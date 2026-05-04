@@ -1,0 +1,490 @@
+{
+  "meta": {
+    "system": "spacy_rule_based"
+  },
+  "documents": [
+    {
+      "id": "doc_001",
+      "doc_type": "credit",
+      "product": "ипотечный_кредит",
+      "entities": [
+        {
+          "id": "e1",
+          "text": "ипотечный кредит",
+          "class": "FinancialProduct",
+          "spacy_label": "FIN_PRODUCT",
+          "start": 28,
+          "end": 44,
+          "confidence": 0.85
+        },
+        {
+          "id": "e2",
+          "text": "залог приобретаемой недвижимости",
+          "class": "ProductAttribute",
+          "spacy_label": "FIN_ATTRIBUTE",
+          "start": 159,
+          "end": 191,
+          "confidence": 0.85
+        },
+        {
+          "id": "e3",
+          "text": "предмет залога",
+          "class": "ProductAttribute",
+          "spacy_label": "FIN_ATTRIBUTE",
+          "start": 221,
+          "end": 235,
+          "confidence": 0.85
+        },
+        {
+          "id": "e4",
+          "text": "аннуитетный платёж",
+          "class": "ProductAttribute",
+          "spacy_label": "FIN_ATTRIBUTE",
+          "start": 286,
+          "end": 304,
+          "confidence": 0.85
+        },
+        {
+          "id": "e5",
+          "text": "ПСК",
+          "class": "ProductAttribute",
+          "spacy_label": "FIN_ATTRIBUTE",
+          "start": 357,
+          "end": 360,
+          "confidence": 0.85
+        },
+        {
+          "id": "e6",
+          "text": "погашение",
+          "class": "Process",
+          "spacy_label": "FIN_PROCESS",
+          "start": 393,
+          "end": 402,
+          "confidence": 0.85
+        }
+      ],
+      "relations": [],
+      "stats": {
+        "entities": 6,
+        "relations": 0,
+        "by_class": {
+          "FinancialProduct": 1,
+          "ProductAttribute": 4,
+          "Process": 1
+        }
+      }
+    },
+    {
+      "id": "doc_003",
+      "doc_type": "credit",
+      "product": "автокредит",
+      "entities": [
+        {
+          "id": "e1",
+          "text": "сумма кредита",
+          "class": "ProductAttribute",
+          "spacy_label": "FIN_ATTRIBUTE",
+          "start": 162,
+          "end": 175,
+          "confidence": 0.85
+        },
+        {
+          "id": "e2",
+          "text": "КАСКО",
+          "class": "FinancialProduct",
+          "spacy_label": "FIN_PRODUCT",
+          "start": 331,
+          "end": 336,
+          "confidence": 0.85
+        },
+        {
+          "id": "e3",
+          "text": "срок кредитования",
+          "class": "ProductAttribute",
+          "spacy_label": "FIN_ATTRIBUTE",
+          "start": 345,
+          "end": 362,
+          "confidence": 0.85
+        },
+        {
+          "id": "e4",
+          "text": "при утрате залога",
+          "class": "Condition",
+          "spacy_label": "FIN_CONDITION",
+          "start": 467,
+          "end": 484,
+          "confidence": 0.85
+        }
+      ],
+      "relations": [
+        {
+          "id": "r1",
+          "subject": "e2",
+          "subject_text": "КАСКО",
+          "relation": "hasAttribute",
+          "object": "e3",
+          "object_text": "срок кредитования",
+          "confidence": 0.65,
+          "evidence": "Обязательным условием является оформление полиса КАСКО на весь срок кредитования."
+        }
+      ],
+      "stats": {
+        "entities": 4,
+        "relations": 1,
+        "by_class": {
+          "ProductAttribute": 2,
+          "FinancialProduct": 1,
+          "Condition": 1
+        }
+      }
+    },
+    {
+      "id": "doc_008",
+      "doc_type": "investment",
+      "product": "пиф",
+      "entities": [
+        {
+          "id": "e1",
+          "text": "ПИФ",
+          "class": "FinancialProduct",
+          "spacy_label": "FIN_PRODUCT",
+          "start": 28,
+          "end": 31,
+          "confidence": 0.85
+        },
+        {
+          "id": "e2",
+          "text": "доверительное управление",
+          "class": "Process",
+          "spacy_label": "FIN_PROCESS",
+          "start": 122,
+          "end": 146,
+          "confidence": 0.85
+        },
+        {
+          "id": "e3",
+          "text": "СЧА",
+          "class": "ProductAttribute",
+          "spacy_label": "FIN_ATTRIBUTE",
+          "start": 330,
+          "end": 333,
+          "confidence": 0.85
+        },
+        {
+          "id": "e4",
+          "text": "СЧА",
+          "class": "ProductAttribute",
+          "spacy_label": "FIN_ATTRIBUTE",
+          "start": 531,
+          "end": 534,
+          "confidence": 0.85
+        }
+      ],
+      "relations": [],
+      "stats": {
+        "entities": 4,
+        "relations": 0,
+        "by_class": {
+          "FinancialProduct": 1,
+          "Process": 1,
+          "ProductAttribute": 2
+        }
+      }
+    },
+    {
+      "id": "doc_009",
+      "doc_type": "investment",
+      "product": "облигация",
+      "entities": [
+        {
+          "id": "e1",
+          "text": "инвестиционный банк",
+          "class": "Actor",
+          "spacy_label": "FIN_ACTOR",
+          "start": 381,
+          "end": 400,
+          "confidence": 0.85
+        },
+        {
+          "id": "e2",
+          "text": "Московской бирже",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 438,
+          "end": 454,
+          "confidence": 0.7
+        }
+      ],
+      "relations": [],
+      "stats": {
+        "entities": 2,
+        "relations": 0,
+        "by_class": {
+          "Actor": 2
+        }
+      }
+    },
+    {
+      "id": "doc_010",
+      "doc_type": "investment",
+      "product": "иис",
+      "entities": [
+        {
+          "id": "e1",
+          "text": "ИИС",
+          "class": "FinancialProduct",
+          "spacy_label": "FIN_PRODUCT",
+          "start": 36,
+          "end": 39,
+          "confidence": 0.85
+        },
+        {
+          "id": "e2",
+          "text": "РФ",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 93,
+          "end": 95,
+          "confidence": 0.7
+        },
+        {
+          "id": "e3",
+          "text": "ИИС",
+          "class": "FinancialProduct",
+          "spacy_label": "FIN_PRODUCT",
+          "start": 146,
+          "end": 149,
+          "confidence": 0.85
+        },
+        {
+          "id": "e4",
+          "text": "не менее трёх лет",
+          "class": "Condition",
+          "spacy_label": "FIN_CONDITION",
+          "start": 369,
+          "end": 386,
+          "confidence": 0.85
+        },
+        {
+          "id": "e5",
+          "text": "Брокер",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 484,
+          "end": 490,
+          "confidence": 0.7
+        },
+        {
+          "id": "e6",
+          "text": "НДФЛ",
+          "class": "LegalTerm",
+          "spacy_label": "FIN_LEGAL",
+          "start": 531,
+          "end": 535,
+          "confidence": 0.85
+        }
+      ],
+      "relations": [
+        {
+          "id": "r1",
+          "subject": "e1",
+          "subject_text": "ИИС",
+          "relation": "issuedBy",
+          "object": "e2",
+          "object_text": "РФ",
+          "confidence": 0.65,
+          "evidence": "Индивидуальный инвестиционный счёт (ИИС) открывается физическим лицам — налоговым резидентам РФ."
+        }
+      ],
+      "stats": {
+        "entities": 6,
+        "relations": 1,
+        "by_class": {
+          "FinancialProduct": 2,
+          "Actor": 2,
+          "Condition": 1,
+          "LegalTerm": 1
+        }
+      }
+    },
+    {
+      "id": "doc_012",
+      "doc_type": "insurance",
+      "product": "каско",
+      "entities": [
+        {
+          "id": "e1",
+          "text": "КАСКО",
+          "class": "FinancialProduct",
+          "spacy_label": "FIN_PRODUCT",
+          "start": 6,
+          "end": 11,
+          "confidence": 0.85
+        },
+        {
+          "id": "e2",
+          "text": "Ущерб",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 182,
+          "end": 187,
+          "confidence": 0.7
+        },
+        {
+          "id": "e3",
+          "text": "страховщик",
+          "class": "Actor",
+          "spacy_label": "FIN_ACTOR",
+          "start": 262,
+          "end": 272,
+          "confidence": 0.85
+        }
+      ],
+      "relations": [],
+      "stats": {
+        "entities": 3,
+        "relations": 0,
+        "by_class": {
+          "FinancialProduct": 1,
+          "Actor": 2
+        }
+      }
+    },
+    {
+      "id": "doc_013",
+      "doc_type": "card",
+      "product": "кредитная_карта",
+      "entities": [
+        {
+          "id": "e1",
+          "text": "грейс-период",
+          "class": "ProductAttribute",
+          "spacy_label": "FIN_ATTRIBUTE",
+          "start": 96,
+          "end": 108,
+          "confidence": 0.85
+        },
+        {
+          "id": "e2",
+          "text": "при полном погашении задолженности",
+          "class": "Condition",
+          "spacy_label": "FIN_CONDITION",
+          "start": 212,
+          "end": 246,
+          "confidence": 0.85
+        },
+        {
+          "id": "e3",
+          "text": "процентная ставка",
+          "class": "ProductAttribute",
+          "spacy_label": "FIN_ATTRIBUTE",
+          "start": 279,
+          "end": 296,
+          "confidence": 0.85
+        },
+        {
+          "id": "e4",
+          "text": "ежемесячный платёж",
+          "class": "ProductAttribute",
+          "spacy_label": "FIN_ATTRIBUTE",
+          "start": 335,
+          "end": 353,
+          "confidence": 0.85
+        },
+        {
+          "id": "e5",
+          "text": "снятие наличных",
+          "class": "Process",
+          "spacy_label": "FIN_PROCESS",
+          "start": 410,
+          "end": 425,
+          "confidence": 0.85
+        }
+      ],
+      "relations": [],
+      "stats": {
+        "entities": 5,
+        "relations": 0,
+        "by_class": {
+          "ProductAttribute": 3,
+          "Condition": 1,
+          "Process": 1
+        }
+      }
+    },
+    {
+      "id": "doc_015",
+      "doc_type": "regulatory",
+      "product": "общий",
+      "entities": [
+        {
+          "id": "e1",
+          "text": "Центральный банк Российской Федерации",
+          "class": "Actor",
+          "spacy_label": "FIN_ACTOR",
+          "start": 446,
+          "end": 483,
+          "confidence": 0.85
+        },
+        {
+          "id": "e2",
+          "text": "ПСК",
+          "class": "ProductAttribute",
+          "spacy_label": "FIN_ATTRIBUTE",
+          "start": 518,
+          "end": 521,
+          "confidence": 0.85
+        }
+      ],
+      "relations": [
+        {
+          "id": "r1",
+          "subject": "e1",
+          "subject_text": "Центральный банк Российской Федерации",
+          "relation": "regulatedBy",
+          "object": "e2",
+          "object_text": "ПСК",
+          "confidence": 0.65,
+          "evidence": "Центральный банк Российской Федерации устанавливает предельные значения ПСК для каждой категории потребительских кредитов."
+        }
+      ],
+      "stats": {
+        "entities": 2,
+        "relations": 1,
+        "by_class": {
+          "Actor": 1,
+          "ProductAttribute": 1
+        }
+      }
+    },
+    {
+      "id": "doc_016",
+      "doc_type": "regulatory",
+      "product": "общий",
+      "entities": [
+        {
+          "id": "e1",
+          "text": "Банк России",
+          "class": "Actor",
+          "spacy_label": "FIN_ACTOR",
+          "start": 379,
+          "end": 390,
+          "confidence": 0.85
+        }
+      ],
+      "relations": [],
+      "stats": {
+        "entities": 1,
+        "relations": 0,
+        "by_class": {
+          "Actor": 1
+        }
+      }
+    }
+  ],
+  "ontology_stats": {
+    "triples": 125,
+    "classes": 16,
+    "properties": 7
+  }
+}

@@ -1,0 +1,1470 @@
+@prefix fin: <http://fin-ontology.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+fin:3RabochikhDnya a fin:Condition ;
+    rdfs:label "3 рабочих дня"@ru ;
+    fin:confidence "1.0" .
+
+fin:Akkreditovannoy a fin:ProductAttribute ;
+    rdfs:label "аккредитованной"@ru ;
+    fin:confidence "0.6" .
+
+fin:Avtomobiley a fin:ProductAttribute ;
+    rdfs:label "автомобилей"@ru ;
+    fin:confidence "0.8" .
+
+fin:Avtomobilya a fin:Actor ;
+    rdfs:label "автомобиля"@ru ;
+    fin:confidence "0.6" .
+
+fin:BankRossii a fin:Actor ;
+    rdfs:label "Банк России"@ru ;
+    fin:confidence "0.9" .
+
+fin:BezShtrafnykhSanktsiy a fin:Condition ;
+    rdfs:label "без штрафных санкций"@ru ;
+    fin:confidence "0.8" .
+
+fin:BeznadyozhnyeSsudy a owl:Class ;
+    rdfs:label "безнадёжные ссуды"@ru ;
+    fin:confidence "0.8" ;
+    rdfs:subClassOf fin:FinancialProduct .
+
+fin:Broker a fin:Actor ;
+    rdfs:label "Брокер"@ru ;
+    fin:confidence "1.0" .
+
+fin:Byt a fin:Condition ;
+    rdfs:label "быть"@ru ;
+    fin:confidence "0.5" .
+
+fin:Cheloveka a fin:Actor ;
+    rdfs:label "человека"@ru ;
+    fin:confidence "0.8" .
+
+fin:DepositProduct a owl:Class ;
+    rdfs:label "Депозитный продукт"@ru ;
+    rdfs:subClassOf fin:FinancialProduct .
+
+fin:Deystvitelnoy a fin:ProductAttribute ;
+    rdfs:label "действительной"@ru ;
+    fin:confidence "0.9" .
+
+fin:Do7Let a fin:Condition ;
+    rdfs:label "до 7 лет"@ru ;
+    fin:confidence "1.0" .
+
+fin:DogovorPotrebitelskogoKredita a owl:Class ;
+    rdfs:label "договор потребительского кредита"@ru ;
+    fin:confidence "1.0" ;
+    rdfs:subClassOf fin:FinancialProduct .
+
+fin:Dogovora a fin:LegalTerm ;
+    rdfs:label "договора"@ru ;
+    fin:confidence "0.8" .
+
+fin:Dopuskaetsya a fin:Condition ;
+    rdfs:label "допускается"@ru ;
+    fin:confidence "0.8" .
+
+fin:Dosrochnoe a fin:Process ;
+    rdfs:label "досрочное"@ru ;
+    fin:confidence "0.7" .
+
+fin:DosrochnoePogashenie a fin:Process ;
+    rdfs:label "досрочное погашение"@ru ;
+    fin:confidence "0.9" .
+
+fin:DosrochnogoPogasheniyaKredita a fin:Process ;
+    rdfs:label "досрочного погашения кредита"@ru ;
+    fin:confidence "1.0" .
+
+fin:DosrochnomZakrytiiSchyota a fin:Process ;
+    rdfs:label "досрочном закрытии счёта"@ru ;
+    fin:confidence "1.0" .
+
+fin:Dosrochnyy a fin:ProductAttribute ;
+    rdfs:label "досрочный"@ru ;
+    fin:confidence "0.7" .
+
+fin:Doveritelnoe a fin:ProductAttribute ;
+    rdfs:label "доверительное"@ru ;
+    fin:confidence "0.7" .
+
+fin:Ezhednevno a fin:Condition ;
+    rdfs:label "ежедневно"@ru ;
+    fin:confidence "0.7" .
+
+fin:Fakticheskoy a fin:ProductAttribute ;
+    rdfs:label "фактической"@ru ;
+    fin:confidence "0.5" .
+
+fin:FinancialProductsOntology a owl:Ontology ;
+    rdfs:label "Онтология финансовых продуктов"@ru ;
+    rdfs:comment "Мультиагентная система. GPT-4o-mini + LangGraph."@ru .
+
+fin:Fizicheskim a fin:ProductAttribute ;
+    rdfs:label "физическим"@ru ;
+    fin:confidence "0.9" .
+
+fin:Formirovat a fin:Process ;
+    rdfs:label "формировать"@ru ;
+    fin:confidence "0.5" .
+
+fin:Imuschestvo a fin:ProductAttribute ;
+    rdfs:label "имущество"@ru ;
+    fin:confidence "0.8" .
+
+fin:Imuschestvom a fin:ProductAttribute ;
+    rdfs:label "имуществом"@ru ;
+    fin:confidence "0.6" .
+
+fin:Individualnyy a fin:ProductAttribute ;
+    rdfs:label "индивидуальный"@ru ;
+    fin:confidence "0.9" .
+
+fin:InspektsionnyeProverki a fin:Process ;
+    rdfs:label "инспекционные проверки"@ru ;
+    fin:confidence "0.8" .
+
+fin:Ispolneniem a fin:LegalTerm ;
+    rdfs:label "исполнением"@ru ;
+    fin:confidence "0.7" .
+
+fin:Istechenii a fin:Condition ;
+    rdfs:label "истечении"@ru ;
+    fin:confidence "0.9" .
+
+fin:KategoriiKachestva a fin:ProductAttribute ;
+    rdfs:label "категории качества"@ru ;
+    fin:confidence "0.8" .
+
+fin:Klassifitsiruyutsya a fin:Process ;
+    rdfs:label "классифицируются"@ru ;
+    fin:confidence "0.7" .
+
+fin:KoeffitsientBonusmalus a fin:ProductAttribute ;
+    rdfs:label "коэффициент бонус-малус"@ru ;
+    fin:confidence "1.0" .
+
+fin:Kredita a fin:LegalTerm ;
+    rdfs:label "кредита"@ru ;
+    fin:confidence "0.8" .
+
+fin:KreditnayaOrganizatsiya a fin:Actor ;
+    rdfs:label "кредитная организация"@ru ;
+    fin:confidence "0.9" .
+
+fin:Kreditnogo a fin:ProductAttribute ;
+    rdfs:label "кредитного"@ru ;
+    fin:confidence "0.5" .
+
+fin:KreditnyyRisk a fin:Condition ;
+    rdfs:label "кредитный риск"@ru ;
+    fin:confidence "0.8" .
+
+fin:Kreditor a fin:Actor ;
+    rdfs:label "кредитор"@ru ;
+    fin:confidence "1.0" .
+
+fin:Kreditovaniya a fin:Process ;
+    rdfs:label "кредитования"@ru ;
+    fin:confidence "0.8" .
+
+fin:Kreditu a fin:LegalTerm ;
+    rdfs:label "кредиту"@ru ;
+    fin:confidence "0.9" .
+
+fin:Mozhet a fin:Condition ;
+    rdfs:label "может"@ru ;
+    fin:confidence "0.5" .
+
+fin:Nachislyayutsya a fin:Process ;
+    rdfs:label "начисляются"@ru ;
+    fin:confidence "0.5" .
+
+fin:Nalogovym a fin:ProductAttribute ;
+    rdfs:label "налоговым"@ru ;
+    fin:confidence "0.5" .
+
+fin:Ndfl a fin:LegalTerm ;
+    rdfs:label "НДФЛ"@ru ;
+    fin:confidence "1.0" .
+
+fin:Obespecheniem a fin:LegalTerm ;
+    rdfs:label "обеспечением"@ru ;
+    fin:confidence "0.9" .
+
+fin:Obespechivaet a fin:Process ;
+    rdfs:label "обеспечивает"@ru ;
+    fin:confidence "0.8" .
+
+fin:Obyazana a fin:LegalTerm ;
+    rdfs:label "обязана"@ru ;
+    fin:confidence "0.6" .
+
+fin:Obyazatelnym a fin:Condition ;
+    rdfs:label "обязательным"@ru ;
+    fin:confidence "0.9" .
+
+fin:Odin a fin:Condition ;
+    rdfs:label "один"@ru ;
+    fin:confidence "0.7" .
+
+fin:Odnogo a fin:Condition ;
+    rdfs:label "одного"@ru ;
+    fin:confidence "0.7" .
+
+fin:Oformlenie a fin:Process ;
+    rdfs:label "оформление"@ru ;
+    fin:confidence "0.8" .
+
+fin:Operatsii a fin:Process ;
+    rdfs:label "операции"@ru ;
+    fin:confidence "0.6" .
+
+fin:Opredelyaetsya a fin:Process ;
+    rdfs:label "определяется"@ru ;
+    fin:confidence "0.5" .
+
+fin:Organizatsiya a fin:Actor ;
+    rdfs:label "организация"@ru ;
+    fin:confidence "0.5" .
+
+fin:Otkazatsya a fin:Process ;
+    rdfs:label "отказаться"@ru ;
+    fin:confidence "0.6" .
+
+fin:Otkryt a fin:Process ;
+    rdfs:label "открыт"@ru ;
+    fin:confidence "0.6" .
+
+fin:Otkryvaetsya a fin:Process ;
+    rdfs:label "открывается"@ru ;
+    fin:confidence "0.7" .
+
+fin:Payschika a fin:Actor ;
+    rdfs:label "пайщика"@ru ;
+    fin:confidence "0.9" .
+
+fin:Pervyy a fin:ProductAttribute ;
+    rdfs:label "первый"@ru ;
+    fin:confidence "0.5" .
+
+fin:Platezhi a fin:ProductAttribute ;
+    rdfs:label "платежи"@ru ;
+    fin:confidence "0.8" .
+
+fin:Poderzhannykh a fin:ProductAttribute ;
+    rdfs:label "подержанных"@ru ;
+    fin:confidence "0.9" .
+
+fin:Podtverzhdeniya a fin:ProductAttribute ;
+    rdfs:label "подтверждения"@ru ;
+    fin:confidence "0.7" .
+
+fin:Pogashenie a fin:Process ;
+    rdfs:label "погашение"@ru ;
+    fin:confidence "0.9" .
+
+fin:Polis a fin:ProductAttribute ;
+    rdfs:label "полис"@ru ;
+    fin:confidence "0.5" .
+
+fin:Polisa a fin:LegalTerm ;
+    rdfs:label "полиса"@ru ;
+    fin:confidence "0.8" .
+
+fin:PolnayaStoimostKredita a fin:ProductAttribute ;
+    rdfs:label "полная стоимость кредита"@ru ;
+    fin:confidence "1.0" .
+
+fin:Polnom a fin:ProductAttribute ;
+    rdfs:label "полном"@ru ;
+    fin:confidence "0.6" .
+
+fin:Poteri a fin:ProductAttribute ;
+    rdfs:label "потери"@ru ;
+    fin:confidence "0.7" .
+
+fin:Potrebitelskogo a fin:ProductAttribute ;
+    rdfs:label "потребительского"@ru ;
+    fin:confidence "0.6" .
+
+fin:Prave a fin:LegalTerm ;
+    rdfs:label "праве"@ru ;
+    fin:confidence "0.9" .
+
+fin:Pravo a fin:LegalTerm ;
+    rdfs:label "право"@ru ;
+    fin:confidence "0.9" .
+
+fin:PredelnyeZnacheniyaPsk a fin:ProductAttribute ;
+    rdfs:label "предельные значения ПСК"@ru ;
+    fin:confidence "1.0" .
+
+fin:Predmetom a fin:ProductAttribute ;
+    rdfs:label "предметом"@ru ;
+    fin:confidence "0.6" .
+
+fin:PredmetomZaloga a fin:LegalTerm ;
+    rdfs:label "предметом залога"@ru ;
+    fin:confidence "1.0" .
+
+fin:Priobretaemoy a fin:ProductAttribute ;
+    rdfs:label "приобретаемой"@ru ;
+    fin:confidence "0.7" .
+
+fin:Professionalnogo a fin:ProductAttribute ;
+    rdfs:label "профессионального"@ru ;
+    fin:confidence "0.5" .
+
+fin:Protsentakh a fin:ProductAttribute ;
+    rdfs:label "процентах"@ru ;
+    fin:confidence "0.9" .
+
+fin:ProtsentakhGodovykh a fin:ProductAttribute ;
+    rdfs:label "процентах годовых"@ru ;
+    fin:confidence "1.0" .
+
+fin:Protsenty a fin:ProductAttribute ;
+    rdfs:label "проценты"@ru ;
+    fin:confidence "1.0" .
+
+fin:Pyati a fin:Metric ;
+    rdfs:label "пяти"@ru ;
+    fin:confidence "0.9" .
+
+fin:Ranee a fin:Condition ;
+    rdfs:label "ранее"@ru ;
+    fin:confidence "0.8" .
+
+fin:Raskryt a fin:Process ;
+    rdfs:label "раскрыть"@ru ;
+    fin:confidence "0.6" .
+
+fin:Ravna a fin:Condition ;
+    rdfs:label "равна"@ru ;
+    fin:confidence "0.5" .
+
+fin:Rezerva a fin:ProductAttribute ;
+    rdfs:label "резерва"@ru ;
+    fin:confidence "0.9" .
+
+fin:Rezervy a fin:ProductAttribute ;
+    rdfs:label "резервы"@ru ;
+    fin:confidence "0.9" .
+
+fin:Riska a fin:ProductAttribute ;
+    rdfs:label "риска"@ru ;
+    fin:confidence "0.5" .
+
+fin:Snyatie a fin:Process ;
+    rdfs:label "снятие"@ru ;
+    fin:confidence "0.7" .
+
+fin:Sobstvennosti a fin:LegalTerm ;
+    rdfs:label "собственности"@ru ;
+    fin:confidence "0.9" .
+
+fin:Soversheniya a fin:Process ;
+    rdfs:label "совершения"@ru ;
+    fin:confidence "0.5" .
+
+fin:Sredstvo a fin:ProductAttribute ;
+    rdfs:label "средство"@ru ;
+    fin:confidence "0.7" .
+
+fin:Srok a fin:ProductAttribute ;
+    rdfs:label "срок"@ru ;
+    fin:confidence "1.0" .
+
+fin:Stoimost a fin:ProductAttribute ;
+    rdfs:label "стоимость"@ru ;
+    fin:confidence "0.7" .
+
+fin:StoimostChistykhAktivovScha a fin:ProductAttribute ;
+    rdfs:label "стоимость чистых активов (СЧА)"@ru ;
+    fin:confidence "1.0" .
+
+fin:StoimostKredita a fin:ProductAttribute ;
+    rdfs:label "стоимость кредита"@ru ;
+    fin:confidence "1.0" .
+
+fin:Strakhovatel a fin:Actor ;
+    rdfs:label "страхователь"@ru ;
+    fin:confidence "1.0" .
+
+fin:Strakhovaya a fin:ProductAttribute ;
+    rdfs:label "страховая"@ru ;
+    fin:confidence "0.8" .
+
+fin:StrakhovayaSumma a fin:ProductAttribute ;
+    rdfs:label "страховая сумма"@ru ;
+    fin:confidence "1.0" .
+
+fin:Strakhovschik a fin:Actor ;
+    rdfs:label "страховщик"@ru ;
+    fin:confidence "1.0" ;
+    skos:closeMatch <https://spec.edmcouncil.org/fibo/ontology/INS/Insurer> .
+
+fin:Suzhdeniya a fin:ProductAttribute ;
+    rdfs:label "суждения"@ru ;
+    fin:confidence "0.5" .
+
+fin:Svyazannye a fin:ProductAttribute ;
+    rdfs:label "связанные"@ru ;
+    fin:confidence "0.5" .
+
+fin:Tolko a fin:Condition ;
+    rdfs:label "только"@ru ;
+    fin:confidence "0.6" .
+
+fin:Transportnoe a fin:ProductAttribute ;
+    rdfs:label "транспортное"@ru ;
+    fin:confidence "0.7" .
+
+fin:Transportnogo a fin:ProductAttribute ;
+    rdfs:label "транспортного"@ru ;
+    fin:confidence "0.5" .
+
+fin:TriGoda a fin:Condition ;
+    rdfs:label "три года"@ru ;
+    fin:confidence "1.0" .
+
+fin:Tryokh a fin:Condition ;
+    rdfs:label "трёх"@ru ;
+    fin:confidence "0.9" .
+
+fin:TryokhLet a fin:Condition ;
+    rdfs:label "трёх лет"@ru ;
+    fin:confidence "0.9" .
+
+fin:TsentralnyyBankRossiyskoyFederatsii a fin:Actor ;
+    rdfs:label "Центральный банк Российской Федерации"@ru ;
+    fin:confidence "1.0" .
+
+fin:Udostoveryaet a fin:Process ;
+    rdfs:label "удостоверяет"@ru ;
+    fin:confidence "0.5" .
+
+fin:Ugona a fin:LegalTerm ;
+    rdfs:label "угона"@ru ;
+    fin:confidence "0.7" .
+
+fin:Ugone a fin:LegalTerm ;
+    rdfs:label "угоне"@ru ;
+    fin:confidence "0.7" .
+
+fin:Urovne a fin:ProductAttribute ;
+    rdfs:label "уровне"@ru ;
+    fin:confidence "0.5" .
+
+fin:Uscherba a fin:LegalTerm ;
+    rdfs:label "ущерба"@ru ;
+    fin:confidence "0.7" .
+
+fin:Usloviem a fin:Condition ;
+    rdfs:label "условием"@ru ;
+    fin:confidence "0.9" .
+
+fin:Ustanavlivaetsya a fin:Process ;
+    rdfs:label "устанавливается"@ru ;
+    fin:confidence "0.8" .
+
+fin:Vklyuchaet a fin:Process ;
+    rdfs:label "включает"@ru ;
+    fin:confidence "0.5" .
+
+fin:Vozmozhnye a fin:Condition ;
+    rdfs:label "возможные"@ru ;
+    fin:confidence "0.5" .
+
+fin:Vydachi a fin:Process ;
+    rdfs:label "выдачи"@ru ;
+    fin:confidence "0.8" .
+
+fin:Vydayotsya a fin:Process ;
+    rdfs:label "выдаётся"@ru ;
+    fin:confidence "0.6" .
+
+fin:Vyplachivaet a fin:Process ;
+    rdfs:label "выплачивает"@ru ;
+    fin:confidence "0.8" .
+
+fin:Zaklyucheniem a fin:LegalTerm ;
+    rdfs:label "заключением"@ru ;
+    fin:confidence "0.7" .
+
+fin:Zaklyucheniya a fin:Process ;
+    rdfs:label "заключения"@ru ;
+    fin:confidence "0.6" .
+
+fin:Zaloga a fin:LegalTerm ;
+    rdfs:label "залога"@ru ;
+    fin:confidence "0.8",
+        "1.0" .
+
+fin:appliesTo a owl:ObjectProperty ;
+    rdfs:label "применяется к"@ru ;
+    rdfs:range fin:FinancialProduct .
+
+fin:ev_1000000Rubley_hasValue a fin:Evidence ;
+    fin:about fin:1000000Rubley ;
+    rdfs:comment "Максимальная сумма ежегодного пополнения счёта — 1 000 000 рублей."@ru .
+
+fin:ev_100OtSummyOsnovnogoDolga_hasValue a fin:Evidence ;
+    fin:about fin:100OtSummyOsnovnogoDolga ;
+    rdfs:comment "резерв формируется в размере 100% от суммы основного долга"@ru .
+
+fin:ev_105Godovykh_hasValue a fin:Evidence ;
+    fin:about fin:105Godovykh ;
+    rdfs:comment "процентная ставка 10,5% годовых"@ru .
+
+fin:ev_15000Rubley_hasValue a fin:Evidence ;
+    fin:about fin:15000Rubley ;
+    rdfs:comment "Франшиза по риску «Ущерб» составляет 15 000 рублей"@ru .
+
+fin:ev_15_hasValue a fin:Evidence ;
+    fin:about fin:15 ;
+    rdfs:comment "не менее 15% от стоимости транспортного средства"@ru .
+
+fin:ev_180Dney_requires a fin:Evidence ;
+    fin:about fin:180Dney ;
+    rdfs:comment "Скидка при погашении паёв — не более 1% при владении менее 180 дней."@ru .
+
+fin:ev_20Let_hasValue a fin:Evidence ;
+    fin:about fin:20Let ;
+    rdfs:comment "в размере 5 000 000 рублей сроком на 20 лет"@ru .
+
+fin:ev_299Godovykh_hasValue a fin:Evidence ;
+    fin:about fin:299Godovykh ;
+    rdfs:comment "процентная ставка составляет 29,9% годовых"@ru .
+
+fin:ev_300Rubley_hasValue a fin:Evidence ;
+    fin:about fin:300Rubley ;
+    rdfs:comment "Минимальный ежемесячный платёж — 3% от суммы задолженности, но не менее 300 рублей."@ru .
+
+fin:ev_390Rubley_hasValue a fin:Evidence ;
+    fin:about fin:390Rubley ;
+    rdfs:comment "комиссия 3%, минимум 390 рублей"@ru .
+
+fin:ev_3_hasValue a fin:Evidence ;
+    fin:about fin:3 ;
+    rdfs:comment "Минимальный ежемесячный платёж — 3% от суммы задолженности"@ru,
+        "взимается комиссия 3%"@ru,
+        "комиссия 3%"@ru .
+
+fin:ev_49919Rubley_hasValue a fin:Evidence ;
+    fin:about fin:49919Rubley ;
+    rdfs:comment "Ежемесячный аннуитетный платёж составляет 49 919 рублей."@ru .
+
+fin:ev_5000000Rubley_hasValue a fin:Evidence ;
+    fin:about fin:5000000Rubley ;
+    rdfs:comment "в размере 5 000 000 рублей"@ru,
+        "размер 5 000 000 рублей под процентную ставку 10,5%"@ru .
+
+fin:ev_500000Rubley_hasValue a fin:Evidence ;
+    fin:about fin:500000Rubley ;
+    rdfs:comment "лимитом до 500 000 рублей"@ru .
+
+fin:ev_55Dney_hasValue a fin:Evidence ;
+    fin:about fin:55Dney ;
+    rdfs:comment "Льготный период (грейс-период) составляет до 55 дней"@ru .
+
+fin:ev_65Godovykh_hasValue a fin:Evidence ;
+    fin:about fin:65Godovykh ;
+    rdfs:comment "Процентная ставка по программе господдержки составляет 6,5% годовых."@ru .
+
+fin:ev_AkkreditovannoyStrakhovoyKompanii_requires a fin:Evidence ;
+    fin:about fin:AkkreditovannoyStrakhovoyKompanii ;
+    rdfs:comment "Заёмщик обязан застраховать предмет залога"@ru .
+
+fin:ev_Avtokredit_issuedBy a fin:Evidence ;
+    fin:about fin:Avtokredit ;
+    rdfs:comment "Автокредит предоставляется на приобретение"@ru .
+
+fin:ev_DosrochnyyVozvratKredita_involves a fin:Evidence ;
+    fin:about fin:DosrochnyyVozvratKredita ;
+    rdfs:comment "Право на досрочный возврат кредита принадлежит заёмщику"@ru .
+
+fin:ev_DoveritelnoeUpravlenie_involves a fin:Evidence ;
+    fin:about fin:DoveritelnoeUpravlenie ;
+    rdfs:comment "Управляющая компания осуществляет доверительное управление"@ru,
+        "доверительное управление имуществом фонда"@ru .
+
+fin:ev_Fond_hasAttribute a fin:Evidence ;
+    fin:about fin:Fond ;
+    rdfs:comment "долю пайщика в праве собственности на имущество фонда"@ru,
+        "является открытым фондом"@ru .
+
+fin:ev_Fond_issuedBy a fin:Evidence ;
+    fin:about fin:Fond ;
+    rdfs:comment "Управляющая компания осуществляет доверительное управление имуществом фонда."@ru .
+
+fin:ev_Franshiza_hasValue a fin:Evidence ;
+    fin:about fin:Franshiza ;
+    rdfs:comment "Франшиза по риску «Ущерб» составляет 15 000 рублей"@ru .
+
+fin:ev_IndividualnyyInvestitsionnyySchyotIis_issuedBy a fin:Evidence ;
+    fin:about fin:IndividualnyyInvestitsionnyySchyotIis ;
+    rdfs:comment "ИИС открывается физическим лицам"@ru,
+        "ИИС открывается физическим лицам — налоговым резидентам РФ"@ru .
+
+fin:ev_IndividualnyyInvestitsionnyySchyotIis_requires a fin:Evidence ;
+    fin:about fin:IndividualnyyInvestitsionnyySchyotIis ;
+    rdfs:comment "открывается физическим лицам — налоговым резидентам РФ"@ru .
+
+fin:ev_InvestitsionnyyPay_hasAttribute a fin:Evidence ;
+    fin:about fin:InvestitsionnyyPay ;
+    rdfs:comment "инвестиционный пай удостоверяет долю пайщика"@ru .
+
+fin:ev_Investitsionnyy_subClassOf a fin:Evidence ;
+    fin:about fin:Investitsionnyy ;
+    rdfs:comment "является открытым фондом облигаций"@ru .
+
+fin:ev_IpotechnyyKredit_hasAttribute a fin:Evidence ;
+    fin:about fin:IpotechnyyKredit ;
+    rdfs:comment "ипотечный кредит в размере 5 000 000 рублей сроком на 20 лет"@ru,
+        "ипотечный кредит в размере 5 000 000 рублей сроком на 20 лет под процентную ставку 10,5% годовых"@ru,
+        "под процентную ставку 10,5% годовых"@ru .
+
+fin:ev_IpotechnyyKredit_issuedBy a fin:Evidence ;
+    fin:about fin:IpotechnyyKredit ;
+    rdfs:comment "Банк предоставляет заёмщику ипотечный кредит"@ru .
+
+fin:ev_IpotechnyyKredit_subClassOf a fin:Evidence ;
+    fin:about fin:IpotechnyyKredit ;
+    rdfs:comment "ипотечный кредит → кредитный продукт"@ru .
+
+fin:ev_Ipotechnyy_subClassOf a fin:Evidence ;
+    fin:about fin:Ipotechnyy ;
+    rdfs:comment "ипотечный кредит"@ru .
+
+fin:ev_Karta_hasAttribute a fin:Evidence ;
+    fin:about fin:Karta ;
+    rdfs:comment "Кредитная карта с лимитом"@ru .
+
+fin:ev_Keshbek_hasValue a fin:Evidence ;
+    fin:about fin:Keshbek ;
+    rdfs:comment "кэшбэк начисляется в размере 5%"@ru,
+        "начисляется в размере 1%"@ru .
+
+fin:ev_Komissiya_hasValue a fin:Evidence ;
+    fin:about fin:Komissiya ;
+    rdfs:comment "комиссия 3%, минимум 390 рублей"@ru .
+
+fin:ev_Kompaniya_involves a fin:Evidence ;
+    fin:about fin:Kompaniya ;
+    rdfs:comment "Управляющая компания осуществляет доверительное управление"@ru .
+
+fin:ev_Kredit_hasAttribute a fin:Evidence ;
+    fin:about fin:Kredit ;
+    rdfs:comment "под процентную ставку 10,5% годовых"@ru .
+
+fin:ev_Kredit_requires a fin:Evidence ;
+    fin:about fin:Kredit ;
+    rdfs:comment "Заёмщик обязан застраховать предмет залога"@ru,
+        "Обеспечением по кредиту является залог"@ru,
+        "Обеспечением по кредиту является залог приобретаемой недвижимости"@ru .
+
+fin:ev_KreditnayaKarta_hasAttribute a fin:Evidence ;
+    fin:about fin:KreditnayaKarta ;
+    rdfs:comment "Кредитная карта с лимитом до 500 000 рублей"@ru .
+
+fin:ev_LgotnyyPeriod_hasValue a fin:Evidence ;
+    fin:about fin:LgotnyyPeriod ;
+    rdfs:comment "льготный период составляет до 55 дней"@ru .
+
+fin:ev_Limit_hasAttribute a fin:Evidence ;
+    fin:about fin:Limit ;
+    rdfs:comment "Кредитная карта с лимитом до 500 000 рублей"@ru .
+
+fin:ev_Limit_hasValue a fin:Evidence ;
+    fin:about fin:Limit ;
+    rdfs:comment "лимитом до 500 000 рублей"@ru .
+
+fin:ev_MaksimalnayaSummaEzhegodnogoPopolneniyaSchyota_hasValue a fin:Evidence ;
+    fin:about fin:MaksimalnayaSummaEzhegodnogoPopolneniyaSchyota ;
+    rdfs:comment "максимальная сумма ежегодного пополнения счёта — 1 000 000 рублей"@ru .
+
+fin:ev_MaksimalnayaSummaKredita_hasValue a fin:Evidence ;
+    fin:about fin:MaksimalnayaSummaKredita ;
+    rdfs:comment "Максимальная сумма кредита — 7 000 000 рублей"@ru .
+
+fin:ev_MinimalnayaSummaPervonachalnoyInvestitsii_hasValue a fin:Evidence ;
+    fin:about fin:MinimalnayaSummaPervonachalnoyInvestitsii ;
+    rdfs:comment "Минимальная сумма первоначальной инвестиции — 1 000 рублей."@ru .
+
+fin:ev_MinimalnyyEzhemesyachnyyPlatyozh_hasValue a fin:Evidence ;
+    fin:about fin:MinimalnyyEzhemesyachnyyPlatyozh ;
+    rdfs:comment "Минимальный ежемесячный платёж — 3% от суммы задолженности, но не менее 300 рублей."@ru .
+
+fin:ev_NadbavkaPriPokupkePayov_hasValue a fin:Evidence ;
+    fin:about fin:NadbavkaPriPokupkePayov ;
+    rdfs:comment "Надбавка при покупке паёв составляет не более 1,5%"@ru,
+        "Надбавка при покупке паёв составляет не более 1,5% от суммы инвестиций."@ru .
+
+fin:ev_NalogovyyVychetTipaA_hasValue a fin:Evidence ;
+    fin:about fin:NalogovyyVychetTipaA ;
+    rdfs:comment "в размере 13% от внесённой суммы"@ru,
+        "в размере 13% от внесённой суммы, но не более 52 000 рублей в год"@ru .
+
+fin:ev_Obligatsiy_subClassOf a fin:Evidence ;
+    fin:about fin:Obligatsiy ;
+    rdfs:comment "открытым фондом облигаций"@ru,
+        "является открытым фондом облигаций"@ru .
+
+fin:ev_Otkrytym_hasAttribute a fin:Evidence ;
+    fin:about fin:Otkrytym ;
+    rdfs:comment "является открытым фондом облигаций"@ru .
+
+fin:ev_PaevoyInvestitsionnyyFondPif_hasAttribute a fin:Evidence ;
+    fin:about fin:PaevoyInvestitsionnyyFondPif ;
+    rdfs:comment "является открытым фондом облигаций"@ru .
+
+fin:ev_PaevoyInvestitsionnyyFondPif_subClassOf a fin:Evidence ;
+    fin:about fin:PaevoyInvestitsionnyyFondPif ;
+    rdfs:comment "является открытым фондом облигаций"@ru .
+
+fin:ev_Paevoy_subClassOf a fin:Evidence ;
+    fin:about fin:Paevoy ;
+    rdfs:comment "является открытым фондом облигаций"@ru .
+
+fin:ev_PervonachalnyyVznos_hasValue a fin:Evidence ;
+    fin:about fin:PervonachalnyyVznos ;
+    rdfs:comment "не менее 15%"@ru .
+
+fin:ev_PolisKasko_hasAttribute a fin:Evidence ;
+    fin:about fin:PolisKasko ;
+    rdfs:comment "Полис КАСКО обеспечивает страховую защиту"@ru,
+        "Полис КАСКО обеспечивает страховую защиту транспортного средства"@ru .
+
+fin:ev_PolisKasko_requires a fin:Evidence ;
+    fin:about fin:PolisKasko ;
+    rdfs:comment "Полис КАСКО обеспечивает страховую защиту транспортного средства от ущерба и угона."@ru .
+
+fin:ev_PolnayaStoimostKreditaPsk_hasValue a fin:Evidence ;
+    fin:about fin:PolnayaStoimostKreditaPsk ;
+    rdfs:comment "Полная стоимость кредита (ПСК) равна 11,2% годовых."@ru .
+
+fin:ev_Predostavlyaet_issuedBy a fin:Evidence ;
+    fin:about fin:Predostavlyaet ;
+    rdfs:comment "Банк предоставляет заёмщику ипотечный кредит"@ru .
+
+fin:ev_PriobretaemoyNedvizhimosti_requires a fin:Evidence ;
+    fin:about fin:PriobretaemoyNedvizhimosti ;
+    rdfs:comment "Обеспечением по кредиту является залог"@ru .
+
+fin:ev_ProtsentnayaStavka_hasValue a fin:Evidence ;
+    fin:about fin:ProtsentnayaStavka ;
+    rdfs:comment "Процентная ставка по программе господдержки составляет 6,5% годовых."@ru .
+
+fin:ev_SkidkaPriPogasheniiPayov_hasAttribute a fin:Evidence ;
+    fin:about fin:SkidkaPriPogasheniiPayov ;
+    rdfs:comment "Скидка при погашении паёв"@ru .
+
+fin:ev_SkidkaPriPogasheniiPayov_hasValue a fin:Evidence ;
+    fin:about fin:SkidkaPriPogasheniiPayov ;
+    rdfs:comment "не более 1%"@ru .
+
+fin:ev_Ssudam_hasValue a fin:Evidence ;
+    fin:about fin:Ssudam ;
+    rdfs:comment "резерв формируется в размере 100% от суммы основного долга"@ru .
+
+fin:ev_Ssudy_hasAttribute a fin:Evidence ;
+    fin:about fin:Ssudy ;
+    rdfs:comment "Ссуды классифицируются по пяти категориям качества"@ru .
+
+fin:ev_Upravlyayuschaya_involves a fin:Evidence ;
+    fin:about fin:Upravlyayuschaya ;
+    rdfs:comment "управляющая компания осуществляет доверительное управление"@ru .
+
+fin:ev_Uscherb_hasAttribute a fin:Evidence ;
+    fin:about fin:Uscherb ;
+    rdfs:comment "Полис КАСКО обеспечивает страховую защиту транспортного средства от ущерба"@ru .
+
+fin:ev_Uscherb_hasValue a fin:Evidence ;
+    fin:about fin:Uscherb ;
+    rdfs:comment "Франшиза по риску «Ущерб» составляет 15 000 рублей"@ru .
+
+fin:ev_VoznagrazhdenieUpravlyayuscheyKompanii_hasValue a fin:Evidence ;
+    fin:about fin:VoznagrazhdenieUpravlyayuscheyKompanii ;
+    rdfs:comment "Вознаграждение управляющей компании — 1,2% годовых"@ru .
+
+fin:ev_Zastrakhovat_involves a fin:Evidence ;
+    fin:about fin:Zastrakhovat ;
+    rdfs:comment "Заёмщик обязан застраховать предмет залога"@ru .
+
+fin:ev_Zastrakhovat_requires a fin:Evidence ;
+    fin:about fin:Zastrakhovat ;
+    rdfs:comment "Заёмщик обязан застраховать предмет залога"@ru .
+
+fin:ev_Zayomschik_involves a fin:Evidence ;
+    fin:about fin:Zayomschik ;
+    rdfs:comment "Право на досрочный возврат кредита принадлежит заёмщику"@ru .
+
+fin:hasAttribute a owl:ObjectProperty ;
+    rdfs:label "имеет атрибут"@ru ;
+    rdfs:domain fin:FinancialProduct ;
+    rdfs:range fin:ProductAttribute .
+
+fin:hasValue a owl:ObjectProperty ;
+    rdfs:label "имеет значение"@ru ;
+    rdfs:domain fin:ProductAttribute ;
+    rdfs:range fin:Metric .
+
+fin:involves a owl:ObjectProperty ;
+    rdfs:label "включает процесс"@ru ;
+    rdfs:domain fin:FinancialProduct ;
+    rdfs:range fin:Process .
+
+fin:issuedBy a owl:ObjectProperty ;
+    rdfs:label "выпускается"@ru ;
+    rdfs:domain fin:FinancialProduct ;
+    rdfs:range fin:Actor .
+
+fin:regulatedBy a owl:ObjectProperty ;
+    rdfs:label "регулируется"@ru ;
+    rdfs:domain fin:FinancialProduct ;
+    rdfs:range fin:Actor .
+
+fin:requires a owl:ObjectProperty ;
+    rdfs:label "требует"@ru ;
+    rdfs:domain fin:FinancialProduct ;
+    rdfs:range fin:Condition .
+
+fin:subClassOf a owl:ObjectProperty ;
+    rdfs:label "подтип"@ru ;
+    rdfs:domain fin:FinancialProduct ;
+    rdfs:range fin:FinancialProduct .
+
+fin:1000Rubley a fin:Metric ;
+    rdfs:label "1 000 рублей"@ru ;
+    fin:confidence "1.0" .
+
+fin:100OtSummyOsnovnogoDolga a fin:Metric ;
+    rdfs:label "100% от суммы основного долга"@ru ;
+    fin:confidence "0.9" ;
+    fin:hasValue fin:Razmer .
+
+fin:105Godovykh a fin:Metric ;
+    rdfs:label "10,5% годовых"@ru ;
+    fin:confidence "1.0" ;
+    fin:hasValue fin:Ipotechnyy,
+        fin:Protsentnuyu,
+        fin:Stavku .
+
+fin:112Godovykh a fin:Metric ;
+    rdfs:label "11,2% годовых"@ru ;
+    fin:confidence "1.0" .
+
+fin:12 a fin:Metric ;
+    rdfs:label "1,2%"@ru ;
+    fin:confidence "1.0" .
+
+fin:13 a fin:Metric ;
+    rdfs:label "13%"@ru ;
+    fin:confidence "1.0" .
+
+fin:180Dney a fin:Condition ;
+    rdfs:label "180 дней"@ru ;
+    fin:confidence "1.0" ;
+    fin:requires fin:Payov .
+
+fin:20Let a fin:Metric ;
+    rdfs:label "20 лет"@ru ;
+    fin:confidence "1.0" ;
+    fin:hasValue fin:Srokom .
+
+fin:299Godovykh a fin:Metric ;
+    rdfs:label "29,9% годовых"@ru ;
+    fin:confidence "1.0" ;
+    fin:hasValue fin:Lgotnogo,
+        fin:LgotnogoPerioda,
+        fin:Period,
+        fin:Perioda .
+
+fin:3 a fin:Metric ;
+    rdfs:label "3%"@ru ;
+    fin:confidence "1.0" ;
+    fin:hasValue fin:Komissiya,
+        fin:Minimalnyy,
+        fin:MinimalnyyEzhemesyachnyyPlatyozh,
+        fin:Nalichnykh,
+        fin:Zadolzhennosti .
+
+fin:49919Rubley a fin:Metric ;
+    rdfs:label "49 919 рублей"@ru ;
+    fin:confidence "1.0" ;
+    fin:hasValue fin:Annuitetnyy .
+
+fin:5 a fin:Metric ;
+    rdfs:label "5%"@ru ;
+    fin:confidence "1.0" .
+
+fin:5000000Rubley a fin:Metric ;
+    rdfs:label "5 000 000 рублей"@ru ;
+    fin:confidence "1.0" ;
+    fin:hasValue fin:Ipotechnyy,
+        fin:Protsentnuyu,
+        fin:Stavku .
+
+fin:52000Rubley a fin:Metric ;
+    rdfs:label "52 000 рублей"@ru ;
+    fin:confidence "1.0" .
+
+fin:7000000Rubley a fin:Metric ;
+    rdfs:label "7 000 000 рублей"@ru ;
+    fin:confidence "1.0" .
+
+fin:Annuitetnyy a fin:ProductAttribute ;
+    rdfs:label "аннуитетный"@ru ;
+    fin:confidence "0.8" .
+
+fin:Avtokredit a owl:Class ;
+    rdfs:label "автокредит"@ru ;
+    fin:confidence "1.0" ;
+    fin:issuedBy fin:Novykh,
+        fin:Priobretenie ;
+    rdfs:subClassOf fin:CreditProduct .
+
+fin:Bezuslovnaya a fin:ProductAttribute ;
+    rdfs:label "безусловная"@ru ;
+    fin:confidence "0.9" .
+
+fin:DoveritelnoeUpravlenie a fin:Process ;
+    rdfs:label "доверительное управление"@ru ;
+    fin:confidence "1.0" ;
+    fin:involves fin:Fond,
+        fin:Fonda,
+        fin:Kompaniya,
+        fin:Upravlyayuschaya .
+
+fin:Ezhegodnogo a fin:ProductAttribute ;
+    rdfs:label "ежегодного"@ru ;
+    fin:confidence "0.9" .
+
+fin:FizicheskimLitsam a fin:Actor ;
+    rdfs:label "физическим лицам"@ru ;
+    fin:confidence "1.0" .
+
+fin:Fonda a fin:Actor ;
+    rdfs:label "фонда"@ru ;
+    fin:confidence "0.7" .
+
+fin:Franshiza a fin:ProductAttribute ;
+    rdfs:label "франшиза"@ru ;
+    fin:confidence "1.0" ;
+    fin:hasValue fin:15000Rubley .
+
+fin:Gospodderzhki a fin:ProductAttribute ;
+    rdfs:label "господдержки"@ru ;
+    fin:confidence "0.8" .
+
+fin:Greys a fin:ProductAttribute ;
+    rdfs:label "грейс"@ru ;
+    fin:confidence "0.7" .
+
+fin:InsuranceProduct a owl:Class ;
+    rdfs:label "Страховой продукт"@ru ;
+    rdfs:subClassOf fin:FinancialProduct .
+
+fin:InvestitsionnyyPay a owl:Class ;
+    rdfs:label "инвестиционный пай"@ru ;
+    fin:confidence "1.0" ;
+    fin:hasAttribute fin:Dolyu ;
+    rdfs:subClassOf fin:InvestmentProduct .
+
+fin:Kachestva a fin:ProductAttribute ;
+    rdfs:label "качества"@ru ;
+    fin:confidence "0.9" .
+
+fin:Kategoriyam a fin:ProductAttribute ;
+    rdfs:label "категориям"@ru ;
+    fin:confidence "0.9" .
+
+fin:Keshbek a fin:ProductAttribute ;
+    rdfs:label "кэшбэк"@ru ;
+    fin:confidence "1.0" ;
+    fin:hasValue fin:1,
+        fin:5 .
+
+fin:KreditnayaKarta a owl:Class ;
+    rdfs:label "кредитная карта"@ru ;
+    fin:confidence "1.0" ;
+    fin:hasAttribute fin:Limit,
+        fin:Limitom ;
+    rdfs:subClassOf fin:CardProduct .
+
+fin:Lgotnogo a fin:ProductAttribute ;
+    rdfs:label "льготного"@ru ;
+    fin:confidence "0.8" .
+
+fin:LgotnogoPerioda a fin:ProductAttribute ;
+    rdfs:label "льготного периода"@ru ;
+    fin:confidence "0.9" .
+
+fin:Lgotnyy a fin:ProductAttribute ;
+    rdfs:label "льготный"@ru ;
+    fin:confidence "0.8" .
+
+fin:LgotnyyPeriod a fin:ProductAttribute ;
+    rdfs:label "льготный период"@ru ;
+    fin:confidence "1.0" ;
+    fin:hasValue fin:55Dney .
+
+fin:Litsam a fin:Actor ;
+    rdfs:label "лицам"@ru ;
+    fin:confidence "0.8" .
+
+fin:MaksimalnayaSummaEzhegodnogoPopolneniyaSchyota a fin:ProductAttribute ;
+    rdfs:label "максимальная сумма ежегодного пополнения счёта"@ru ;
+    fin:confidence "1.0" ;
+    fin:hasValue fin:1000000Rubley .
+
+fin:MaksimalnayaSummaKredita a fin:ProductAttribute ;
+    rdfs:label "максимальная сумма кредита"@ru ;
+    fin:confidence "1.0" ;
+    fin:hasValue fin:7000000Rubley .
+
+fin:MinimalnayaSummaPervonachalnoyInvestitsii a fin:ProductAttribute ;
+    rdfs:label "минимальная сумма первоначальной инвестиции"@ru ;
+    fin:confidence "1.0" ;
+    fin:hasValue fin:1000Rubley .
+
+fin:NadbavkaPriPokupkePayov a fin:ProductAttribute ;
+    rdfs:label "надбавка при покупке паёв"@ru ;
+    fin:confidence "1.0" ;
+    fin:hasValue fin:15,
+        fin:Payov .
+
+fin:NalogovymRezidentamRf a fin:Condition ;
+    rdfs:label "налоговым резидентам РФ"@ru ;
+    fin:confidence "1.0" .
+
+fin:NalogovyyVychetTipaA a fin:ProductAttribute ;
+    rdfs:label "налоговый вычет типа А"@ru ;
+    fin:confidence "1.0" ;
+    fin:hasValue fin:13,
+        fin:52000Rubley .
+
+fin:Nedvizhimosti a fin:ProductAttribute ;
+    rdfs:label "недвижимости"@ru ;
+    fin:confidence "0.8" .
+
+fin:Novykh a fin:ProductAttribute ;
+    rdfs:label "новых"@ru ;
+    fin:confidence "0.9" .
+
+fin:Perioda a fin:ProductAttribute ;
+    rdfs:label "периода"@ru ;
+    fin:confidence "0.8",
+        "0.9" .
+
+fin:Pervonachalnyy a fin:ProductAttribute ;
+    rdfs:label "первоначальный"@ru ;
+    fin:confidence "0.9" .
+
+fin:PervonachalnyyVznos a fin:ProductAttribute ;
+    rdfs:label "первоначальный взнос"@ru ;
+    fin:confidence "1.0" ;
+    fin:hasValue fin:15 .
+
+fin:PolnayaStoimostKreditaPsk a fin:ProductAttribute ;
+    rdfs:label "Полная стоимость кредита (ПСК)"@ru ;
+    fin:confidence "0.9" ;
+    fin:hasValue fin:112Godovykh,
+        fin:Kredit .
+
+fin:Popolneniya a fin:ProductAttribute ;
+    rdfs:label "пополнения"@ru ;
+    fin:confidence "0.9" .
+
+fin:Predmet a fin:ProductAttribute ;
+    rdfs:label "предмет"@ru ;
+    fin:confidence "0.7" .
+
+fin:PriobretaemoyNedvizhimosti a fin:ProductAttribute ;
+    rdfs:label "приобретаемой недвижимости"@ru ;
+    fin:confidence "0.7" ;
+    fin:requires fin:Kredit .
+
+fin:Priobretenie a fin:ProductAttribute ;
+    rdfs:label "приобретение"@ru ;
+    fin:confidence "0.8" .
+
+fin:Programme a fin:ProductAttribute ;
+    rdfs:label "программе"@ru ;
+    fin:confidence "0.8" .
+
+fin:ProtsentnayaStavka a fin:ProductAttribute ;
+    rdfs:label "процентная ставка"@ru ;
+    fin:confidence "1.0" ;
+    fin:hasValue fin:65Godovykh ;
+    skos:closeMatch <https://spec.edmcouncil.org/fibo/ontology/LOAN/NominalInterestRate> .
+
+fin:Rezidentam a fin:Actor ;
+    rdfs:label "резидентам"@ru ;
+    fin:confidence "0.8" .
+
+fin:Risku a fin:ProductAttribute ;
+    rdfs:label "риску"@ru ;
+    fin:confidence "0.8" .
+
+fin:Schyota a fin:ProductAttribute ;
+    rdfs:label "счёта"@ru ;
+    fin:confidence "0.8" .
+
+fin:Sredstva a fin:ProductAttribute ;
+    rdfs:label "средства"@ru ;
+    fin:confidence "0.5" .
+
+fin:Ssudam a owl:Class ;
+    rdfs:label "ссудам"@ru ;
+    fin:confidence "0.9" ;
+    fin:hasValue fin:Razmer ;
+    rdfs:subClassOf fin:FinancialProduct .
+
+fin:Ssudy a owl:Class ;
+    rdfs:label "ссуды"@ru ;
+    fin:confidence "0.9" ;
+    fin:hasAttribute fin:Kachestva,
+        fin:Kategoriyam ;
+    rdfs:subClassOf fin:FinancialProduct .
+
+fin:Strakhovoy a fin:ProductAttribute ;
+    rdfs:label "страховой"@ru ;
+    fin:confidence "0.6" .
+
+fin:Strakhovuyu a fin:ProductAttribute ;
+    rdfs:label "страховую"@ru ;
+    fin:confidence "0.5" .
+
+fin:TransportnogoSredstva a fin:ProductAttribute ;
+    rdfs:label "транспортного средства"@ru ;
+    fin:confidence "0.5" .
+
+fin:Ugon a fin:ProductAttribute ;
+    rdfs:label "угон"@ru ;
+    fin:confidence "1.0" .
+
+fin:VoznagrazhdenieUpravlyayuscheyKompanii a fin:ProductAttribute ;
+    rdfs:label "вознаграждение управляющей компании"@ru ;
+    fin:confidence "1.0" ;
+    fin:hasValue fin:12 .
+
+fin:Vznos a fin:ProductAttribute ;
+    rdfs:label "взнос"@ru ;
+    fin:confidence "0.9" .
+
+fin:Zalog a fin:LegalTerm ;
+    rdfs:label "залог"@ru ;
+    fin:confidence "0.9" .
+
+fin:Zaschitu a fin:ProductAttribute ;
+    rdfs:label "защиту"@ru ;
+    fin:confidence "0.9" .
+
+fin:Zayomschik fin:involves fin:DosrochnyyVozvratKredita .
+
+fin:Zayomschiku a fin:Actor ;
+    rdfs:label "заёмщику"@ru ;
+    fin:confidence "1.0" .
+
+fin:1 a fin:Metric ;
+    rdfs:label "1%"@ru ;
+    fin:confidence "1.0" .
+
+fin:1000000Rubley a fin:Metric ;
+    rdfs:label "1 000 000 рублей"@ru ;
+    fin:confidence "1.0" ;
+    fin:hasValue fin:Ezhegodnogo,
+        fin:Popolneniya,
+        fin:Schyot,
+        fin:Schyota .
+
+fin:300Rubley a fin:Metric ;
+    rdfs:label "300 рублей"@ru ;
+    fin:confidence "1.0" ;
+    fin:hasValue fin:Minimalnyy,
+        fin:Zadolzhennosti .
+
+fin:390Rubley a fin:Metric ;
+    rdfs:label "390 рублей"@ru ;
+    fin:confidence "1.0" ;
+    fin:hasValue fin:Nalichnykh .
+
+fin:500000Rubley a fin:Metric ;
+    rdfs:label "500 000 рублей"@ru ;
+    fin:confidence "1.0" ;
+    fin:hasValue fin:Limitom .
+
+fin:55Dney a fin:Metric ;
+    rdfs:label "55 дней"@ru ;
+    fin:confidence "1.0" ;
+    fin:hasValue fin:Greys,
+        fin:Lgotnyy,
+        fin:Period .
+
+fin:65Godovykh a fin:Metric ;
+    rdfs:label "6,5% годовых"@ru ;
+    fin:confidence "1.0" ;
+    fin:hasValue fin:Gospodderzhki,
+        fin:Programme .
+
+fin:AkkreditovannoyStrakhovoyKompanii a fin:Actor ;
+    rdfs:label "аккредитованной страховой компании"@ru ;
+    fin:confidence "0.8" ;
+    fin:requires fin:Kredit .
+
+fin:CardProduct a owl:Class ;
+    rdfs:label "Карточный продукт"@ru ;
+    rdfs:subClassOf fin:FinancialProduct .
+
+fin:Dolyu a fin:ProductAttribute ;
+    rdfs:label "долю"@ru ;
+    fin:confidence "0.8" .
+
+fin:DosrochnyyVozvratKredita a fin:Process ;
+    rdfs:label "досрочный возврат кредита"@ru ;
+    fin:confidence "1.0" ;
+    fin:involves fin:Zayomschiku .
+
+fin:IndividualnyyInvestitsionnyySchyotIis a owl:Class ;
+    rdfs:label "Индивидуальный инвестиционный счёт (ИИС)"@ru ;
+    fin:confidence "1.0" ;
+    fin:issuedBy fin:FizicheskimLitsam,
+        fin:Litsam,
+        fin:Rezidentam ;
+    fin:requires fin:NalogovymRezidentamRf ;
+    rdfs:subClassOf fin:InvestmentProduct .
+
+fin:Investitsionnyy a fin:ProductAttribute ;
+    rdfs:label "инвестиционный"@ru ;
+    fin:confidence "0.8" ;
+    fin:subClassOf fin:Fondom .
+
+fin:Karta a owl:Class ;
+    rdfs:label "карта"@ru ;
+    fin:confidence "0.9" ;
+    fin:hasAttribute fin:Limitom ;
+    rdfs:subClassOf fin:CardProduct .
+
+fin:Komissiya a fin:ProductAttribute ;
+    rdfs:label "комиссия"@ru ;
+    fin:confidence "1.0" ;
+    fin:hasValue fin:390Rubley .
+
+fin:Minimalnyy a fin:ProductAttribute ;
+    rdfs:label "минимальный"@ru ;
+    fin:confidence "0.8" .
+
+fin:MinimalnyyEzhemesyachnyyPlatyozh a fin:ProductAttribute ;
+    rdfs:label "минимальный ежемесячный платёж"@ru ;
+    fin:confidence "1.0" ;
+    fin:hasValue fin:300Rubley .
+
+fin:Nalichnykh a fin:ProductAttribute ;
+    rdfs:label "наличных"@ru ;
+    fin:confidence "0.6" .
+
+fin:Obligatsiy a fin:ProductAttribute ;
+    rdfs:label "облигаций"@ru ;
+    fin:confidence "0.8" ;
+    fin:subClassOf fin:Fond,
+        fin:Fondom .
+
+fin:Paevoy a fin:ProductAttribute ;
+    rdfs:label "паевой"@ru ;
+    fin:confidence "0.8" ;
+    fin:subClassOf fin:Fond,
+        fin:Fondom .
+
+fin:PaevoyInvestitsionnyyFondPif a owl:Class ;
+    rdfs:label "Паевой инвестиционный фонд (ПИФ)"@ru ;
+    fin:confidence "1.0" ;
+    fin:hasAttribute fin:Investitsionnyy,
+        fin:Otkrytym,
+        fin:Paevoy ;
+    fin:subClassOf fin:Fond,
+        fin:Fondom,
+        fin:Obligatsiy ;
+    rdfs:subClassOf fin:InvestmentProduct .
+
+fin:Predostavlyaet a fin:Process ;
+    rdfs:label "предоставляет"@ru ;
+    fin:confidence "0.6" ;
+    fin:issuedBy fin:Kredit .
+
+fin:Razmer a fin:ProductAttribute ;
+    rdfs:label "размер"@ru ;
+    fin:confidence "0.9" .
+
+fin:SkidkaPriPogasheniiPayov a fin:ProductAttribute ;
+    rdfs:label "скидка при погашении паёв"@ru ;
+    fin:confidence "1.0" ;
+    fin:hasAttribute fin:Payov ;
+    fin:hasValue fin:1 .
+
+fin:Srokom a fin:ProductAttribute ;
+    rdfs:label "сроком"@ru ;
+    fin:confidence "0.8" .
+
+fin:Upravlenie a fin:Process ;
+    rdfs:label "управление"@ru ;
+    fin:confidence "0.8" .
+
+fin:Uscherb a fin:ProductAttribute ;
+    rdfs:label "ущерб"@ru ;
+    fin:confidence "1.0" ;
+    fin:hasAttribute fin:PolisKasko ;
+    fin:hasValue fin:15000Rubley .
+
+fin:Zadolzhennosti a fin:ProductAttribute ;
+    rdfs:label "задолженности"@ru ;
+    fin:confidence "0.7" .
+
+fin:Zastrakhovat a fin:Process ;
+    rdfs:label "застраховать"@ru ;
+    fin:confidence "0.9" ;
+    fin:involves fin:AkkreditovannoyStrakhovoyKompanii ;
+    fin:requires fin:Kredit .
+
+fin:15 a fin:Metric ;
+    rdfs:label "1,5%"@ru,
+        "15%"@ru ;
+    fin:confidence "1.0" ;
+    fin:hasValue fin:Pervonachalnyy,
+        fin:Vznos .
+
+fin:15000Rubley a fin:Metric ;
+    rdfs:label "15 000 рублей"@ru ;
+    fin:confidence "1.0" ;
+    fin:hasValue fin:Bezuslovnaya,
+        fin:Risku .
+
+fin:CreditProduct a owl:Class ;
+    rdfs:label "Кредитный продукт"@ru ;
+    rdfs:subClassOf fin:FinancialProduct .
+
+fin:IpotechnyyKredit a owl:Class ;
+    rdfs:label "ипотечный кредит"@ru ;
+    fin:confidence "1.0" ;
+    fin:hasAttribute fin:Ipotechnyy,
+        fin:Protsentnuyu,
+        fin:Srokom,
+        fin:Stavku ;
+    fin:issuedBy fin:Predostavlyaet ;
+    fin:subClassOf fin:Kredit ;
+    rdfs:subClassOf fin:CreditProduct ;
+    skos:closeMatch <https://spec.edmcouncil.org/fibo/ontology/LOAN/ResidentialMortgageLoan> .
+
+fin:Kompaniya a fin:Actor ;
+    rdfs:label "компания"@ru ;
+    fin:confidence "0.9" ;
+    fin:involves fin:Upravlenie .
+
+fin:Limit a fin:ProductAttribute ;
+    rdfs:label "лимит"@ru ;
+    fin:confidence "1.0" ;
+    fin:hasAttribute fin:Karta ;
+    fin:hasValue fin:500000Rubley .
+
+fin:Limitom a fin:ProductAttribute ;
+    rdfs:label "лимитом"@ru ;
+    fin:confidence "0.8" .
+
+fin:Otkrytym a fin:ProductAttribute ;
+    rdfs:label "открытым"@ru ;
+    fin:confidence "0.8" ;
+    fin:hasAttribute fin:Fondom .
+
+fin:Payov a owl:Class ;
+    rdfs:label "паёв"@ru ;
+    fin:confidence "0.9" ;
+    rdfs:subClassOf fin:InvestmentProduct .
+
+fin:PolisKasko a fin:ProductAttribute,
+        owl:Class ;
+    rdfs:label "Полис КАСКО"@ru,
+        "полис КАСКО"@ru ;
+    fin:confidence "1.0" ;
+    fin:hasAttribute fin:Sredstva,
+        fin:Strakhovuyu,
+        fin:TransportnogoSredstva,
+        fin:Zaschitu ;
+    fin:requires fin:Ugon ;
+    rdfs:subClassOf fin:InsuranceProduct .
+
+fin:Upravlyayuschaya a fin:Actor ;
+    rdfs:label "управляющая"@ru ;
+    fin:confidence "0.9" ;
+    fin:involves fin:Upravlenie .
+
+fin:Ipotechnyy a fin:ProductAttribute ;
+    rdfs:label "ипотечный"@ru ;
+    fin:confidence "0.7" ;
+    fin:subClassOf fin:Kredit .
+
+fin:Protsentnuyu a fin:ProductAttribute ;
+    rdfs:label "процентную"@ru ;
+    fin:confidence "0.8" .
+
+fin:Stavku a fin:ProductAttribute ;
+    rdfs:label "ставку"@ru ;
+    fin:confidence "0.8" .
+
+fin:Fondom a owl:Class ;
+    rdfs:label "фондом"@ru ;
+    fin:confidence "0.9" ;
+    rdfs:subClassOf fin:InvestmentProduct .
+
+fin:Fond a owl:Class ;
+    rdfs:label "фонд"@ru ;
+    fin:confidence "0.9" ;
+    fin:hasAttribute fin:Dolyu,
+        fin:Otkrytym ;
+    fin:issuedBy fin:Kompaniya,
+        fin:Upravlyayuschaya ;
+    rdfs:subClassOf fin:InvestmentProduct .
+
+fin:InvestmentProduct a owl:Class ;
+    rdfs:label "Инвестиционный продукт"@ru ;
+    rdfs:subClassOf fin:FinancialProduct .
+
+fin:Kredit a owl:Class ;
+    rdfs:label "кредит"@ru ;
+    fin:confidence "0.9" ;
+    fin:hasAttribute fin:Protsentnuyu,
+        fin:Stavku ;
+    fin:requires fin:Nedvizhimosti,
+        fin:Predmet,
+        fin:Strakhovoy,
+        fin:Zalog ;
+    rdfs:subClassOf fin:CreditProduct ;
+    skos:closeMatch <https://spec.edmcouncil.org/fibo/ontology/LOAN/Loan> .
+
+fin:FinancialProduct a owl:Class ;
+    rdfs:label "Финансовый продукт"@ru .
+
+fin:LegalTerm a owl:Class ;
+    rdfs:label "Юридический термин"@ru .
+
+fin:Actor a owl:Class ;
+    rdfs:label "Участник"@ru .
+
+fin:Condition a owl:Class ;
+    rdfs:label "Условие"@ru .
+
+fin:Metric a owl:Class ;
+    rdfs:label "Метрика"@ru .
+
+fin:Process a owl:Class ;
+    rdfs:label "Процесс"@ru .
+
+fin:ProductAttribute a owl:Class ;
+    rdfs:label "Атрибут продукта"@ru .
+

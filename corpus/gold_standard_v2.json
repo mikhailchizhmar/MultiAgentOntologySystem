@@ -1,0 +1,657 @@
+{
+  "meta": {
+    "annotator": "human_expert_v2",
+    "annotation_schema_version": "2.0",
+    "entity_classes": [
+      "FinancialProduct",
+      "ProductAttribute",
+      "Actor",
+      "Process",
+      "Condition",
+      "LegalTerm",
+      "Metric"
+    ],
+    "relation_types": [
+      "hasAttribute",
+      "issuedBy",
+      "requires",
+      "involves",
+      "regulatedBy",
+      "subClassOf",
+      "hasValue",
+      "appliesTo",
+      "hasParticipant",
+      "ownedBy"
+    ]
+  },
+
+  "documents": [
+
+    {
+      "id": "doc_001",
+      "text": "Банк предоставляет заёмщику ипотечный кредит в размере 5 000 000 рублей сроком на 20 лет под процентную ставку 10,5% годовых. Обеспечением по кредиту является залог приобретаемой недвижимости. Заёмщик обязан застраховать предмет залога в аккредитованной страховой компании. Ежемесячный аннуитетный платёж составляет 49 919 рублей. Полная стоимость кредита (ПСК) равна 11,2% годовых. Досрочное погашение допускается без штрафных санкций.",
+
+      "entities": [
+        {
+          "id": "e1",
+          "text": "ипотечный кредит",
+          "class": "FinancialProduct",
+          "start": 30,
+          "confidence": 1.0,
+          "comment": "Ключевой продукт документа."
+        },
+        {
+          "id": "e2",
+          "text": "банк",
+          "class": "Actor",
+          "start": 0,
+          "confidence": 1.0,
+          "comment": "Кредитор — эмитент продукта."
+        },
+        {
+          "id": "e3",
+          "text": "заёмщик",
+          "class": "Actor",
+          "start": 16,
+          "confidence": 1.0,
+          "comment": "Получатель кредита — сторона договора."
+        },
+        {
+          "id": "e4",
+          "text": "процентная ставка",
+          "class": "ProductAttribute",
+          "start": 76,
+          "confidence": 1.0,
+          "comment": "Название атрибута без числа. Числовое значение — e5."
+        },
+        {
+          "id": "e5",
+          "text": "10,5% годовых",
+          "class": "Metric",
+          "start": 94,
+          "confidence": 1.0,
+          "comment": "Конкретное значение процентной ставки."
+        },
+        {
+          "id": "e6",
+          "text": "срок кредитования",
+          "class": "ProductAttribute",
+          "start": null,
+          "confidence": 1.0,
+          "comment": "Атрибут, подразумеваемый фразой 'сроком на 20 лет'. Числовое значение — e7."
+        },
+        {
+          "id": "e7",
+          "text": "20 лет",
+          "class": "Metric",
+          "start": 60,
+          "confidence": 1.0,
+          "comment": "Конкретное значение срока кредитования."
+        },
+        {
+          "id": "e8",
+          "text": "5 000 000 рублей",
+          "class": "Metric",
+          "start": 50,
+          "confidence": 1.0,
+          "comment": "Конкретная сумма кредита."
+        },
+        {
+          "id": "e9",
+          "text": "сумма кредита",
+          "class": "ProductAttribute",
+          "start": null,
+          "confidence": 1.0,
+          "comment": "Атрибут, подразумеваемый фразой 'в размере 5 000 000 рублей'. Числовое значение — e8."
+        },
+        {
+          "id": "e10",
+          "text": "обеспечение",
+          "class": "ProductAttribute",
+          "start": 109,
+          "confidence": 1.0,
+          "comment": "Категория характеристики продукта. Конкретный вид обеспечения — e11."
+        },
+        {
+          "id": "e11",
+          "text": "залог приобретаемой недвижимости",
+          "class": "LegalTerm",
+          "start": 150,
+          "confidence": 1.0,
+          "comment": "Юридическая конструкция — конкретный вид обеспечения."
+        },
+        {
+          "id": "e12",
+          "text": "страховая компания",
+          "class": "Actor",
+          "start": 230,
+          "confidence": 0.9,
+          "comment": "Аккредитованный страховщик — третья сторона."
+        },
+        {
+          "id": "e13",
+          "text": "страхование залога",
+          "class": "Process",
+          "start": null,
+          "confidence": 0.95,
+          "comment": "Process, подразумеваемый фразой 'обязан застраховать предмет залога'."
+        },
+        {
+          "id": "e14",
+          "text": "аннуитетный платёж",
+          "class": "ProductAttribute",
+          "start": 270,
+          "confidence": 1.0,
+          "comment": "Тип схемы погашения — атрибут продукта."
+        },
+        {
+          "id": "e15",
+          "text": "49 919 рублей",
+          "class": "Metric",
+          "start": 302,
+          "confidence": 1.0,
+          "comment": "Конкретное значение ежемесячного платежа."
+        },
+        {
+          "id": "e16",
+          "text": "полная стоимость кредита",
+          "class": "ProductAttribute",
+          "start": 328,
+          "confidence": 1.0,
+          "comment": "ПСК — регуляторно обязательный атрибут кредита."
+        },
+        {
+          "id": "e17",
+          "text": "11,2% годовых",
+          "class": "Metric",
+          "start": 358,
+          "confidence": 1.0,
+          "comment": "Конкретное значение ПСК."
+        },
+        {
+          "id": "e18",
+          "text": "досрочное погашение",
+          "class": "Process",
+          "start": 378,
+          "confidence": 1.0,
+          "comment": "Бизнес-процесс, разрешённый без штрафных санкций."
+        },
+        {
+          "id": "e19",
+          "text": "кредитный продукт",
+          "class": "FinancialProduct",
+          "start": null,
+          "confidence": 1.0,
+          "comment": "Родительский класс для subClassOf."
+        }
+      ],
+
+      "relations": [
+        {
+          "id": "r1",
+          "subject": "e1",
+          "relation": "issuedBy",
+          "object": "e2",
+          "confidence": 1.0,
+          "evidence": "Банк предоставляет заёмщику ипотечный кредит"
+        },
+        {
+          "id": "r2",
+          "subject": "e1",
+          "relation": "hasParticipant",
+          "object": "e3",
+          "confidence": 1.0,
+          "evidence": "Банк предоставляет заёмщику ипотечный кредит"
+        },
+        {
+          "id": "r3",
+          "subject": "e1",
+          "relation": "hasAttribute",
+          "object": "e4",
+          "confidence": 1.0,
+          "evidence": "под процентную ставку 10,5% годовых"
+        },
+        {
+          "id": "r4",
+          "subject": "e4",
+          "relation": "hasValue",
+          "object": "e5",
+          "confidence": 1.0,
+          "evidence": "процентную ставку 10,5% годовых"
+        },
+        {
+          "id": "r5",
+          "subject": "e1",
+          "relation": "hasAttribute",
+          "object": "e6",
+          "confidence": 1.0,
+          "evidence": "сроком на 20 лет"
+        },
+        {
+          "id": "r6",
+          "subject": "e6",
+          "relation": "hasValue",
+          "object": "e7",
+          "confidence": 1.0,
+          "evidence": "сроком на 20 лет"
+        },
+        {
+          "id": "r7",
+          "subject": "e1",
+          "relation": "hasAttribute",
+          "object": "e9",
+          "confidence": 1.0,
+          "evidence": "в размере 5 000 000 рублей"
+        },
+        {
+          "id": "r8",
+          "subject": "e9",
+          "relation": "hasValue",
+          "object": "e8",
+          "confidence": 1.0,
+          "evidence": "в размере 5 000 000 рублей"
+        },
+        {
+          "id": "r9",
+          "subject": "e1",
+          "relation": "hasAttribute",
+          "object": "e10",
+          "confidence": 1.0,
+          "evidence": "Обеспечением по кредиту является залог приобретаемой недвижимости"
+        },
+        {
+          "id": "r10",
+          "subject": "e10",
+          "relation": "appliesTo",
+          "object": "e11",
+          "confidence": 1.0,
+          "evidence": "Обеспечением по кредиту является залог приобретаемой недвижимости"
+        },
+        {
+          "id": "r11",
+          "subject": "e1",
+          "relation": "requires",
+          "object": "e13",
+          "confidence": 0.95,
+          "evidence": "Заёмщик обязан застраховать предмет залога"
+        },
+        {
+          "id": "r12",
+          "subject": "e13",
+          "relation": "involves",
+          "object": "e12",
+          "confidence": 0.95,
+          "evidence": "застраховать предмет залога в аккредитованной страховой компании"
+        },
+        {
+          "id": "r13",
+          "subject": "e1",
+          "relation": "hasAttribute",
+          "object": "e14",
+          "confidence": 1.0,
+          "evidence": "Ежемесячный аннуитетный платёж"
+        },
+        {
+          "id": "r14",
+          "subject": "e14",
+          "relation": "hasValue",
+          "object": "e15",
+          "confidence": 1.0,
+          "evidence": "аннуитетный платёж составляет 49 919 рублей"
+        },
+        {
+          "id": "r15",
+          "subject": "e1",
+          "relation": "hasAttribute",
+          "object": "e16",
+          "confidence": 1.0,
+          "evidence": "Полная стоимость кредита (ПСК) равна 11,2% годовых"
+        },
+        {
+          "id": "r16",
+          "subject": "e16",
+          "relation": "hasValue",
+          "object": "e17",
+          "confidence": 1.0,
+          "evidence": "ПСК равна 11,2% годовых"
+        },
+        {
+          "id": "r17",
+          "subject": "e1",
+          "relation": "involves",
+          "object": "e18",
+          "confidence": 1.0,
+          "evidence": "Досрочное погашение допускается без штрафных санкций"
+        },
+        {
+          "id": "r18",
+          "subject": "e18",
+          "relation": "hasParticipant",
+          "object": "e3",
+          "confidence": 0.9,
+          "evidence": "Досрочное погашение допускается"
+        },
+        {
+          "id": "r19",
+          "subject": "e1",
+          "relation": "subClassOf",
+          "object": "e19",
+          "confidence": 1.0,
+          "evidence": "структурное"
+        }
+      ],
+
+      "ontology_triples": [
+        "ИпотечныйКредит rdf:type owl:Class",
+        "ИпотечныйКредит rdfs:subClassOf КредитныйПродукт",
+        "КредитныйПродукт rdfs:subClassOf ФинансовыйПродукт",
+        "ИпотечныйКредит rdfs:label 'Ипотечный кредит'@ru",
+        "ИпотечныйКредит :issuedBy :Банк",
+        "ИпотечныйКредит :hasParticipant :Заёмщик",
+        "ИпотечныйКредит :hasAttribute :ПроцентнаяСтавка",
+        "ИпотечныйКредит :hasAttribute :СрокКредитования",
+        "ИпотечныйКредит :hasAttribute :СуммаКредита",
+        "ИпотечныйКредит :hasAttribute :Обеспечение",
+        "ИпотечныйКредит :hasAttribute :АннуитетныйПлатёж",
+        "ИпотечныйКредит :hasAttribute :ПолнаяСтоимостьКредита",
+        "ИпотечныйКредит :requires :СтрахованиеЗалога",
+        "ИпотечныйКредит :involves :ДосрочноеПогашение",
+        "СтрахованиеЗалога :involves :СтраховаяКомпания",
+        "Обеспечение :appliesTo :ЗалогНедвижимости"
+      ],
+
+      "annotation_notes": "start=null означает, что сущность подразумевается текстом, но не представлена дословно."
+    },
+
+    {
+      "id": "doc_008",
+      "text": "Паевой инвестиционный фонд (ПИФ) «Облигации Первый» является открытым фондом облигаций. Управляющая компания осуществляет доверительное управление имуществом фонда. Инвестиционный пай удостоверяет долю пайщика в праве собственности на имущество фонда. Стоимость пая рассчитывается ежедневно на основании стоимости чистых активов (СЧА). Надбавка при покупке паёв составляет не более 1,5% от суммы инвестиций. Скидка при погашении паёв — не более 1% при владении менее 180 дней. Вознаграждение управляющей компании — 1,2% годовых от СЧА. Минимальная сумма первоначальной инвестиции — 1 000 рублей.",
+
+      "entities": [
+        {
+          "id": "e1",
+          "text": "паевой инвестиционный фонд",
+          "class": "FinancialProduct",
+          "start": 0,
+          "confidence": 1.0,
+          "comment": "Основной продукт документа."
+        },
+        {
+          "id": "e2",
+          "text": "открытый фонд облигаций",
+          "class": "FinancialProduct",
+          "start": 60,
+          "confidence": 0.95,
+          "comment": "Подтип ПИФа по категории и инвестиционной стратегии."
+        },
+        {
+          "id": "e3",
+          "text": "управляющая компания",
+          "class": "Actor",
+          "start": 90,
+          "confidence": 1.0,
+          "comment": "Управляющий фондом."
+        },
+        {
+          "id": "e4",
+          "text": "доверительное управление",
+          "class": "Process",
+          "start": 120,
+          "confidence": 1.0,
+          "comment": "Процесс управления активами фонда."
+        },
+        {
+          "id": "e5",
+          "text": "инвестиционный пай",
+          "class": "FinancialProduct",
+          "start": 170,
+          "confidence": 1.0,
+          "comment": "Самостоятельно торгуемый инструмент участия в ПИФе."
+        },
+        {
+          "id": "e6",
+          "text": "пайщик",
+          "class": "Actor",
+          "start": 208,
+          "confidence": 1.0,
+          "comment": "Инвестор — владелец пая."
+        },
+        {
+          "id": "e7",
+          "text": "стоимость чистых активов",
+          "class": "ProductAttribute",
+          "start": 298,
+          "confidence": 1.0,
+          "comment": "Расчётный показатель фонда — название атрибута без конкретного числа. ProductAttribute, не Metric."
+        },
+        {
+          "id": "e8",
+          "text": "надбавка",
+          "class": "ProductAttribute",
+          "start": 340,
+          "confidence": 1.0,
+          "comment": "Комиссия при покупке паёв."
+        },
+        {
+          "id": "e9",
+          "text": "1,5%",
+          "class": "Metric",
+          "start": 380,
+          "confidence": 1.0,
+          "comment": "Максимальное значение надбавки."
+        },
+        {
+          "id": "e10",
+          "text": "скидка при погашении паёв",
+          "class": "ProductAttribute",
+          "start": 415,
+          "confidence": 1.0,
+          "comment": "Комиссия при выходе из фонда."
+        },
+        {
+          "id": "e11",
+          "text": "1%",
+          "class": "Metric",
+          "start": 445,
+          "confidence": 1.0,
+          "comment": "Максимальное значение скидки."
+        },
+        {
+          "id": "e12",
+          "text": "180 дней",
+          "class": "Condition",
+          "start": 460,
+          "confidence": 0.95,
+          "comment": "Порог срока владения — условие применения скидки. Condition, не Metric."
+        },
+        {
+          "id": "e13",
+          "text": "вознаграждение управляющей компании",
+          "class": "ProductAttribute",
+          "start": 490,
+          "confidence": 1.0,
+          "comment": "Management fee — атрибут продукта (ПИФа), который несёт инвестор."
+        },
+        {
+          "id": "e14",
+          "text": "1,2% годовых",
+          "class": "Metric",
+          "start": 528,
+          "confidence": 1.0,
+          "comment": "Значение вознаграждения УК."
+        },
+        {
+          "id": "e15",
+          "text": "минимальная сумма инвестиции",
+          "class": "ProductAttribute",
+          "start": 558,
+          "confidence": 1.0,
+          "comment": "Порог входа — атрибут доступности продукта."
+        },
+        {
+          "id": "e16",
+          "text": "1 000 рублей",
+          "class": "Metric",
+          "start": 598,
+          "confidence": 1.0,
+          "comment": "Значение минимального порога."
+        }
+      ],
+
+      "relations": [
+        {
+          "id": "r1",
+          "subject": "e1",
+          "relation": "issuedBy",
+          "object": "e3",
+          "confidence": 1.0,
+          "evidence": "Управляющая компания осуществляет доверительное управление имуществом фонда"
+        },
+        {
+          "id": "r2",
+          "subject": "e2",
+          "relation": "subClassOf",
+          "object": "e1",
+          "confidence": 0.95,
+          "evidence": "является открытым фондом облигаций"
+        },
+        {
+          "id": "r3",
+          "subject": "e1",
+          "relation": "involves",
+          "object": "e4",
+          "confidence": 1.0,
+          "evidence": "Управляющая компания осуществляет доверительное управление"
+        },
+        {
+          "id": "r4",
+          "subject": "e4",
+          "relation": "involves",
+          "object": "e3",
+          "confidence": 1.0,
+          "evidence": "Управляющая компания осуществляет доверительное управление"
+        },
+        {
+          "id": "r5",
+          "subject": "e5",
+          "relation": "appliesTo",
+          "object": "e1",
+          "confidence": 1.0,
+          "evidence": "Инвестиционный пай удостоверяет долю пайщика в праве собственности на имущество фонда"
+        },
+        {
+          "id": "r6",
+          "subject": "e5",
+          "relation": "ownedBy",
+          "object": "e6",
+          "confidence": 1.0,
+          "evidence": "Инвестиционный пай удостоверяет долю пайщика"
+        },
+        {
+          "id": "r7",
+          "subject": "e1",
+          "relation": "hasAttribute",
+          "object": "e7",
+          "confidence": 1.0,
+          "evidence": "Стоимость пая рассчитывается на основании стоимости чистых активов"
+        },
+        {
+          "id": "r8",
+          "subject": "e1",
+          "relation": "hasAttribute",
+          "object": "e8",
+          "confidence": 1.0,
+          "evidence": "Надбавка при покупке паёв составляет не более 1,5%"
+        },
+        {
+          "id": "r9",
+          "subject": "e8",
+          "relation": "hasValue",
+          "object": "e9",
+          "confidence": 1.0,
+          "evidence": "составляет не более 1,5%"
+        },
+        {
+          "id": "r10",
+          "subject": "e1",
+          "relation": "hasAttribute",
+          "object": "e10",
+          "confidence": 1.0,
+          "evidence": "Скидка при погашении паёв — не более 1%"
+        },
+        {
+          "id": "r11",
+          "subject": "e10",
+          "relation": "hasValue",
+          "object": "e11",
+          "confidence": 1.0,
+          "evidence": "не более 1%"
+        },
+        {
+          "id": "r12",
+          "subject": "e10",
+          "relation": "requires",
+          "object": "e12",
+          "confidence": 0.95,
+          "evidence": "при владении менее 180 дней"
+        },
+        {
+          "id": "r13",
+          "subject": "e1",
+          "relation": "hasAttribute",
+          "object": "e13",
+          "confidence": 1.0,
+          "evidence": "Вознаграждение управляющей компании — 1,2% годовых"
+        },
+        {
+          "id": "r14",
+          "subject": "e13",
+          "relation": "hasValue",
+          "object": "e14",
+          "confidence": 1.0,
+          "evidence": "1,2% годовых от СЧА"
+        },
+        {
+          "id": "r15",
+          "subject": "e1",
+          "relation": "hasAttribute",
+          "object": "e15",
+          "confidence": 1.0,
+          "evidence": "Минимальная сумма первоначальной инвестиции — 1 000 рублей"
+        },
+        {
+          "id": "r16",
+          "subject": "e15",
+          "relation": "hasValue",
+          "object": "e16",
+          "confidence": 1.0,
+          "evidence": "1 000 рублей"
+        }
+      ],
+
+      "ontology_triples": [
+        "ПИФ rdf:type owl:Class",
+        "ПИФ rdfs:subClassOf ИнвестиционныйПродукт",
+        "ИнвестиционныйПродукт rdfs:subClassOf ФинансовыйПродукт",
+        "ОткрытыйФондОблигаций rdf:type owl:Class",
+        "ОткрытыйФондОблигаций rdfs:subClassOf ПИФ",
+        "ИнвестиционныйПай rdf:type owl:Class",
+        "ИнвестиционныйПай rdfs:subClassOf ФинансовыйПродукт",
+        "ПИФ rdfs:label 'Паевой инвестиционный фонд'@ru",
+        "ПИФ :issuedBy :УправляющаяКомпания",
+        "ПИФ :involves :ДоверительноеУправление",
+        "ДоверительноеУправление :involves :УправляющаяКомпания",
+        "ИнвестиционныйПай :appliesTo :ПИФ",
+        "ИнвестиционныйПай :ownedBy :Пайщик",
+        "ПИФ :hasAttribute :СтоимостьЧистыхАктивов",
+        "ПИФ :hasAttribute :Надбавка",
+        "ПИФ :hasAttribute :СкидкаПриПогашении",
+        "ПИФ :hasAttribute :ВознаграждениеУК",
+        "ПИФ :hasAttribute :МинимальнаяСуммаИнвестиции",
+        "СкидкаПриПогашении :requires :УсловиеСрокаВладения"
+      ],
+
+      "annotation_notes": "start=null означает, что сущность подразумевается текстом, но не представлена дословно."
+    }
+  ]
+}

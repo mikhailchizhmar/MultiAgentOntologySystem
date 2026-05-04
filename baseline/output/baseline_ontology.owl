@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:fin="http://fin-ontology.org/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://fin-ontology.org/Kasko">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="ru">КАСКО</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://fin-ontology.org/CreditProduct"/>
+    <rdfs:subClassOf rdf:resource="http://fin-ontology.org/InsuranceProduct"/>
+    <fin:hasAttribute rdf:resource="http://fin-ontology.org/SrokKreditovaniya"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/FinancialProductsOntology">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdfs:label xml:lang="ru">Онтология финансовых продуктов</rdfs:label>
+    <rdfs:comment xml:lang="ru">Baseline-версия. Построена автоматически.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/Actor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="ru">Участник</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/SummaKredita">
+    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
+    <rdfs:label xml:lang="ru">сумма кредита</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/CreditProduct">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="ru">Кредитный продукт</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://fin-ontology.org/FinancialProduct"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/requires">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="ru">требует</rdfs:label>
+    <rdfs:domain rdf:resource="http://fin-ontology.org/FinancialProduct"/>
+    <rdfs:range rdf:resource="http://fin-ontology.org/Condition"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/ProductAttribute">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="ru">Атрибут продукта</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/Strakhovschik">
+    <rdf:type rdf:resource="http://fin-ontology.org/Actor"/>
+    <rdfs:label xml:lang="ru">страховщик</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/Iis">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="ru">ИИС</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://fin-ontology.org/InvestmentProduct"/>
+    <fin:issuedBy rdf:resource="http://fin-ontology.org/Rf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/TsentralnyyBankRossiyskoyFederatsii">
+    <rdf:type rdf:resource="http://fin-ontology.org/Actor"/>
+    <rdfs:label xml:lang="ru">Центральный банк Российской Федерации</rdfs:label>
+    <fin:regulatedBy rdf:resource="http://fin-ontology.org/Psk"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/Broker">
+    <rdf:type rdf:resource="http://fin-ontology.org/Actor"/>
+    <rdfs:label xml:lang="ru">Брокер</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/InsuranceProduct">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="ru">Страховой продукт</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://fin-ontology.org/FinancialProduct"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/PriUtrateZaloga">
+    <rdf:type rdf:resource="http://fin-ontology.org/Condition"/>
+    <rdfs:label xml:lang="ru">при утрате залога</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/Pif">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="ru">ПИФ</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://fin-ontology.org/InvestmentProduct"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/SnyatieNalichnykh">
+    <rdf:type rdf:resource="http://fin-ontology.org/Process"/>
+    <rdfs:label xml:lang="ru">снятие наличных</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/InvestmentProduct">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="ru">Инвестиционный продукт</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://fin-ontology.org/FinancialProduct"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/BankRossii">
+    <rdf:type rdf:resource="http://fin-ontology.org/Actor"/>
+    <rdfs:label xml:lang="ru">Банк России</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/hasValue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="ru">имеет значение</rdfs:label>
+    <rdfs:domain rdf:resource="http://fin-ontology.org/ProductAttribute"/>
+    <rdfs:range rdf:resource="http://fin-ontology.org/Metric"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/DoveritelnoeUpravlenie">
+    <rdf:type rdf:resource="http://fin-ontology.org/Process"/>
+    <rdfs:label xml:lang="ru">доверительное управление</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/LegalTerm">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="ru">Юридический термин</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/Metric">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="ru">Метрика</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/FinancialProduct">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="ru">Финансовый продукт</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/issuedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="ru">выпускается</rdfs:label>
+    <rdfs:domain rdf:resource="http://fin-ontology.org/FinancialProduct"/>
+    <rdfs:range rdf:resource="http://fin-ontology.org/Actor"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/Rf">
+    <rdf:type rdf:resource="http://fin-ontology.org/Actor"/>
+    <rdfs:label xml:lang="ru">РФ</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/Condition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="ru">Условие</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/MoskovskoyBirzhe">
+    <rdf:type rdf:resource="http://fin-ontology.org/Actor"/>
+    <rdfs:label xml:lang="ru">Московской бирже</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/DepositProduct">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="ru">Депозитный продукт</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://fin-ontology.org/FinancialProduct"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/appliesTo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="ru">применяется к</rdfs:label>
+    <rdfs:range rdf:resource="http://fin-ontology.org/FinancialProduct"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/involves">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="ru">включает процесс</rdfs:label>
+    <rdfs:domain rdf:resource="http://fin-ontology.org/FinancialProduct"/>
+    <rdfs:range rdf:resource="http://fin-ontology.org/Process"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/Pogashenie">
+    <rdf:type rdf:resource="http://fin-ontology.org/Process"/>
+    <rdfs:label xml:lang="ru">погашение</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/Greysperiod">
+    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
+    <rdfs:label xml:lang="ru">грейс-период</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/EzhemesyachnyyPlatyozh">
+    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
+    <rdfs:label xml:lang="ru">ежемесячный платёж</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/IpotechnyyKredit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="ru">ипотечный кредит</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://fin-ontology.org/CreditProduct"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/hasAttribute">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="ru">имеет атрибут</rdfs:label>
+    <rdfs:domain rdf:resource="http://fin-ontology.org/FinancialProduct"/>
+    <rdfs:range rdf:resource="http://fin-ontology.org/ProductAttribute"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/NeMeneeTryokhLet">
+    <rdf:type rdf:resource="http://fin-ontology.org/Condition"/>
+    <rdfs:label xml:lang="ru">не менее трёх лет</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/InvestitsionnyyBank">
+    <rdf:type rdf:resource="http://fin-ontology.org/Actor"/>
+    <rdfs:label xml:lang="ru">инвестиционный банк</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/SrokKreditovaniya">
+    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
+    <rdfs:label xml:lang="ru">срок кредитования</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/PriPolnomPogasheniiZadolzhennosti">
+    <rdf:type rdf:resource="http://fin-ontology.org/Condition"/>
+    <rdfs:label xml:lang="ru">при полном погашении задолженности</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/AnnuitetnyyPlatyozh">
+    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
+    <rdfs:label xml:lang="ru">аннуитетный платёж</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/CardProduct">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="ru">Карточный продукт</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://fin-ontology.org/FinancialProduct"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/ZalogPriobretaemoyNedvizhimosti">
+    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
+    <rdfs:label xml:lang="ru">залог приобретаемой недвижимости</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/regulatedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="ru">регулируется</rdfs:label>
+    <rdfs:domain rdf:resource="http://fin-ontology.org/FinancialProduct"/>
+    <rdfs:range rdf:resource="http://fin-ontology.org/Actor"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/ProtsentnayaStavka">
+    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
+    <rdfs:label xml:lang="ru">процентная ставка</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/Uscherb">
+    <rdf:type rdf:resource="http://fin-ontology.org/Actor"/>
+    <rdfs:label xml:lang="ru">Ущерб</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/Ndfl">
+    <rdf:type rdf:resource="http://fin-ontology.org/LegalTerm"/>
+    <rdfs:label xml:lang="ru">НДФЛ</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/Scha">
+    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
+    <rdfs:label xml:lang="ru">СЧА</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/Process">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="ru">Процесс</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/Psk">
+    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
+    <rdfs:label xml:lang="ru">ПСК</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/PredmetZaloga">
+    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
+    <rdfs:label xml:lang="ru">предмет залога</rdfs:label>
+  </rdf:Description>
+</rdf:RDF>

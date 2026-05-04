@@ -1,0 +1,124 @@
+# ─────────────────────────────────────────────────────────────────
+# urls.txt — список документов для парсинга
+# Формат: URL | имя_файла | тип_документа
+# Строки начинающиеся с # — комментарии
+# ─────────────────────────────────────────────────────────────────
+
+# ══════════════════════════════════════════════════════════════════
+# КРЕДИТНЫЕ ДОГОВОРЫ
+# ══════════════════════════════════════════════════════════════════
+
+# — УБРиР —
+https://www.ubrr.ru/uploads/main/01c/59d722a94d8a4/Kreditnyj-dogovor-overdraft-Jekspress.pdf | ubrir_overdraft_express | кредитный_договор
+https://www.ubrr.ru/uploads/main/011/57b2cd2f7bd15/Кредитный%20договор%20(овердрафт%20).pdf | ubrir_overdraft_klassicheskiy | кредитный_договор
+https://www.ubrr.ru/uploads/main/01d/59f6d1df6952e/Kreditnyj%20dogovor%20overdraft%20«Zarplatnyj».pdf | ubrir_overdraft_zarplatnyy | кредитный_договор
+
+# — Центр-инвест —
+https://www.centrinvest.ru/media/fiz/credit/documents/pdf/kred-dog-potreb.pdf | centrinvest_potrebkredit | кредитный_договор
+https://www.centrinvest.ru/files/services/fiz/pdf/KD-ipoteka-stavki-refinansirovaniya.pdf | centrinvest_ipoteka_refin | кредитный_договор
+https://www.centrinvest.ru/files/services/fiz/pdf/KD-ipoteka-stavki.pdf | centrinvest_ipoteka | кредитный_договор
+https://www.centrinvest.ru/media/fiz/credit/documents/pdf/kred-dog-auto.pdf | centrinvest_auto_cred | кредитный_договор
+https://www.centrinvest.ru/files/services/fiz/pdf/offer-classic.pdf | centrinvest_overdraft_classic | кредитный_договор
+https://www.centrinvest.ru/files/services/fiz/pdf/offer-card-gp.pdf | centrinvest_overdraft_grace | кредитный_договор
+
+# — Россельхозбанк —
+https://www.rshb.ru/api/v1/storage/c797f20f-22b0-4f5a-9e32-89164755430b/attachment | rshb_potrebkredit_lpkh | кредитный_договор
+
+# — Альфа-Банк —
+https://alfabank.servicecdn.ru/site-upload/60/4b/1309/cred_dog_stroi_zhil_27-05-22.pdf | alfabank_ipoteka_stroitelstvo | кредитный_договор
+
+# — ВТБ —
+https://www.vtb.ru/-/media/Files/personal/avtokredity/docs/forma-kreditnogo-dogovora.pdf | vtb_avtokredit | кредитный_договор
+
+# — Кредит Урал Банк —
+https://creditural.ru/upload/iblock/c3a/refin2.pdf | kubank_refinansirovanie_ipoteka | кредитный_договор
+
+# — Шаблоны (юридические базы) —
+https://juristi-spb.ru/documents/tipovoy-kreditnyy-dogovor-obrazets-blank/ | juristi_tipovoy_kredit | кредитный_договор
+
+# — Типовые формы Кошелев-Банк (страница)
+https://www.koshelev-bank.ru/upload/medialibrary/236/29zlzj3ftpvf6yji6w1m973a83nq33s4/%D0%A2%D0%B8%D0%BF%D0%BE%D0%B2%D0%B0%D1%8F%20%D1%84%D0%BE%D1%80%D0%BC%D0%B0%20%D0%9A%D1%80%D0%B5%D0%B4%D0%B8%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D0%B0%20%D0%B4%D0%BB%D1%8F%20%D0%BF%D0%BE%D1%82%D1%80%D0%B5%D0%B1%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D0%BA%D0%B8%D1%85%20%D0%BA%D1%80%D0%B5%D0%B4%D0%B8%D1%82%D0%BE%D0%B2.pdf | koshelev_potrebkredit | кредитный_договор
+https://www.koshelev-bank.ru/upload/medialibrary/cc4/nm2tmwb98nq5qey2f1r8ipwj3i1cauz6/%D0%A2%D0%B8%D0%BF%D0%BE%D0%B2%D0%B0%D1%8F%20%D1%84%D0%BE%D1%80%D0%BC%D0%B0%20%D0%9A%D1%80%D0%B5%D0%B4%D0%B8%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D0%B0%20%20(%D0%BF%D1%80%D0%B8%D0%BE%D0%B1%D1%80%D0%B5%D1%82%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BD%D0%B5%D0%B4%D0%B2%D0%B8%D0%B6%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D0%B8%20%D0%BD%D0%B0%20%D0%BF%D0%B5%D1%80%D0%B2%D0%B8%D1%87%D0%BD%D0%BE%D0%BC%20%D1%80%D1%8B%D0%BD%D0%BA%D0%B5).pdf | koshelev_ipoteka_perv | кредитный_договор
+https://www.koshelev-bank.ru/upload/medialibrary/b29/v4k046syefzwqjb44x0bl5qi3xseai9i/%D0%A2%D0%B8%D0%BF%D0%BE%D0%B2%D0%B0%D1%8F%20%D1%84%D0%BE%D1%80%D0%BC%D0%B0%20%D0%9A%D1%80%D0%B5%D0%B4%D0%B8%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D0%B0%20%20(%D0%BF%D1%80%D0%B8%D0%BE%D0%B1%D1%80%D0%B5%D1%82%D0%B5%D0%BD%D0%B8%D0%B5%20%D0%BD%D0%B5%D0%B4%D0%B2%D0%B8%D0%B6%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D0%B8%20%D0%BD%D0%B0%20%D0%B2%D1%82%D0%BE%D1%80%D0%B8%D1%87%D0%BD%D0%BE%D0%BC%20%D1%80%D1%8B%D0%BD%D0%BA%D0%B5).pdf | koshelev_ipoteka_vtor | кредитный_договор
+https://www.koshelev-bank.ru/upload/medialibrary/d6e/hawmy7ievoumwp90sul72d1adnp4cxs2/%D0%A2%D0%B8%D0%BF%D0%BE%D0%B2%D0%B0%D1%8F%20%D1%84%D0%BE%D1%80%D0%BC%D0%B0%20%D0%9A%D1%80%D0%B5%D0%B4%D0%B8%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D0%B0%20%D0%BD%D0%B0%20%D1%86%D0%B5%D0%BB%D0%B8%20%D1%80%D0%B5%D1%84%D0%B8%D0%BD%D0%B0%D0%BD%D1%81%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20(%D0%BF%D0%B5%D1%80%D0%B2%D0%B8%D1%87%D0%BD%D1%8B%D0%B9%20%D1%80%D1%8B%D0%BD%D0%BE%D0%BA%20%D0%BD%D0%B5%D0%B4%D0%B2%D0%B8%D0%B6%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D0%B8).pdf | koshelev_refin_perv | кредитный_договор
+https://www.koshelev-bank.ru/upload/medialibrary/47c/t7i04kz3waji8uuvuuqyzhlr2vkw1fk8/%D0%A2%D0%B8%D0%BF%D0%BE%D0%B2%D0%B0%D1%8F%20%D1%84%D0%BE%D1%80%D0%BC%D0%B0%20%D0%9A%D1%80%D0%B5%D0%B4%D0%B8%D1%82%D0%BD%D0%BE%D0%B3%D0%BE%20%D0%B4%D0%BE%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D0%B0%20%D0%BD%D0%B0%20%D1%86%D0%B5%D0%BB%D0%B8%20%D1%80%D0%B5%D1%84%D0%B8%D0%BD%D0%B0%D0%BD%D1%81%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20(%D0%B2%D1%82%D0%BE%D1%80%D0%B8%D1%87%D0%BD%D1%8B%D0%B9%20%D1%80%D1%8B%D0%BD%D0%BE%D0%BA%20%D0%BD%D0%B5%D0%B4%D0%B2%D0%B8%D0%B6%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D0%B8).pdf | koshelev_refin_vtor | кредитный_договор
+
+# ══════════════════════════════════════════════════════════════════
+# ДЕПОЗИТНЫЕ ПРОДУКТЫ
+# ══════════════════════════════════════════════════════════════════
+
+# — PDF / DOC: официальные условия —
+https://www.ubrr.ru/uploads/main/00i/54c09a9fea410/%D0%9F%D1%80%D0%B0%D0%B2%D0%B8%D0%BB%D0%B0%20%D0%BF%D1%80%D0%B8%D0%B5%D0%BC%D0%B0%20%D0%B8%20%D0%BE%D0%B1%D1%81%D0%BB%D1%83%D0%B6%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%20%D0%B1%D0%B0%D0%BD%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D1%85%20%D0%B2%D0%BA%D0%BB%D0%B0%D0%B4%D0%BE%D0%B2.pdf | ubrir_pravila_vkladov | депозитный_продукт
+# TODO: upd: скан вместо текста
+# https://www.sberbank.ru/common/img/uploaded/vklad/usl_r_vkladov.pdf | sber_usloviya_vkladov | депозитный_продукт
+https://www.centrinvest.ru/media/fiz/deposits/documents/pdf/pravila_obsluzhivaniya_bankovskih_vkladov_FL_22.01.2024.pdf | centrinvest_pravila_vkladov | депозитный_продукт
+# TODO: upd локальные файлы кредитных продуктов
+# https://www.centrinvest.ru/files/services/fiz/pdf/Sbornik_usloviy_vkladov.pdf | centrinvest_sbornik_usloviy | депозитный_продукт
+
+# — Страницы продуктов на сайтах банков —
+https://www.tbank.ru/bank/help/deposits/deposit/open/terms/ | tbank_usloviya_vkladov | депозитный_продукт
+# TODO: upd
+# https://www.vtb.ru/personal/vklady-i-scheta/ | vtb_vklady_lineinye | депозитный_продукт
+https://www.vtb.ru/articles/vklady-i-scheta/chto-nuzhno-znast-pro-dogovor-bankovskogo-vklada/ | vtb_dogovor_vklada_statya | депозитный_продукт
+# TODO: upd
+# https://www.psbank.ru/personal/saving | psb_vklady | депозитный_продукт
+# TODO: upd
+# https://www.rsb.ru/deposits/ | rsb_vklady | депозитный_продукт
+# TODO: upd
+# https://sovcombank.ru/deposits | sovkombank_vklady | депозитный_продукт
+# TODO: upd
+#https://www.centrinvest.ru/for-individuals/deposits/universal | centrinvest_vklad_universalnyy | депозитный_продукт
+https://www.rshb.ru/natural/deposits/svoy-deposit | rshb_vklad_svoy | депозитный_продукт
+# TODO: upd
+# https://www.rshb.ru/natural/deposits | rshb_vklady_vse | депозитный_продукт
+https://domrfbank.ru/blog/chto-proverit-pered-otkrytiem-vklada/ | domrf_vybor_vklada | депозитный_продукт
+https://expobank.ru/blog/chto-budet-so-vkladami-v-2025-godu/ | expobank_vklady_2025 | депозитный_продукт
+
+# — Агрегаторы: карточки продуктов —
+https://finuslugi.ru/vklady | finuslugi_vitrina_vkladov | депозитный_продукт
+https://bankinform.ru/services/deposits/14444/91 | bankinform_alfa_vklad | депозитный_продукт
+https://bankinform.ru/services/deposits/14704/91 | bankinform_alfa_vklad_novye_dengi | депозитный_продукт
+https://bankinform.ru/services/deposits/12856/91 | bankinform_alfa_schet | депозитный_продукт
+https://bankinform.ru/services/deposits/vklady-alfa-bank-rubli | bankinform_alfa_vse_vklady | депозитный_продукт
+https://bankinform.ru/services/deposits/vklady-sovkombank-rubli | bankinform_sovkombank_vklady | депозитный_продукт
+https://bankinform.ru/services/deposits/vklady-rosselkhozbank-rubli | bankinform_rshb_vklady | депозитный_продукт
+https://www.banki.ru/products/deposits/ | bankiru_vitrina_vkladov | депозитный_продукт
+
+# # ══════════════════════════════════════════════════════════════════
+# # НОРМАТИВНЫЕ ДОКУМЕНТЫ
+# # ══════════════════════════════════════════════════════════════════
+# 
+# # — Федеральные законы (КонсультантПлюс) —
+# https://www.consultant.ru/document/cons_doc_LAW_5842/ | fz_395_1_o_bankah | нормативный_документ
+# https://www.consultant.ru/document/cons_doc_LAW_37570/ | fz_86_o_cbrf | нормативный_документ
+# https://www.consultant.ru/document/cons_doc_LAW_45769/ | fz_177_strahovanie_vkladov | нормативный_документ
+# https://www.consultant.ru/document/cons_doc_LAW_155986/ | fz_353_potrebkredit | нормативный_документ
+# https://www.consultant.ru/document/cons_doc_LAW_51043/ | fz_218_kreditnye_istorii | нормативный_документ
+# https://www.consultant.ru/document/cons_doc_LAW_115625/ | fz_161_nps | нормативный_документ
+# https://www.consultant.ru/document/cons_doc_LAW_39331/ | fz_127_bankrotstvo | нормативный_документ
+# 
+# # — Положения Банка России (КонсультантПлюс) —
+# https://www.consultant.ru/document/cons_doc_LAW_220089/ | polojenie_590_p_rezervy | нормативный_документ
+# https://www.consultant.ru/document/cons_doc_LAW_302369/ | polojenie_646_p_kapital | нормативный_документ
+# https://www.consultant.ru/document/cons_doc_LAW_390549/ | polojenie_762_p_perevody | нормативный_документ
+# https://www.consultant.ru/document/cons_doc_LAW_432991/ | polojenie_809_p_plan_schetov | нормативный_документ
+# https://www.consultant.ru/document/cons_doc_LAW_432993/ | polojenie_810_p_dohody | нормативный_документ
+# https://www.consultant.ru/document/cons_doc_LAW_365785/ | polojenie_732_p_ps_br | нормативный_документ
+# https://www.consultant.ru/document/cons_doc_LAW_388040/ | polojenie_758_p_kreditnaya_istoriya | нормативный_документ
+# 
+# # — Инструкции Банка России (КонсультантПлюс) —
+# https://www.consultant.ru/document/cons_doc_LAW_524800/ | instrukcia_220_i_normativy | нормативный_документ
+# https://www.consultant.ru/document/cons_doc_LAW_391996/ | instrukcia_204_i_scheta | нормативный_документ
+# https://www.consultant.ru/document/cons_doc_LAW_445521/ | instrukcia_213_i_val_pozicii | нормативный_документ
+# 
+# # — ГК РФ и прочие НПА —
+# https://www.consultant.ru/document/cons_doc_LAW_9027/ | gk_rf_kredit_vklad | нормативный_документ
+# https://www.consultant.ru/document/cons_doc_LAW_9027/e3f1132036918763f681d1ecf09de85c3f15b13f/ | gk_rf_st837_vidy_vkladov | нормативный_документ
+# 
+# # — Документы ЦБ РФ (открытый доступ, PDF) —
+# https://cbr.ru/StaticHtml/File/8373/alphabet.pdf | cbr_bankovskaya_azbuka | нормативный_документ
+# https://cbr.ru/analytics/na_vr/ | cbr_reestr_normativnyh_aktov | нормативный_документ
+# https://cbr.ru/counteraction_m_ter/acts/ | cbr_akty_pml | нормативный_документ
+# https://www.cbr.ru/press/pr/?file=639003805159347653BANK_SECTOR.htm | cbr_monitoring_stavok_vkladov | нормативный_документ
+# https://www.consultant.ru/law/podborki/forma_kreditnogo_dogovora/ | consultant_formy_kreditnyh_dogovorov | нормативный_документ
+# https://www.consultant.ru/law/hotdocs/t27/ | consultant_goryachie_dokumenty_banki | нормативный_документ

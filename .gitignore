@@ -1,0 +1,4 @@
+.env
+__pycache__
+parser/*_docs*
+.DS_Store
