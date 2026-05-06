@@ -8,8 +8,8 @@ LangGraph пайплайн мультиагентной системы.
 
 Запуск:
     export OPENAI_API_KEY=sk-...
-    python pipeline.py                    # весь корпус
-    python pipeline.py --doc doc_001      # один документ
+    python pipeline.py                       # весь корпус
+    python pipeline.py --doc doc_001         # один документ
     python pipeline.py --doc doc_001 --eval  # + сравнение с gold standard
 
 Зависимости:
@@ -26,15 +26,14 @@ from pathlib import Path
 from langchain_openai import ChatOpenAI
 from langgraph.graph import StateGraph, END
 
-# sys.path.insert(0, str(Path(__file__).parent.parent / "corpus"))
-
-from corpus.documents import CORPUS
 from agents.state import PipelineState
 from agents.term_extractor import TermExtractorAgent
 from agents.entity_classifier import EntityClassifierAgent
 from agents.relation_extractor import RelationExtractorAgent
 from agents.validator import ValidatorAgent
 from agents.ontology_integrator import OntologyIntegratorAgent, build_base_graph
+from evaluate import evaluate
+from corpus.loader import load_corpus, load_gold
 
 OUTPUT_DIR = Path(__file__).parent / "output"
 OUTPUT_DIR.mkdir(exist_ok=True)
@@ -62,21 +61,18 @@ def build_graph(
     Рёбра: линейные (каждый агент передаёт состояние следующему).
     """
 
-    term_agent     = TermExtractorAgent(llm=llm, corpus_texts=corpus_texts)
-    class_agent    = EntityClassifierAgent(llm=llm)
-    rel_agent      = RelationExtractorAgent(llm=llm)
-    val_agent      = ValidatorAgent(llm=llm)
+    term_agent  = TermExtractorAgent(llm=llm, corpus_texts=corpus_texts)
+    class_agent = EntityClassifierAgent(llm=llm)
+    rel_agent   = RelationExtractorAgent(llm=llm)
+    val_agent   = ValidatorAgent(llm=llm)
 
-    # LangGraph требует, чтобы узлы возвращали dict или объект с __dict__
-    # PipelineState — dataclass, поэтому оборачиваем в лямбды
-    def node_extract(state: PipelineState)  -> PipelineState: return term_agent.run(state)
-    def node_classify(state: PipelineState) -> PipelineState: return class_agent.run(state)
-    def node_relate(state: PipelineState)   -> PipelineState: return rel_agent.run(state)
-    def node_validate(state: PipelineState) -> PipelineState: return val_agent.run(state)
-    def node_integrate(state: PipelineState)-> PipelineState: return integrator.run(state)
+    def node_extract(state):  return term_agent.run(state)
+    def node_classify(state): return class_agent.run(state)
+    def node_relate(state):   return rel_agent.run(state)
+    def node_validate(state): return val_agent.run(state)
+    def node_integrate(state):return integrator.run(state)
 
     graph = StateGraph(PipelineState)
-
     graph.add_node("extract_terms",     node_extract)
     graph.add_node("classify_entities", node_classify)
     graph.add_node("extract_relations", node_relate)
@@ -99,6 +95,13 @@ def build_graph(
 
 def run_doc(app, doc: dict, verbose: bool = True) -> PipelineState:
     """Прогоняет один документ через граф."""
+    import time
+
+    if verbose:
+        print(f"\n{'─'*55}")
+        print(f"  Документ: {doc['id']}  ({len(doc['text'])} символов)")
+        print(f"{'─'*55}")
+
     initial = PipelineState(
         doc_id=doc["id"],
         doc_type=doc["type"],
@@ -106,81 +109,31 @@ def run_doc(app, doc: dict, verbose: bool = True) -> PipelineState:
         text=doc["text"],
     )
 
-    final: PipelineState = app.invoke(initial)
+    t0    = time.time()
+    raw   = app.invoke(initial)
+    elapsed = time.time() - t0
+
+    # LangGraph с dataclass-состоянием возвращает dict — конвертируем обратно
+    if isinstance(raw, dict):
+        final = PipelineState(**{
+            k: v for k, v in raw.items()
+            if k in PipelineState.__dataclass_fields__
+        })
+    else:
+        final = raw
 
     if verbose:
-        print(f"\n  [{doc['id']}] {doc['product']}")
-        print(f"    терминов:   {len(final["terms"])}")
-        print(f"    сущностей:  {len(final["entities"])}")
-        print(f"    отношений:  {len(final["relations"])}")
-        print(f"    троек:      {len(final["validated_triples"])}")
-        if final["errors"]:
-            for err in final["errors"]:
+        print(f"\n  Результат [{doc['id']}]")
+        print(f"    терминов:   {len(final.terms)}")
+        print(f"    сущностей:  {len(final.entities)}")
+        print(f"    отношений:  {len(final.relations)}")
+        print(f"    троек:      {len(final.validated_triples)}")
+        print(f"    время:      {elapsed:.1f}с")
+        if final.errors:
+            for err in final.errors:
                 print(f"    ⚠ {err}")
 
     return final
-
-
-# ─────────────────────────────────────────────────────────────────────────────
-# ОЦЕНКА ПО GOLD STANDARD
-# ─────────────────────────────────────────────────────────────────────────────
-
-def evaluate(results: list[PipelineState], gold_path: Path) -> dict:
-    """Precision / Recall / F1 по сущностям относительно gold standard."""
-    with open(gold_path, encoding="utf-8") as f:
-        gold_data = json.load(f)
-
-    gold_by_id = {d["id"]: d for d in gold_data["documents"]}
-    per_doc    = {}
-    total_tp = total_fp = total_fn = 0
-
-    for state in results:
-        if state["doc_id"] not in gold_by_id:
-            continue
-
-        gold_ents = {e["text"].lower(): e["class"]
-                     for e in gold_by_id[state["doc_id"]]["entities"]}
-        pred_ents = {e.text.lower(): e.cls
-                     for e in state["entities"]}
-
-        gold_set, pred_set = set(gold_ents), set(pred_ents)
-        tp = len(gold_set & pred_set)
-        fp = len(pred_set - gold_set)
-        fn = len(gold_set - pred_set)
-
-        total_tp += tp; total_fp += fp; total_fn += fn
-
-        p  = tp / (tp + fp) if (tp + fp) else 0.0
-        r  = tp / (tp + fn) if (tp + fn) else 0.0
-        f1 = 2 * p * r / (p + r) if (p + r) else 0.0
-
-        per_doc[state["doc_id"]] = {
-            "tp": tp, "fp": fp, "fn": fn,
-            "precision": round(p, 3),
-            "recall":    round(r, 3),
-            "f1":        round(f1, 3),
-            "missed":    sorted(gold_set - pred_set),
-            "spurious":  sorted(pred_set - gold_set),
-            "class_errors": [
-                {"text": t, "gold": gold_ents[t], "pred": pred_ents[t]}
-                for t in (gold_set & pred_set)
-                if gold_ents[t] != pred_ents[t]
-            ],
-        }
-
-    p  = total_tp / (total_tp + total_fp) if (total_tp + total_fp) else 0.0
-    r  = total_tp / (total_tp + total_fn) if (total_tp + total_fn) else 0.0
-    f1 = 2 * p * r / (p + r) if (p + r) else 0.0
-
-    return {
-        "per_doc": per_doc,
-        "overall": {
-            "tp": total_tp, "fp": total_fp, "fn": total_fn,
-            "micro_precision": round(p, 3),
-            "micro_recall":    round(r, 3),
-            "micro_f1":        round(f1, 3),
-        },
-    }
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -201,77 +154,98 @@ def main():
     if not api_key:
         raise ValueError("Задай переменную OPENAI_API_KEY")
 
-    verbose = not args.quiet
-    docs    = [d for d in CORPUS if d["id"] in args.doc] if args.doc else CORPUS
+    verbose      = not args.quiet
+    docs         = load_corpus(doc_ids=args.doc)
+    corpus_texts = [d["text"] for d in load_corpus() if d["text"]]
 
     print(f"\n{'='*60}")
     print(f"  Мультиагентная система | LangGraph + {args.model}")
     print(f"  Документов: {len(docs)}")
     print(f"{'='*60}")
 
-    # Инициализация
-    llm = ChatOpenAI(
-        model=args.model,
-        temperature=0,
-        api_key=api_key,
-    )
+    llm        = ChatOpenAI(model=args.model, temperature=0, api_key=api_key)
+    base_graph = build_base_graph()
+    integrator = OntologyIntegratorAgent(graph=base_graph)
+    app        = build_graph(llm=llm, integrator=integrator, corpus_texts=corpus_texts)
 
-    base_graph  = build_base_graph()
-    integrator  = OntologyIntegratorAgent(graph=base_graph)
-    corpus_texts = [d["text"] for d in CORPUS]
-
-    app = build_graph(llm=llm, integrator=integrator, corpus_texts=corpus_texts)
-
-    # Обработка документов
     results: list[PipelineState] = []
     for doc in docs:
-        state = run_doc(app, doc, verbose=verbose)
-        results.append(state)
+        results.append(run_doc(app, doc, verbose=verbose))
 
-    # Сохранение онтологии
     integrator.save(str(OUTPUT_DIR))
 
-    # Сохранение аннотаций
-    # ann_path = OUTPUT_DIR / "annotations.json"
-    # with open(ann_path, "w", encoding="utf-8") as f:
-    #     json.dump(
-    #         {
-    #             "meta":      {"model": args.model, "docs": len(results)},
-    #             "documents": [s for s in results],
-    #         },
-    #         f, ensure_ascii=False, indent=2,
-    #     )
-    # print(f"\n  Аннотации: {ann_path}")
+    # Сохраняем результаты в формате gold_annotations.json
+    if len(results) == 1:
+        ann_path = OUTPUT_DIR / f"{results[0].doc_id}.json"
+    else:
+        ann_path = OUTPUT_DIR / "results.json"
+    with open(ann_path, "w", encoding="utf-8") as f:
+        json.dump({"documents": [r.to_dict() for r in results]},
+                  f, ensure_ascii=False, indent=2)
+    print(f"  Аннотации: {ann_path}")
 
-    # Оценка
     if args.eval:
-        gold_path = Path(__file__).parent.parent / "corpus" / "gold_annotations.json"
-        if not gold_path.exists():
-            print(f"  Gold standard не найден: {gold_path}")
-        else:
-            m = evaluate(results, gold_path)
-            print(f"\n{'─'*60}  ОЦЕНКА")
-            for doc_id, dm in m["per_doc"].items():
-                print(f"\n  [{doc_id}]  "
-                      f"P={dm['precision']}  R={dm['recall']}  F1={dm['f1']}  "
-                      f"(TP={dm['tp']} FP={dm['fp']} FN={dm['fn']})")
-                if dm["missed"]:
-                    print(f"    пропущено: {dm['missed']}")
-                if dm["class_errors"]:
-                    print(f"    ошибки класса: {dm['class_errors']}")
+        gold      = load_gold()
+        gold_path = OUTPUT_DIR / "gold_annotations.json"
+        with open(gold_path, "w", encoding="utf-8") as f:
+            json.dump(gold, f, ensure_ascii=False, indent=2)
 
-            ov = m["overall"]
-            print(f"\n  ИТОГО  "
-                  f"P={ov['micro_precision']}  "
-                  f"R={ov['micro_recall']}  "
-                  f"F1={ov['micro_f1']}\n")
+        m = evaluate(
+            results=results,
+            gold_path=gold_path,
+            get_entities=lambda s: [
+                {"text": e.text, "class": e.cls} for e in s.entities
+            ],
+            get_relations=lambda s: s.validated_triples,
+            get_doc_id=lambda s: s.doc_id,
+        )
 
-            eval_path = OUTPUT_DIR / "eval.json"
-            with open(eval_path, "w", encoding="utf-8") as f:
-                json.dump(m, f, ensure_ascii=False, indent=2)
-            print(f"  Метрики: {eval_path}")
+        _print_metrics(m)
+
+        eval_path = OUTPUT_DIR / "eval.json"
+        with open(eval_path, "w", encoding="utf-8") as f:
+            json.dump(m, f, ensure_ascii=False, indent=2)
+        print(f"  Метрики: {eval_path}")
 
     print(f"\n{'='*60}\n")
+
+
+def _print_metrics(m: dict):
+    print(f"\n{'─'*60}  ОЦЕНКА\n")
+
+    for doc_id, dm in m["per_doc"].items():
+        print(f"  [{doc_id}]")
+        ep = dm["entity_partial"]
+        es = dm["entity_strict"]
+        er = dm["relation"]
+        print(f"    entity partial  P={ep['precision']}  R={ep['recall']}  F1={ep['f1']}"
+              f"  (TP={ep['tp']} FP={ep['fp']} FN={ep['fn']})")
+        print(f"    entity strict   P={es['precision']}  R={es['recall']}  F1={es['f1']}"
+              f"  (TP={es['tp']} FP={es['fp']} FN={es['fn']})")
+        print(f"    relation        P={er['precision']}  R={er['recall']}  F1={er['f1']}"
+              f"  (TP={er['tp']} FP={er['fp']} FN={er['fn']})")
+
+        if es.get("class_errors"):
+            print(f"    ошибки класса:")
+            for ce in es["class_errors"]:
+                print(f"      «{ce['text']}»: predicted={ce['predicted']}, gold={ce['gold']}")
+
+        if es.get("per_class_f1"):
+            print(f"    F1 по классам:")
+            for cls, v in es["per_class_f1"].items():
+                if v["tp"] + v["fp"] + v["fn"] > 0:
+                    print(f"      {cls:<20} F1={v['f1']}  "
+                          f"(TP={v['tp']} FP={v['fp']} FN={v['fn']})")
+
+    ov = m["overall"]
+    print(f"\n  ИТОГО (micro-avg)")
+    for key, label in [("entity_partial", "entity partial"),
+                        ("entity_strict",  "entity strict "),
+                        ("relation",       "relation      ")]:
+        v = ov[key]
+        print(f"    {label}  P={v['micro_precision']}  "
+              f"R={v['micro_recall']}  F1={v['micro_f1']}")
+    print()
 
 
 if __name__ == "__main__":

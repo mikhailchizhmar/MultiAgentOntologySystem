@@ -69,17 +69,48 @@ class PipelineState:
     logs:     list[str] = field(default_factory=list)
 
     def log(self, agent: str, message: str):
-        self.logs.append(f"[{agent}] {message}")
+        entry = f"[{agent}] {message}"
+        self.logs.append(entry)
+        # Выводим сразу — так видно прогресс в реальном времени,
+        # а не только после завершения всего документа
+        print(f"  {entry}")
 
     def to_dict(self) -> dict:
+        # Сущности — формат gold
+        entities_gold = [
+            {
+                "id":         e.id,
+                "text":       e.text,
+                "class":      e.cls,
+                "start":      None,
+                "confidence": e.confidence,
+                "comment":    e.comment,
+            }
+            for e in self.entities
+        ]
+        # Отношения — формат gold (subject/object — id сущностей)
+        relations_gold = [
+            {
+                "id":         r.id,
+                "subject":    r.subject_id,
+                "relation":   r.relation,
+                "object":     r.object_id,
+                "confidence": r.confidence,
+                "evidence":   r.evidence,
+            }
+            for r in self.relations
+        ]
+        # ontology_triples берём из validated_triples как текстовые строки
+        triples = [
+            f"{t['subject']} :{t['relation']} :{t['object']}"
+            for t in self.validated_triples
+        ]
         return {
-            "doc_id":   self.doc_id,
-            "doc_type": self.doc_type,
-            "product":  self.product,
-            "terms":    [t.__dict__ for t in self.terms],
-            "entities": [e.__dict__ for e in self.entities],
-            "relations":[r.__dict__ for r in self.relations],
-            "validated_triples": self.validated_triples,
-            "errors":   self.errors,
-            "logs":     self.logs,
+            "id":               self.doc_id,
+            "title":            self.product,
+            "source":           self.doc_id + ".txt",
+            "entities":         entities_gold,
+            "relations":        relations_gold,
+            "ontology_triples": triples,
+            "annotation_notes": "",
         }

@@ -2,3 +2,5 @@
 __pycache__
 parser/*_docs*
 .DS_Store
+legacy
+agents/output

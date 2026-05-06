@@ -199,13 +199,12 @@ class Entity:
 
     def to_dict(self) -> dict:
         return {
-            "id":          self.id,
-            "text":        self.text,
-            "class":       self.cls,
-            "spacy_label": self.spacy_label,
-            "start":       self.start,
-            "end":         self.end,
-            "confidence":  self.confidence,
+            "id":         self.id,
+            "text":       self.text,
+            "class":      self.cls,
+            "start":      self.start,
+            "confidence": self.confidence,
+            "comment":    "",
         }
 
 

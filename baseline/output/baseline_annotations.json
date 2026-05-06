@@ -4,487 +4,2641 @@
   },
   "documents": [
     {
-      "id": "doc_001",
+      "id": "ubrir_overdraft_express",
       "doc_type": "credit",
-      "product": "ипотечный_кредит",
+      "product": "Типовая форма кредитного договора (х-дневный овердрафт с изменяемым лимитом)",
       "entities": [
         {
           "id": "e1",
-          "text": "ипотечный кредит",
-          "class": "FinancialProduct",
-          "spacy_label": "FIN_PRODUCT",
-          "start": 28,
-          "end": 44,
-          "confidence": 0.85
+          "text": "Уральский банк реконструкции и развития",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 255,
+          "end": 294,
+          "confidence": 0.7
         },
         {
           "id": "e2",
-          "text": "залог приобретаемой недвижимости",
-          "class": "ProductAttribute",
-          "spacy_label": "FIN_ATTRIBUTE",
-          "start": 159,
-          "end": 191,
-          "confidence": 0.85
+          "text": "Кредитора",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 353,
+          "end": 362,
+          "confidence": 0.7
         },
         {
           "id": "e3",
-          "text": "предмет залога",
-          "class": "ProductAttribute",
-          "spacy_label": "FIN_ATTRIBUTE",
-          "start": 221,
-          "end": 235,
+          "text": "договор",
+          "class": "LegalTerm",
+          "spacy_label": "FIN_LEGAL",
+          "start": 685,
+          "end": 692,
           "confidence": 0.85
         },
         {
           "id": "e4",
-          "text": "аннуитетный платёж",
-          "class": "ProductAttribute",
-          "spacy_label": "FIN_ATTRIBUTE",
-          "start": 286,
-          "end": 304,
-          "confidence": 0.85
+          "text": "ПАО КБ «УБРиР»",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 887,
+          "end": 901,
+          "confidence": 0.7
         },
         {
           "id": "e5",
-          "text": "ПСК",
-          "class": "ProductAttribute",
-          "spacy_label": "FIN_ATTRIBUTE",
-          "start": 357,
-          "end": 360,
-          "confidence": 0.85
+          "text": "Заемщику",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 977,
+          "end": 985,
+          "confidence": 0.7
         },
         {
           "id": "e6",
+          "text": "Кредитором",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 1345,
+          "end": 1355,
+          "confidence": 0.7
+        },
+        {
+          "id": "e7",
           "text": "погашение",
           "class": "Process",
           "spacy_label": "FIN_PROCESS",
-          "start": 393,
-          "end": 402,
-          "confidence": 0.85
-        }
-      ],
-      "relations": [],
-      "stats": {
-        "entities": 6,
-        "relations": 0,
-        "by_class": {
-          "FinancialProduct": 1,
-          "ProductAttribute": 4,
-          "Process": 1
-        }
-      }
-    },
-    {
-      "id": "doc_003",
-      "doc_type": "credit",
-      "product": "автокредит",
-      "entities": [
-        {
-          "id": "e1",
-          "text": "сумма кредита",
-          "class": "ProductAttribute",
-          "spacy_label": "FIN_ATTRIBUTE",
-          "start": 162,
-          "end": 175,
+          "start": 1704,
+          "end": 1713,
           "confidence": 0.85
         },
         {
-          "id": "e2",
-          "text": "КАСКО",
-          "class": "FinancialProduct",
-          "spacy_label": "FIN_PRODUCT",
-          "start": 331,
-          "end": 336,
-          "confidence": 0.85
-        },
-        {
-          "id": "e3",
-          "text": "срок кредитования",
-          "class": "ProductAttribute",
-          "spacy_label": "FIN_ATTRIBUTE",
-          "start": 345,
-          "end": 362,
-          "confidence": 0.85
-        },
-        {
-          "id": "e4",
-          "text": "при утрате залога",
-          "class": "Condition",
-          "spacy_label": "FIN_CONDITION",
-          "start": 467,
-          "end": 484,
-          "confidence": 0.85
-        }
-      ],
-      "relations": [
-        {
-          "id": "r1",
-          "subject": "e2",
-          "subject_text": "КАСКО",
-          "relation": "hasAttribute",
-          "object": "e3",
-          "object_text": "срок кредитования",
-          "confidence": 0.65,
-          "evidence": "Обязательным условием является оформление полиса КАСКО на весь срок кредитования."
-        }
-      ],
-      "stats": {
-        "entities": 4,
-        "relations": 1,
-        "by_class": {
-          "ProductAttribute": 2,
-          "FinancialProduct": 1,
-          "Condition": 1
-        }
-      }
-    },
-    {
-      "id": "doc_008",
-      "doc_type": "investment",
-      "product": "пиф",
-      "entities": [
-        {
-          "id": "e1",
-          "text": "ПИФ",
-          "class": "FinancialProduct",
-          "spacy_label": "FIN_PRODUCT",
-          "start": 28,
-          "end": 31,
-          "confidence": 0.85
-        },
-        {
-          "id": "e2",
-          "text": "доверительное управление",
-          "class": "Process",
-          "spacy_label": "FIN_PROCESS",
-          "start": 122,
-          "end": 146,
-          "confidence": 0.85
-        },
-        {
-          "id": "e3",
-          "text": "СЧА",
-          "class": "ProductAttribute",
-          "spacy_label": "FIN_ATTRIBUTE",
-          "start": 330,
-          "end": 333,
-          "confidence": 0.85
-        },
-        {
-          "id": "e4",
-          "text": "СЧА",
-          "class": "ProductAttribute",
-          "spacy_label": "FIN_ATTRIBUTE",
-          "start": 531,
-          "end": 534,
-          "confidence": 0.85
-        }
-      ],
-      "relations": [],
-      "stats": {
-        "entities": 4,
-        "relations": 0,
-        "by_class": {
-          "FinancialProduct": 1,
-          "Process": 1,
-          "ProductAttribute": 2
-        }
-      }
-    },
-    {
-      "id": "doc_009",
-      "doc_type": "investment",
-      "product": "облигация",
-      "entities": [
-        {
-          "id": "e1",
-          "text": "инвестиционный банк",
+          "id": "e8",
+          "text": "Заемщик",
           "class": "Actor",
-          "spacy_label": "FIN_ACTOR",
-          "start": 381,
-          "end": 400,
-          "confidence": 0.85
+          "spacy_label": "PER",
+          "start": 1832,
+          "end": 1839,
+          "confidence": 0.7
         },
         {
-          "id": "e2",
-          "text": "Московской бирже",
+          "id": "e9",
+          "text": "Кредитору",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 1851,
+          "end": 1860,
+          "confidence": 0.7
+        },
+        {
+          "id": "e10",
+          "text": "Кредитору",
           "class": "Actor",
           "spacy_label": "ORG",
-          "start": 438,
-          "end": 454,
+          "start": 2189,
+          "end": 2198,
           "confidence": 0.7
-        }
-      ],
-      "relations": [],
-      "stats": {
-        "entities": 2,
-        "relations": 0,
-        "by_class": {
-          "Actor": 2
-        }
-      }
-    },
-    {
-      "id": "doc_010",
-      "doc_type": "investment",
-      "product": "иис",
-      "entities": [
+        },
         {
-          "id": "e1",
-          "text": "ИИС",
-          "class": "FinancialProduct",
-          "spacy_label": "FIN_PRODUCT",
-          "start": 36,
-          "end": 39,
+          "id": "e11",
+          "text": "Кредитора",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 2359,
+          "end": 2368,
+          "confidence": 0.7
+        },
+        {
+          "id": "e12",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 2494,
+          "end": 2502,
+          "confidence": 0.7
+        },
+        {
+          "id": "e13",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 3124,
+          "end": 3132,
+          "confidence": 0.7
+        },
+        {
+          "id": "e14",
+          "text": "Кредитором",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 3512,
+          "end": 3522,
+          "confidence": 0.7
+        },
+        {
+          "id": "e15",
+          "text": "Заемщиком",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 3525,
+          "end": 3534,
+          "confidence": 0.7
+        },
+        {
+          "id": "e16",
+          "text": "Условиями",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 3579,
+          "end": 3588,
+          "confidence": 0.7
+        },
+        {
+          "id": "e17",
+          "text": "Российской Федерации",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 3748,
+          "end": 3768,
+          "confidence": 0.7
+        },
+        {
+          "id": "e18",
+          "text": "договор",
+          "class": "LegalTerm",
+          "spacy_label": "FIN_LEGAL",
+          "start": 3785,
+          "end": 3792,
           "confidence": 0.85
         },
         {
-          "id": "e2",
+          "id": "e19",
+          "text": "Заемщиком",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 3891,
+          "end": 3900,
+          "confidence": 0.7
+        },
+        {
+          "id": "e20",
+          "text": "договор",
+          "class": "LegalTerm",
+          "spacy_label": "FIN_LEGAL",
+          "start": 3973,
+          "end": 3980,
+          "confidence": 0.85
+        },
+        {
+          "id": "e21",
+          "text": "АДРЕСА",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 4062,
+          "end": 4068,
+          "confidence": 0.7
+        },
+        {
+          "id": "e22",
+          "text": "РЕКВИЗИТЫ",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 4071,
+          "end": 4080,
+          "confidence": 0.7
+        },
+        {
+          "id": "e23",
+          "text": "СТОРОН",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 4081,
+          "end": 4087,
+          "confidence": 0.7
+        },
+        {
+          "id": "e24",
+          "text": "Публичное акционерное общество \"",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 4103,
+          "end": 4135,
+          "confidence": 0.7
+        },
+        {
+          "id": "e25",
+          "text": "Уральский банк реконструкции и развития",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 4135,
+          "end": 4174,
+          "confidence": 0.7
+        },
+        {
+          "id": "e26",
+          "text": "Российская Федерация",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 4249,
+          "end": 4269,
+          "confidence": 0.7
+        },
+        {
+          "id": "e27",
+          "text": "Свердловская область",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 4271,
+          "end": 4291,
+          "confidence": 0.7
+        },
+        {
+          "id": "e28",
+          "text": "Екатеринбург",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 4296,
+          "end": 4308,
+          "confidence": 0.7
+        },
+        {
+          "id": "e29",
+          "text": "Сакко",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 4314,
+          "end": 4319,
+          "confidence": 0.7
+        },
+        {
+          "id": "e30",
+          "text": "Ванцетти",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 4322,
+          "end": 4330,
+          "confidence": 0.7
+        },
+        {
+          "id": "e31",
+          "text": "Уральском ГУ",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 4366,
+          "end": 4378,
+          "confidence": 0.7
+        },
+        {
+          "id": "e32",
+          "text": "Банка России",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 4379,
+          "end": 4391,
+          "confidence": 0.7
+        },
+        {
+          "id": "e33",
+          "text": "Екатеринбурга",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 4395,
+          "end": 4408,
+          "confidence": 0.7
+        },
+        {
+          "id": "e34",
+          "text": "БИК",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 4410,
+          "end": 4413,
+          "confidence": 0.7
+        },
+        {
+          "id": "e35",
+          "text": "УСЛОВИЯ",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 5408,
+          "end": 5415,
+          "confidence": 0.7
+        },
+        {
+          "id": "e36",
+          "text": "ПРАВИЛА",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 5418,
+          "end": 5425,
+          "confidence": 0.7
+        },
+        {
+          "id": "e37",
+          "text": "Кредитором",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 5560,
+          "end": 5570,
+          "confidence": 0.7
+        },
+        {
+          "id": "e38",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 5602,
+          "end": 5610,
+          "confidence": 0.7
+        },
+        {
+          "id": "e39",
+          "text": "Кредитором",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 5721,
+          "end": 5731,
+          "confidence": 0.7
+        },
+        {
+          "id": "e40",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 5751,
+          "end": 5759,
+          "confidence": 0.7
+        },
+        {
+          "id": "e41",
+          "text": "Кредитор",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 5846,
+          "end": 5854,
+          "confidence": 0.7
+        },
+        {
+          "id": "e42",
+          "text": "Заемщику",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 5865,
+          "end": 5873,
+          "confidence": 0.7
+        },
+        {
+          "id": "e43",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 6954,
+          "end": 6962,
+          "confidence": 0.7
+        },
+        {
+          "id": "e44",
+          "text": "Кредитора",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 7078,
+          "end": 7087,
+          "confidence": 0.7
+        },
+        {
+          "id": "e45",
+          "text": "Кредитором",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 7212,
+          "end": 7222,
+          "confidence": 0.7
+        },
+        {
+          "id": "e46",
+          "text": "Кредитором",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 7473,
+          "end": 7483,
+          "confidence": 0.7
+        },
+        {
+          "id": "e47",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 7487,
+          "end": 7495,
+          "confidence": 0.7
+        },
+        {
+          "id": "e48",
+          "text": "Кредитором",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 7696,
+          "end": 7706,
+          "confidence": 0.7
+        },
+        {
+          "id": "e49",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 7710,
+          "end": 7718,
+          "confidence": 0.7
+        },
+        {
+          "id": "e50",
+          "text": "Кредитором",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 7950,
+          "end": 7960,
+          "confidence": 0.7
+        },
+        {
+          "id": "e51",
+          "text": "Кредитором",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 8135,
+          "end": 8145,
+          "confidence": 0.7
+        },
+        {
+          "id": "e52",
+          "text": "ПОРЯДОК",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 8602,
+          "end": 8609,
+          "confidence": 0.7
+        },
+        {
+          "id": "e53",
+          "text": "Кредитору",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 8785,
+          "end": 8794,
+          "confidence": 0.7
+        },
+        {
+          "id": "e54",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 9649,
+          "end": 9657,
+          "confidence": 0.7
+        },
+        {
+          "id": "e55",
+          "text": "Кредитора",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 9704,
+          "end": 9713,
+          "confidence": 0.7
+        },
+        {
+          "id": "e56",
+          "text": "Заемщик",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 9715,
+          "end": 9722,
+          "confidence": 0.7
+        },
+        {
+          "id": "e57",
+          "text": "0406",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 10109,
+          "end": 10113,
+          "confidence": 0.7
+        },
+        {
+          "id": "e58",
+          "text": "договор",
+          "class": "LegalTerm",
+          "spacy_label": "FIN_LEGAL",
+          "start": 10229,
+          "end": 10236,
+          "confidence": 0.85
+        },
+        {
+          "id": "e59",
+          "text": "Заемщиком",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 10259,
+          "end": 10268,
+          "confidence": 0.7
+        },
+        {
+          "id": "e60",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 10362,
+          "end": 10370,
+          "confidence": 0.7
+        },
+        {
+          "id": "e61",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 10467,
+          "end": 10475,
+          "confidence": 0.7
+        },
+        {
+          "id": "e62",
+          "text": "Заемщику банковского\n(расчетного) счета",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 10694,
+          "end": 10733,
+          "confidence": 0.7
+        },
+        {
+          "id": "e63",
+          "text": "Кредитора",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 10799,
+          "end": 10808,
+          "confidence": 0.7
+        },
+        {
+          "id": "e64",
+          "text": "Кредитора",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 11059,
+          "end": 11068,
+          "confidence": 0.7
+        },
+        {
+          "id": "e65",
+          "text": "погашение",
+          "class": "Process",
+          "spacy_label": "FIN_PROCESS",
+          "start": 11246,
+          "end": 11255,
+          "confidence": 0.85
+        },
+        {
+          "id": "e66",
+          "text": "Кредитора",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 11589,
+          "end": 11598,
+          "confidence": 0.7
+        },
+        {
+          "id": "e67",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 11626,
+          "end": 11634,
+          "confidence": 0.7
+        },
+        {
+          "id": "e68",
+          "text": "Тарифам Кредитора",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 11743,
+          "end": 11760,
+          "confidence": 0.7
+        },
+        {
+          "id": "e69",
+          "text": "Российской Федерации",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 11860,
+          "end": 11880,
+          "confidence": 0.7
+        },
+        {
+          "id": "e70",
+          "text": "Кредитором",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 12262,
+          "end": 12272,
+          "confidence": 0.7
+        },
+        {
+          "id": "e71",
+          "text": "ПРАВА",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 12320,
+          "end": 12325,
+          "confidence": 0.7
+        },
+        {
+          "id": "e72",
+          "text": "ОБЯЗАННОСТИ",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 12328,
+          "end": 12339,
+          "confidence": 0.7
+        },
+        {
+          "id": "e73",
+          "text": "Кредитору",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 12389,
+          "end": 12398,
+          "confidence": 0.7
+        },
+        {
+          "id": "e74",
+          "text": "Кредитором",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 12662,
+          "end": 12672,
+          "confidence": 0.7
+        },
+        {
+          "id": "e75",
+          "text": "Банком",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 12979,
+          "end": 12985,
+          "confidence": 0.7
+        },
+        {
+          "id": "e76",
+          "text": "Кредитором",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 13165,
+          "end": 13175,
+          "confidence": 0.7
+        },
+        {
+          "id": "e77",
+          "text": "Заемщик",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 13223,
+          "end": 13230,
+          "confidence": 0.7
+        },
+        {
+          "id": "e78",
           "text": "РФ",
           "class": "Actor",
           "spacy_label": "LOC",
-          "start": 93,
-          "end": 95,
+          "start": 13307,
+          "end": 13309,
           "confidence": 0.7
         },
         {
-          "id": "e3",
-          "text": "ИИС",
-          "class": "FinancialProduct",
-          "spacy_label": "FIN_PRODUCT",
-          "start": 146,
-          "end": 149,
-          "confidence": 0.85
-        },
-        {
-          "id": "e4",
-          "text": "не менее трёх лет",
-          "class": "Condition",
-          "spacy_label": "FIN_CONDITION",
-          "start": 369,
-          "end": 386,
-          "confidence": 0.85
-        },
-        {
-          "id": "e5",
-          "text": "Брокер",
+          "id": "e79",
+          "text": "Кредитором -",
           "class": "Actor",
           "spacy_label": "PER",
-          "start": 484,
-          "end": 490,
+          "start": 13378,
+          "end": 13390,
           "confidence": 0.7
         },
         {
-          "id": "e6",
-          "text": "НДФЛ",
-          "class": "LegalTerm",
-          "spacy_label": "FIN_LEGAL",
-          "start": 531,
-          "end": 535,
-          "confidence": 0.85
-        }
-      ],
-      "relations": [
-        {
-          "id": "r1",
-          "subject": "e1",
-          "subject_text": "ИИС",
-          "relation": "issuedBy",
-          "object": "e2",
-          "object_text": "РФ",
-          "confidence": 0.65,
-          "evidence": "Индивидуальный инвестиционный счёт (ИИС) открывается физическим лицам — налоговым резидентам РФ."
-        }
-      ],
-      "stats": {
-        "entities": 6,
-        "relations": 1,
-        "by_class": {
-          "FinancialProduct": 2,
-          "Actor": 2,
-          "Condition": 1,
-          "LegalTerm": 1
-        }
-      }
-    },
-    {
-      "id": "doc_012",
-      "doc_type": "insurance",
-      "product": "каско",
-      "entities": [
-        {
-          "id": "e1",
-          "text": "КАСКО",
-          "class": "FinancialProduct",
-          "spacy_label": "FIN_PRODUCT",
-          "start": 6,
-          "end": 11,
-          "confidence": 0.85
+          "id": "e80",
+          "text": "РФ",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 13509,
+          "end": 13511,
+          "confidence": 0.7
         },
         {
-          "id": "e2",
-          "text": "Ущерб",
+          "id": "e81",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 13728,
+          "end": 13736,
+          "confidence": 0.7
+        },
+        {
+          "id": "e82",
+          "text": "Кредитора",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 13790,
+          "end": 13799,
+          "confidence": 0.7
+        },
+        {
+          "id": "e83",
+          "text": "Кредитору",
           "class": "Actor",
           "spacy_label": "ORG",
-          "start": 182,
-          "end": 187,
+          "start": 14008,
+          "end": 14017,
           "confidence": 0.7
         },
         {
-          "id": "e3",
-          "text": "страховщик",
+          "id": "e84",
+          "text": "Российской Федерации",
           "class": "Actor",
-          "spacy_label": "FIN_ACTOR",
-          "start": 262,
-          "end": 272,
-          "confidence": 0.85
-        }
-      ],
-      "relations": [],
-      "stats": {
-        "entities": 3,
-        "relations": 0,
-        "by_class": {
-          "FinancialProduct": 1,
-          "Actor": 2
-        }
-      }
-    },
-    {
-      "id": "doc_013",
-      "doc_type": "card",
-      "product": "кредитная_карта",
-      "entities": [
-        {
-          "id": "e1",
-          "text": "грейс-период",
-          "class": "ProductAttribute",
-          "spacy_label": "FIN_ATTRIBUTE",
-          "start": 96,
-          "end": 108,
-          "confidence": 0.85
+          "spacy_label": "LOC",
+          "start": 14062,
+          "end": 14082,
+          "confidence": 0.7
         },
         {
-          "id": "e2",
-          "text": "при полном погашении задолженности",
-          "class": "Condition",
-          "spacy_label": "FIN_CONDITION",
-          "start": 212,
-          "end": 246,
-          "confidence": 0.85
+          "id": "e85",
+          "text": "Кредитору",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 14143,
+          "end": 14152,
+          "confidence": 0.7
         },
         {
-          "id": "e3",
+          "id": "e86",
+          "text": "Кредитора",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 14321,
+          "end": 14330,
+          "confidence": 0.7
+        },
+        {
+          "id": "e87",
+          "text": "Кредита",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 14455,
+          "end": 14462,
+          "confidence": 0.7
+        },
+        {
+          "id": "e88",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 14641,
+          "end": 14649,
+          "confidence": 0.7
+        },
+        {
+          "id": "e89",
+          "text": "Кредитором",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 14695,
+          "end": 14705,
+          "confidence": 0.7
+        },
+        {
+          "id": "e90",
+          "text": "Заемщиком",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 14710,
+          "end": 14719,
+          "confidence": 0.7
+        },
+        {
+          "id": "e91",
+          "text": "Кредитора",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 14798,
+          "end": 14807,
+          "confidence": 0.7
+        },
+        {
+          "id": "e92",
+          "text": "Российской Федерации",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 14961,
+          "end": 14981,
+          "confidence": 0.7
+        },
+        {
+          "id": "e93",
+          "text": "Кредитором",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 15022,
+          "end": 15032,
+          "confidence": 0.7
+        },
+        {
+          "id": "e94",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 15102,
+          "end": 15110,
+          "confidence": 0.7
+        },
+        {
+          "id": "e95",
+          "text": "ПАО КБ «УБРиР»",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 15230,
+          "end": 15244,
+          "confidence": 0.7
+        },
+        {
+          "id": "e96",
+          "text": "Кредитора",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 15263,
+          "end": 15272,
+          "confidence": 0.7
+        },
+        {
+          "id": "e97",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 15777,
+          "end": 15785,
+          "confidence": 0.7
+        },
+        {
+          "id": "e98",
+          "text": "Заемщику",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 15923,
+          "end": 15931,
+          "confidence": 0.7
+        },
+        {
+          "id": "e99",
+          "text": "Центрального банка",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 16047,
+          "end": 16065,
+          "confidence": 0.7
+        },
+        {
+          "id": "e100",
+          "text": "Российской Федерации (ЦБ РФ)/ключевой ставки",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 16066,
+          "end": 16110,
+          "confidence": 0.7
+        },
+        {
+          "id": "e101",
+          "text": "Центрального банка",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 16111,
+          "end": 16129,
+          "confidence": 0.7
+        },
+        {
+          "id": "e102",
+          "text": "Российской Федерации (ЦБ РФ",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 16130,
+          "end": 16157,
+          "confidence": 0.7
+        },
+        {
+          "id": "e103",
+          "text": "ЦБ",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 16199,
+          "end": 16201,
+          "confidence": 0.7
+        },
+        {
+          "id": "e104",
+          "text": "РФ",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 16202,
+          "end": 16204,
+          "confidence": 0.7
+        },
+        {
+          "id": "e105",
+          "text": "ЦБ",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 16221,
+          "end": 16223,
+          "confidence": 0.7
+        },
+        {
+          "id": "e106",
+          "text": "РФ",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 16224,
+          "end": 16226,
+          "confidence": 0.7
+        },
+        {
+          "id": "e107",
           "text": "процентная ставка",
           "class": "ProductAttribute",
           "spacy_label": "FIN_ATTRIBUTE",
-          "start": 279,
-          "end": 296,
+          "start": 16334,
+          "end": 16351,
           "confidence": 0.85
         },
         {
-          "id": "e4",
-          "text": "ежемесячный платёж",
+          "id": "e108",
+          "text": "ЦБ",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 16489,
+          "end": 16491,
+          "confidence": 0.7
+        },
+        {
+          "id": "e109",
+          "text": "РФ",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 16492,
+          "end": 16494,
+          "confidence": 0.7
+        },
+        {
+          "id": "e110",
+          "text": "ЦБ",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 16511,
+          "end": 16513,
+          "confidence": 0.7
+        },
+        {
+          "id": "e111",
+          "text": "РФ",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 16514,
+          "end": 16516,
+          "confidence": 0.7
+        },
+        {
+          "id": "e112",
+          "text": "ЦБ",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 16827,
+          "end": 16829,
+          "confidence": 0.7
+        },
+        {
+          "id": "e113",
+          "text": "РФ",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 16830,
+          "end": 16832,
+          "confidence": 0.7
+        },
+        {
+          "id": "e114",
+          "text": "ЦБ",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 16849,
+          "end": 16851,
+          "confidence": 0.7
+        },
+        {
+          "id": "e115",
+          "text": "РФ",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 16852,
+          "end": 16854,
+          "confidence": 0.7
+        },
+        {
+          "id": "e116",
+          "text": "процентная ставка",
           "class": "ProductAttribute",
           "spacy_label": "FIN_ATTRIBUTE",
-          "start": 335,
-          "end": 353,
+          "start": 16937,
+          "end": 16954,
           "confidence": 0.85
         },
         {
-          "id": "e5",
-          "text": "снятие наличных",
+          "id": "e117",
+          "text": "Центрального банка",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 17461,
+          "end": 17479,
+          "confidence": 0.7
+        },
+        {
+          "id": "e118",
+          "text": "Российской Федерации",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 17480,
+          "end": 17500,
+          "confidence": 0.7
+        },
+        {
+          "id": "e119",
+          "text": "Центрального банка",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 17517,
+          "end": 17535,
+          "confidence": 0.7
+        },
+        {
+          "id": "e120",
+          "text": "Российской Федерации",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 17536,
+          "end": 17556,
+          "confidence": 0.7
+        },
+        {
+          "id": "e121",
+          "text": "Кредитора",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 17632,
+          "end": 17641,
+          "confidence": 0.7
+        },
+        {
+          "id": "e122",
+          "text": "Кредитора",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 17725,
+          "end": 17734,
+          "confidence": 0.7
+        },
+        {
+          "id": "e123",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 17784,
+          "end": 17792,
+          "confidence": 0.7
+        },
+        {
+          "id": "e124",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 18193,
+          "end": 18201,
+          "confidence": 0.7
+        },
+        {
+          "id": "e125",
+          "text": "Кредитора",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 18355,
+          "end": 18364,
+          "confidence": 0.7
+        },
+        {
+          "id": "e126",
+          "text": "начисление процентов",
           "class": "Process",
           "spacy_label": "FIN_PROCESS",
-          "start": 410,
-          "end": 425,
-          "confidence": 0.85
-        }
-      ],
-      "relations": [],
-      "stats": {
-        "entities": 5,
-        "relations": 0,
-        "by_class": {
-          "ProductAttribute": 3,
-          "Condition": 1,
-          "Process": 1
-        }
-      }
-    },
-    {
-      "id": "doc_015",
-      "doc_type": "regulatory",
-      "product": "общий",
-      "entities": [
-        {
-          "id": "e1",
-          "text": "Центральный банк Российской Федерации",
-          "class": "Actor",
-          "spacy_label": "FIN_ACTOR",
-          "start": 446,
-          "end": 483,
+          "start": 18365,
+          "end": 18385,
           "confidence": 0.85
         },
         {
-          "id": "e2",
-          "text": "ПСК",
-          "class": "ProductAttribute",
-          "spacy_label": "FIN_ATTRIBUTE",
-          "start": 518,
-          "end": 521,
+          "id": "e127",
+          "text": "Кредитора",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 18660,
+          "end": 18669,
+          "confidence": 0.7
+        },
+        {
+          "id": "e128",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 18689,
+          "end": 18697,
+          "confidence": 0.7
+        },
+        {
+          "id": "e129",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 18808,
+          "end": 18816,
+          "confidence": 0.7
+        },
+        {
+          "id": "e130",
+          "text": "начисление процентов",
+          "class": "Process",
+          "spacy_label": "FIN_PROCESS",
+          "start": 18817,
+          "end": 18837,
           "confidence": 0.85
+        },
+        {
+          "id": "e131",
+          "text": "Заемщик",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 18947,
+          "end": 18954,
+          "confidence": 0.7
+        },
+        {
+          "id": "e132",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 19543,
+          "end": 19551,
+          "confidence": 0.7
+        },
+        {
+          "id": "e133",
+          "text": "Заемщиком",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 19770,
+          "end": 19779,
+          "confidence": 0.7
+        },
+        {
+          "id": "e134",
+          "text": "Поручителем",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 19781,
+          "end": 19792,
+          "confidence": 0.7
+        },
+        {
+          "id": "e135",
+          "text": "Заемщиком недостоверной информации",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 19885,
+          "end": 19919,
+          "confidence": 0.7
+        },
+        {
+          "id": "e136",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 19947,
+          "end": 19955,
+          "confidence": 0.7
+        },
+        {
+          "id": "e137",
+          "text": "Кредитора",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 20006,
+          "end": 20015,
+          "confidence": 0.7
+        },
+        {
+          "id": "e138",
+          "text": "Кредитором",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 20207,
+          "end": 20217,
+          "confidence": 0.7
+        },
+        {
+          "id": "e139",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 20235,
+          "end": 20243,
+          "confidence": 0.7
+        },
+        {
+          "id": "e140",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 20280,
+          "end": 20288,
+          "confidence": 0.7
+        },
+        {
+          "id": "e141",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 20309,
+          "end": 20317,
+          "confidence": 0.7
+        },
+        {
+          "id": "e142",
+          "text": "Заемщик",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 20365,
+          "end": 20372,
+          "confidence": 0.7
+        },
+        {
+          "id": "e143",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 20512,
+          "end": 20520,
+          "confidence": 0.7
+        },
+        {
+          "id": "e144",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 20680,
+          "end": 20688,
+          "confidence": 0.7
+        },
+        {
+          "id": "e145",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 20914,
+          "end": 20922,
+          "confidence": 0.7
+        },
+        {
+          "id": "e146",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 20976,
+          "end": 20984,
+          "confidence": 0.7
+        },
+        {
+          "id": "e147",
+          "text": "расчетном(ых",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 21277,
+          "end": 21289,
+          "confidence": 0.7
+        },
+        {
+          "id": "e148",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 21301,
+          "end": 21309,
+          "confidence": 0.7
+        },
+        {
+          "id": "e149",
+          "text": "ПАО КБ «УБРиР»",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 21312,
+          "end": 21326,
+          "confidence": 0.7
+        },
+        {
+          "id": "e150",
+          "text": "Кредитора",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 21594,
+          "end": 21603,
+          "confidence": 0.7
+        },
+        {
+          "id": "e151",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 21681,
+          "end": 21689,
+          "confidence": 0.7
+        },
+        {
+          "id": "e152",
+          "text": "Банка России",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 21778,
+          "end": 21790,
+          "confidence": 0.7
+        },
+        {
+          "id": "e153",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 21970,
+          "end": 21978,
+          "confidence": 0.7
+        },
+        {
+          "id": "e154",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 22180,
+          "end": 22188,
+          "confidence": 0.7
+        },
+        {
+          "id": "e155",
+          "text": "Заемщик",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 22244,
+          "end": 22251,
+          "confidence": 0.7
+        },
+        {
+          "id": "e156",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 22527,
+          "end": 22535,
+          "confidence": 0.7
+        },
+        {
+          "id": "e157",
+          "text": "лимита овердрафта",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 22650,
+          "end": 22667,
+          "confidence": 0.7
+        },
+        {
+          "id": "e158",
+          "text": "Кредитору",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 22789,
+          "end": 22798,
+          "confidence": 0.7
+        },
+        {
+          "id": "e159",
+          "text": "Кредитору",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 22996,
+          "end": 23005,
+          "confidence": 0.7
+        },
+        {
+          "id": "e160",
+          "text": "Кредитору",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 23121,
+          "end": 23130,
+          "confidence": 0.7
+        },
+        {
+          "id": "e161",
+          "text": "Кредитором",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 23253,
+          "end": 23263,
+          "confidence": 0.7
+        },
+        {
+          "id": "e162",
+          "text": "Кредитора",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 23380,
+          "end": 23389,
+          "confidence": 0.7
+        },
+        {
+          "id": "e163",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 23597,
+          "end": 23605,
+          "confidence": 0.7
+        },
+        {
+          "id": "e164",
+          "text": "погашение",
+          "class": "Process",
+          "spacy_label": "FIN_PROCESS",
+          "start": 23652,
+          "end": 23661,
+          "confidence": 0.85
+        },
+        {
+          "id": "e165",
+          "text": "Кредитором",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 23714,
+          "end": 23724,
+          "confidence": 0.7
+        },
+        {
+          "id": "e166",
+          "text": "Кредитора",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 23748,
+          "end": 23757,
+          "confidence": 0.7
+        },
+        {
+          "id": "e167",
+          "text": "Тарифам",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 23767,
+          "end": 23774,
+          "confidence": 0.7
+        },
+        {
+          "id": "e168",
+          "text": "Кредитором",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 23955,
+          "end": 23965,
+          "confidence": 0.7
+        },
+        {
+          "id": "e169",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 24015,
+          "end": 24023,
+          "confidence": 0.7
+        },
+        {
+          "id": "e170",
+          "text": "лимита овердрафта",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 24187,
+          "end": 24204,
+          "confidence": 0.7
+        },
+        {
+          "id": "e171",
+          "text": "Кредитор",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 24325,
+          "end": 24333,
+          "confidence": 0.7
+        },
+        {
+          "id": "e172",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 24379,
+          "end": 24387,
+          "confidence": 0.7
+        },
+        {
+          "id": "e173",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 24783,
+          "end": 24791,
+          "confidence": 0.7
+        },
+        {
+          "id": "e174",
+          "text": "Кредитор",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 24812,
+          "end": 24820,
+          "confidence": 0.7
+        },
+        {
+          "id": "e175",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 24830,
+          "end": 24838,
+          "confidence": 0.7
+        },
+        {
+          "id": "e176",
+          "text": "Кредитора",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 25142,
+          "end": 25151,
+          "confidence": 0.7
+        },
+        {
+          "id": "e177",
+          "text": "Кредитора",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 25281,
+          "end": 25290,
+          "confidence": 0.7
+        },
+        {
+          "id": "e178",
+          "text": "Банка России",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 25334,
+          "end": 25346,
+          "confidence": 0.7
+        },
+        {
+          "id": "e179",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 25510,
+          "end": 25518,
+          "confidence": 0.7
+        },
+        {
+          "id": "e180",
+          "text": "Кредитора",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 25607,
+          "end": 25616,
+          "confidence": 0.7
+        },
+        {
+          "id": "e181",
+          "text": "Банка России",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 25660,
+          "end": 25672,
+          "confidence": 0.7
+        },
+        {
+          "id": "e182",
+          "text": "Российской Федерации",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 26250,
+          "end": 26270,
+          "confidence": 0.7
+        },
+        {
+          "id": "e183",
+          "text": "Заемщик",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 26408,
+          "end": 26415,
+          "confidence": 0.7
+        },
+        {
+          "id": "e184",
+          "text": "Кредитору",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 26427,
+          "end": 26436,
+          "confidence": 0.7
+        },
+        {
+          "id": "e185",
+          "text": "Заемщик",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 26918,
+          "end": 26925,
+          "confidence": 0.7
+        },
+        {
+          "id": "e186",
+          "text": "Кредитору",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 26937,
+          "end": 26946,
+          "confidence": 0.7
+        },
+        {
+          "id": "e187",
+          "text": "Заемщик",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 27325,
+          "end": 27332,
+          "confidence": 0.7
+        },
+        {
+          "id": "e188",
+          "text": "Кредитору",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 27347,
+          "end": 27356,
+          "confidence": 0.7
+        },
+        {
+          "id": "e189",
+          "text": "Условий",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 27598,
+          "end": 27605,
+          "confidence": 0.7
+        },
+        {
+          "id": "e190",
+          "text": "Заемщик",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 27629,
+          "end": 27636,
+          "confidence": 0.7
+        },
+        {
+          "id": "e191",
+          "text": "Кредитору",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 27648,
+          "end": 27657,
+          "confidence": 0.7
+        },
+        {
+          "id": "e192",
+          "text": "Кредитора",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 28025,
+          "end": 28034,
+          "confidence": 0.7
+        },
+        {
+          "id": "e193",
+          "text": "Заемщик",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 28087,
+          "end": 28094,
+          "confidence": 0.7
+        },
+        {
+          "id": "e194",
+          "text": "Кредитору",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 28106,
+          "end": 28115,
+          "confidence": 0.7
+        },
+        {
+          "id": "e195",
+          "text": "Кредитора",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 28323,
+          "end": 28332,
+          "confidence": 0.7
+        },
+        {
+          "id": "e196",
+          "text": "Кредитору",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 28420,
+          "end": 28429,
+          "confidence": 0.7
+        },
+        {
+          "id": "e197",
+          "text": "Кредитора",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 28543,
+          "end": 28552,
+          "confidence": 0.7
+        },
+        {
+          "id": "e198",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 28580,
+          "end": 28588,
+          "confidence": 0.7
+        },
+        {
+          "id": "e199",
+          "text": "Кредитора",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 28687,
+          "end": 28696,
+          "confidence": 0.7
+        },
+        {
+          "id": "e200",
+          "text": "Кредитора",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 28940,
+          "end": 28949,
+          "confidence": 0.7
+        },
+        {
+          "id": "e201",
+          "text": "договор",
+          "class": "LegalTerm",
+          "spacy_label": "FIN_LEGAL",
+          "start": 28986,
+          "end": 28993,
+          "confidence": 0.85
+        },
+        {
+          "id": "e202",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 29378,
+          "end": 29386,
+          "confidence": 0.7
+        },
+        {
+          "id": "e203",
+          "text": "Кредитор",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 29483,
+          "end": 29491,
+          "confidence": 0.7
+        },
+        {
+          "id": "e204",
+          "text": "Заемщиком Кредитору",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 29605,
+          "end": 29624,
+          "confidence": 0.7
+        },
+        {
+          "id": "e205",
+          "text": "Кредитором Заемщику",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 30000,
+          "end": 30019,
+          "confidence": 0.7
+        },
+        {
+          "id": "e206",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 30377,
+          "end": 30385,
+          "confidence": 0.7
+        },
+        {
+          "id": "e207",
+          "text": "Интернет-банк",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 30387,
+          "end": 30400,
+          "confidence": 0.7
+        },
+        {
+          "id": "e208",
+          "text": "Российской Федерации",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 30716,
+          "end": 30736,
+          "confidence": 0.7
+        },
+        {
+          "id": "e209",
+          "text": "Заемщик",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 30822,
+          "end": 30829,
+          "confidence": 0.7
+        },
+        {
+          "id": "e210",
+          "text": "Федерального закона",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 30926,
+          "end": 30945,
+          "confidence": 0.7
+        },
+        {
+          "id": "e211",
+          "text": "Российской Федерации",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 30946,
+          "end": 30966,
+          "confidence": 0.7
+        },
+        {
+          "id": "e212",
+          "text": "Заемщика",
+          "class": "Actor",
+          "spacy_label": "PER",
+          "start": 31169,
+          "end": 31177,
+          "confidence": 0.7
+        },
+        {
+          "id": "e213",
+          "text": "Арбитражном суде",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 31292,
+          "end": 31308,
+          "confidence": 0.7
+        },
+        {
+          "id": "e214",
+          "text": "Свердловской области",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 31309,
+          "end": 31329,
+          "confidence": 0.7
+        },
+        {
+          "id": "e215",
+          "text": "Российской Федерации",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 31385,
+          "end": 31405,
+          "confidence": 0.7
+        },
+        {
+          "id": "e216",
+          "text": "Российской Федерации",
+          "class": "Actor",
+          "spacy_label": "LOC",
+          "start": 31527,
+          "end": 31547,
+          "confidence": 0.7
+        },
+        {
+          "id": "e217",
+          "text": "БАНКОМ",
+          "class": "Actor",
+          "spacy_label": "ORG",
+          "start": 31766,
+          "end": 31772,
+          "confidence": 0.7
         }
       ],
       "relations": [
         {
           "id": "r1",
-          "subject": "e1",
-          "subject_text": "Центральный банк Российской Федерации",
-          "relation": "regulatedBy",
-          "object": "e2",
-          "object_text": "ПСК",
+          "subject": "e4",
+          "subject_text": "ПАО КБ «УБРиР»",
+          "relation": "issuedBy",
+          "object": "e5",
+          "object_text": "Заемщику",
           "confidence": 0.65,
-          "evidence": "Центральный банк Российской Федерации устанавливает предельные значения ПСК для каждой категории потребительских кредитов."
-        }
-      ],
-      "stats": {
-        "entities": 2,
-        "relations": 1,
-        "by_class": {
-          "Actor": 1,
-          "ProductAttribute": 1
-        }
-      }
-    },
-    {
-      "id": "doc_016",
-      "doc_type": "regulatory",
-      "product": "общий",
-      "entities": [
+          "evidence": "Кредитор осуществляет на условиях и в порядке, установленном настоящим договором, платежи с расчетного счета\nЗаемщика №___________________, открытого в ПАО КБ «УБРиР», при отсутствии или недостаточности на нем денежных\nсредств (предоставляет Заемщику кредит в форме овердрафта)."
+        },
         {
-          "id": "e1",
-          "text": "Банк России",
-          "class": "Actor",
-          "spacy_label": "FIN_ACTOR",
-          "start": 379,
-          "end": 390,
-          "confidence": 0.85
+          "id": "r2",
+          "subject": "e41",
+          "subject_text": "Кредитор",
+          "relation": "issuedBy",
+          "object": "e42",
+          "object_text": "Заемщику",
+          "confidence": 0.65,
+          "evidence": "Для отражения задолженности по кредиту Кредитор открывает Заемщику ссудный счет."
+        },
+        {
+          "id": "r3",
+          "subject": "e73",
+          "subject_text": "Кредитору",
+          "relation": "hasValue",
+          "object": "e74",
+          "object_text": "Кредитором",
+          "confidence": 0.65,
+          "evidence": "Предоставлять Кредитору:\n финансовую отчетность –\nЗаемщик, применяющий обычную систему налогообложения:\nпо окончании 1-3 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма №\n2), а также информацию о финансовом положении по форме, установленной Кредитором – не позднее 10 числа второго месяца\nквартала, следующего за отчетным кварталом – ежеквартально;\nпо окончании 4 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма № 2)\nс отметкой налогового органа, а также информацию о финансовом положении по форме, установленной Банком – не позднее\n10 апреля года, следующего за отчетным – ежегодно;\nЗаемщик, применяющий другие системы налогообложения:\nбаланс и справку о доходах и расходах по форме, установленной Кредитором, декларацию с отметкой налогового\nоргана (если Заемщик подает декларацию за квартал в соответствии с действующим законодательством РФ), а также\nинформацию о финансовом положении по форме, установленной Кредитором - не позднее 10 числа второго месяца квартала,\nследующего за отчетным кварталом – ежеквартально (если законодательством РФ предусмотрено предоставление в\nналоговые органы декларации за год - годовая отчетность предоставляется не позднее 10 апреля года, следующего за\nотчетным)."
+        },
+        {
+          "id": "r4",
+          "subject": "e73",
+          "subject_text": "Кредитору",
+          "relation": "hasValue",
+          "object": "e75",
+          "object_text": "Банком",
+          "confidence": 0.65,
+          "evidence": "Предоставлять Кредитору:\n финансовую отчетность –\nЗаемщик, применяющий обычную систему налогообложения:\nпо окончании 1-3 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма №\n2), а также информацию о финансовом положении по форме, установленной Кредитором – не позднее 10 числа второго месяца\nквартала, следующего за отчетным кварталом – ежеквартально;\nпо окончании 4 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма № 2)\nс отметкой налогового органа, а также информацию о финансовом положении по форме, установленной Банком – не позднее\n10 апреля года, следующего за отчетным – ежегодно;\nЗаемщик, применяющий другие системы налогообложения:\nбаланс и справку о доходах и расходах по форме, установленной Кредитором, декларацию с отметкой налогового\nоргана (если Заемщик подает декларацию за квартал в соответствии с действующим законодательством РФ), а также\nинформацию о финансовом положении по форме, установленной Кредитором - не позднее 10 числа второго месяца квартала,\nследующего за отчетным кварталом – ежеквартально (если законодательством РФ предусмотрено предоставление в\nналоговые органы декларации за год - годовая отчетность предоставляется не позднее 10 апреля года, следующего за\nотчетным)."
+        },
+        {
+          "id": "r5",
+          "subject": "e73",
+          "subject_text": "Кредитору",
+          "relation": "hasValue",
+          "object": "e76",
+          "object_text": "Кредитором",
+          "confidence": 0.65,
+          "evidence": "Предоставлять Кредитору:\n финансовую отчетность –\nЗаемщик, применяющий обычную систему налогообложения:\nпо окончании 1-3 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма №\n2), а также информацию о финансовом положении по форме, установленной Кредитором – не позднее 10 числа второго месяца\nквартала, следующего за отчетным кварталом – ежеквартально;\nпо окончании 4 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма № 2)\nс отметкой налогового органа, а также информацию о финансовом положении по форме, установленной Банком – не позднее\n10 апреля года, следующего за отчетным – ежегодно;\nЗаемщик, применяющий другие системы налогообложения:\nбаланс и справку о доходах и расходах по форме, установленной Кредитором, декларацию с отметкой налогового\nоргана (если Заемщик подает декларацию за квартал в соответствии с действующим законодательством РФ), а также\nинформацию о финансовом положении по форме, установленной Кредитором - не позднее 10 числа второго месяца квартала,\nследующего за отчетным кварталом – ежеквартально (если законодательством РФ предусмотрено предоставление в\nналоговые органы декларации за год - годовая отчетность предоставляется не позднее 10 апреля года, следующего за\nотчетным)."
+        },
+        {
+          "id": "r6",
+          "subject": "e73",
+          "subject_text": "Кредитору",
+          "relation": "hasValue",
+          "object": "e77",
+          "object_text": "Заемщик",
+          "confidence": 0.65,
+          "evidence": "Предоставлять Кредитору:\n финансовую отчетность –\nЗаемщик, применяющий обычную систему налогообложения:\nпо окончании 1-3 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма №\n2), а также информацию о финансовом положении по форме, установленной Кредитором – не позднее 10 числа второго месяца\nквартала, следующего за отчетным кварталом – ежеквартально;\nпо окончании 4 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма № 2)\nс отметкой налогового органа, а также информацию о финансовом положении по форме, установленной Банком – не позднее\n10 апреля года, следующего за отчетным – ежегодно;\nЗаемщик, применяющий другие системы налогообложения:\nбаланс и справку о доходах и расходах по форме, установленной Кредитором, декларацию с отметкой налогового\nоргана (если Заемщик подает декларацию за квартал в соответствии с действующим законодательством РФ), а также\nинформацию о финансовом положении по форме, установленной Кредитором - не позднее 10 числа второго месяца квартала,\nследующего за отчетным кварталом – ежеквартально (если законодательством РФ предусмотрено предоставление в\nналоговые органы декларации за год - годовая отчетность предоставляется не позднее 10 апреля года, следующего за\nотчетным)."
+        },
+        {
+          "id": "r7",
+          "subject": "e73",
+          "subject_text": "Кредитору",
+          "relation": "hasValue",
+          "object": "e78",
+          "object_text": "РФ",
+          "confidence": 0.65,
+          "evidence": "Предоставлять Кредитору:\n финансовую отчетность –\nЗаемщик, применяющий обычную систему налогообложения:\nпо окончании 1-3 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма №\n2), а также информацию о финансовом положении по форме, установленной Кредитором – не позднее 10 числа второго месяца\nквартала, следующего за отчетным кварталом – ежеквартально;\nпо окончании 4 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма № 2)\nс отметкой налогового органа, а также информацию о финансовом положении по форме, установленной Банком – не позднее\n10 апреля года, следующего за отчетным – ежегодно;\nЗаемщик, применяющий другие системы налогообложения:\nбаланс и справку о доходах и расходах по форме, установленной Кредитором, декларацию с отметкой налогового\nоргана (если Заемщик подает декларацию за квартал в соответствии с действующим законодательством РФ), а также\nинформацию о финансовом положении по форме, установленной Кредитором - не позднее 10 числа второго месяца квартала,\nследующего за отчетным кварталом – ежеквартально (если законодательством РФ предусмотрено предоставление в\nналоговые органы декларации за год - годовая отчетность предоставляется не позднее 10 апреля года, следующего за\nотчетным)."
+        },
+        {
+          "id": "r8",
+          "subject": "e73",
+          "subject_text": "Кредитору",
+          "relation": "hasValue",
+          "object": "e79",
+          "object_text": "Кредитором -",
+          "confidence": 0.65,
+          "evidence": "Предоставлять Кредитору:\n финансовую отчетность –\nЗаемщик, применяющий обычную систему налогообложения:\nпо окончании 1-3 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма №\n2), а также информацию о финансовом положении по форме, установленной Кредитором – не позднее 10 числа второго месяца\nквартала, следующего за отчетным кварталом – ежеквартально;\nпо окончании 4 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма № 2)\nс отметкой налогового органа, а также информацию о финансовом положении по форме, установленной Банком – не позднее\n10 апреля года, следующего за отчетным – ежегодно;\nЗаемщик, применяющий другие системы налогообложения:\nбаланс и справку о доходах и расходах по форме, установленной Кредитором, декларацию с отметкой налогового\nоргана (если Заемщик подает декларацию за квартал в соответствии с действующим законодательством РФ), а также\nинформацию о финансовом положении по форме, установленной Кредитором - не позднее 10 числа второго месяца квартала,\nследующего за отчетным кварталом – ежеквартально (если законодательством РФ предусмотрено предоставление в\nналоговые органы декларации за год - годовая отчетность предоставляется не позднее 10 апреля года, следующего за\nотчетным)."
+        },
+        {
+          "id": "r9",
+          "subject": "e73",
+          "subject_text": "Кредитору",
+          "relation": "hasValue",
+          "object": "e80",
+          "object_text": "РФ",
+          "confidence": 0.65,
+          "evidence": "Предоставлять Кредитору:\n финансовую отчетность –\nЗаемщик, применяющий обычную систему налогообложения:\nпо окончании 1-3 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма №\n2), а также информацию о финансовом положении по форме, установленной Кредитором – не позднее 10 числа второго месяца\nквартала, следующего за отчетным кварталом – ежеквартально;\nпо окончании 4 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма № 2)\nс отметкой налогового органа, а также информацию о финансовом положении по форме, установленной Банком – не позднее\n10 апреля года, следующего за отчетным – ежегодно;\nЗаемщик, применяющий другие системы налогообложения:\nбаланс и справку о доходах и расходах по форме, установленной Кредитором, декларацию с отметкой налогового\nоргана (если Заемщик подает декларацию за квартал в соответствии с действующим законодательством РФ), а также\nинформацию о финансовом положении по форме, установленной Кредитором - не позднее 10 числа второго месяца квартала,\nследующего за отчетным кварталом – ежеквартально (если законодательством РФ предусмотрено предоставление в\nналоговые органы декларации за год - годовая отчетность предоставляется не позднее 10 апреля года, следующего за\nотчетным)."
+        },
+        {
+          "id": "r10",
+          "subject": "e74",
+          "subject_text": "Кредитором",
+          "relation": "hasValue",
+          "object": "e75",
+          "object_text": "Банком",
+          "confidence": 0.65,
+          "evidence": "Предоставлять Кредитору:\n финансовую отчетность –\nЗаемщик, применяющий обычную систему налогообложения:\nпо окончании 1-3 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма №\n2), а также информацию о финансовом положении по форме, установленной Кредитором – не позднее 10 числа второго месяца\nквартала, следующего за отчетным кварталом – ежеквартально;\nпо окончании 4 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма № 2)\nс отметкой налогового органа, а также информацию о финансовом положении по форме, установленной Банком – не позднее\n10 апреля года, следующего за отчетным – ежегодно;\nЗаемщик, применяющий другие системы налогообложения:\nбаланс и справку о доходах и расходах по форме, установленной Кредитором, декларацию с отметкой налогового\nоргана (если Заемщик подает декларацию за квартал в соответствии с действующим законодательством РФ), а также\nинформацию о финансовом положении по форме, установленной Кредитором - не позднее 10 числа второго месяца квартала,\nследующего за отчетным кварталом – ежеквартально (если законодательством РФ предусмотрено предоставление в\nналоговые органы декларации за год - годовая отчетность предоставляется не позднее 10 апреля года, следующего за\nотчетным)."
+        },
+        {
+          "id": "r11",
+          "subject": "e74",
+          "subject_text": "Кредитором",
+          "relation": "hasValue",
+          "object": "e76",
+          "object_text": "Кредитором",
+          "confidence": 0.65,
+          "evidence": "Предоставлять Кредитору:\n финансовую отчетность –\nЗаемщик, применяющий обычную систему налогообложения:\nпо окончании 1-3 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма №\n2), а также информацию о финансовом положении по форме, установленной Кредитором – не позднее 10 числа второго месяца\nквартала, следующего за отчетным кварталом – ежеквартально;\nпо окончании 4 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма № 2)\nс отметкой налогового органа, а также информацию о финансовом положении по форме, установленной Банком – не позднее\n10 апреля года, следующего за отчетным – ежегодно;\nЗаемщик, применяющий другие системы налогообложения:\nбаланс и справку о доходах и расходах по форме, установленной Кредитором, декларацию с отметкой налогового\nоргана (если Заемщик подает декларацию за квартал в соответствии с действующим законодательством РФ), а также\nинформацию о финансовом положении по форме, установленной Кредитором - не позднее 10 числа второго месяца квартала,\nследующего за отчетным кварталом – ежеквартально (если законодательством РФ предусмотрено предоставление в\nналоговые органы декларации за год - годовая отчетность предоставляется не позднее 10 апреля года, следующего за\nотчетным)."
+        },
+        {
+          "id": "r12",
+          "subject": "e74",
+          "subject_text": "Кредитором",
+          "relation": "hasValue",
+          "object": "e77",
+          "object_text": "Заемщик",
+          "confidence": 0.65,
+          "evidence": "Предоставлять Кредитору:\n финансовую отчетность –\nЗаемщик, применяющий обычную систему налогообложения:\nпо окончании 1-3 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма №\n2), а также информацию о финансовом положении по форме, установленной Кредитором – не позднее 10 числа второго месяца\nквартала, следующего за отчетным кварталом – ежеквартально;\nпо окончании 4 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма № 2)\nс отметкой налогового органа, а также информацию о финансовом положении по форме, установленной Банком – не позднее\n10 апреля года, следующего за отчетным – ежегодно;\nЗаемщик, применяющий другие системы налогообложения:\nбаланс и справку о доходах и расходах по форме, установленной Кредитором, декларацию с отметкой налогового\nоргана (если Заемщик подает декларацию за квартал в соответствии с действующим законодательством РФ), а также\nинформацию о финансовом положении по форме, установленной Кредитором - не позднее 10 числа второго месяца квартала,\nследующего за отчетным кварталом – ежеквартально (если законодательством РФ предусмотрено предоставление в\nналоговые органы декларации за год - годовая отчетность предоставляется не позднее 10 апреля года, следующего за\nотчетным)."
+        },
+        {
+          "id": "r13",
+          "subject": "e74",
+          "subject_text": "Кредитором",
+          "relation": "hasValue",
+          "object": "e78",
+          "object_text": "РФ",
+          "confidence": 0.65,
+          "evidence": "Предоставлять Кредитору:\n финансовую отчетность –\nЗаемщик, применяющий обычную систему налогообложения:\nпо окончании 1-3 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма №\n2), а также информацию о финансовом положении по форме, установленной Кредитором – не позднее 10 числа второго месяца\nквартала, следующего за отчетным кварталом – ежеквартально;\nпо окончании 4 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма № 2)\nс отметкой налогового органа, а также информацию о финансовом положении по форме, установленной Банком – не позднее\n10 апреля года, следующего за отчетным – ежегодно;\nЗаемщик, применяющий другие системы налогообложения:\nбаланс и справку о доходах и расходах по форме, установленной Кредитором, декларацию с отметкой налогового\nоргана (если Заемщик подает декларацию за квартал в соответствии с действующим законодательством РФ), а также\nинформацию о финансовом положении по форме, установленной Кредитором - не позднее 10 числа второго месяца квартала,\nследующего за отчетным кварталом – ежеквартально (если законодательством РФ предусмотрено предоставление в\nналоговые органы декларации за год - годовая отчетность предоставляется не позднее 10 апреля года, следующего за\nотчетным)."
+        },
+        {
+          "id": "r14",
+          "subject": "e74",
+          "subject_text": "Кредитором",
+          "relation": "hasValue",
+          "object": "e79",
+          "object_text": "Кредитором -",
+          "confidence": 0.65,
+          "evidence": "Предоставлять Кредитору:\n финансовую отчетность –\nЗаемщик, применяющий обычную систему налогообложения:\nпо окончании 1-3 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма №\n2), а также информацию о финансовом положении по форме, установленной Кредитором – не позднее 10 числа второго месяца\nквартала, следующего за отчетным кварталом – ежеквартально;\nпо окончании 4 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма № 2)\nс отметкой налогового органа, а также информацию о финансовом положении по форме, установленной Банком – не позднее\n10 апреля года, следующего за отчетным – ежегодно;\nЗаемщик, применяющий другие системы налогообложения:\nбаланс и справку о доходах и расходах по форме, установленной Кредитором, декларацию с отметкой налогового\nоргана (если Заемщик подает декларацию за квартал в соответствии с действующим законодательством РФ), а также\nинформацию о финансовом положении по форме, установленной Кредитором - не позднее 10 числа второго месяца квартала,\nследующего за отчетным кварталом – ежеквартально (если законодательством РФ предусмотрено предоставление в\nналоговые органы декларации за год - годовая отчетность предоставляется не позднее 10 апреля года, следующего за\nотчетным)."
+        },
+        {
+          "id": "r15",
+          "subject": "e74",
+          "subject_text": "Кредитором",
+          "relation": "hasValue",
+          "object": "e80",
+          "object_text": "РФ",
+          "confidence": 0.65,
+          "evidence": "Предоставлять Кредитору:\n финансовую отчетность –\nЗаемщик, применяющий обычную систему налогообложения:\nпо окончании 1-3 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма №\n2), а также информацию о финансовом положении по форме, установленной Кредитором – не позднее 10 числа второго месяца\nквартала, следующего за отчетным кварталом – ежеквартально;\nпо окончании 4 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма № 2)\nс отметкой налогового органа, а также информацию о финансовом положении по форме, установленной Банком – не позднее\n10 апреля года, следующего за отчетным – ежегодно;\nЗаемщик, применяющий другие системы налогообложения:\nбаланс и справку о доходах и расходах по форме, установленной Кредитором, декларацию с отметкой налогового\nоргана (если Заемщик подает декларацию за квартал в соответствии с действующим законодательством РФ), а также\nинформацию о финансовом положении по форме, установленной Кредитором - не позднее 10 числа второго месяца квартала,\nследующего за отчетным кварталом – ежеквартально (если законодательством РФ предусмотрено предоставление в\nналоговые органы декларации за год - годовая отчетность предоставляется не позднее 10 апреля года, следующего за\nотчетным)."
+        },
+        {
+          "id": "r16",
+          "subject": "e75",
+          "subject_text": "Банком",
+          "relation": "hasValue",
+          "object": "e76",
+          "object_text": "Кредитором",
+          "confidence": 0.65,
+          "evidence": "Предоставлять Кредитору:\n финансовую отчетность –\nЗаемщик, применяющий обычную систему налогообложения:\nпо окончании 1-3 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма №\n2), а также информацию о финансовом положении по форме, установленной Кредитором – не позднее 10 числа второго месяца\nквартала, следующего за отчетным кварталом – ежеквартально;\nпо окончании 4 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма № 2)\nс отметкой налогового органа, а также информацию о финансовом положении по форме, установленной Банком – не позднее\n10 апреля года, следующего за отчетным – ежегодно;\nЗаемщик, применяющий другие системы налогообложения:\nбаланс и справку о доходах и расходах по форме, установленной Кредитором, декларацию с отметкой налогового\nоргана (если Заемщик подает декларацию за квартал в соответствии с действующим законодательством РФ), а также\nинформацию о финансовом положении по форме, установленной Кредитором - не позднее 10 числа второго месяца квартала,\nследующего за отчетным кварталом – ежеквартально (если законодательством РФ предусмотрено предоставление в\nналоговые органы декларации за год - годовая отчетность предоставляется не позднее 10 апреля года, следующего за\nотчетным)."
+        },
+        {
+          "id": "r17",
+          "subject": "e75",
+          "subject_text": "Банком",
+          "relation": "hasValue",
+          "object": "e77",
+          "object_text": "Заемщик",
+          "confidence": 0.65,
+          "evidence": "Предоставлять Кредитору:\n финансовую отчетность –\nЗаемщик, применяющий обычную систему налогообложения:\nпо окончании 1-3 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма №\n2), а также информацию о финансовом положении по форме, установленной Кредитором – не позднее 10 числа второго месяца\nквартала, следующего за отчетным кварталом – ежеквартально;\nпо окончании 4 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма № 2)\nс отметкой налогового органа, а также информацию о финансовом положении по форме, установленной Банком – не позднее\n10 апреля года, следующего за отчетным – ежегодно;\nЗаемщик, применяющий другие системы налогообложения:\nбаланс и справку о доходах и расходах по форме, установленной Кредитором, декларацию с отметкой налогового\nоргана (если Заемщик подает декларацию за квартал в соответствии с действующим законодательством РФ), а также\nинформацию о финансовом положении по форме, установленной Кредитором - не позднее 10 числа второго месяца квартала,\nследующего за отчетным кварталом – ежеквартально (если законодательством РФ предусмотрено предоставление в\nналоговые органы декларации за год - годовая отчетность предоставляется не позднее 10 апреля года, следующего за\nотчетным)."
+        },
+        {
+          "id": "r18",
+          "subject": "e75",
+          "subject_text": "Банком",
+          "relation": "hasValue",
+          "object": "e78",
+          "object_text": "РФ",
+          "confidence": 0.65,
+          "evidence": "Предоставлять Кредитору:\n финансовую отчетность –\nЗаемщик, применяющий обычную систему налогообложения:\nпо окончании 1-3 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма №\n2), а также информацию о финансовом положении по форме, установленной Кредитором – не позднее 10 числа второго месяца\nквартала, следующего за отчетным кварталом – ежеквартально;\nпо окончании 4 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма № 2)\nс отметкой налогового органа, а также информацию о финансовом положении по форме, установленной Банком – не позднее\n10 апреля года, следующего за отчетным – ежегодно;\nЗаемщик, применяющий другие системы налогообложения:\nбаланс и справку о доходах и расходах по форме, установленной Кредитором, декларацию с отметкой налогового\nоргана (если Заемщик подает декларацию за квартал в соответствии с действующим законодательством РФ), а также\nинформацию о финансовом положении по форме, установленной Кредитором - не позднее 10 числа второго месяца квартала,\nследующего за отчетным кварталом – ежеквартально (если законодательством РФ предусмотрено предоставление в\nналоговые органы декларации за год - годовая отчетность предоставляется не позднее 10 апреля года, следующего за\nотчетным)."
+        },
+        {
+          "id": "r19",
+          "subject": "e75",
+          "subject_text": "Банком",
+          "relation": "hasValue",
+          "object": "e79",
+          "object_text": "Кредитором -",
+          "confidence": 0.65,
+          "evidence": "Предоставлять Кредитору:\n финансовую отчетность –\nЗаемщик, применяющий обычную систему налогообложения:\nпо окончании 1-3 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма №\n2), а также информацию о финансовом положении по форме, установленной Кредитором – не позднее 10 числа второго месяца\nквартала, следующего за отчетным кварталом – ежеквартально;\nпо окончании 4 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма № 2)\nс отметкой налогового органа, а также информацию о финансовом положении по форме, установленной Банком – не позднее\n10 апреля года, следующего за отчетным – ежегодно;\nЗаемщик, применяющий другие системы налогообложения:\nбаланс и справку о доходах и расходах по форме, установленной Кредитором, декларацию с отметкой налогового\nоргана (если Заемщик подает декларацию за квартал в соответствии с действующим законодательством РФ), а также\nинформацию о финансовом положении по форме, установленной Кредитором - не позднее 10 числа второго месяца квартала,\nследующего за отчетным кварталом – ежеквартально (если законодательством РФ предусмотрено предоставление в\nналоговые органы декларации за год - годовая отчетность предоставляется не позднее 10 апреля года, следующего за\nотчетным)."
+        },
+        {
+          "id": "r20",
+          "subject": "e75",
+          "subject_text": "Банком",
+          "relation": "hasValue",
+          "object": "e80",
+          "object_text": "РФ",
+          "confidence": 0.65,
+          "evidence": "Предоставлять Кредитору:\n финансовую отчетность –\nЗаемщик, применяющий обычную систему налогообложения:\nпо окончании 1-3 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма №\n2), а также информацию о финансовом положении по форме, установленной Кредитором – не позднее 10 числа второго месяца\nквартала, следующего за отчетным кварталом – ежеквартально;\nпо окончании 4 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма № 2)\nс отметкой налогового органа, а также информацию о финансовом положении по форме, установленной Банком – не позднее\n10 апреля года, следующего за отчетным – ежегодно;\nЗаемщик, применяющий другие системы налогообложения:\nбаланс и справку о доходах и расходах по форме, установленной Кредитором, декларацию с отметкой налогового\nоргана (если Заемщик подает декларацию за квартал в соответствии с действующим законодательством РФ), а также\nинформацию о финансовом положении по форме, установленной Кредитором - не позднее 10 числа второго месяца квартала,\nследующего за отчетным кварталом – ежеквартально (если законодательством РФ предусмотрено предоставление в\nналоговые органы декларации за год - годовая отчетность предоставляется не позднее 10 апреля года, следующего за\nотчетным)."
+        },
+        {
+          "id": "r21",
+          "subject": "e76",
+          "subject_text": "Кредитором",
+          "relation": "hasValue",
+          "object": "e79",
+          "object_text": "Кредитором -",
+          "confidence": 0.65,
+          "evidence": "Предоставлять Кредитору:\n финансовую отчетность –\nЗаемщик, применяющий обычную систему налогообложения:\nпо окончании 1-3 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма №\n2), а также информацию о финансовом положении по форме, установленной Кредитором – не позднее 10 числа второго месяца\nквартала, следующего за отчетным кварталом – ежеквартально;\nпо окончании 4 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма № 2)\nс отметкой налогового органа, а также информацию о финансовом положении по форме, установленной Банком – не позднее\n10 апреля года, следующего за отчетным – ежегодно;\nЗаемщик, применяющий другие системы налогообложения:\nбаланс и справку о доходах и расходах по форме, установленной Кредитором, декларацию с отметкой налогового\nоргана (если Заемщик подает декларацию за квартал в соответствии с действующим законодательством РФ), а также\nинформацию о финансовом положении по форме, установленной Кредитором - не позднее 10 числа второго месяца квартала,\nследующего за отчетным кварталом – ежеквартально (если законодательством РФ предусмотрено предоставление в\nналоговые органы декларации за год - годовая отчетность предоставляется не позднее 10 апреля года, следующего за\nотчетным)."
+        },
+        {
+          "id": "r22",
+          "subject": "e76",
+          "subject_text": "Кредитором",
+          "relation": "hasValue",
+          "object": "e80",
+          "object_text": "РФ",
+          "confidence": 0.65,
+          "evidence": "Предоставлять Кредитору:\n финансовую отчетность –\nЗаемщик, применяющий обычную систему налогообложения:\nпо окончании 1-3 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма №\n2), а также информацию о финансовом положении по форме, установленной Кредитором – не позднее 10 числа второго месяца\nквартала, следующего за отчетным кварталом – ежеквартально;\nпо окончании 4 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма № 2)\nс отметкой налогового органа, а также информацию о финансовом положении по форме, установленной Банком – не позднее\n10 апреля года, следующего за отчетным – ежегодно;\nЗаемщик, применяющий другие системы налогообложения:\nбаланс и справку о доходах и расходах по форме, установленной Кредитором, декларацию с отметкой налогового\nоргана (если Заемщик подает декларацию за квартал в соответствии с действующим законодательством РФ), а также\nинформацию о финансовом положении по форме, установленной Кредитором - не позднее 10 числа второго месяца квартала,\nследующего за отчетным кварталом – ежеквартально (если законодательством РФ предусмотрено предоставление в\nналоговые органы декларации за год - годовая отчетность предоставляется не позднее 10 апреля года, следующего за\nотчетным)."
+        },
+        {
+          "id": "r23",
+          "subject": "e77",
+          "subject_text": "Заемщик",
+          "relation": "hasValue",
+          "object": "e79",
+          "object_text": "Кредитором -",
+          "confidence": 0.65,
+          "evidence": "Предоставлять Кредитору:\n финансовую отчетность –\nЗаемщик, применяющий обычную систему налогообложения:\nпо окончании 1-3 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма №\n2), а также информацию о финансовом положении по форме, установленной Кредитором – не позднее 10 числа второго месяца\nквартала, следующего за отчетным кварталом – ежеквартально;\nпо окончании 4 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма № 2)\nс отметкой налогового органа, а также информацию о финансовом положении по форме, установленной Банком – не позднее\n10 апреля года, следующего за отчетным – ежегодно;\nЗаемщик, применяющий другие системы налогообложения:\nбаланс и справку о доходах и расходах по форме, установленной Кредитором, декларацию с отметкой налогового\nоргана (если Заемщик подает декларацию за квартал в соответствии с действующим законодательством РФ), а также\nинформацию о финансовом положении по форме, установленной Кредитором - не позднее 10 числа второго месяца квартала,\nследующего за отчетным кварталом – ежеквартально (если законодательством РФ предусмотрено предоставление в\nналоговые органы декларации за год - годовая отчетность предоставляется не позднее 10 апреля года, следующего за\nотчетным)."
+        },
+        {
+          "id": "r24",
+          "subject": "e77",
+          "subject_text": "Заемщик",
+          "relation": "hasValue",
+          "object": "e80",
+          "object_text": "РФ",
+          "confidence": 0.65,
+          "evidence": "Предоставлять Кредитору:\n финансовую отчетность –\nЗаемщик, применяющий обычную систему налогообложения:\nпо окончании 1-3 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма №\n2), а также информацию о финансовом положении по форме, установленной Кредитором – не позднее 10 числа второго месяца\nквартала, следующего за отчетным кварталом – ежеквартально;\nпо окончании 4 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма № 2)\nс отметкой налогового органа, а также информацию о финансовом положении по форме, установленной Банком – не позднее\n10 апреля года, следующего за отчетным – ежегодно;\nЗаемщик, применяющий другие системы налогообложения:\nбаланс и справку о доходах и расходах по форме, установленной Кредитором, декларацию с отметкой налогового\nоргана (если Заемщик подает декларацию за квартал в соответствии с действующим законодательством РФ), а также\nинформацию о финансовом положении по форме, установленной Кредитором - не позднее 10 числа второго месяца квартала,\nследующего за отчетным кварталом – ежеквартально (если законодательством РФ предусмотрено предоставление в\nналоговые органы декларации за год - годовая отчетность предоставляется не позднее 10 апреля года, следующего за\nотчетным)."
+        },
+        {
+          "id": "r25",
+          "subject": "e78",
+          "subject_text": "РФ",
+          "relation": "hasValue",
+          "object": "e79",
+          "object_text": "Кредитором -",
+          "confidence": 0.65,
+          "evidence": "Предоставлять Кредитору:\n финансовую отчетность –\nЗаемщик, применяющий обычную систему налогообложения:\nпо окончании 1-3 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма №\n2), а также информацию о финансовом положении по форме, установленной Кредитором – не позднее 10 числа второго месяца\nквартала, следующего за отчетным кварталом – ежеквартально;\nпо окончании 4 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма № 2)\nс отметкой налогового органа, а также информацию о финансовом положении по форме, установленной Банком – не позднее\n10 апреля года, следующего за отчетным – ежегодно;\nЗаемщик, применяющий другие системы налогообложения:\nбаланс и справку о доходах и расходах по форме, установленной Кредитором, декларацию с отметкой налогового\nоргана (если Заемщик подает декларацию за квартал в соответствии с действующим законодательством РФ), а также\nинформацию о финансовом положении по форме, установленной Кредитором - не позднее 10 числа второго месяца квартала,\nследующего за отчетным кварталом – ежеквартально (если законодательством РФ предусмотрено предоставление в\nналоговые органы декларации за год - годовая отчетность предоставляется не позднее 10 апреля года, следующего за\nотчетным)."
+        },
+        {
+          "id": "r26",
+          "subject": "e78",
+          "subject_text": "РФ",
+          "relation": "hasValue",
+          "object": "e80",
+          "object_text": "РФ",
+          "confidence": 0.65,
+          "evidence": "Предоставлять Кредитору:\n финансовую отчетность –\nЗаемщик, применяющий обычную систему налогообложения:\nпо окончании 1-3 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма №\n2), а также информацию о финансовом положении по форме, установленной Кредитором – не позднее 10 числа второго месяца\nквартала, следующего за отчетным кварталом – ежеквартально;\nпо окончании 4 квартала – копии бухгалтерского баланса (форма № 1) и отчета о финансовых результатах (форма № 2)\nс отметкой налогового органа, а также информацию о финансовом положении по форме, установленной Банком – не позднее\n10 апреля года, следующего за отчетным – ежегодно;\nЗаемщик, применяющий другие системы налогообложения:\nбаланс и справку о доходах и расходах по форме, установленной Кредитором, декларацию с отметкой налогового\nоргана (если Заемщик подает декларацию за квартал в соответствии с действующим законодательством РФ), а также\nинформацию о финансовом положении по форме, установленной Кредитором - не позднее 10 числа второго месяца квартала,\nследующего за отчетным кварталом – ежеквартально (если законодательством РФ предусмотрено предоставление в\nналоговые органы декларации за год - годовая отчетность предоставляется не позднее 10 апреля года, следующего за\nотчетным)."
+        },
+        {
+          "id": "r27",
+          "subject": "e91",
+          "subject_text": "Кредитора",
+          "relation": "hasValue",
+          "object": "e92",
+          "object_text": "Российской Федерации",
+          "confidence": 0.65,
+          "evidence": "Своевременно оплачивать стоимость банковских услуг Кредитора в размере и порядке, установленном Тарифами\nКредитора на услуги для юридических лиц (некредитных организаций) и индивидуальных предпринимателей в валюте\nРоссийской Федерации и иностранной валюте."
+        },
+        {
+          "id": "r28",
+          "subject": "e132",
+          "subject_text": "Заемщика",
+          "relation": "hasValue",
+          "object": "e135",
+          "object_text": "Заемщиком недостоверной информации",
+          "confidence": 0.65,
+          "evidence": "Кредитного договора;\n уклонения Заемщика от проведения Кредитором проверок обеспеченности кредита, реальности финансово-\nхозяйственной деятельности (включая организационно-обеспечительную деятельность) Заемщика, финансового состояния\nЗаемщика;\n невыполнения Заемщиком (Поручителем) условий Кредитного договора (договора поручительства);\n установления факта предоставления Заемщиком недостоверной информации;\n возбуждения в отношении Заемщика исполнительного производства, если это, по мнению Кредитора, может повлечь\nнеисполнение или ненадлежащее исполнение Заемщиком своих обязательств по настоящему договору;\n неисполнения либо ненадлежащего исполнения условий иных заключенных договоров с Кредитором;\n реорганизации Заемщика,\n\n6\n наложения ареста на имущество Заемщика;\n если в отношении Заемщика имеется требование о его ликвидации, либо если Заемщик самостоятельно принял\nрешение о своей ликвидации, о признании несостоятельным (банкротом);\n перечисления суммы кредита на расчетные счета Заемщика, открытые в других банках;\n приобретения ценных бумаг, в том числе векселей за счет предоставленного кредита;\n существенного ухудшения финансового состояния Заемщика."
+        },
+        {
+          "id": "r29",
+          "subject": "e132",
+          "subject_text": "Заемщика",
+          "relation": "hasValue",
+          "object": "e136",
+          "object_text": "Заемщика",
+          "confidence": 0.65,
+          "evidence": "Кредитного договора;\n уклонения Заемщика от проведения Кредитором проверок обеспеченности кредита, реальности финансово-\nхозяйственной деятельности (включая организационно-обеспечительную деятельность) Заемщика, финансового состояния\nЗаемщика;\n невыполнения Заемщиком (Поручителем) условий Кредитного договора (договора поручительства);\n установления факта предоставления Заемщиком недостоверной информации;\n возбуждения в отношении Заемщика исполнительного производства, если это, по мнению Кредитора, может повлечь\nнеисполнение или ненадлежащее исполнение Заемщиком своих обязательств по настоящему договору;\n неисполнения либо ненадлежащего исполнения условий иных заключенных договоров с Кредитором;\n реорганизации Заемщика,\n\n6\n наложения ареста на имущество Заемщика;\n если в отношении Заемщика имеется требование о его ликвидации, либо если Заемщик самостоятельно принял\nрешение о своей ликвидации, о признании несостоятельным (банкротом);\n перечисления суммы кредита на расчетные счета Заемщика, открытые в других банках;\n приобретения ценных бумаг, в том числе векселей за счет предоставленного кредита;\n существенного ухудшения финансового состояния Заемщика."
+        },
+        {
+          "id": "r30",
+          "subject": "e132",
+          "subject_text": "Заемщика",
+          "relation": "hasValue",
+          "object": "e137",
+          "object_text": "Кредитора",
+          "confidence": 0.65,
+          "evidence": "Кредитного договора;\n уклонения Заемщика от проведения Кредитором проверок обеспеченности кредита, реальности финансово-\nхозяйственной деятельности (включая организационно-обеспечительную деятельность) Заемщика, финансового состояния\nЗаемщика;\n невыполнения Заемщиком (Поручителем) условий Кредитного договора (договора поручительства);\n установления факта предоставления Заемщиком недостоверной информации;\n возбуждения в отношении Заемщика исполнительного производства, если это, по мнению Кредитора, может повлечь\nнеисполнение или ненадлежащее исполнение Заемщиком своих обязательств по настоящему договору;\n неисполнения либо ненадлежащего исполнения условий иных заключенных договоров с Кредитором;\n реорганизации Заемщика,\n\n6\n наложения ареста на имущество Заемщика;\n если в отношении Заемщика имеется требование о его ликвидации, либо если Заемщик самостоятельно принял\nрешение о своей ликвидации, о признании несостоятельным (банкротом);\n перечисления суммы кредита на расчетные счета Заемщика, открытые в других банках;\n приобретения ценных бумаг, в том числе векселей за счет предоставленного кредита;\n существенного ухудшения финансового состояния Заемщика."
+        },
+        {
+          "id": "r31",
+          "subject": "e132",
+          "subject_text": "Заемщика",
+          "relation": "hasValue",
+          "object": "e138",
+          "object_text": "Кредитором",
+          "confidence": 0.65,
+          "evidence": "Кредитного договора;\n уклонения Заемщика от проведения Кредитором проверок обеспеченности кредита, реальности финансово-\nхозяйственной деятельности (включая организационно-обеспечительную деятельность) Заемщика, финансового состояния\nЗаемщика;\n невыполнения Заемщиком (Поручителем) условий Кредитного договора (договора поручительства);\n установления факта предоставления Заемщиком недостоверной информации;\n возбуждения в отношении Заемщика исполнительного производства, если это, по мнению Кредитора, может повлечь\nнеисполнение или ненадлежащее исполнение Заемщиком своих обязательств по настоящему договору;\n неисполнения либо ненадлежащего исполнения условий иных заключенных договоров с Кредитором;\n реорганизации Заемщика,\n\n6\n наложения ареста на имущество Заемщика;\n если в отношении Заемщика имеется требование о его ликвидации, либо если Заемщик самостоятельно принял\nрешение о своей ликвидации, о признании несостоятельным (банкротом);\n перечисления суммы кредита на расчетные счета Заемщика, открытые в других банках;\n приобретения ценных бумаг, в том числе векселей за счет предоставленного кредита;\n существенного ухудшения финансового состояния Заемщика."
+        },
+        {
+          "id": "r32",
+          "subject": "e132",
+          "subject_text": "Заемщика",
+          "relation": "hasValue",
+          "object": "e139",
+          "object_text": "Заемщика",
+          "confidence": 0.65,
+          "evidence": "Кредитного договора;\n уклонения Заемщика от проведения Кредитором проверок обеспеченности кредита, реальности финансово-\nхозяйственной деятельности (включая организационно-обеспечительную деятельность) Заемщика, финансового состояния\nЗаемщика;\n невыполнения Заемщиком (Поручителем) условий Кредитного договора (договора поручительства);\n установления факта предоставления Заемщиком недостоверной информации;\n возбуждения в отношении Заемщика исполнительного производства, если это, по мнению Кредитора, может повлечь\nнеисполнение или ненадлежащее исполнение Заемщиком своих обязательств по настоящему договору;\n неисполнения либо ненадлежащего исполнения условий иных заключенных договоров с Кредитором;\n реорганизации Заемщика,\n\n6\n наложения ареста на имущество Заемщика;\n если в отношении Заемщика имеется требование о его ликвидации, либо если Заемщик самостоятельно принял\nрешение о своей ликвидации, о признании несостоятельным (банкротом);\n перечисления суммы кредита на расчетные счета Заемщика, открытые в других банках;\n приобретения ценных бумаг, в том числе векселей за счет предоставленного кредита;\n существенного ухудшения финансового состояния Заемщика."
+        },
+        {
+          "id": "r33",
+          "subject": "e132",
+          "subject_text": "Заемщика",
+          "relation": "hasValue",
+          "object": "e140",
+          "object_text": "Заемщика",
+          "confidence": 0.65,
+          "evidence": "Кредитного договора;\n уклонения Заемщика от проведения Кредитором проверок обеспеченности кредита, реальности финансово-\nхозяйственной деятельности (включая организационно-обеспечительную деятельность) Заемщика, финансового состояния\nЗаемщика;\n невыполнения Заемщиком (Поручителем) условий Кредитного договора (договора поручительства);\n установления факта предоставления Заемщиком недостоверной информации;\n возбуждения в отношении Заемщика исполнительного производства, если это, по мнению Кредитора, может повлечь\nнеисполнение или ненадлежащее исполнение Заемщиком своих обязательств по настоящему договору;\n неисполнения либо ненадлежащего исполнения условий иных заключенных договоров с Кредитором;\n реорганизации Заемщика,\n\n6\n наложения ареста на имущество Заемщика;\n если в отношении Заемщика имеется требование о его ликвидации, либо если Заемщик самостоятельно принял\nрешение о своей ликвидации, о признании несостоятельным (банкротом);\n перечисления суммы кредита на расчетные счета Заемщика, открытые в других банках;\n приобретения ценных бумаг, в том числе векселей за счет предоставленного кредита;\n существенного ухудшения финансового состояния Заемщика."
+        },
+        {
+          "id": "r34",
+          "subject": "e132",
+          "subject_text": "Заемщика",
+          "relation": "hasValue",
+          "object": "e141",
+          "object_text": "Заемщика",
+          "confidence": 0.65,
+          "evidence": "Кредитного договора;\n уклонения Заемщика от проведения Кредитором проверок обеспеченности кредита, реальности финансово-\nхозяйственной деятельности (включая организационно-обеспечительную деятельность) Заемщика, финансового состояния\nЗаемщика;\n невыполнения Заемщиком (Поручителем) условий Кредитного договора (договора поручительства);\n установления факта предоставления Заемщиком недостоверной информации;\n возбуждения в отношении Заемщика исполнительного производства, если это, по мнению Кредитора, может повлечь\nнеисполнение или ненадлежащее исполнение Заемщиком своих обязательств по настоящему договору;\n неисполнения либо ненадлежащего исполнения условий иных заключенных договоров с Кредитором;\n реорганизации Заемщика,\n\n6\n наложения ареста на имущество Заемщика;\n если в отношении Заемщика имеется требование о его ликвидации, либо если Заемщик самостоятельно принял\nрешение о своей ликвидации, о признании несостоятельным (банкротом);\n перечисления суммы кредита на расчетные счета Заемщика, открытые в других банках;\n приобретения ценных бумаг, в том числе векселей за счет предоставленного кредита;\n существенного ухудшения финансового состояния Заемщика."
+        },
+        {
+          "id": "r35",
+          "subject": "e132",
+          "subject_text": "Заемщика",
+          "relation": "hasValue",
+          "object": "e142",
+          "object_text": "Заемщик",
+          "confidence": 0.65,
+          "evidence": "Кредитного договора;\n уклонения Заемщика от проведения Кредитором проверок обеспеченности кредита, реальности финансово-\nхозяйственной деятельности (включая организационно-обеспечительную деятельность) Заемщика, финансового состояния\nЗаемщика;\n невыполнения Заемщиком (Поручителем) условий Кредитного договора (договора поручительства);\n установления факта предоставления Заемщиком недостоверной информации;\n возбуждения в отношении Заемщика исполнительного производства, если это, по мнению Кредитора, может повлечь\nнеисполнение или ненадлежащее исполнение Заемщиком своих обязательств по настоящему договору;\n неисполнения либо ненадлежащего исполнения условий иных заключенных договоров с Кредитором;\n реорганизации Заемщика,\n\n6\n наложения ареста на имущество Заемщика;\n если в отношении Заемщика имеется требование о его ликвидации, либо если Заемщик самостоятельно принял\nрешение о своей ликвидации, о признании несостоятельным (банкротом);\n перечисления суммы кредита на расчетные счета Заемщика, открытые в других банках;\n приобретения ценных бумаг, в том числе векселей за счет предоставленного кредита;\n существенного ухудшения финансового состояния Заемщика."
+        },
+        {
+          "id": "r36",
+          "subject": "e132",
+          "subject_text": "Заемщика",
+          "relation": "hasValue",
+          "object": "e143",
+          "object_text": "Заемщика",
+          "confidence": 0.65,
+          "evidence": "Кредитного договора;\n уклонения Заемщика от проведения Кредитором проверок обеспеченности кредита, реальности финансово-\nхозяйственной деятельности (включая организационно-обеспечительную деятельность) Заемщика, финансового состояния\nЗаемщика;\n невыполнения Заемщиком (Поручителем) условий Кредитного договора (договора поручительства);\n установления факта предоставления Заемщиком недостоверной информации;\n возбуждения в отношении Заемщика исполнительного производства, если это, по мнению Кредитора, может повлечь\nнеисполнение или ненадлежащее исполнение Заемщиком своих обязательств по настоящему договору;\n неисполнения либо ненадлежащего исполнения условий иных заключенных договоров с Кредитором;\n реорганизации Заемщика,\n\n6\n наложения ареста на имущество Заемщика;\n если в отношении Заемщика имеется требование о его ликвидации, либо если Заемщик самостоятельно принял\nрешение о своей ликвидации, о признании несостоятельным (банкротом);\n перечисления суммы кредита на расчетные счета Заемщика, открытые в других банках;\n приобретения ценных бумаг, в том числе векселей за счет предоставленного кредита;\n существенного ухудшения финансового состояния Заемщика."
+        },
+        {
+          "id": "r37",
+          "subject": "e132",
+          "subject_text": "Заемщика",
+          "relation": "hasValue",
+          "object": "e144",
+          "object_text": "Заемщика",
+          "confidence": 0.65,
+          "evidence": "Кредитного договора;\n уклонения Заемщика от проведения Кредитором проверок обеспеченности кредита, реальности финансово-\nхозяйственной деятельности (включая организационно-обеспечительную деятельность) Заемщика, финансового состояния\nЗаемщика;\n невыполнения Заемщиком (Поручителем) условий Кредитного договора (договора поручительства);\n установления факта предоставления Заемщиком недостоверной информации;\n возбуждения в отношении Заемщика исполнительного производства, если это, по мнению Кредитора, может повлечь\nнеисполнение или ненадлежащее исполнение Заемщиком своих обязательств по настоящему договору;\n неисполнения либо ненадлежащего исполнения условий иных заключенных договоров с Кредитором;\n реорганизации Заемщика,\n\n6\n наложения ареста на имущество Заемщика;\n если в отношении Заемщика имеется требование о его ликвидации, либо если Заемщик самостоятельно принял\nрешение о своей ликвидации, о признании несостоятельным (банкротом);\n перечисления суммы кредита на расчетные счета Заемщика, открытые в других банках;\n приобретения ценных бумаг, в том числе векселей за счет предоставленного кредита;\n существенного ухудшения финансового состояния Заемщика."
+        },
+        {
+          "id": "r38",
+          "subject": "e133",
+          "subject_text": "Заемщиком",
+          "relation": "hasValue",
+          "object": "e135",
+          "object_text": "Заемщиком недостоверной информации",
+          "confidence": 0.65,
+          "evidence": "Кредитного договора;\n уклонения Заемщика от проведения Кредитором проверок обеспеченности кредита, реальности финансово-\nхозяйственной деятельности (включая организационно-обеспечительную деятельность) Заемщика, финансового состояния\nЗаемщика;\n невыполнения Заемщиком (Поручителем) условий Кредитного договора (договора поручительства);\n установления факта предоставления Заемщиком недостоверной информации;\n возбуждения в отношении Заемщика исполнительного производства, если это, по мнению Кредитора, может повлечь\nнеисполнение или ненадлежащее исполнение Заемщиком своих обязательств по настоящему договору;\n неисполнения либо ненадлежащего исполнения условий иных заключенных договоров с Кредитором;\n реорганизации Заемщика,\n\n6\n наложения ареста на имущество Заемщика;\n если в отношении Заемщика имеется требование о его ликвидации, либо если Заемщик самостоятельно принял\nрешение о своей ликвидации, о признании несостоятельным (банкротом);\n перечисления суммы кредита на расчетные счета Заемщика, открытые в других банках;\n приобретения ценных бумаг, в том числе векселей за счет предоставленного кредита;\n существенного ухудшения финансового состояния Заемщика."
+        },
+        {
+          "id": "r39",
+          "subject": "e133",
+          "subject_text": "Заемщиком",
+          "relation": "hasValue",
+          "object": "e136",
+          "object_text": "Заемщика",
+          "confidence": 0.65,
+          "evidence": "Кредитного договора;\n уклонения Заемщика от проведения Кредитором проверок обеспеченности кредита, реальности финансово-\nхозяйственной деятельности (включая организационно-обеспечительную деятельность) Заемщика, финансового состояния\nЗаемщика;\n невыполнения Заемщиком (Поручителем) условий Кредитного договора (договора поручительства);\n установления факта предоставления Заемщиком недостоверной информации;\n возбуждения в отношении Заемщика исполнительного производства, если это, по мнению Кредитора, может повлечь\nнеисполнение или ненадлежащее исполнение Заемщиком своих обязательств по настоящему договору;\n неисполнения либо ненадлежащего исполнения условий иных заключенных договоров с Кредитором;\n реорганизации Заемщика,\n\n6\n наложения ареста на имущество Заемщика;\n если в отношении Заемщика имеется требование о его ликвидации, либо если Заемщик самостоятельно принял\nрешение о своей ликвидации, о признании несостоятельным (банкротом);\n перечисления суммы кредита на расчетные счета Заемщика, открытые в других банках;\n приобретения ценных бумаг, в том числе векселей за счет предоставленного кредита;\n существенного ухудшения финансового состояния Заемщика."
+        },
+        {
+          "id": "r40",
+          "subject": "e133",
+          "subject_text": "Заемщиком",
+          "relation": "hasValue",
+          "object": "e137",
+          "object_text": "Кредитора",
+          "confidence": 0.65,
+          "evidence": "Кредитного договора;\n уклонения Заемщика от проведения Кредитором проверок обеспеченности кредита, реальности финансово-\nхозяйственной деятельности (включая организационно-обеспечительную деятельность) Заемщика, финансового состояния\nЗаемщика;\n невыполнения Заемщиком (Поручителем) условий Кредитного договора (договора поручительства);\n установления факта предоставления Заемщиком недостоверной информации;\n возбуждения в отношении Заемщика исполнительного производства, если это, по мнению Кредитора, может повлечь\nнеисполнение или ненадлежащее исполнение Заемщиком своих обязательств по настоящему договору;\n неисполнения либо ненадлежащего исполнения условий иных заключенных договоров с Кредитором;\n реорганизации Заемщика,\n\n6\n наложения ареста на имущество Заемщика;\n если в отношении Заемщика имеется требование о его ликвидации, либо если Заемщик самостоятельно принял\nрешение о своей ликвидации, о признании несостоятельным (банкротом);\n перечисления суммы кредита на расчетные счета Заемщика, открытые в других банках;\n приобретения ценных бумаг, в том числе векселей за счет предоставленного кредита;\n существенного ухудшения финансового состояния Заемщика."
+        },
+        {
+          "id": "r41",
+          "subject": "e133",
+          "subject_text": "Заемщиком",
+          "relation": "hasValue",
+          "object": "e138",
+          "object_text": "Кредитором",
+          "confidence": 0.65,
+          "evidence": "Кредитного договора;\n уклонения Заемщика от проведения Кредитором проверок обеспеченности кредита, реальности финансово-\nхозяйственной деятельности (включая организационно-обеспечительную деятельность) Заемщика, финансового состояния\nЗаемщика;\n невыполнения Заемщиком (Поручителем) условий Кредитного договора (договора поручительства);\n установления факта предоставления Заемщиком недостоверной информации;\n возбуждения в отношении Заемщика исполнительного производства, если это, по мнению Кредитора, может повлечь\nнеисполнение или ненадлежащее исполнение Заемщиком своих обязательств по настоящему договору;\n неисполнения либо ненадлежащего исполнения условий иных заключенных договоров с Кредитором;\n реорганизации Заемщика,\n\n6\n наложения ареста на имущество Заемщика;\n если в отношении Заемщика имеется требование о его ликвидации, либо если Заемщик самостоятельно принял\nрешение о своей ликвидации, о признании несостоятельным (банкротом);\n перечисления суммы кредита на расчетные счета Заемщика, открытые в других банках;\n приобретения ценных бумаг, в том числе векселей за счет предоставленного кредита;\n существенного ухудшения финансового состояния Заемщика."
+        },
+        {
+          "id": "r42",
+          "subject": "e133",
+          "subject_text": "Заемщиком",
+          "relation": "hasValue",
+          "object": "e139",
+          "object_text": "Заемщика",
+          "confidence": 0.65,
+          "evidence": "Кредитного договора;\n уклонения Заемщика от проведения Кредитором проверок обеспеченности кредита, реальности финансово-\nхозяйственной деятельности (включая организационно-обеспечительную деятельность) Заемщика, финансового состояния\nЗаемщика;\n невыполнения Заемщиком (Поручителем) условий Кредитного договора (договора поручительства);\n установления факта предоставления Заемщиком недостоверной информации;\n возбуждения в отношении Заемщика исполнительного производства, если это, по мнению Кредитора, может повлечь\nнеисполнение или ненадлежащее исполнение Заемщиком своих обязательств по настоящему договору;\n неисполнения либо ненадлежащего исполнения условий иных заключенных договоров с Кредитором;\n реорганизации Заемщика,\n\n6\n наложения ареста на имущество Заемщика;\n если в отношении Заемщика имеется требование о его ликвидации, либо если Заемщик самостоятельно принял\nрешение о своей ликвидации, о признании несостоятельным (банкротом);\n перечисления суммы кредита на расчетные счета Заемщика, открытые в других банках;\n приобретения ценных бумаг, в том числе векселей за счет предоставленного кредита;\n существенного ухудшения финансового состояния Заемщика."
+        },
+        {
+          "id": "r43",
+          "subject": "e133",
+          "subject_text": "Заемщиком",
+          "relation": "hasValue",
+          "object": "e140",
+          "object_text": "Заемщика",
+          "confidence": 0.65,
+          "evidence": "Кредитного договора;\n уклонения Заемщика от проведения Кредитором проверок обеспеченности кредита, реальности финансово-\nхозяйственной деятельности (включая организационно-обеспечительную деятельность) Заемщика, финансового состояния\nЗаемщика;\n невыполнения Заемщиком (Поручителем) условий Кредитного договора (договора поручительства);\n установления факта предоставления Заемщиком недостоверной информации;\n возбуждения в отношении Заемщика исполнительного производства, если это, по мнению Кредитора, может повлечь\nнеисполнение или ненадлежащее исполнение Заемщиком своих обязательств по настоящему договору;\n неисполнения либо ненадлежащего исполнения условий иных заключенных договоров с Кредитором;\n реорганизации Заемщика,\n\n6\n наложения ареста на имущество Заемщика;\n если в отношении Заемщика имеется требование о его ликвидации, либо если Заемщик самостоятельно принял\nрешение о своей ликвидации, о признании несостоятельным (банкротом);\n перечисления суммы кредита на расчетные счета Заемщика, открытые в других банках;\n приобретения ценных бумаг, в том числе векселей за счет предоставленного кредита;\n существенного ухудшения финансового состояния Заемщика."
+        },
+        {
+          "id": "r44",
+          "subject": "e133",
+          "subject_text": "Заемщиком",
+          "relation": "hasValue",
+          "object": "e141",
+          "object_text": "Заемщика",
+          "confidence": 0.65,
+          "evidence": "Кредитного договора;\n уклонения Заемщика от проведения Кредитором проверок обеспеченности кредита, реальности финансово-\nхозяйственной деятельности (включая организационно-обеспечительную деятельность) Заемщика, финансового состояния\nЗаемщика;\n невыполнения Заемщиком (Поручителем) условий Кредитного договора (договора поручительства);\n установления факта предоставления Заемщиком недостоверной информации;\n возбуждения в отношении Заемщика исполнительного производства, если это, по мнению Кредитора, может повлечь\nнеисполнение или ненадлежащее исполнение Заемщиком своих обязательств по настоящему договору;\n неисполнения либо ненадлежащего исполнения условий иных заключенных договоров с Кредитором;\n реорганизации Заемщика,\n\n6\n наложения ареста на имущество Заемщика;\n если в отношении Заемщика имеется требование о его ликвидации, либо если Заемщик самостоятельно принял\nрешение о своей ликвидации, о признании несостоятельным (банкротом);\n перечисления суммы кредита на расчетные счета Заемщика, открытые в других банках;\n приобретения ценных бумаг, в том числе векселей за счет предоставленного кредита;\n существенного ухудшения финансового состояния Заемщика."
+        },
+        {
+          "id": "r45",
+          "subject": "e133",
+          "subject_text": "Заемщиком",
+          "relation": "hasValue",
+          "object": "e142",
+          "object_text": "Заемщик",
+          "confidence": 0.65,
+          "evidence": "Кредитного договора;\n уклонения Заемщика от проведения Кредитором проверок обеспеченности кредита, реальности финансово-\nхозяйственной деятельности (включая организационно-обеспечительную деятельность) Заемщика, финансового состояния\nЗаемщика;\n невыполнения Заемщиком (Поручителем) условий Кредитного договора (договора поручительства);\n установления факта предоставления Заемщиком недостоверной информации;\n возбуждения в отношении Заемщика исполнительного производства, если это, по мнению Кредитора, может повлечь\nнеисполнение или ненадлежащее исполнение Заемщиком своих обязательств по настоящему договору;\n неисполнения либо ненадлежащего исполнения условий иных заключенных договоров с Кредитором;\n реорганизации Заемщика,\n\n6\n наложения ареста на имущество Заемщика;\n если в отношении Заемщика имеется требование о его ликвидации, либо если Заемщик самостоятельно принял\nрешение о своей ликвидации, о признании несостоятельным (банкротом);\n перечисления суммы кредита на расчетные счета Заемщика, открытые в других банках;\n приобретения ценных бумаг, в том числе векселей за счет предоставленного кредита;\n существенного ухудшения финансового состояния Заемщика."
+        },
+        {
+          "id": "r46",
+          "subject": "e133",
+          "subject_text": "Заемщиком",
+          "relation": "hasValue",
+          "object": "e143",
+          "object_text": "Заемщика",
+          "confidence": 0.65,
+          "evidence": "Кредитного договора;\n уклонения Заемщика от проведения Кредитором проверок обеспеченности кредита, реальности финансово-\nхозяйственной деятельности (включая организационно-обеспечительную деятельность) Заемщика, финансового состояния\nЗаемщика;\n невыполнения Заемщиком (Поручителем) условий Кредитного договора (договора поручительства);\n установления факта предоставления Заемщиком недостоверной информации;\n возбуждения в отношении Заемщика исполнительного производства, если это, по мнению Кредитора, может повлечь\nнеисполнение или ненадлежащее исполнение Заемщиком своих обязательств по настоящему договору;\n неисполнения либо ненадлежащего исполнения условий иных заключенных договоров с Кредитором;\n реорганизации Заемщика,\n\n6\n наложения ареста на имущество Заемщика;\n если в отношении Заемщика имеется требование о его ликвидации, либо если Заемщик самостоятельно принял\nрешение о своей ликвидации, о признании несостоятельным (банкротом);\n перечисления суммы кредита на расчетные счета Заемщика, открытые в других банках;\n приобретения ценных бумаг, в том числе векселей за счет предоставленного кредита;\n существенного ухудшения финансового состояния Заемщика."
+        },
+        {
+          "id": "r47",
+          "subject": "e133",
+          "subject_text": "Заемщиком",
+          "relation": "hasValue",
+          "object": "e144",
+          "object_text": "Заемщика",
+          "confidence": 0.65,
+          "evidence": "Кредитного договора;\n уклонения Заемщика от проведения Кредитором проверок обеспеченности кредита, реальности финансово-\nхозяйственной деятельности (включая организационно-обеспечительную деятельность) Заемщика, финансового состояния\nЗаемщика;\n невыполнения Заемщиком (Поручителем) условий Кредитного договора (договора поручительства);\n установления факта предоставления Заемщиком недостоверной информации;\n возбуждения в отношении Заемщика исполнительного производства, если это, по мнению Кредитора, может повлечь\nнеисполнение или ненадлежащее исполнение Заемщиком своих обязательств по настоящему договору;\n неисполнения либо ненадлежащего исполнения условий иных заключенных договоров с Кредитором;\n реорганизации Заемщика,\n\n6\n наложения ареста на имущество Заемщика;\n если в отношении Заемщика имеется требование о его ликвидации, либо если Заемщик самостоятельно принял\nрешение о своей ликвидации, о признании несостоятельным (банкротом);\n перечисления суммы кредита на расчетные счета Заемщика, открытые в других банках;\n приобретения ценных бумаг, в том числе векселей за счет предоставленного кредита;\n существенного ухудшения финансового состояния Заемщика."
+        },
+        {
+          "id": "r48",
+          "subject": "e134",
+          "subject_text": "Поручителем",
+          "relation": "hasValue",
+          "object": "e135",
+          "object_text": "Заемщиком недостоверной информации",
+          "confidence": 0.65,
+          "evidence": "Кредитного договора;\n уклонения Заемщика от проведения Кредитором проверок обеспеченности кредита, реальности финансово-\nхозяйственной деятельности (включая организационно-обеспечительную деятельность) Заемщика, финансового состояния\nЗаемщика;\n невыполнения Заемщиком (Поручителем) условий Кредитного договора (договора поручительства);\n установления факта предоставления Заемщиком недостоверной информации;\n возбуждения в отношении Заемщика исполнительного производства, если это, по мнению Кредитора, может повлечь\nнеисполнение или ненадлежащее исполнение Заемщиком своих обязательств по настоящему договору;\n неисполнения либо ненадлежащего исполнения условий иных заключенных договоров с Кредитором;\n реорганизации Заемщика,\n\n6\n наложения ареста на имущество Заемщика;\n если в отношении Заемщика имеется требование о его ликвидации, либо если Заемщик самостоятельно принял\nрешение о своей ликвидации, о признании несостоятельным (банкротом);\n перечисления суммы кредита на расчетные счета Заемщика, открытые в других банках;\n приобретения ценных бумаг, в том числе векселей за счет предоставленного кредита;\n существенного ухудшения финансового состояния Заемщика."
+        },
+        {
+          "id": "r49",
+          "subject": "e134",
+          "subject_text": "Поручителем",
+          "relation": "hasValue",
+          "object": "e136",
+          "object_text": "Заемщика",
+          "confidence": 0.65,
+          "evidence": "Кредитного договора;\n уклонения Заемщика от проведения Кредитором проверок обеспеченности кредита, реальности финансово-\nхозяйственной деятельности (включая организационно-обеспечительную деятельность) Заемщика, финансового состояния\nЗаемщика;\n невыполнения Заемщиком (Поручителем) условий Кредитного договора (договора поручительства);\n установления факта предоставления Заемщиком недостоверной информации;\n возбуждения в отношении Заемщика исполнительного производства, если это, по мнению Кредитора, может повлечь\nнеисполнение или ненадлежащее исполнение Заемщиком своих обязательств по настоящему договору;\n неисполнения либо ненадлежащего исполнения условий иных заключенных договоров с Кредитором;\n реорганизации Заемщика,\n\n6\n наложения ареста на имущество Заемщика;\n если в отношении Заемщика имеется требование о его ликвидации, либо если Заемщик самостоятельно принял\nрешение о своей ликвидации, о признании несостоятельным (банкротом);\n перечисления суммы кредита на расчетные счета Заемщика, открытые в других банках;\n приобретения ценных бумаг, в том числе векселей за счет предоставленного кредита;\n существенного ухудшения финансового состояния Заемщика."
+        },
+        {
+          "id": "r50",
+          "subject": "e134",
+          "subject_text": "Поручителем",
+          "relation": "hasValue",
+          "object": "e137",
+          "object_text": "Кредитора",
+          "confidence": 0.65,
+          "evidence": "Кредитного договора;\n уклонения Заемщика от проведения Кредитором проверок обеспеченности кредита, реальности финансово-\nхозяйственной деятельности (включая организационно-обеспечительную деятельность) Заемщика, финансового состояния\nЗаемщика;\n невыполнения Заемщиком (Поручителем) условий Кредитного договора (договора поручительства);\n установления факта предоставления Заемщиком недостоверной информации;\n возбуждения в отношении Заемщика исполнительного производства, если это, по мнению Кредитора, может повлечь\nнеисполнение или ненадлежащее исполнение Заемщиком своих обязательств по настоящему договору;\n неисполнения либо ненадлежащего исполнения условий иных заключенных договоров с Кредитором;\n реорганизации Заемщика,\n\n6\n наложения ареста на имущество Заемщика;\n если в отношении Заемщика имеется требование о его ликвидации, либо если Заемщик самостоятельно принял\nрешение о своей ликвидации, о признании несостоятельным (банкротом);\n перечисления суммы кредита на расчетные счета Заемщика, открытые в других банках;\n приобретения ценных бумаг, в том числе векселей за счет предоставленного кредита;\n существенного ухудшения финансового состояния Заемщика."
+        },
+        {
+          "id": "r51",
+          "subject": "e134",
+          "subject_text": "Поручителем",
+          "relation": "hasValue",
+          "object": "e138",
+          "object_text": "Кредитором",
+          "confidence": 0.65,
+          "evidence": "Кредитного договора;\n уклонения Заемщика от проведения Кредитором проверок обеспеченности кредита, реальности финансово-\nхозяйственной деятельности (включая организационно-обеспечительную деятельность) Заемщика, финансового состояния\nЗаемщика;\n невыполнения Заемщиком (Поручителем) условий Кредитного договора (договора поручительства);\n установления факта предоставления Заемщиком недостоверной информации;\n возбуждения в отношении Заемщика исполнительного производства, если это, по мнению Кредитора, может повлечь\nнеисполнение или ненадлежащее исполнение Заемщиком своих обязательств по настоящему договору;\n неисполнения либо ненадлежащего исполнения условий иных заключенных договоров с Кредитором;\n реорганизации Заемщика,\n\n6\n наложения ареста на имущество Заемщика;\n если в отношении Заемщика имеется требование о его ликвидации, либо если Заемщик самостоятельно принял\nрешение о своей ликвидации, о признании несостоятельным (банкротом);\n перечисления суммы кредита на расчетные счета Заемщика, открытые в других банках;\n приобретения ценных бумаг, в том числе векселей за счет предоставленного кредита;\n существенного ухудшения финансового состояния Заемщика."
+        },
+        {
+          "id": "r52",
+          "subject": "e134",
+          "subject_text": "Поручителем",
+          "relation": "hasValue",
+          "object": "e139",
+          "object_text": "Заемщика",
+          "confidence": 0.65,
+          "evidence": "Кредитного договора;\n уклонения Заемщика от проведения Кредитором проверок обеспеченности кредита, реальности финансово-\nхозяйственной деятельности (включая организационно-обеспечительную деятельность) Заемщика, финансового состояния\nЗаемщика;\n невыполнения Заемщиком (Поручителем) условий Кредитного договора (договора поручительства);\n установления факта предоставления Заемщиком недостоверной информации;\n возбуждения в отношении Заемщика исполнительного производства, если это, по мнению Кредитора, может повлечь\nнеисполнение или ненадлежащее исполнение Заемщиком своих обязательств по настоящему договору;\n неисполнения либо ненадлежащего исполнения условий иных заключенных договоров с Кредитором;\n реорганизации Заемщика,\n\n6\n наложения ареста на имущество Заемщика;\n если в отношении Заемщика имеется требование о его ликвидации, либо если Заемщик самостоятельно принял\nрешение о своей ликвидации, о признании несостоятельным (банкротом);\n перечисления суммы кредита на расчетные счета Заемщика, открытые в других банках;\n приобретения ценных бумаг, в том числе векселей за счет предоставленного кредита;\n существенного ухудшения финансового состояния Заемщика."
+        },
+        {
+          "id": "r53",
+          "subject": "e134",
+          "subject_text": "Поручителем",
+          "relation": "hasValue",
+          "object": "e140",
+          "object_text": "Заемщика",
+          "confidence": 0.65,
+          "evidence": "Кредитного договора;\n уклонения Заемщика от проведения Кредитором проверок обеспеченности кредита, реальности финансово-\nхозяйственной деятельности (включая организационно-обеспечительную деятельность) Заемщика, финансового состояния\nЗаемщика;\n невыполнения Заемщиком (Поручителем) условий Кредитного договора (договора поручительства);\n установления факта предоставления Заемщиком недостоверной информации;\n возбуждения в отношении Заемщика исполнительного производства, если это, по мнению Кредитора, может повлечь\nнеисполнение или ненадлежащее исполнение Заемщиком своих обязательств по настоящему договору;\n неисполнения либо ненадлежащего исполнения условий иных заключенных договоров с Кредитором;\n реорганизации Заемщика,\n\n6\n наложения ареста на имущество Заемщика;\n если в отношении Заемщика имеется требование о его ликвидации, либо если Заемщик самостоятельно принял\nрешение о своей ликвидации, о признании несостоятельным (банкротом);\n перечисления суммы кредита на расчетные счета Заемщика, открытые в других банках;\n приобретения ценных бумаг, в том числе векселей за счет предоставленного кредита;\n существенного ухудшения финансового состояния Заемщика."
+        },
+        {
+          "id": "r54",
+          "subject": "e134",
+          "subject_text": "Поручителем",
+          "relation": "hasValue",
+          "object": "e141",
+          "object_text": "Заемщика",
+          "confidence": 0.65,
+          "evidence": "Кредитного договора;\n уклонения Заемщика от проведения Кредитором проверок обеспеченности кредита, реальности финансово-\nхозяйственной деятельности (включая организационно-обеспечительную деятельность) Заемщика, финансового состояния\nЗаемщика;\n невыполнения Заемщиком (Поручителем) условий Кредитного договора (договора поручительства);\n установления факта предоставления Заемщиком недостоверной информации;\n возбуждения в отношении Заемщика исполнительного производства, если это, по мнению Кредитора, может повлечь\nнеисполнение или ненадлежащее исполнение Заемщиком своих обязательств по настоящему договору;\n неисполнения либо ненадлежащего исполнения условий иных заключенных договоров с Кредитором;\n реорганизации Заемщика,\n\n6\n наложения ареста на имущество Заемщика;\n если в отношении Заемщика имеется требование о его ликвидации, либо если Заемщик самостоятельно принял\nрешение о своей ликвидации, о признании несостоятельным (банкротом);\n перечисления суммы кредита на расчетные счета Заемщика, открытые в других банках;\n приобретения ценных бумаг, в том числе векселей за счет предоставленного кредита;\n существенного ухудшения финансового состояния Заемщика."
+        },
+        {
+          "id": "r55",
+          "subject": "e134",
+          "subject_text": "Поручителем",
+          "relation": "hasValue",
+          "object": "e142",
+          "object_text": "Заемщик",
+          "confidence": 0.65,
+          "evidence": "Кредитного договора;\n уклонения Заемщика от проведения Кредитором проверок обеспеченности кредита, реальности финансово-\nхозяйственной деятельности (включая организационно-обеспечительную деятельность) Заемщика, финансового состояния\nЗаемщика;\n невыполнения Заемщиком (Поручителем) условий Кредитного договора (договора поручительства);\n установления факта предоставления Заемщиком недостоверной информации;\n возбуждения в отношении Заемщика исполнительного производства, если это, по мнению Кредитора, может повлечь\nнеисполнение или ненадлежащее исполнение Заемщиком своих обязательств по настоящему договору;\n неисполнения либо ненадлежащего исполнения условий иных заключенных договоров с Кредитором;\n реорганизации Заемщика,\n\n6\n наложения ареста на имущество Заемщика;\n если в отношении Заемщика имеется требование о его ликвидации, либо если Заемщик самостоятельно принял\nрешение о своей ликвидации, о признании несостоятельным (банкротом);\n перечисления суммы кредита на расчетные счета Заемщика, открытые в других банках;\n приобретения ценных бумаг, в том числе векселей за счет предоставленного кредита;\n существенного ухудшения финансового состояния Заемщика."
+        },
+        {
+          "id": "r56",
+          "subject": "e134",
+          "subject_text": "Поручителем",
+          "relation": "hasValue",
+          "object": "e143",
+          "object_text": "Заемщика",
+          "confidence": 0.65,
+          "evidence": "Кредитного договора;\n уклонения Заемщика от проведения Кредитором проверок обеспеченности кредита, реальности финансово-\nхозяйственной деятельности (включая организационно-обеспечительную деятельность) Заемщика, финансового состояния\nЗаемщика;\n невыполнения Заемщиком (Поручителем) условий Кредитного договора (договора поручительства);\n установления факта предоставления Заемщиком недостоверной информации;\n возбуждения в отношении Заемщика исполнительного производства, если это, по мнению Кредитора, может повлечь\nнеисполнение или ненадлежащее исполнение Заемщиком своих обязательств по настоящему договору;\n неисполнения либо ненадлежащего исполнения условий иных заключенных договоров с Кредитором;\n реорганизации Заемщика,\n\n6\n наложения ареста на имущество Заемщика;\n если в отношении Заемщика имеется требование о его ликвидации, либо если Заемщик самостоятельно принял\nрешение о своей ликвидации, о признании несостоятельным (банкротом);\n перечисления суммы кредита на расчетные счета Заемщика, открытые в других банках;\n приобретения ценных бумаг, в том числе векселей за счет предоставленного кредита;\n существенного ухудшения финансового состояния Заемщика."
+        },
+        {
+          "id": "r57",
+          "subject": "e134",
+          "subject_text": "Поручителем",
+          "relation": "hasValue",
+          "object": "e144",
+          "object_text": "Заемщика",
+          "confidence": 0.65,
+          "evidence": "Кредитного договора;\n уклонения Заемщика от проведения Кредитором проверок обеспеченности кредита, реальности финансово-\nхозяйственной деятельности (включая организационно-обеспечительную деятельность) Заемщика, финансового состояния\nЗаемщика;\n невыполнения Заемщиком (Поручителем) условий Кредитного договора (договора поручительства);\n установления факта предоставления Заемщиком недостоверной информации;\n возбуждения в отношении Заемщика исполнительного производства, если это, по мнению Кредитора, может повлечь\nнеисполнение или ненадлежащее исполнение Заемщиком своих обязательств по настоящему договору;\n неисполнения либо ненадлежащего исполнения условий иных заключенных договоров с Кредитором;\n реорганизации Заемщика,\n\n6\n наложения ареста на имущество Заемщика;\n если в отношении Заемщика имеется требование о его ликвидации, либо если Заемщик самостоятельно принял\nрешение о своей ликвидации, о признании несостоятельным (банкротом);\n перечисления суммы кредита на расчетные счета Заемщика, открытые в других банках;\n приобретения ценных бумаг, в том числе векселей за счет предоставленного кредита;\n существенного ухудшения финансового состояния Заемщика."
+        },
+        {
+          "id": "r58",
+          "subject": "e145",
+          "subject_text": "Заемщика",
+          "relation": "hasValue",
+          "object": "e147",
+          "object_text": "расчетном(ых",
+          "confidence": 0.65,
+          "evidence": "Под существенным ухудшением финансового состояния\nСтороны понимают:\n существенное (25 процентов и более) снижение чистых активов (собственных средств) Заемщика по сравнению с их\nзначением, указанным в финансовой отчетности Заемщика на дату предоставления кредита;\n выявлено наличие у Заемщика скрытых потерь (неликвидных запасов готовой продукции или требований, безнадежных\nк взысканию) в размере, равном или превышающем 25 процентов чистых активов (собственных средств) Заемщика;\n прекращение или существенное снижение (более чем на 25 процентов) ежемесячных кредитовых оборотов на\nрасчетном(ых) счете(ах) Заемщика в ПАО КБ «УБРиР» по сравнению со среднемесячным значением рассчитанным за период 6\n(Шесть) месяцев до даты предоставления кредита (предоставления первой части кредита (транша))."
+        },
+        {
+          "id": "r59",
+          "subject": "e145",
+          "subject_text": "Заемщика",
+          "relation": "hasValue",
+          "object": "e148",
+          "object_text": "Заемщика",
+          "confidence": 0.65,
+          "evidence": "Под существенным ухудшением финансового состояния\nСтороны понимают:\n существенное (25 процентов и более) снижение чистых активов (собственных средств) Заемщика по сравнению с их\nзначением, указанным в финансовой отчетности Заемщика на дату предоставления кредита;\n выявлено наличие у Заемщика скрытых потерь (неликвидных запасов готовой продукции или требований, безнадежных\nк взысканию) в размере, равном или превышающем 25 процентов чистых активов (собственных средств) Заемщика;\n прекращение или существенное снижение (более чем на 25 процентов) ежемесячных кредитовых оборотов на\nрасчетном(ых) счете(ах) Заемщика в ПАО КБ «УБРиР» по сравнению со среднемесячным значением рассчитанным за период 6\n(Шесть) месяцев до даты предоставления кредита (предоставления первой части кредита (транша))."
+        },
+        {
+          "id": "r60",
+          "subject": "e145",
+          "subject_text": "Заемщика",
+          "relation": "hasValue",
+          "object": "e149",
+          "object_text": "ПАО КБ «УБРиР»",
+          "confidence": 0.65,
+          "evidence": "Под существенным ухудшением финансового состояния\nСтороны понимают:\n существенное (25 процентов и более) снижение чистых активов (собственных средств) Заемщика по сравнению с их\nзначением, указанным в финансовой отчетности Заемщика на дату предоставления кредита;\n выявлено наличие у Заемщика скрытых потерь (неликвидных запасов готовой продукции или требований, безнадежных\nк взысканию) в размере, равном или превышающем 25 процентов чистых активов (собственных средств) Заемщика;\n прекращение или существенное снижение (более чем на 25 процентов) ежемесячных кредитовых оборотов на\nрасчетном(ых) счете(ах) Заемщика в ПАО КБ «УБРиР» по сравнению со среднемесячным значением рассчитанным за период 6\n(Шесть) месяцев до даты предоставления кредита (предоставления первой части кредита (транша))."
+        },
+        {
+          "id": "r61",
+          "subject": "e146",
+          "subject_text": "Заемщика",
+          "relation": "hasValue",
+          "object": "e147",
+          "object_text": "расчетном(ых",
+          "confidence": 0.65,
+          "evidence": "Под существенным ухудшением финансового состояния\nСтороны понимают:\n существенное (25 процентов и более) снижение чистых активов (собственных средств) Заемщика по сравнению с их\nзначением, указанным в финансовой отчетности Заемщика на дату предоставления кредита;\n выявлено наличие у Заемщика скрытых потерь (неликвидных запасов готовой продукции или требований, безнадежных\nк взысканию) в размере, равном или превышающем 25 процентов чистых активов (собственных средств) Заемщика;\n прекращение или существенное снижение (более чем на 25 процентов) ежемесячных кредитовых оборотов на\nрасчетном(ых) счете(ах) Заемщика в ПАО КБ «УБРиР» по сравнению со среднемесячным значением рассчитанным за период 6\n(Шесть) месяцев до даты предоставления кредита (предоставления первой части кредита (транша))."
+        },
+        {
+          "id": "r62",
+          "subject": "e146",
+          "subject_text": "Заемщика",
+          "relation": "hasValue",
+          "object": "e148",
+          "object_text": "Заемщика",
+          "confidence": 0.65,
+          "evidence": "Под существенным ухудшением финансового состояния\nСтороны понимают:\n существенное (25 процентов и более) снижение чистых активов (собственных средств) Заемщика по сравнению с их\nзначением, указанным в финансовой отчетности Заемщика на дату предоставления кредита;\n выявлено наличие у Заемщика скрытых потерь (неликвидных запасов готовой продукции или требований, безнадежных\nк взысканию) в размере, равном или превышающем 25 процентов чистых активов (собственных средств) Заемщика;\n прекращение или существенное снижение (более чем на 25 процентов) ежемесячных кредитовых оборотов на\nрасчетном(ых) счете(ах) Заемщика в ПАО КБ «УБРиР» по сравнению со среднемесячным значением рассчитанным за период 6\n(Шесть) месяцев до даты предоставления кредита (предоставления первой части кредита (транша))."
+        },
+        {
+          "id": "r63",
+          "subject": "e146",
+          "subject_text": "Заемщика",
+          "relation": "hasValue",
+          "object": "e149",
+          "object_text": "ПАО КБ «УБРиР»",
+          "confidence": 0.65,
+          "evidence": "Под существенным ухудшением финансового состояния\nСтороны понимают:\n существенное (25 процентов и более) снижение чистых активов (собственных средств) Заемщика по сравнению с их\nзначением, указанным в финансовой отчетности Заемщика на дату предоставления кредита;\n выявлено наличие у Заемщика скрытых потерь (неликвидных запасов готовой продукции или требований, безнадежных\nк взысканию) в размере, равном или превышающем 25 процентов чистых активов (собственных средств) Заемщика;\n прекращение или существенное снижение (более чем на 25 процентов) ежемесячных кредитовых оборотов на\nрасчетном(ых) счете(ах) Заемщика в ПАО КБ «УБРиР» по сравнению со среднемесячным значением рассчитанным за период 6\n(Шесть) месяцев до даты предоставления кредита (предоставления первой части кредита (транша))."
+        },
+        {
+          "id": "r64",
+          "subject": "e187",
+          "subject_text": "Заемщик",
+          "relation": "issuedBy",
+          "object": "e188",
+          "object_text": "Кредитору",
+          "confidence": 0.65,
+          "evidence": "В случае несвоевременного возврата кредита и процентов по кредиту Заемщик предоставляет Кредитору право\nобратить взыскание на заложенное имущество и (или) предъявить требование к поручителю (гаранту)."
+        },
+        {
+          "id": "r65",
+          "subject": "e213",
+          "subject_text": "Арбитражном суде",
+          "relation": "hasValue",
+          "object": "e215",
+          "object_text": "Российской Федерации",
+          "confidence": 0.65,
+          "evidence": "Все споры и разногласия, возникающие по настоящему договору, подлежат рассмотрению в Арбитражном суде\nСвердловской области в порядке, установленном действующим законодательством Российской Федерации."
+        },
+        {
+          "id": "r66",
+          "subject": "e214",
+          "subject_text": "Свердловской области",
+          "relation": "hasValue",
+          "object": "e215",
+          "object_text": "Российской Федерации",
+          "confidence": 0.65,
+          "evidence": "Все споры и разногласия, возникающие по настоящему договору, подлежат рассмотрению в Арбитражном суде\nСвердловской области в порядке, установленном действующим законодательством Российской Федерации."
         }
       ],
-      "relations": [],
       "stats": {
-        "entities": 1,
-        "relations": 0,
+        "entities": 217,
+        "relations": 66,
         "by_class": {
-          "Actor": 1
+          "Actor": 205,
+          "LegalTerm": 5,
+          "Process": 5,
+          "ProductAttribute": 2
         }
       }
     }
   ],
   "ontology_stats": {
-    "triples": 125,
-    "classes": 16,
+    "triples": 211,
+    "classes": 12,
     "properties": 7
   }
 }

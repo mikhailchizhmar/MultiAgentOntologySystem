@@ -2,103 +2,175 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-fin:AnnuitetnyyPlatyozh a fin:ProductAttribute ;
-    rdfs:label "аннуитетный платёж"@ru .
+fin:0406 a fin:Actor ;
+    rdfs:label "0406"@ru .
 
-fin:BankRossii a fin:Actor ;
-    rdfs:label "Банк России"@ru .
+fin:Adresa a fin:Actor ;
+    rdfs:label "АДРЕСА"@ru .
 
-fin:Broker a fin:Actor ;
-    rdfs:label "Брокер"@ru .
+fin:ArbitrazhnomSude a fin:Actor ;
+    rdfs:label "Арбитражном суде"@ru ;
+    fin:hasValue fin:RossiyskoyFederatsii .
+
+fin:BankaRossii a fin:Actor ;
+    rdfs:label "Банка России"@ru .
+
+fin:Bik a fin:Actor ;
+    rdfs:label "БИК"@ru .
 
 fin:CardProduct a owl:Class ;
     rdfs:label "Карточный продукт"@ru ;
+    rdfs:subClassOf fin:FinancialProduct .
+
+fin:CreditProduct a owl:Class ;
+    rdfs:label "Кредитный продукт"@ru ;
     rdfs:subClassOf fin:FinancialProduct .
 
 fin:DepositProduct a owl:Class ;
     rdfs:label "Депозитный продукт"@ru ;
     rdfs:subClassOf fin:FinancialProduct .
 
-fin:DoveritelnoeUpravlenie a fin:Process ;
-    rdfs:label "доверительное управление"@ru .
+fin:Dogovor a fin:LegalTerm ;
+    rdfs:label "договор"@ru .
 
-fin:EzhemesyachnyyPlatyozh a fin:ProductAttribute ;
-    rdfs:label "ежемесячный платёж"@ru .
+fin:Ekaterinburg a fin:Actor ;
+    rdfs:label "Екатеринбург"@ru .
+
+fin:Ekaterinburga a fin:Actor ;
+    rdfs:label "Екатеринбурга"@ru .
+
+fin:FederalnogoZakona a fin:Actor ;
+    rdfs:label "Федерального закона"@ru .
 
 fin:FinancialProductsOntology a owl:Ontology ;
     rdfs:label "Онтология финансовых продуктов"@ru ;
     rdfs:comment "Baseline-версия. Построена автоматически."@ru .
 
-fin:Greysperiod a fin:ProductAttribute ;
-    rdfs:label "грейс-период"@ru .
+fin:InsuranceProduct a owl:Class ;
+    rdfs:label "Страховой продукт"@ru ;
+    rdfs:subClassOf fin:FinancialProduct .
 
-fin:Iis a owl:Class ;
-    rdfs:label "ИИС"@ru ;
-    fin:issuedBy fin:Rf ;
-    rdfs:subClassOf fin:InvestmentProduct .
+fin:Internetbank a fin:Actor ;
+    rdfs:label "Интернет-банк"@ru .
 
-fin:InvestitsionnyyBank a fin:Actor ;
-    rdfs:label "инвестиционный банк"@ru .
+fin:InvestmentProduct a owl:Class ;
+    rdfs:label "Инвестиционный продукт"@ru ;
+    rdfs:subClassOf fin:FinancialProduct .
 
-fin:IpotechnyyKredit a owl:Class ;
-    rdfs:label "ипотечный кредит"@ru ;
-    rdfs:subClassOf fin:CreditProduct .
+fin:Kredita a fin:Actor ;
+    rdfs:label "Кредита"@ru .
 
-fin:Kasko a owl:Class ;
-    rdfs:label "КАСКО"@ru ;
-    fin:hasAttribute fin:SrokKreditovaniya ;
-    rdfs:subClassOf fin:CreditProduct,
-        fin:InsuranceProduct .
+fin:Kreditor a fin:Actor ;
+    rdfs:label "Кредитор"@ru ;
+    fin:issuedBy fin:Zaemschiku .
 
-fin:MoskovskoyBirzhe a fin:Actor ;
-    rdfs:label "Московской бирже"@ru .
+fin:KreditoromZaemschiku a fin:Actor ;
+    rdfs:label "Кредитором Заемщику"@ru .
 
-fin:Ndfl a fin:LegalTerm ;
-    rdfs:label "НДФЛ"@ru .
+fin:LimitaOverdrafta a fin:Actor ;
+    rdfs:label "лимита овердрафта"@ru .
 
-fin:NeMeneeTryokhLet a fin:Condition ;
-    rdfs:label "не менее трёх лет"@ru .
+fin:NachislenieProtsentov a fin:Process ;
+    rdfs:label "начисление процентов"@ru .
 
-fin:Pif a owl:Class ;
-    rdfs:label "ПИФ"@ru ;
-    rdfs:subClassOf fin:InvestmentProduct .
+fin:Obyazannosti a fin:Actor ;
+    rdfs:label "ОБЯЗАННОСТИ"@ru .
 
 fin:Pogashenie a fin:Process ;
     rdfs:label "погашение"@ru .
 
-fin:PredmetZaloga a fin:ProductAttribute ;
-    rdfs:label "предмет залога"@ru .
+fin:Poruchitelem a fin:Actor ;
+    rdfs:label "Поручителем"@ru ;
+    fin:hasValue fin:Kreditora,
+        fin:Kreditorom,
+        fin:Zaemschik,
+        fin:Zaemschika,
+        fin:ZaemschikomNedostovernoyInformatsii .
 
-fin:PriPolnomPogasheniiZadolzhennosti a fin:Condition ;
-    rdfs:label "при полном погашении задолженности"@ru .
+fin:Poryadok a fin:Actor ;
+    rdfs:label "ПОРЯДОК"@ru .
 
-fin:PriUtrateZaloga a fin:Condition ;
-    rdfs:label "при утрате залога"@ru .
+fin:Prava a fin:Actor ;
+    rdfs:label "ПРАВА"@ru .
+
+fin:Pravila a fin:Actor ;
+    rdfs:label "ПРАВИЛА"@ru .
 
 fin:ProtsentnayaStavka a fin:ProductAttribute ;
     rdfs:label "процентная ставка"@ru .
 
-fin:Scha a fin:ProductAttribute ;
-    rdfs:label "СЧА"@ru .
+fin:PublichnoeAktsionernoeObschestvo a fin:Actor ;
+    rdfs:label "Публичное акционерное общество \""@ru .
 
-fin:SnyatieNalichnykh a fin:Process ;
-    rdfs:label "снятие наличных"@ru .
+fin:Rekvizity a fin:Actor ;
+    rdfs:label "РЕКВИЗИТЫ"@ru .
 
-fin:Strakhovschik a fin:Actor ;
-    rdfs:label "страховщик"@ru .
+fin:RossiyskayaFederatsiya a fin:Actor ;
+    rdfs:label "Российская Федерация"@ru .
 
-fin:SummaKredita a fin:ProductAttribute ;
-    rdfs:label "сумма кредита"@ru .
+fin:RossiyskoyFederatsiiTsbRf a fin:Actor ;
+    rdfs:label "Российской Федерации (ЦБ РФ"@ru .
 
-fin:TsentralnyyBankRossiyskoyFederatsii a fin:Actor ;
-    rdfs:label "Центральный банк Российской Федерации"@ru ;
-    fin:regulatedBy fin:Psk .
+fin:RossiyskoyFederatsiiTsbRfklyuchevoyStavki a fin:Actor ;
+    rdfs:label "Российской Федерации (ЦБ РФ)/ключевой ставки"@ru .
 
-fin:Uscherb a fin:Actor ;
-    rdfs:label "Ущерб"@ru .
+fin:Sakko a fin:Actor ;
+    rdfs:label "Сакко"@ru .
 
-fin:ZalogPriobretaemoyNedvizhimosti a fin:ProductAttribute ;
-    rdfs:label "залог приобретаемой недвижимости"@ru .
+fin:Storon a fin:Actor ;
+    rdfs:label "СТОРОН"@ru .
+
+fin:SverdlovskayaOblast a fin:Actor ;
+    rdfs:label "Свердловская область"@ru .
+
+fin:SverdlovskoyOblasti a fin:Actor ;
+    rdfs:label "Свердловской области"@ru ;
+    fin:hasValue fin:RossiyskoyFederatsii .
+
+fin:Tarifam a fin:Actor ;
+    rdfs:label "Тарифам"@ru .
+
+fin:TarifamKreditora a fin:Actor ;
+    rdfs:label "Тарифам Кредитора"@ru .
+
+fin:Tsb a fin:Actor ;
+    rdfs:label "ЦБ"@ru .
+
+fin:TsentralnogoBanka a fin:Actor ;
+    rdfs:label "Центрального банка"@ru .
+
+fin:UralskiyBankRekonstruktsiiIRazvitiya a fin:Actor ;
+    rdfs:label "Уральский банк реконструкции и развития"@ru .
+
+fin:UralskomGu a fin:Actor ;
+    rdfs:label "Уральском ГУ"@ru .
+
+fin:Usloviy a fin:Actor ;
+    rdfs:label "Условий"@ru .
+
+fin:Usloviya a fin:Actor ;
+    rdfs:label "УСЛОВИЯ"@ru .
+
+fin:Usloviyami a fin:Actor ;
+    rdfs:label "Условиями"@ru .
+
+fin:Vantsetti a fin:Actor ;
+    rdfs:label "Ванцетти"@ru .
+
+fin:Zaemschikom a fin:Actor ;
+    rdfs:label "Заемщиком"@ru ;
+    fin:hasValue fin:Kreditora,
+        fin:Kreditorom,
+        fin:Zaemschik,
+        fin:Zaemschika,
+        fin:ZaemschikomNedostovernoyInformatsii .
+
+fin:ZaemschikomKreditoru a fin:Actor ;
+    rdfs:label "Заемщиком Кредитору"@ru .
+
+fin:ZaemschikuBankovskogoRaschetnogoScheta a fin:Actor ;
+    rdfs:label """Заемщику банковского
+(расчетного) счета"""@ru .
 
 fin:appliesTo a owl:ObjectProperty ;
     rdfs:label "применяется к"@ru ;
@@ -134,9 +206,15 @@ fin:requires a owl:ObjectProperty ;
     rdfs:domain fin:FinancialProduct ;
     rdfs:range fin:Condition .
 
-fin:InsuranceProduct a owl:Class ;
-    rdfs:label "Страховой продукт"@ru ;
-    rdfs:subClassOf fin:FinancialProduct .
+fin:Condition a owl:Class ;
+    rdfs:label "Условие"@ru .
+
+fin:Kreditoru a fin:Actor ;
+    rdfs:label "Кредитору"@ru ;
+    fin:hasValue fin:Bankom,
+        fin:Kreditorom,
+        fin:Rf,
+        fin:Zaemschik .
 
 fin:LegalTerm a owl:Class ;
     rdfs:label "Юридический термин"@ru .
@@ -144,35 +222,71 @@ fin:LegalTerm a owl:Class ;
 fin:Metric a owl:Class ;
     rdfs:label "Метрика"@ru .
 
-fin:Psk a fin:ProductAttribute ;
-    rdfs:label "ПСК"@ru .
+fin:PaoKbUbrir a fin:Actor ;
+    rdfs:label "ПАО КБ «УБРиР»"@ru ;
+    fin:issuedBy fin:Zaemschiku .
 
-fin:Rf a fin:Actor ;
-    rdfs:label "РФ"@ru .
+fin:Raschetnomykh a fin:Actor ;
+    rdfs:label "расчетном(ых"@ru .
 
-fin:SrokKreditovaniya a fin:ProductAttribute ;
-    rdfs:label "срок кредитования"@ru .
+fin:Bankom a fin:Actor ;
+    rdfs:label "БАНКОМ"@ru,
+        "Банком"@ru ;
+    fin:hasValue fin:Kreditorom,
+        fin:Rf,
+        fin:Zaemschik .
 
-fin:CreditProduct a owl:Class ;
-    rdfs:label "Кредитный продукт"@ru ;
-    rdfs:subClassOf fin:FinancialProduct .
+fin:Zaemschiku a fin:Actor ;
+    rdfs:label "Заемщику"@ru .
 
-fin:InvestmentProduct a owl:Class ;
-    rdfs:label "Инвестиционный продукт"@ru ;
-    rdfs:subClassOf fin:FinancialProduct .
-
-fin:Condition a owl:Class ;
-    rdfs:label "Условие"@ru .
+fin:Kreditora a fin:Actor ;
+    rdfs:label "Кредитора"@ru ;
+    fin:hasValue fin:RossiyskoyFederatsii .
 
 fin:Process a owl:Class ;
     rdfs:label "Процесс"@ru .
 
-fin:Actor a owl:Class ;
-    rdfs:label "Участник"@ru .
+fin:ProductAttribute a owl:Class ;
+    rdfs:label "Атрибут продукта"@ru .
+
+fin:RossiyskoyFederatsii a fin:Actor ;
+    rdfs:label "Российской Федерации"@ru .
+
+fin:Zaemschika a fin:Actor ;
+    rdfs:label "Заемщика"@ru ;
+    fin:hasValue fin:Kreditora,
+        fin:Kreditorom,
+        fin:PaoKbUbrir,
+        fin:Raschetnomykh,
+        fin:Zaemschik,
+        fin:Zaemschika,
+        fin:ZaemschikomNedostovernoyInformatsii .
+
+fin:ZaemschikomNedostovernoyInformatsii a fin:Actor ;
+    rdfs:label "Заемщиком недостоверной информации"@ru .
+
+fin:Rf a fin:Actor ;
+    rdfs:label "РФ"@ru ;
+    fin:hasValue fin:Kreditorom,
+        fin:Rf .
+
+fin:Zaemschik a fin:Actor ;
+    rdfs:label "Заемщик"@ru ;
+    fin:hasValue fin:Kreditorom,
+        fin:Rf ;
+    fin:issuedBy fin:Kreditoru .
+
+fin:Kreditorom a fin:Actor ;
+    rdfs:label "Кредитором"@ru,
+        "Кредитором -"@ru ;
+    fin:hasValue fin:Bankom,
+        fin:Kreditorom,
+        fin:Rf,
+        fin:Zaemschik .
 
 fin:FinancialProduct a owl:Class ;
     rdfs:label "Финансовый продукт"@ru .
 
-fin:ProductAttribute a owl:Class ;
-    rdfs:label "Атрибут продукта"@ru .
+fin:Actor a owl:Class ;
+    rdfs:label "Участник"@ru .
 

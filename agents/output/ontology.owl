@@ -3,641 +3,98 @@
    xmlns:fin="http://fin-ontology.org/"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
 >
-  <rdf:Description rdf:about="http://fin-ontology.org/52000Rubley">
-    <rdf:type rdf:resource="http://fin-ontology.org/Metric"/>
-    <rdfs:label xml:lang="ru">52 000 рублей</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
+  <rdf:Description rdf:about="http://fin-ontology.org/FinancialProductsOntology">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdfs:label xml:lang="ru">Онтология финансовых продуктов</rdfs:label>
+    <rdfs:comment xml:lang="ru">Мультиагентная система. GPT-4o-mini + LangGraph.</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Pyati">
-    <rdf:type rdf:resource="http://fin-ontology.org/Metric"/>
-    <rdfs:label xml:lang="ru">пяти</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/3">
-    <rdf:type rdf:resource="http://fin-ontology.org/Metric"/>
-    <rdfs:label xml:lang="ru">3%</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/MinimalnyyEzhemesyachnyyPlatyozh"/>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/Zadolzhennosti"/>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/Minimalnyy"/>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/Komissiya"/>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/Nalichnykh"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Ugone">
-    <rdf:type rdf:resource="http://fin-ontology.org/LegalTerm"/>
-    <rdfs:label xml:lang="ru">угоне</rdfs:label>
-    <fin:confidence>0.7</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_3_hasValue">
+  <rdf:Description rdf:about="http://fin-ontology.org/ev_Kredit_hasAttribute">
     <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/3"/>
-    <rdfs:comment xml:lang="ru">Минимальный ежемесячный платёж — 3% от суммы задолженности</rdfs:comment>
-    <rdfs:comment xml:lang="ru">взимается комиссия 3%</rdfs:comment>
-    <rdfs:comment xml:lang="ru">комиссия 3%</rdfs:comment>
+    <fin:about rdf:resource="http://fin-ontology.org/Kredit"/>
+    <rdfs:comment xml:lang="ru">лимит</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Изменение лимита овердрафта</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Срок использования кредита определяется</rdfs:comment>
+    <rdfs:comment xml:lang="ru">уплачивает Кредитору проценты из расчета</rdfs:comment>
+    <rdfs:comment xml:lang="ru">срок не позднее 5 (Пяти) рабочих дней</rdfs:comment>
+    <rdfs:comment xml:lang="ru">уплату задолженности, указанной в п.</rdfs:comment>
+    <rdfs:comment xml:lang="ru">являющимися неотъемлемой частью настоящего кредитного договора</rdfs:comment>
+    <rdfs:comment xml:lang="ru">УСЛОВИЯ И ПРАВИЛА КРЕДИТОВАНИЯ</rdfs:comment>
+    <rdfs:comment xml:lang="ru">УСЛОВИЯ КРЕДИТОВАНИЯ</rdfs:comment>
+    <rdfs:comment xml:lang="ru">в пределах суммы установленного лимита</rdfs:comment>
+    <rdfs:comment xml:lang="ru">отражения задолженности по кредиту</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Сроком использования кредита считается период</rdfs:comment>
+    <rdfs:comment xml:lang="ru">проценты (или их часть) и иные причитающиеся с Заемщика денежные средства</rdfs:comment>
+    <rdfs:comment xml:lang="ru">счет(а) Кредитора по учету ссудной и иной задолженности</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Условий и правил кредитования.</rdfs:comment>
+    <rdfs:comment xml:lang="ru">лимита по кредиту</rdfs:comment>
+    <rdfs:comment xml:lang="ru">задолженности по кредиту</rdfs:comment>
+    <rdfs:comment xml:lang="ru">изменен лимит</rdfs:comment>
+    <rdfs:comment xml:lang="ru">срок действия договора</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Установленный лимит</rdfs:comment>
+    <rdfs:comment xml:lang="ru">установленный лимит</rdfs:comment>
+    <rdfs:comment xml:lang="ru">проценты за пользование кредитом</rdfs:comment>
+    <rdfs:comment xml:lang="ru">сроков, установленных настоящим договором</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Проценты за пользование кредитом</rdfs:comment>
+    <rdfs:comment xml:lang="ru">остаток задолженности по основному долгу</rdfs:comment>
+    <rdfs:comment xml:lang="ru">сроков, установленных п.</rdfs:comment>
+    <rdfs:comment xml:lang="ru">кредитный договор</rdfs:comment>
+    <rdfs:comment xml:lang="ru">наличие задолженности по уплате кредита</rdfs:comment>
+    <rdfs:comment xml:lang="ru">счета (включая счета в валюте, отличной от валюты кредита)</rdfs:comment>
+    <rdfs:comment xml:lang="ru">кредитного договора</rdfs:comment>
+    <rdfs:comment xml:lang="ru">кредитного</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Условий и правил кредитования</rdfs:comment>
+    <rdfs:comment xml:lang="ru">просроченной ссудной задолженности</rdfs:comment>
+    <rdfs:comment xml:lang="ru">процентов за просроченную ссудную задолженность</rdfs:comment>
+    <rdfs:comment xml:lang="ru">правил кредитования</rdfs:comment>
+    <rdfs:comment xml:lang="ru">копию кредитного договора</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Количество проверок и их сроки</rdfs:comment>
+    <rdfs:comment xml:lang="ru">кредита на срок более 365 и менее 730 дней</rdfs:comment>
+    <rdfs:comment xml:lang="ru">по измененной ставке</rdfs:comment>
+    <rdfs:comment xml:lang="ru">заплатить проценты по первоначальной процентной ставке</rdfs:comment>
+    <rdfs:comment xml:lang="ru">за фактический срок пользования денежными средствами</rdfs:comment>
+    <rdfs:comment xml:lang="ru">лимит кредита</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Кредитного договора;</rdfs:comment>
+    <rdfs:comment xml:lang="ru">кредитного договора;</rdfs:comment>
+    <rdfs:comment xml:lang="ru">формирования кредитными организациями резервов на возможные потери по ссудам, ссудной и приравненной к ней задолженности</rdfs:comment>
+    <rdfs:comment xml:lang="ru">лимита</rdfs:comment>
+    <rdfs:comment xml:lang="ru">кредитования</rdfs:comment>
+    <rdfs:comment xml:lang="ru">настоящих</rdfs:comment>
+    <rdfs:comment xml:lang="ru">лимита овердрафта</rdfs:comment>
+    <rdfs:comment xml:lang="ru">уплатить причитающиеся проценты</rdfs:comment>
+    <rdfs:comment xml:lang="ru">уплатить причитающиеся пени</rdfs:comment>
+    <rdfs:comment xml:lang="ru">взыскании задолженности</rdfs:comment>
+    <rdfs:comment xml:lang="ru">расчетного счета Заемщика</rdfs:comment>
+    <rdfs:comment xml:lang="ru">кредит</rdfs:comment>
+    <rdfs:comment xml:lang="ru">уменьшает размер лимита</rdfs:comment>
+    <rdfs:comment xml:lang="ru">расчетного</rdfs:comment>
+    <rdfs:comment xml:lang="ru">расчетного(ых) счета(ов)</rdfs:comment>
+    <rdfs:comment xml:lang="ru">уплату процентов за пользование кредитом, в том числе подлежащих уплате до срока возврата кредита</rdfs:comment>
+    <rdfs:comment xml:lang="ru">сроков погашения кредита</rdfs:comment>
+    <rdfs:comment xml:lang="ru">ставка цифрами и прописью процентов</rdfs:comment>
+    <rdfs:comment xml:lang="ru">уплачивает Кредитору пени</rdfs:comment>
+    <rdfs:comment xml:lang="ru">суммы просроченной ссудной задолженности</rdfs:comment>
+    <rdfs:comment xml:lang="ru">ставка цифрами и прописью процентов от суммы просроченной задолженности</rdfs:comment>
+    <rdfs:comment xml:lang="ru">пени из расчета</rdfs:comment>
+    <rdfs:comment xml:lang="ru">настоящих условий и правил кредитования</rdfs:comment>
+    <rdfs:comment xml:lang="ru">суммы просроченной задолженности</rdfs:comment>
+    <rdfs:comment xml:lang="ru">в размере _______________ от суммы лимита</rdfs:comment>
+    <rdfs:comment xml:lang="ru">срок предоставления документов</rdfs:comment>
+    <rdfs:comment xml:lang="ru">в размере _________________ от суммы лимита</rdfs:comment>
+    <rdfs:comment xml:lang="ru">очередность погашения задолженности</rdfs:comment>
+    <rdfs:comment xml:lang="ru">изменение сроков возврата кредита</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Keshbek">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">кэшбэк</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/1"/>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/5"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Limitom">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">лимитом</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/PolnayaStoimostKredita">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">полная стоимость кредита</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_Uscherb_hasAttribute">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/Uscherb"/>
-    <rdfs:comment xml:lang="ru">Полис КАСКО обеспечивает страховую защиту транспортного средства от ущерба</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/LegalTerm">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="ru">Юридический термин</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Ranee">
-    <rdf:type rdf:resource="http://fin-ontology.org/Condition"/>
-    <rdfs:label xml:lang="ru">ранее</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Riska">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">риска</rdfs:label>
-    <fin:confidence>0.5</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Predostavlyaet">
-    <rdf:type rdf:resource="http://fin-ontology.org/Process"/>
-    <rdfs:label xml:lang="ru">предоставляет</rdfs:label>
-    <fin:confidence>0.6</fin:confidence>
+  <rdf:Description rdf:about="http://fin-ontology.org/Kreditor">
     <fin:issuedBy rdf:resource="http://fin-ontology.org/Kredit"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_IndividualnyyInvestitsionnyySchyotIis_issuedBy">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/IndividualnyyInvestitsionnyySchyotIis"/>
-    <rdfs:comment xml:lang="ru">ИИС открывается физическим лицам</rdfs:comment>
-    <rdfs:comment xml:lang="ru">ИИС открывается физическим лицам — налоговым резидентам РФ</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_InvestitsionnyyPay_hasAttribute">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/InvestitsionnyyPay"/>
-    <rdfs:comment xml:lang="ru">инвестиционный пай удостоверяет долю пайщика</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/TryokhLet">
-    <rdf:type rdf:resource="http://fin-ontology.org/Condition"/>
-    <rdfs:label xml:lang="ru">трёх лет</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/DosrochnoePogashenie">
-    <rdf:type rdf:resource="http://fin-ontology.org/Process"/>
-    <rdfs:label xml:lang="ru">досрочное погашение</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/DosrochnomZakrytiiSchyota">
-    <rdf:type rdf:resource="http://fin-ontology.org/Process"/>
-    <rdfs:label xml:lang="ru">досрочном закрытии счёта</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/appliesTo">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="ru">применяется к</rdfs:label>
-    <rdfs:range rdf:resource="http://fin-ontology.org/FinancialProduct"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Raskryt">
-    <rdf:type rdf:resource="http://fin-ontology.org/Process"/>
-    <rdfs:label xml:lang="ru">раскрыть</rdfs:label>
-    <fin:confidence>0.6</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/KreditnyyRisk">
-    <rdf:type rdf:resource="http://fin-ontology.org/Condition"/>
-    <rdfs:label xml:lang="ru">кредитный риск</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/12">
-    <rdf:type rdf:resource="http://fin-ontology.org/Metric"/>
-    <rdfs:label xml:lang="ru">1,2%</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Kredit">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://fin-ontology.org/CreditProduct"/>
-    <rdfs:label xml:lang="ru">кредит</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Protsentnuyu"/>
-    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Stavku"/>
-    <fin:requires rdf:resource="http://fin-ontology.org/Zalog"/>
-    <fin:requires rdf:resource="http://fin-ontology.org/Nedvizhimosti"/>
-    <fin:requires rdf:resource="http://fin-ontology.org/Predmet"/>
-    <fin:requires rdf:resource="http://fin-ontology.org/Strakhovoy"/>
-    <skos:closeMatch rdf:resource="https://spec.edmcouncil.org/fibo/ontology/LOAN/Loan"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Suzhdeniya">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">суждения</rdfs:label>
-    <fin:confidence>0.5</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Otkrytym">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">открытым</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
-    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Fondom"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_IpotechnyyKredit_hasAttribute">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/IpotechnyyKredit"/>
-    <rdfs:comment xml:lang="ru">ипотечный кредит в размере 5 000 000 рублей сроком на 20 лет под процентную ставку 10,5% годовых</rdfs:comment>
-    <rdfs:comment xml:lang="ru">ипотечный кредит в размере 5 000 000 рублей сроком на 20 лет</rdfs:comment>
-    <rdfs:comment xml:lang="ru">под процентную ставку 10,5% годовых</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Actor">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="ru">Участник</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Zaklyucheniya">
-    <rdf:type rdf:resource="http://fin-ontology.org/Process"/>
-    <rdfs:label xml:lang="ru">заключения</rdfs:label>
-    <fin:confidence>0.6</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Payov">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://fin-ontology.org/InvestmentProduct"/>
-    <rdfs:label xml:lang="ru">паёв</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Komissiya">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">комиссия</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/390Rubley"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/180Dney">
-    <rdf:type rdf:resource="http://fin-ontology.org/Condition"/>
-    <rdfs:label xml:lang="ru">180 дней</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-    <fin:requires rdf:resource="http://fin-ontology.org/Payov"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_SkidkaPriPogasheniiPayov_hasValue">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/SkidkaPriPogasheniiPayov"/>
-    <rdfs:comment xml:lang="ru">не более 1%</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_Komissiya_hasValue">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/Komissiya"/>
-    <rdfs:comment xml:lang="ru">комиссия 3%, минимум 390 рублей</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Predmetom">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">предметом</rdfs:label>
-    <fin:confidence>0.6</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Broker">
-    <rdf:type rdf:resource="http://fin-ontology.org/Actor"/>
-    <rdfs:label xml:lang="ru">Брокер</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Vznos">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">взнос</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Kreditovaniya">
-    <rdf:type rdf:resource="http://fin-ontology.org/Process"/>
-    <rdfs:label xml:lang="ru">кредитования</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/5000000Rubley">
-    <rdf:type rdf:resource="http://fin-ontology.org/Metric"/>
-    <rdfs:label xml:lang="ru">5 000 000 рублей</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/Ipotechnyy"/>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/Protsentnuyu"/>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/Stavku"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_Kompaniya_involves">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/Kompaniya"/>
-    <rdfs:comment xml:lang="ru">Управляющая компания осуществляет доверительное управление</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_Ssudy_hasAttribute">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/Ssudy"/>
-    <rdfs:comment xml:lang="ru">Ссуды классифицируются по пяти категориям качества</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Platezhi">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">платежи</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Strakhovschik">
-    <rdf:type rdf:resource="http://fin-ontology.org/Actor"/>
-    <rdfs:label xml:lang="ru">страховщик</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-    <skos:closeMatch rdf:resource="https://spec.edmcouncil.org/fibo/ontology/INS/Insurer"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/LgotnogoPerioda">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">льготного периода</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/PaevoyInvestitsionnyyFondPif">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://fin-ontology.org/InvestmentProduct"/>
-    <rdfs:label xml:lang="ru">Паевой инвестиционный фонд (ПИФ)</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-    <fin:subClassOf rdf:resource="http://fin-ontology.org/Obligatsiy"/>
-    <fin:subClassOf rdf:resource="http://fin-ontology.org/Fond"/>
-    <fin:subClassOf rdf:resource="http://fin-ontology.org/Fondom"/>
-    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Investitsionnyy"/>
-    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Paevoy"/>
-    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Otkrytym"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Programme">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">программе</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Sobstvennosti">
-    <rdf:type rdf:resource="http://fin-ontology.org/LegalTerm"/>
-    <rdfs:label xml:lang="ru">собственности</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Polis">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">полис</rdfs:label>
-    <fin:confidence>0.5</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Ispolneniem">
-    <rdf:type rdf:resource="http://fin-ontology.org/LegalTerm"/>
-    <rdfs:label xml:lang="ru">исполнением</rdfs:label>
-    <fin:confidence>0.7</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Strakhovuyu">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">страховую</rdfs:label>
-    <fin:confidence>0.5</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_ProtsentnayaStavka_hasValue">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/ProtsentnayaStavka"/>
-    <rdfs:comment xml:lang="ru">Процентная ставка по программе господдержки составляет 6,5% годовых.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Priobretenie">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">приобретение</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Organizatsiya">
-    <rdf:type rdf:resource="http://fin-ontology.org/Actor"/>
-    <rdfs:label xml:lang="ru">организация</rdfs:label>
-    <fin:confidence>0.5</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_Ssudam_hasValue">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/Ssudam"/>
-    <rdfs:comment xml:lang="ru">резерв формируется в размере 100% от суммы основного долга</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_DosrochnyyVozvratKredita_involves">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/DosrochnyyVozvratKredita"/>
-    <rdfs:comment xml:lang="ru">Право на досрочный возврат кредита принадлежит заёмщику</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_PaevoyInvestitsionnyyFondPif_hasAttribute">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/PaevoyInvestitsionnyyFondPif"/>
-    <rdfs:comment xml:lang="ru">является открытым фондом облигаций</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_MaksimalnayaSummaKredita_hasValue">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/MaksimalnayaSummaKredita"/>
-    <rdfs:comment xml:lang="ru">Максимальная сумма кредита — 7 000 000 рублей</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/NalogovymRezidentamRf">
-    <rdf:type rdf:resource="http://fin-ontology.org/Condition"/>
-    <rdfs:label xml:lang="ru">налоговым резидентам РФ</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Zaschitu">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">защиту</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_Fond_hasAttribute">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/Fond"/>
-    <rdfs:comment xml:lang="ru">является открытым фондом</rdfs:comment>
-    <rdfs:comment xml:lang="ru">долю пайщика в праве собственности на имущество фонда</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/1">
-    <rdf:type rdf:resource="http://fin-ontology.org/Metric"/>
-    <rdfs:label xml:lang="ru">1%</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/TriGoda">
-    <rdf:type rdf:resource="http://fin-ontology.org/Condition"/>
-    <rdfs:label xml:lang="ru">три года</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/PredelnyeZnacheniyaPsk">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">предельные значения ПСК</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/InspektsionnyeProverki">
-    <rdf:type rdf:resource="http://fin-ontology.org/Process"/>
-    <rdfs:label xml:lang="ru">инспекционные проверки</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Vydachi">
-    <rdf:type rdf:resource="http://fin-ontology.org/Process"/>
-    <rdfs:label xml:lang="ru">выдачи</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/subClassOf">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="ru">подтип</rdfs:label>
-    <rdfs:domain rdf:resource="http://fin-ontology.org/FinancialProduct"/>
-    <rdfs:range rdf:resource="http://fin-ontology.org/FinancialProduct"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/65Godovykh">
-    <rdf:type rdf:resource="http://fin-ontology.org/Metric"/>
-    <rdfs:label xml:lang="ru">6,5% годовых</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/Programme"/>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/Gospodderzhki"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Fond">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://fin-ontology.org/InvestmentProduct"/>
-    <rdfs:label xml:lang="ru">фонд</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Otkrytym"/>
-    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Dolyu"/>
-    <fin:issuedBy rdf:resource="http://fin-ontology.org/Upravlyayuschaya"/>
-    <fin:issuedBy rdf:resource="http://fin-ontology.org/Kompaniya"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_Franshiza_hasValue">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/Franshiza"/>
-    <rdfs:comment xml:lang="ru">Франшиза по риску «Ущерб» составляет 15 000 рублей</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/involves">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="ru">включает процесс</rdfs:label>
-    <rdfs:domain rdf:resource="http://fin-ontology.org/FinancialProduct"/>
-    <rdfs:range rdf:resource="http://fin-ontology.org/Process"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_15000Rubley_hasValue">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/15000Rubley"/>
-    <rdfs:comment xml:lang="ru">Франшиза по риску «Ущерб» составляет 15 000 рублей</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Kachestva">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">качества</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_15_hasValue">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/15"/>
-    <rdfs:comment xml:lang="ru">не менее 15% от стоимости транспортного средства</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Process">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="ru">Процесс</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/SkidkaPriPogasheniiPayov">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">скидка при погашении паёв</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/1"/>
-    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Payov"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/MaksimalnayaSummaKredita">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">максимальная сумма кредита</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/7000000Rubley"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Snyatie">
-    <rdf:type rdf:resource="http://fin-ontology.org/Process"/>
-    <rdfs:label xml:lang="ru">снятие</rdfs:label>
-    <fin:confidence>0.7</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/390Rubley">
-    <rdf:type rdf:resource="http://fin-ontology.org/Metric"/>
-    <rdfs:label xml:lang="ru">390 рублей</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/Nalichnykh"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_PervonachalnyyVznos_hasValue">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/PervonachalnyyVznos"/>
-    <rdfs:comment xml:lang="ru">не менее 15%</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/5">
-    <rdf:type rdf:resource="http://fin-ontology.org/Metric"/>
-    <rdfs:label xml:lang="ru">5%</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/AkkreditovannoyStrakhovoyKompanii">
-    <rdf:type rdf:resource="http://fin-ontology.org/Actor"/>
-    <rdfs:label xml:lang="ru">аккредитованной страховой компании</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
+    <fin:issuedBy rdf:resource="http://fin-ontology.org/Overdraft"/>
+    <fin:issuedBy rdf:resource="http://fin-ontology.org/Overdrafta"/>
+    <fin:issuedBy rdf:resource="http://fin-ontology.org/Kredita"/>
+    <fin:requires rdf:resource="http://fin-ontology.org/Overdraft"/>
     <fin:requires rdf:resource="http://fin-ontology.org/Kredit"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_Zastrakhovat_requires">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/Zastrakhovat"/>
-    <rdfs:comment xml:lang="ru">Заёмщик обязан застраховать предмет залога</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Litsam">
-    <rdf:type rdf:resource="http://fin-ontology.org/Actor"/>
-    <rdfs:label xml:lang="ru">лицам</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Cheloveka">
-    <rdf:type rdf:resource="http://fin-ontology.org/Actor"/>
-    <rdfs:label xml:lang="ru">человека</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/KreditnayaKarta">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://fin-ontology.org/CardProduct"/>
-    <rdfs:label xml:lang="ru">кредитная карта</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Limit"/>
-    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Limitom"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Obyazana">
-    <rdf:type rdf:resource="http://fin-ontology.org/LegalTerm"/>
-    <rdfs:label xml:lang="ru">обязана</rdfs:label>
-    <fin:confidence>0.6</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Limit">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">лимит</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/500000Rubley"/>
-    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Karta"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_MaksimalnayaSummaEzhegodnogoPopolneniyaSchyota_hasValue">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/MaksimalnayaSummaEzhegodnogoPopolneniyaSchyota"/>
-    <rdfs:comment xml:lang="ru">максимальная сумма ежегодного пополнения счёта — 1 000 000 рублей</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Fakticheskoy">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">фактической</rdfs:label>
-    <fin:confidence>0.5</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Bezuslovnaya">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">безусловная</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/InvestitsionnyyPay">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://fin-ontology.org/InvestmentProduct"/>
-    <rdfs:label xml:lang="ru">инвестиционный пай</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Dolyu"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Stoimost">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">стоимость</rdfs:label>
-    <fin:confidence>0.7</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/55Dney">
-    <rdf:type rdf:resource="http://fin-ontology.org/Metric"/>
-    <rdfs:label xml:lang="ru">55 дней</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/Period"/>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/Lgotnyy"/>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/Greys"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_55Dney_hasValue">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/55Dney"/>
-    <rdfs:comment xml:lang="ru">Льготный период (грейс-период) составляет до 55 дней</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/PriobretaemoyNedvizhimosti">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">приобретаемой недвижимости</rdfs:label>
-    <fin:confidence>0.7</fin:confidence>
-    <fin:requires rdf:resource="http://fin-ontology.org/Kredit"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ProtsentnayaStavka">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">процентная ставка</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/65Godovykh"/>
-    <skos:closeMatch rdf:resource="https://spec.edmcouncil.org/fibo/ontology/LOAN/NominalInterestRate"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/1000Rubley">
-    <rdf:type rdf:resource="http://fin-ontology.org/Metric"/>
-    <rdfs:label xml:lang="ru">1 000 рублей</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Condition">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="ru">Условие</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_105Godovykh_hasValue">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/105Godovykh"/>
-    <rdfs:comment xml:lang="ru">процентная ставка 10,5% годовых</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/MinimalnayaSummaPervonachalnoyInvestitsii">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">минимальная сумма первоначальной инвестиции</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/1000Rubley"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_500000Rubley_hasValue">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/500000Rubley"/>
-    <rdfs:comment xml:lang="ru">лимитом до 500 000 рублей</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Deystvitelnoy">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">действительной</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Ndfl">
-    <rdf:type rdf:resource="http://fin-ontology.org/LegalTerm"/>
-    <rdfs:label xml:lang="ru">НДФЛ</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Perioda">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">периода</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-    <fin:confidence>0.8</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_Avtokredit_issuedBy">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/Avtokredit"/>
-    <rdfs:comment xml:lang="ru">Автокредит предоставляется на приобретение</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Uscherb">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">ущерб</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-    <fin:hasAttribute rdf:resource="http://fin-ontology.org/PolisKasko"/>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/15000Rubley"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_Zastrakhovat_involves">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/Zastrakhovat"/>
-    <rdfs:comment xml:lang="ru">Заёмщик обязан застраховать предмет залога</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/1000000Rubley">
-    <rdf:type rdf:resource="http://fin-ontology.org/Metric"/>
-    <rdfs:label xml:lang="ru">1 000 000 рублей</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/Schyot"/>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/Schyota"/>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/Ezhegodnogo"/>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/Popolneniya"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/100OtSummyOsnovnogoDolga">
-    <rdf:type rdf:resource="http://fin-ontology.org/Metric"/>
-    <rdfs:label xml:lang="ru">100% от суммы основного долга</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/Razmer"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/CreditProduct">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="ru">Кредитный продукт</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://fin-ontology.org/FinancialProduct"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/IndividualnyyInvestitsionnyySchyotIis">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://fin-ontology.org/InvestmentProduct"/>
-    <rdfs:label xml:lang="ru">Индивидуальный инвестиционный счёт (ИИС)</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-    <fin:issuedBy rdf:resource="http://fin-ontology.org/FizicheskimLitsam"/>
-    <fin:issuedBy rdf:resource="http://fin-ontology.org/Litsam"/>
-    <fin:issuedBy rdf:resource="http://fin-ontology.org/Rezidentam"/>
-    <fin:requires rdf:resource="http://fin-ontology.org/NalogovymRezidentamRf"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Novykh">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">новых</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_Uscherb_hasValue">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/Uscherb"/>
-    <rdfs:comment xml:lang="ru">Франшиза по риску «Ущерб» составляет 15 000 рублей</rdfs:comment>
+    <fin:involves rdf:resource="http://fin-ontology.org/Kredit"/>
+    <fin:involves rdf:resource="http://fin-ontology.org/Kredita"/>
+    <fin:involves rdf:resource="http://fin-ontology.org/Overdraft"/>
+    <fin:involves rdf:resource="http://fin-ontology.org/Pogashenie"/>
   </rdf:Description>
   <rdf:Description rdf:about="http://fin-ontology.org/regulatedBy">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -645,264 +102,452 @@
     <rdfs:domain rdf:resource="http://fin-ontology.org/FinancialProduct"/>
     <rdfs:range rdf:resource="http://fin-ontology.org/Actor"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Zalog">
-    <rdf:type rdf:resource="http://fin-ontology.org/LegalTerm"/>
-    <rdfs:label xml:lang="ru">залог</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
+  <rdf:Description rdf:about="http://fin-ontology.org/ev_Kredit_requires">
+    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
+    <fin:about rdf:resource="http://fin-ontology.org/Kredit"/>
+    <rdfs:comment xml:lang="ru">с другой стороны, именуемый в дальнейшем «Заемщик»</rdfs:comment>
+    <rdfs:comment xml:lang="ru">согласие (акцепт) на списание денежных средств на основании платежного требования Кредитора</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Датой предоставления кредита является день осуществления платежа Кредитором с расчетного счета Заемщика</rdfs:comment>
+    <rdfs:comment xml:lang="ru">при установлении лимита в течение срока действия договора</rdfs:comment>
+    <rdfs:comment xml:lang="ru">сроков, установленных настоящим договором</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Заемщик производит уплату процентов</rdfs:comment>
+    <rdfs:comment xml:lang="ru">срок, установленного п.</rdfs:comment>
+    <rdfs:comment xml:lang="ru">при условии отсутствия у него задолженности</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Кредитор имеет право производить списание денежных средств</rdfs:comment>
+    <rdfs:comment xml:lang="ru">по истечении срока</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Тарифам Кредитора на услуги для юридических лиц</rdfs:comment>
+    <rdfs:comment xml:lang="ru">в случае осуществления списания денежных средств согласно кредитному договору</rdfs:comment>
+    <rdfs:comment xml:lang="ru">по письменному требованию Кредитора</rdfs:comment>
+    <rdfs:comment xml:lang="ru">в случае получения кредита в других банках</rdfs:comment>
+    <rdfs:comment xml:lang="ru">проверки реальности финансового-хозяйственной деятельности Заемщика</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Кредитор уведомляет Заемщика</rdfs:comment>
+    <rdfs:comment xml:lang="ru">перечисления суммы кредита на расчетные счета Заемщика</rdfs:comment>
+    <rdfs:comment xml:lang="ru">извещает Заемщика об изменении процентной ставки</rdfs:comment>
+    <rdfs:comment xml:lang="ru">по инициативе Кредитора</rdfs:comment>
+    <rdfs:comment xml:lang="ru">право требовать от Заемщика уплаты процентов за пользование кредитом</rdfs:comment>
+    <rdfs:comment xml:lang="ru">неисполнения либо ненадлежащего исполнения условий иных заключенных договоров с Кредитором;</rdfs:comment>
+    <rdfs:comment xml:lang="ru">наличия у Заемщика картотеки расчетных документов, неоплаченных в срок</rdfs:comment>
+    <rdfs:comment xml:lang="ru">при несоответствии деятельности Заемщика критериям определения ведения реальной деятельности</rdfs:comment>
+    <rdfs:comment xml:lang="ru">настоящих условий</rdfs:comment>
+    <rdfs:comment xml:lang="ru">уплатить штрафные неустойки</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Отказать в предоставлении кредита для оплаты инкассовых поручений на бесспорное взыскание денежных средств с расчетного счета Заемщика</rdfs:comment>
+    <rdfs:comment xml:lang="ru">в уплату задолженности, указанной в п.</rdfs:comment>
+    <rdfs:comment xml:lang="ru">обязанности Заемщика для выполнения действий, необходимых для осмотра предмета залога по требованию Кредитора</rdfs:comment>
+    <rdfs:comment xml:lang="ru">требованием Кредитора как срок предоставления документов</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/PolisKasko">
+  <rdf:Description rdf:about="http://fin-ontology.org/ev_Kredit_issuedBy">
+    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
+    <fin:about rdf:resource="http://fin-ontology.org/Kredit"/>
+    <rdfs:comment xml:lang="ru">Публичное акционерное общество «Уральский банк реконструкции и развития», именуемое в дальнейшем «Кредитор»</rdfs:comment>
+    <rdfs:comment xml:lang="ru">по инициативе Кредитора</rdfs:comment>
+    <rdfs:comment xml:lang="ru">по требованию Кредитора</rdfs:comment>
+    <rdfs:comment xml:lang="ru">издержек Кредитора по получению исполнения от Заемщика</rdfs:comment>
+    <rdfs:comment xml:lang="ru">по письменному требованию Кредитора</rdfs:comment>
+    <rdfs:comment xml:lang="ru">проверки целевого использования и обеспеченности Кредита</rdfs:comment>
+    <rdfs:comment xml:lang="ru">влияют на деятельность Кредитора</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Кредитного договора;</rdfs:comment>
+    <rdfs:comment xml:lang="ru">существенное снижение чистых активов Заемщика по сравнению с их значением, указанным в финансовой отчетности Заемщика на дату предоставления кредита</rdfs:comment>
+    <rdfs:comment xml:lang="ru">к расчетному счету, открытому у Кредитора</rdfs:comment>
+    <rdfs:comment xml:lang="ru">в случае, если Заемщик не пользовался лимитом овердрафта</rdfs:comment>
+    <rdfs:comment xml:lang="ru">кредитор</rdfs:comment>
+    <rdfs:comment xml:lang="ru">заемщика</rdfs:comment>
+    <rdfs:comment xml:lang="ru">кредит</rdfs:comment>
+    <rdfs:comment xml:lang="ru">кредитор с расчетного(ых) счета(ов), открытого(ых) у Кредитора</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Кредитор в одностороннем порядке определять очередность погашения</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Перевод Заемщиком своего долга на другое лицо допускается только с письменного согласия Кредитора.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/Kredit">
+    <fin:involves rdf:resource="http://fin-ontology.org/Dogovor"/>
+    <fin:involves rdf:resource="http://fin-ontology.org/Kreditora"/>
+    <fin:involves rdf:resource="http://fin-ontology.org/Zaemschika"/>
+    <fin:involves rdf:resource="http://fin-ontology.org/Pogashenie"/>
+    <fin:issuedBy rdf:resource="http://fin-ontology.org/Kreditora"/>
+    <fin:issuedBy rdf:resource="http://fin-ontology.org/Kredita"/>
+    <fin:issuedBy rdf:resource="http://fin-ontology.org/Zaemschika"/>
+    <fin:requires rdf:resource="http://fin-ontology.org/Zaemschika"/>
+    <fin:requires rdf:resource="http://fin-ontology.org/Kreditora"/>
+    <fin:requires rdf:resource="http://fin-ontology.org/Dogovor"/>
+    <fin:requires rdf:resource="http://fin-ontology.org/Srok"/>
+    <fin:requires rdf:resource="http://fin-ontology.org/Zadolzhennosti"/>
+    <fin:requires rdf:resource="http://fin-ontology.org/NastoyaschikhUsloviy"/>
+    <fin:requires rdf:resource="http://fin-ontology.org/ShtrafnyeNeustoyki"/>
+    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Limit"/>
+    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Srok"/>
+    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Protsenty"/>
+    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Zadolzhennosti"/>
+    <fin:hasAttribute rdf:resource="http://fin-ontology.org/KreditnogoDogovora"/>
+    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Kreditovaniya"/>
+    <fin:hasAttribute rdf:resource="http://fin-ontology.org/UsloviyaKreditovaniya"/>
+    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Limita"/>
+    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Dogovor"/>
+    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Raschetnogo"/>
+    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Kreditnogo"/>
+    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Zadolzhennost"/>
+    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Overdrafta"/>
+    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Nastoyaschikh"/>
+    <fin:hasAttribute rdf:resource="http://fin-ontology.org/LimitaOverdrafta"/>
+    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Peni"/>
+    <fin:regulatedBy rdf:resource="http://fin-ontology.org/Dogovor"/>
+    <fin:regulatedBy rdf:resource="http://fin-ontology.org/Kreditora"/>
+    <fin:appliesTo rdf:resource="http://fin-ontology.org/Dogovor"/>
+    <fin:appliesTo rdf:resource="http://fin-ontology.org/PravilKreditovaniya"/>
+    <fin:appliesTo rdf:resource="http://fin-ontology.org/NastoyaschikhUsloviy"/>
+    <fin:appliesTo rdf:resource="http://fin-ontology.org/Pravil"/>
+    <fin:subClassOf rdf:resource="http://fin-ontology.org/KreditnogoDogovora"/>
+    <fin:subClassOf rdf:resource="http://fin-ontology.org/Kreditnogo"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/ev_Zaemschik_issuedBy">
+    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
+    <fin:about rdf:resource="http://fin-ontology.org/Zaemschik"/>
+    <rdfs:comment xml:lang="ru">предоставляет Заемщику кредит в форме овердрафта</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Кредитор имеет право производить списание денежных средств с любого принадлежащего Заемщику</rdfs:comment>
+    <rdfs:comment xml:lang="ru">предоставлении Заемщику предусмотренного настоящим договором кредита</rdfs:comment>
+    <rdfs:comment xml:lang="ru">кредит</rdfs:comment>
+    <rdfs:comment xml:lang="ru">заемщик предоставляет согласие на списание денежных средств на основании платежного требования Кредитора</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Уведомление или иное сообщение, направляемое Заемщиком Кредитору</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/Protsenty">
     <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
+    <rdfs:label xml:lang="ru">проценты</rdfs:label>
+    <fin:confidence>1.0</fin:confidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/ev_Kredit_appliesTo">
+    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
+    <fin:about rdf:resource="http://fin-ontology.org/Kredit"/>
+    <rdfs:comment xml:lang="ru">по Кредитному договору</rdfs:comment>
+    <rdfs:comment xml:lang="ru">правил кредитования</rdfs:comment>
+    <rdfs:comment xml:lang="ru">настоящих условий и правил кредитования</rdfs:comment>
+    <rdfs:comment xml:lang="ru">настоящих условий</rdfs:comment>
+    <rdfs:comment xml:lang="ru">правил</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/involves">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="ru">включает процесс</rdfs:label>
+    <rdfs:domain rdf:resource="http://fin-ontology.org/FinancialProduct"/>
+    <rdfs:range rdf:resource="http://fin-ontology.org/Process"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/UsloviyPravil">
+    <rdf:type rdf:resource="http://fin-ontology.org/LegalTerm"/>
+    <rdfs:label xml:lang="ru">условий правил</rdfs:label>
+    <fin:confidence>0.7</fin:confidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/ev_Zaemschik_requires">
+    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
+    <fin:about rdf:resource="http://fin-ontology.org/Zaemschik"/>
+    <rdfs:comment xml:lang="ru">с одной стороны, и: ________________________________________, именуемый в дальнейшем «Заемщик»</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Заемщик уплачивает Кредитору проценты</rdfs:comment>
+    <rdfs:comment xml:lang="ru">на основании принятых Кредитором к платежу расчетных документов Заемщика</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Датой предоставления кредита является день осуществления платежа Кредитором с расчетного счета Заемщика</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Кредитор открывает Заемщику ссудный счет.</rdfs:comment>
+    <rdfs:comment xml:lang="ru">иные причитающиеся с Заемщика денежные средства по Кредитному договору</rdfs:comment>
+    <rdfs:comment xml:lang="ru">доводится Кредитором до Заемщика</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Заемщик производит уплату процентов</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Банк не принимает заявление Заемщика о расторжении договора при наличии задолженности по уплате кредита</rdfs:comment>
+    <rdfs:comment xml:lang="ru">издержек Кредитора по получению исполнения от Заемщика</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Заемщик, применяющий обычную систему налогообложения: по окончании 1-3 квартала – копии бухгалтерского баланса</rdfs:comment>
+    <rdfs:comment xml:lang="ru">проверки реальности финансового-хозяйственной деятельности Заемщика</rdfs:comment>
+    <rdfs:comment xml:lang="ru">с Заемщиком не согласовываются</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Кредитор уведомляет Заемщика</rdfs:comment>
+    <rdfs:comment xml:lang="ru">по ходатайству Заемщику</rdfs:comment>
+    <rdfs:comment xml:lang="ru">перечисления суммы кредита на расчетные счета Заемщика</rdfs:comment>
+    <rdfs:comment xml:lang="ru">извещает Заемщика об изменении процентной ставки</rdfs:comment>
+    <rdfs:comment xml:lang="ru">право требовать от Заемщика уплаты процентов за пользование кредитом</rdfs:comment>
+    <rdfs:comment xml:lang="ru">уклонения Заемщика от проведения Кредитором проверок обеспеченности кредита</rdfs:comment>
+    <rdfs:comment xml:lang="ru">невыполнения Заемщиком (Поручителем) условий Кредитного договора</rdfs:comment>
+    <rdfs:comment xml:lang="ru">существенное снижение чистых активов Заемщика по сравнению с их значением, указанным в финансовой отчетности Заемщика на дату предоставления кредита</rdfs:comment>
+    <rdfs:comment xml:lang="ru">при несоответствии деятельности Заемщика критериям определения ведения реальной деятельности</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Отказаться от дальнейшего кредитования Заемщика</rdfs:comment>
+    <rdfs:comment xml:lang="ru">досрочно закрыть лимит овердрафта в случае, если Заемщик не пользовался лимитом овердрафта</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Кредитор извещает Заемщика о закрытии овердрафта</rdfs:comment>
+    <rdfs:comment xml:lang="ru">неисполнения или ненадлежащего исполнения Заемщиком</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Заемщик обязан возвратить Кредитору сумму кредита</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Отказать в предоставлении кредита для оплаты инкассовых поручений на бесспорное взыскание денежных средств с расчетного счета Заемщика</rdfs:comment>
+    <rdfs:comment xml:lang="ru">извещением об этом Заемщика</rdfs:comment>
+    <rdfs:comment xml:lang="ru">на основании заявления Заемщика</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Заемщик несет ответственность за несвоевременные возврат кредита</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Заемщик уплачивает Кредитору пени</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Заемщик уплачивает Кредитору</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Заемщик уплачивает Кредитору штраф</rdfs:comment>
+    <rdfs:comment xml:lang="ru">определять очередность погашения задолженности по кредитному договору</rdfs:comment>
+    <rdfs:comment xml:lang="ru">по исполнению последним обязательств согласно настоящего кредитного договора</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Перевод Заемщиком своего долга на другое лицо допускается только с письменного согласия Кредитора.</rdfs:comment>
+    <rdfs:comment xml:lang="ru">если оно доставлено адресату</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/Process">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="ru">полис КАСКО</rdfs:label>
-    <rdfs:label xml:lang="ru">Полис КАСКО</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-    <rdfs:subClassOf rdf:resource="http://fin-ontology.org/InsuranceProduct"/>
-    <fin:requires rdf:resource="http://fin-ontology.org/Ugon"/>
-    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Strakhovuyu"/>
-    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Sredstva"/>
-    <fin:hasAttribute rdf:resource="http://fin-ontology.org/TransportnogoSredstva"/>
-    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Zaschitu"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Paevoy">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">паевой</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
-    <fin:subClassOf rdf:resource="http://fin-ontology.org/Fond"/>
-    <fin:subClassOf rdf:resource="http://fin-ontology.org/Fondom"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Protsentnuyu">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">процентную</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Obespecheniem">
-    <rdf:type rdf:resource="http://fin-ontology.org/LegalTerm"/>
-    <rdfs:label xml:lang="ru">обеспечением</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/7000000Rubley">
-    <rdf:type rdf:resource="http://fin-ontology.org/Metric"/>
-    <rdfs:label xml:lang="ru">7 000 000 рублей</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/KategoriiKachestva">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">категории качества</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Pervonachalnyy">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">первоначальный</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_Keshbek_hasValue">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/Keshbek"/>
-    <rdfs:comment xml:lang="ru">начисляется в размере 1%</rdfs:comment>
-    <rdfs:comment xml:lang="ru">кэшбэк начисляется в размере 5%</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_DoveritelnoeUpravlenie_involves">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/DoveritelnoeUpravlenie"/>
-    <rdfs:comment xml:lang="ru">доверительное управление имуществом фонда</rdfs:comment>
-    <rdfs:comment xml:lang="ru">Управляющая компания осуществляет доверительное управление</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_NalogovyyVychetTipaA_hasValue">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/NalogovyyVychetTipaA"/>
-    <rdfs:comment xml:lang="ru">в размере 13% от внесённой суммы</rdfs:comment>
-    <rdfs:comment xml:lang="ru">в размере 13% от внесённой суммы, но не более 52 000 рублей в год</rdfs:comment>
+    <rdfs:label xml:lang="ru">Процесс</rdfs:label>
   </rdf:Description>
   <rdf:Description rdf:about="http://fin-ontology.org/CardProduct">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="ru">Карточный продукт</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://fin-ontology.org/FinancialProduct"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Mozhet">
-    <rdf:type rdf:resource="http://fin-ontology.org/Condition"/>
-    <rdfs:label xml:lang="ru">может</rdfs:label>
-    <fin:confidence>0.5</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/BankRossii">
-    <rdf:type rdf:resource="http://fin-ontology.org/Actor"/>
-    <rdfs:label xml:lang="ru">Банк России</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Zastrakhovat">
+  <rdf:Description rdf:about="http://fin-ontology.org/Pogashenie">
     <rdf:type rdf:resource="http://fin-ontology.org/Process"/>
-    <rdfs:label xml:lang="ru">застраховать</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-    <fin:involves rdf:resource="http://fin-ontology.org/AkkreditovannoyStrakhovoyKompanii"/>
-    <fin:requires rdf:resource="http://fin-ontology.org/Kredit"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Tolko">
-    <rdf:type rdf:resource="http://fin-ontology.org/Condition"/>
-    <rdfs:label xml:lang="ru">только</rdfs:label>
-    <fin:confidence>0.6</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/TsentralnyyBankRossiyskoyFederatsii">
-    <rdf:type rdf:resource="http://fin-ontology.org/Actor"/>
-    <rdfs:label xml:lang="ru">Центральный банк Российской Федерации</rdfs:label>
+    <rdfs:label xml:lang="ru">погашение</rdfs:label>
     <fin:confidence>1.0</fin:confidence>
+    <fin:involves rdf:resource="http://fin-ontology.org/Kreditora"/>
+    <fin:involves rdf:resource="http://fin-ontology.org/Zaemschika"/>
+    <fin:issuedBy rdf:resource="http://fin-ontology.org/Kredita"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/BeznadyozhnyeSsudy">
+  <rdf:Description rdf:about="http://fin-ontology.org/ev_Kreditor_issuedBy">
+    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
+    <fin:about rdf:resource="http://fin-ontology.org/Kreditor"/>
+    <rdfs:comment xml:lang="ru">Публичное акционерное общество «Уральский банк реконструкции и развития», именуемое в дальнейшем «Кредитор»</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Сумма лимита овердрафта устанавливается кредитором</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Изменение лимита овердрафта производится Кредитором</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Заемщик уплачивает Кредитору проценты</rdfs:comment>
+    <rdfs:comment xml:lang="ru">согласие (акцепт) на списание денежных средств на основании платежного требования Кредитора</rdfs:comment>
+    <rdfs:comment xml:lang="ru">КРЕДИТОР: Публичное акционерное общество 'Уральский банк реконструкции и развития'</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Предоставление кредита осуществляется без дополнительных согласований на основании принятых Кредитором</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Датой предоставления кредита является день осуществления платежа Кредитором</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Кредитор открывает Заемщику ссудный счет.</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Кредит... на соответствующий(ие) счет(а) доходов Кредитора</rdfs:comment>
+    <rdfs:comment xml:lang="ru">устанавливается и изменяется Кредитором</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Размер лимита овердрафта доводится Кредитором до Заемщика</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Кредитором до Заемщика</rdfs:comment>
+    <rdfs:comment xml:lang="ru">доводится Кредитором до Заемщика</rdfs:comment>
+    <rdfs:comment xml:lang="ru">день подписания Кредитного договора Кредитором</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Кредитором изменен лимит</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Уплачивать Кредитору проценты за пользование кредитом</rdfs:comment>
+    <rdfs:comment xml:lang="ru">по инициативе Кредитора</rdfs:comment>
+    <rdfs:comment xml:lang="ru">по требованию Кредитора</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Кредитор вправе направлять денежные средства</rdfs:comment>
+    <rdfs:comment xml:lang="ru">издержек Кредитора по получению исполнения от Заемщика</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Тарифам Кредитора на услуги для юридических лиц</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Кредитором на день формирования платежного требования.</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Предоставлять Кредитору: финансовую отчетность</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Информация предоставляется Кредитору</rdfs:comment>
+    <rdfs:comment xml:lang="ru">предоставлять Кредитору сведения и копию кредитного договора</rdfs:comment>
+    <rdfs:comment xml:lang="ru">определяются Кредитором</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Тарифы изменяются Кредитором</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Кредитор извещает Заемщика</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Кредитного договора;</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Кредитор извещает Заемщика о закрытии овердрафта</rdfs:comment>
+    <rdfs:comment xml:lang="ru">возмещения убытков, причиненных Кредитору</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Заемщик обязан возвратить Кредитору сумму кредита</rdfs:comment>
+    <rdfs:comment xml:lang="ru">кредитор</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Кредитор уменьшает размер лимита</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Решение о возобновлении кредитования принимается Кредитором</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Кредитного договора, Заемщик уплачивает Кредитору</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Заемщик уплачивает Кредитору</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Заемщик уплачивает Кредитору штраф</rdfs:comment>
+    <rdfs:comment xml:lang="ru">требованием Кредитора как срок предоставления документов</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Заемщик предоставляет право Кредитору</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Уведомление или иное сообщение, направляемое Кредитором Заемщику</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/InsuranceProduct">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="ru">Страховой продукт</rdfs:label>
     <rdfs:subClassOf rdf:resource="http://fin-ontology.org/FinancialProduct"/>
-    <rdfs:label xml:lang="ru">безнадёжные ссуды</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
   </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/issuedBy">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="ru">выпускается</rdfs:label>
-    <rdfs:domain rdf:resource="http://fin-ontology.org/FinancialProduct"/>
-    <rdfs:range rdf:resource="http://fin-ontology.org/Actor"/>
+  <rdf:Description rdf:about="http://fin-ontology.org/Kreditnogo">
+    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
+    <rdfs:label xml:lang="ru">кредитного</rdfs:label>
+    <fin:confidence>0.7</fin:confidence>
   </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_Otkrytym_hasAttribute">
+  <rdf:Description rdf:about="http://fin-ontology.org/ev_Overdraft_issuedBy">
     <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/Otkrytym"/>
-    <rdfs:comment xml:lang="ru">является открытым фондом облигаций</rdfs:comment>
+    <fin:about rdf:resource="http://fin-ontology.org/Overdraft"/>
+    <rdfs:comment xml:lang="ru">в случае, если Заемщик не пользовался лимитом овердрафта</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Odin">
+  <rdf:Description rdf:about="http://fin-ontology.org/Kreditovaniya">
+    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
+    <rdfs:label xml:lang="ru">кредитования</rdfs:label>
+    <fin:confidence>1.0</fin:confidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/Actor">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="ru">Участник</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/Overdrafta">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://fin-ontology.org/CreditProduct"/>
+    <rdfs:label xml:lang="ru">овердрафта</rdfs:label>
+    <fin:confidence>1.0</fin:confidence>
+    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Kreditovaniya"/>
+    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Pravil"/>
+    <fin:hasAttribute rdf:resource="http://fin-ontology.org/LimitaOverdrafta"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/ProductAttribute">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="ru">Атрибут продукта</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/LimitaOverdrafta">
+    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
+    <rdfs:label xml:lang="ru">лимита овердрафта</rdfs:label>
+    <fin:confidence>1.0</fin:confidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/ev_Overdrafta_hasAttribute">
+    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
+    <fin:about rdf:resource="http://fin-ontology.org/Overdrafta"/>
+    <rdfs:comment xml:lang="ru">лимита</rdfs:comment>
+    <rdfs:comment xml:lang="ru">кредитования</rdfs:comment>
+    <rdfs:comment xml:lang="ru">настоящих</rdfs:comment>
+    <rdfs:comment xml:lang="ru">уменьшить размер лимита овердрафта</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/Kredita">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://fin-ontology.org/CreditProduct"/>
+    <rdfs:label xml:lang="ru">кредита</rdfs:label>
+    <fin:confidence>1.0</fin:confidence>
+    <fin:hasAttribute rdf:resource="http://fin-ontology.org/KreditnogoDogovora"/>
+    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Kreditnogo"/>
+    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Zadolzhennosti"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/InvestmentProduct">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="ru">Инвестиционный продукт</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://fin-ontology.org/FinancialProduct"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/Zaemschika">
+    <rdf:type rdf:resource="http://fin-ontology.org/Actor"/>
+    <rdfs:label xml:lang="ru">заемщика</rdfs:label>
+    <fin:confidence>1.0</fin:confidence>
+    <fin:requires rdf:resource="http://fin-ontology.org/Kredita"/>
+    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Kredita"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/Overdraft">
+    <fin:subClassOf rdf:resource="http://fin-ontology.org/Kredit"/>
+    <fin:requires rdf:resource="http://fin-ontology.org/Zaemschika"/>
+    <fin:requires rdf:resource="http://fin-ontology.org/Zadolzhennosti"/>
+    <fin:requires rdf:resource="http://fin-ontology.org/NastoyaschikhUsloviy"/>
+    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Raschetnogo"/>
+    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Limit"/>
+    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Limita"/>
+    <fin:hasAttribute rdf:resource="http://fin-ontology.org/LimitaOverdrafta"/>
+    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Zadolzhennosti"/>
+    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Kreditnogo"/>
+    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Kreditovaniya"/>
+    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Nastoyaschikh"/>
+    <fin:involves rdf:resource="http://fin-ontology.org/Pogashenie"/>
+    <fin:issuedBy rdf:resource="http://fin-ontology.org/Zaemschika"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/Srok">
+    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
+    <rdfs:label xml:lang="ru">срок</rdfs:label>
+    <fin:confidence>1.0</fin:confidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/ev_Kreditor_requires">
+    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
+    <fin:about rdf:resource="http://fin-ontology.org/Kreditor"/>
+    <rdfs:comment xml:lang="ru">предоставляет Заемщику кредит в форме овердрафта</rdfs:comment>
+    <rdfs:comment xml:lang="ru">день полного погашения задолженности по кредиту</rdfs:comment>
+    <rdfs:comment xml:lang="ru">право требовать от Заемщика уплаты процентов за пользование кредитом</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/ev_Kredit_regulatedBy">
+    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
+    <fin:about rdf:resource="http://fin-ontology.org/Kredit"/>
+    <rdfs:comment xml:lang="ru">Отношения между Кредитором и Заемщиком регулируются настоящим кредитным договором</rdfs:comment>
+    <rdfs:comment xml:lang="ru">издержек Кредитора по получению исполнения</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/ArbitrazhnyySud">
+    <rdf:type rdf:resource="http://fin-ontology.org/Actor"/>
+    <rdfs:label xml:lang="ru">арбитражный суд</rdfs:label>
+    <fin:confidence>1.0</fin:confidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/Zaemschik">
+    <fin:requires rdf:resource="http://fin-ontology.org/Kredit"/>
+    <fin:requires rdf:resource="http://fin-ontology.org/Kredita"/>
+    <fin:requires rdf:resource="http://fin-ontology.org/Overdraft"/>
+    <fin:requires rdf:resource="http://fin-ontology.org/Overdrafta"/>
+    <fin:issuedBy rdf:resource="http://fin-ontology.org/Overdraft"/>
+    <fin:issuedBy rdf:resource="http://fin-ontology.org/Kredit"/>
+    <fin:issuedBy rdf:resource="http://fin-ontology.org/Kredita"/>
+    <fin:involves rdf:resource="http://fin-ontology.org/Kredit"/>
+    <fin:involves rdf:resource="http://fin-ontology.org/Overdraft"/>
+    <fin:involves rdf:resource="http://fin-ontology.org/Pogashenie"/>
+    <fin:involves rdf:resource="http://fin-ontology.org/Kredita"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/Raschetnogo">
+    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
+    <rdfs:label xml:lang="ru">расчетного</rdfs:label>
+    <fin:confidence>0.7</fin:confidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/ev_Kreditor_involves">
+    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
+    <fin:about rdf:resource="http://fin-ontology.org/Kreditor"/>
+    <rdfs:comment xml:lang="ru">предоставляет Заемщику кредит</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Допускать сотрудников Кредитора в служебные, производственные, складские и другие помещения для проведения проверки целевого использования и обеспеченности Кредита</rdfs:comment>
+    <rdfs:comment xml:lang="ru">влияют на деятельность Кредитора</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Кредитор извещает Заемщика о закрытии овердрафта</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Кредитором решения о взыскании задолженности</rdfs:comment>
+    <rdfs:comment xml:lang="ru">погашение</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Кредитор имеет право уступить право требования к Заемщику</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/CreditProduct">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="ru">Кредитный продукт</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://fin-ontology.org/FinancialProduct"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/ShtrafnyeNeustoyki">
     <rdf:type rdf:resource="http://fin-ontology.org/Condition"/>
-    <rdfs:label xml:lang="ru">один</rdfs:label>
-    <fin:confidence>0.7</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Zayomschiku">
-    <rdf:type rdf:resource="http://fin-ontology.org/Actor"/>
-    <rdfs:label xml:lang="ru">заёмщику</rdfs:label>
+    <rdfs:label xml:lang="ru">штрафные неустойки</rdfs:label>
     <fin:confidence>1.0</fin:confidence>
   </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Odnogo">
-    <rdf:type rdf:resource="http://fin-ontology.org/Condition"/>
-    <rdfs:label xml:lang="ru">одного</rdfs:label>
-    <fin:confidence>0.7</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Avtomobiley">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">автомобилей</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Zaloga">
-    <rdf:type rdf:resource="http://fin-ontology.org/LegalTerm"/>
-    <rdfs:label xml:lang="ru">залога</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
-    <fin:confidence>1.0</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/TransportnogoSredstva">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">транспортного средства</rdfs:label>
-    <fin:confidence>0.5</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Individualnyy">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">индивидуальный</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_5000000Rubley_hasValue">
+  <rdf:Description rdf:about="http://fin-ontology.org/ev_Kreditora_issuedBy">
     <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/5000000Rubley"/>
-    <rdfs:comment xml:lang="ru">в размере 5 000 000 рублей</rdfs:comment>
-    <rdfs:comment xml:lang="ru">размер 5 000 000 рублей под процентную ставку 10,5%</rdfs:comment>
+    <fin:about rdf:resource="http://fin-ontology.org/Kreditora"/>
+    <rdfs:comment xml:lang="ru">по требованию Кредитора</rdfs:comment>
+    <rdfs:comment xml:lang="ru">кредит</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Кредитор по получению исполнения от Заемщика</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Dogovora">
-    <rdf:type rdf:resource="http://fin-ontology.org/LegalTerm"/>
-    <rdfs:label xml:lang="ru">договора</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Fizicheskim">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">физическим</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/300Rubley">
-    <rdf:type rdf:resource="http://fin-ontology.org/Metric"/>
-    <rdfs:label xml:lang="ru">300 рублей</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/Zadolzhennosti"/>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/Minimalnyy"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Dosrochnyy">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">досрочный</rdfs:label>
-    <fin:confidence>0.7</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/hasValue">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:label xml:lang="ru">имеет значение</rdfs:label>
-    <rdfs:domain rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:range rdf:resource="http://fin-ontology.org/Metric"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Risku">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">риску</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Zayomschik">
-    <fin:involves rdf:resource="http://fin-ontology.org/DosrochnyyVozvratKredita"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Ezhegodnogo">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">ежегодного</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/13">
-    <rdf:type rdf:resource="http://fin-ontology.org/Metric"/>
-    <rdfs:label xml:lang="ru">13%</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Nachislyayutsya">
-    <rdf:type rdf:resource="http://fin-ontology.org/Process"/>
-    <rdfs:label xml:lang="ru">начисляются</rdfs:label>
-    <fin:confidence>0.5</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/FizicheskimLitsam">
-    <rdf:type rdf:resource="http://fin-ontology.org/Actor"/>
-    <rdfs:label xml:lang="ru">физическим лицам</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_Ipotechnyy_subClassOf">
+  <rdf:Description rdf:about="http://fin-ontology.org/ev_Overdraft_hasAttribute">
     <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/Ipotechnyy"/>
-    <rdfs:comment xml:lang="ru">ипотечный кредит</rdfs:comment>
+    <fin:about rdf:resource="http://fin-ontology.org/Overdraft"/>
+    <rdfs:comment xml:lang="ru">расчетного счета</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Сумма лимита овердрафта</rdfs:comment>
+    <rdfs:comment xml:lang="ru">лимит овердрафта</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Изменение лимита овердрафта</rdfs:comment>
+    <rdfs:comment xml:lang="ru">лимита овердрафта</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Размер лимита овердрафта</rdfs:comment>
+    <rdfs:comment xml:lang="ru">лимита по овердрафту</rdfs:comment>
+    <rdfs:comment xml:lang="ru">задолженности по кредиту</rdfs:comment>
+    <rdfs:comment xml:lang="ru">задолженности по овердрафту</rdfs:comment>
+    <rdfs:comment xml:lang="ru">кредитного договора</rdfs:comment>
+    <rdfs:comment xml:lang="ru">досрочно закрыть лимит овердрафта</rdfs:comment>
+    <rdfs:comment xml:lang="ru">кредитования</rdfs:comment>
+    <rdfs:comment xml:lang="ru">настоящих</rdfs:comment>
+    <rdfs:comment xml:lang="ru">уменьшить размер лимита овердрафта</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/DoveritelnoeUpravlenie">
-    <rdf:type rdf:resource="http://fin-ontology.org/Process"/>
-    <rdfs:label xml:lang="ru">доверительное управление</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-    <fin:involves rdf:resource="http://fin-ontology.org/Fonda"/>
-    <fin:involves rdf:resource="http://fin-ontology.org/Fond"/>
-    <fin:involves rdf:resource="http://fin-ontology.org/Upravlyayuschaya"/>
-    <fin:involves rdf:resource="http://fin-ontology.org/Kompaniya"/>
+  <rdf:Description rdf:about="http://fin-ontology.org/NastoyaschikhUsloviy">
+    <rdf:type rdf:resource="http://fin-ontology.org/LegalTerm"/>
+    <rdfs:label xml:lang="ru">настоящих условий</rdfs:label>
+    <fin:confidence>0.7</fin:confidence>
+    <fin:requires rdf:resource="http://fin-ontology.org/Overdrafta"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/299Godovykh">
-    <rdf:type rdf:resource="http://fin-ontology.org/Metric"/>
-    <rdfs:label xml:lang="ru">29,9% годовых</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/Period"/>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/Lgotnogo"/>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/Perioda"/>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/LgotnogoPerioda"/>
+  <rdf:Description rdf:about="http://fin-ontology.org/ev_Zaemschika_hasAttribute">
+    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
+    <fin:about rdf:resource="http://fin-ontology.org/Zaemschika"/>
+    <rdfs:comment xml:lang="ru">кредит</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Investitsionnyy">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">инвестиционный</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
-    <fin:subClassOf rdf:resource="http://fin-ontology.org/Fondom"/>
+  <rdf:Description rdf:about="http://fin-ontology.org/ev_Kredita_hasAttribute">
+    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
+    <fin:about rdf:resource="http://fin-ontology.org/Kredita"/>
+    <rdfs:comment xml:lang="ru">кредитного договора</rdfs:comment>
+    <rdfs:comment xml:lang="ru">кредитного</rdfs:comment>
+    <rdfs:comment xml:lang="ru">кредит</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Kreditor">
-    <rdf:type rdf:resource="http://fin-ontology.org/Actor"/>
-    <rdfs:label xml:lang="ru">кредитор</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
+  <rdf:Description rdf:about="http://fin-ontology.org/ev_Zaemschik_involves">
+    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
+    <fin:about rdf:resource="http://fin-ontology.org/Zaemschik"/>
+    <rdfs:comment xml:lang="ru">Заемщик имеет право погашать кредит</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Кредитный договор может быть расторгнут Заемщиком</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Заемщик имеет право досрочно погасить кредит</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Кредитор извещает Заемщика о закрытии овердрафта</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Отказаться от дальнейшего кредитования Заемщика</rdfs:comment>
+    <rdfs:comment xml:lang="ru">погашение</rdfs:comment>
+    <rdfs:comment xml:lang="ru">обязанности Заемщика по предоставлению информации Кредитору</rdfs:comment>
+    <rdfs:comment xml:lang="ru">В случае нарушения Заемщиком сроков погашения кредита</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Заемщик предоставляет Кредитору право обратиться взыскание</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Otkazatsya">
-    <rdf:type rdf:resource="http://fin-ontology.org/Process"/>
-    <rdfs:label xml:lang="ru">отказаться</rdfs:label>
-    <fin:confidence>0.6</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Imuschestvom">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">имуществом</rdfs:label>
-    <fin:confidence>0.6</fin:confidence>
+  <rdf:Description rdf:about="http://fin-ontology.org/ev_Overdraft_requires">
+    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
+    <fin:about rdf:resource="http://fin-ontology.org/Overdraft"/>
+    <rdfs:comment xml:lang="ru">предоставляет Заемщику кредит в форме овердрафта</rdfs:comment>
+    <rdfs:comment xml:lang="ru">доводится Кредитором до Заемщика</rdfs:comment>
+    <rdfs:comment xml:lang="ru">при отсутствии задолженности по настоящему договору на момент закрытия овердрафта</rdfs:comment>
+    <rdfs:comment xml:lang="ru">настоящих условий</rdfs:comment>
   </rdf:Description>
   <rdf:Description rdf:about="http://fin-ontology.org/hasAttribute">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -910,14 +555,168 @@
     <rdfs:domain rdf:resource="http://fin-ontology.org/FinancialProduct"/>
     <rdfs:range rdf:resource="http://fin-ontology.org/ProductAttribute"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Kredita">
-    <rdf:type rdf:resource="http://fin-ontology.org/LegalTerm"/>
-    <rdfs:label xml:lang="ru">кредита</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/StrakhovayaSumma">
+  <rdf:Description rdf:about="http://fin-ontology.org/UsloviyaKreditovaniya">
     <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">страховая сумма</rdfs:label>
+    <rdfs:label xml:lang="ru">условия кредитования</rdfs:label>
+    <fin:confidence>1.0</fin:confidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/hasValue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="ru">имеет значение</rdfs:label>
+    <rdfs:domain rdf:resource="http://fin-ontology.org/ProductAttribute"/>
+    <rdfs:range rdf:resource="http://fin-ontology.org/Metric"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/ev_Zaemschika_requires">
+    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
+    <fin:about rdf:resource="http://fin-ontology.org/Zaemschika"/>
+    <rdfs:comment xml:lang="ru">Отказать в предоставлении кредита для оплаты инкассовых поручений на бесспорное взыскание денежных средств с расчетного счета Заемщика</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/NastoyaschikhUsloviyPravil">
+    <rdf:type rdf:resource="http://fin-ontology.org/LegalTerm"/>
+    <rdfs:label xml:lang="ru">настоящих условий правил</rdfs:label>
+    <fin:confidence>0.7</fin:confidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/appliesTo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="ru">применяется к</rdfs:label>
+    <rdfs:range rdf:resource="http://fin-ontology.org/FinancialProduct"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/Condition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="ru">Условие</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/ev_Dogovor_issuedBy">
+    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
+    <fin:about rdf:resource="http://fin-ontology.org/Dogovor"/>
+    <rdfs:comment xml:lang="ru">кредитор</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/UsloviyPravilKreditovaniya">
+    <rdf:type rdf:resource="http://fin-ontology.org/LegalTerm"/>
+    <rdfs:label xml:lang="ru">условий правил кредитования</rdfs:label>
+    <fin:confidence>0.7</fin:confidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/ev_Kredit_subClassOf">
+    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
+    <fin:about rdf:resource="http://fin-ontology.org/Kredit"/>
+    <rdfs:comment xml:lang="ru">кредитного договора</rdfs:comment>
+    <rdfs:comment xml:lang="ru">договор</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/Zadolzhennosti">
+    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
+    <rdfs:label xml:lang="ru">задолженности</rdfs:label>
+    <fin:confidence>1.0</fin:confidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/Kreditora">
+    <rdf:type rdf:resource="http://fin-ontology.org/Actor"/>
+    <rdfs:label xml:lang="ru">кредитора</rdfs:label>
+    <fin:confidence>1.0</fin:confidence>
+    <fin:issuedBy rdf:resource="http://fin-ontology.org/Kredita"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/PravilKreditovaniya">
+    <rdf:type rdf:resource="http://fin-ontology.org/LegalTerm"/>
+    <rdfs:label xml:lang="ru">правил кредитования</rdfs:label>
+    <fin:confidence>1.0</fin:confidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/Metric">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="ru">Метрика</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/issuedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="ru">выпускается</rdfs:label>
+    <rdfs:domain rdf:resource="http://fin-ontology.org/FinancialProduct"/>
+    <rdfs:range rdf:resource="http://fin-ontology.org/Actor"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/ev_Pogashenie_issuedBy">
+    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
+    <fin:about rdf:resource="http://fin-ontology.org/Pogashenie"/>
+    <rdfs:comment xml:lang="ru">кредит</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/KreditnogoDogovora">
+    <rdf:type rdf:resource="http://fin-ontology.org/LegalTerm"/>
+    <rdfs:label xml:lang="ru">кредитного договора</rdfs:label>
+    <fin:confidence>1.0</fin:confidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/ev_Overdraft_involves">
+    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
+    <fin:about rdf:resource="http://fin-ontology.org/Overdraft"/>
+    <rdfs:comment xml:lang="ru">погашение ссудной задолженности по овердрафту</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/Nastoyaschikh">
+    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
+    <rdfs:label xml:lang="ru">настоящих</rdfs:label>
+    <fin:confidence>0.5</fin:confidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/Dogovor">
+    <rdf:type rdf:resource="http://fin-ontology.org/LegalTerm"/>
+    <rdfs:label xml:lang="ru">договор</rdfs:label>
+    <fin:confidence>1.0</fin:confidence>
+    <fin:issuedBy rdf:resource="http://fin-ontology.org/Kredita"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/ev_NastoyaschikhUsloviy_requires">
+    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
+    <fin:about rdf:resource="http://fin-ontology.org/NastoyaschikhUsloviy"/>
+    <rdfs:comment xml:lang="ru">настоящих условий</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/LegalTerm">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="ru">Юридический термин</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/ev_Kredit_involves">
+    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
+    <fin:about rdf:resource="http://fin-ontology.org/Kredit"/>
+    <rdfs:comment xml:lang="ru">заключили настоящий договор о нижеследующем</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Кредит... на соответствующий(ие) счет(а) доходов Кредитора</rdfs:comment>
+    <rdfs:comment xml:lang="ru">иные причитающиеся с Заемщика денежные средства</rdfs:comment>
+    <rdfs:comment xml:lang="ru">погашение ссудной задолженности по кредиту</rdfs:comment>
+    <rdfs:comment xml:lang="ru">досрочного возврата кредита, уплаты причитающихся процентов</rdfs:comment>
+    <rdfs:comment xml:lang="ru">погашение</rdfs:comment>
+    <rdfs:comment xml:lang="ru">Решение о возобновлении кредитования принимается Кредитором на основании заявления Заемщика</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/PlatezhnoeTrebovanie">
+    <rdf:type rdf:resource="http://fin-ontology.org/LegalTerm"/>
+    <rdfs:label xml:lang="ru">платежное требование</rdfs:label>
+    <fin:confidence>1.0</fin:confidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/Peni">
+    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
+    <rdfs:label xml:lang="ru">пени</rdfs:label>
+    <fin:confidence>1.0</fin:confidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/ev_Overdraft_subClassOf">
+    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
+    <fin:about rdf:resource="http://fin-ontology.org/Overdraft"/>
+    <rdfs:comment xml:lang="ru">овердрафт является формой кредита</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/FinansovayaOtchetnost">
+    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
+    <rdfs:label xml:lang="ru">финансовая отчетность</rdfs:label>
+    <fin:confidence>1.0</fin:confidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/subClassOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label xml:lang="ru">подтип</rdfs:label>
+    <rdfs:domain rdf:resource="http://fin-ontology.org/FinancialProduct"/>
+    <rdfs:range rdf:resource="http://fin-ontology.org/FinancialProduct"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/Pravil">
+    <rdf:type rdf:resource="http://fin-ontology.org/LegalTerm"/>
+    <rdfs:label xml:lang="ru">правил</rdfs:label>
+    <fin:confidence>0.7</fin:confidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/Litsenziya">
+    <rdf:type rdf:resource="http://fin-ontology.org/LegalTerm"/>
+    <rdfs:label xml:lang="ru">лицензия</rdfs:label>
+    <fin:confidence>1.0</fin:confidence>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/DepositProduct">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label xml:lang="ru">Депозитный продукт</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://fin-ontology.org/FinancialProduct"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://fin-ontology.org/Limita">
+    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
+    <rdfs:label xml:lang="ru">лимита</rdfs:label>
     <fin:confidence>1.0</fin:confidence>
   </rdf:Description>
   <rdf:Description rdf:about="http://fin-ontology.org/requires">
@@ -926,875 +725,18 @@
     <rdfs:domain rdf:resource="http://fin-ontology.org/FinancialProduct"/>
     <rdfs:range rdf:resource="http://fin-ontology.org/Condition"/>
   </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Dolyu">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">долю</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
+  <rdf:Description rdf:about="http://fin-ontology.org/ev_Pogashenie_involves">
+    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
+    <fin:about rdf:resource="http://fin-ontology.org/Pogashenie"/>
+    <rdfs:comment xml:lang="ru">погашение</rdfs:comment>
   </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Pervyy">
+  <rdf:Description rdf:about="http://fin-ontology.org/Zadolzhennost">
     <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">первый</rdfs:label>
-    <fin:confidence>0.5</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/NalogovyyVychetTipaA">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">налоговый вычет типа А</rdfs:label>
+    <rdfs:label xml:lang="ru">задолженность</rdfs:label>
     <fin:confidence>1.0</fin:confidence>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/13"/>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/52000Rubley"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/StoimostKredita">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">стоимость кредита</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_PriobretaemoyNedvizhimosti_requires">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/PriobretaemoyNedvizhimosti"/>
-    <rdfs:comment xml:lang="ru">Обеспечением по кредиту является залог</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Dopuskaetsya">
-    <rdf:type rdf:resource="http://fin-ontology.org/Condition"/>
-    <rdfs:label xml:lang="ru">допускается</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_MinimalnayaSummaPervonachalnoyInvestitsii_hasValue">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/MinimalnayaSummaPervonachalnoyInvestitsii"/>
-    <rdfs:comment xml:lang="ru">Минимальная сумма первоначальной инвестиции — 1 000 рублей.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_PolisKasko_hasAttribute">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/PolisKasko"/>
-    <rdfs:comment xml:lang="ru">Полис КАСКО обеспечивает страховую защиту</rdfs:comment>
-    <rdfs:comment xml:lang="ru">Полис КАСКО обеспечивает страховую защиту транспортного средства</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Upravlenie">
-    <rdf:type rdf:resource="http://fin-ontology.org/Process"/>
-    <rdfs:label xml:lang="ru">управление</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/DepositProduct">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="ru">Депозитный продукт</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://fin-ontology.org/FinancialProduct"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_IndividualnyyInvestitsionnyySchyotIis_requires">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/IndividualnyyInvestitsionnyySchyotIis"/>
-    <rdfs:comment xml:lang="ru">открывается физическим лицам — налоговым резидентам РФ</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_Kredit_requires">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/Kredit"/>
-    <rdfs:comment xml:lang="ru">Обеспечением по кредиту является залог</rdfs:comment>
-    <rdfs:comment xml:lang="ru">Обеспечением по кредиту является залог приобретаемой недвижимости</rdfs:comment>
-    <rdfs:comment xml:lang="ru">Заёмщик обязан застраховать предмет залога</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/DosrochnogoPogasheniyaKredita">
-    <rdf:type rdf:resource="http://fin-ontology.org/Process"/>
-    <rdfs:label xml:lang="ru">досрочного погашения кредита</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/MinimalnyyEzhemesyachnyyPlatyozh">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">минимальный ежемесячный платёж</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/300Rubley"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_Investitsionnyy_subClassOf">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/Investitsionnyy"/>
-    <rdfs:comment xml:lang="ru">является открытым фондом облигаций</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_IpotechnyyKredit_subClassOf">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/IpotechnyyKredit"/>
-    <rdfs:comment xml:lang="ru">ипотечный кредит → кредитный продукт</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/105Godovykh">
-    <rdf:type rdf:resource="http://fin-ontology.org/Metric"/>
-    <rdfs:label xml:lang="ru">10,5% годовых</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/Ipotechnyy"/>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/Protsentnuyu"/>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/Stavku"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Srok">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">срок</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Professionalnogo">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">профессионального</rdfs:label>
-    <fin:confidence>0.5</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Byt">
-    <rdf:type rdf:resource="http://fin-ontology.org/Condition"/>
-    <rdfs:label xml:lang="ru">быть</rdfs:label>
-    <fin:confidence>0.5</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_VoznagrazhdenieUpravlyayuscheyKompanii_hasValue">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/VoznagrazhdenieUpravlyayuscheyKompanii"/>
-    <rdfs:comment xml:lang="ru">Вознаграждение управляющей компании — 1,2% годовых</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_AkkreditovannoyStrakhovoyKompanii_requires">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/AkkreditovannoyStrakhovoyKompanii"/>
-    <rdfs:comment xml:lang="ru">Заёмщик обязан застраховать предмет залога</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/500000Rubley">
-    <rdf:type rdf:resource="http://fin-ontology.org/Metric"/>
-    <rdfs:label xml:lang="ru">500 000 рублей</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/Limitom"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_PaevoyInvestitsionnyyFondPif_subClassOf">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/PaevoyInvestitsionnyyFondPif"/>
-    <rdfs:comment xml:lang="ru">является открытым фондом облигаций</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Svyazannye">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">связанные</rdfs:label>
-    <fin:confidence>0.5</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_LgotnyyPeriod_hasValue">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/LgotnyyPeriod"/>
-    <rdfs:comment xml:lang="ru">льготный период составляет до 55 дней</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/KreditnayaOrganizatsiya">
-    <rdf:type rdf:resource="http://fin-ontology.org/Actor"/>
-    <rdfs:label xml:lang="ru">кредитная организация</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_20Let_hasValue">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/20Let"/>
-    <rdfs:comment xml:lang="ru">в размере 5 000 000 рублей сроком на 20 лет</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Payschika">
-    <rdf:type rdf:resource="http://fin-ontology.org/Actor"/>
-    <rdfs:label xml:lang="ru">пайщика</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_390Rubley_hasValue">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/390Rubley"/>
-    <rdfs:comment xml:lang="ru">комиссия 3%, минимум 390 рублей</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Srokom">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">сроком</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Greys">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">грейс</rdfs:label>
-    <fin:confidence>0.7</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/StoimostChistykhAktivovScha">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">стоимость чистых активов (СЧА)</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/PredmetomZaloga">
-    <rdf:type rdf:resource="http://fin-ontology.org/LegalTerm"/>
-    <rdfs:label xml:lang="ru">предметом залога</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Strakhovoy">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">страховой</rdfs:label>
-    <fin:confidence>0.6</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_180Dney_requires">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/180Dney"/>
-    <rdfs:comment xml:lang="ru">Скидка при погашении паёв — не более 1% при владении менее 180 дней.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/15000Rubley">
-    <rdf:type rdf:resource="http://fin-ontology.org/Metric"/>
-    <rdfs:label xml:lang="ru">15 000 рублей</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/Risku"/>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/Bezuslovnaya"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Ssudy">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://fin-ontology.org/FinancialProduct"/>
-    <rdfs:label xml:lang="ru">ссуды</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Kategoriyam"/>
-    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Kachestva"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Fonda">
-    <rdf:type rdf:resource="http://fin-ontology.org/Actor"/>
-    <rdfs:label xml:lang="ru">фонда</rdfs:label>
-    <fin:confidence>0.7</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Ssudam">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://fin-ontology.org/FinancialProduct"/>
-    <rdfs:label xml:lang="ru">ссудам</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/Razmer"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Vyplachivaet">
-    <rdf:type rdf:resource="http://fin-ontology.org/Process"/>
-    <rdfs:label xml:lang="ru">выплачивает</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Rezidentam">
-    <rdf:type rdf:resource="http://fin-ontology.org/Actor"/>
-    <rdfs:label xml:lang="ru">резидентам</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Ezhednevno">
-    <rdf:type rdf:resource="http://fin-ontology.org/Condition"/>
-    <rdfs:label xml:lang="ru">ежедневно</rdfs:label>
-    <fin:confidence>0.7</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/InsuranceProduct">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="ru">Страховой продукт</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://fin-ontology.org/FinancialProduct"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Vydayotsya">
-    <rdf:type rdf:resource="http://fin-ontology.org/Process"/>
-    <rdfs:label xml:lang="ru">выдаётся</rdfs:label>
-    <fin:confidence>0.6</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Potrebitelskogo">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">потребительского</rdfs:label>
-    <fin:confidence>0.6</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Rezerva">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">резерва</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Transportnogo">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">транспортного</rdfs:label>
-    <fin:confidence>0.5</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Udostoveryaet">
-    <rdf:type rdf:resource="http://fin-ontology.org/Process"/>
-    <rdfs:label xml:lang="ru">удостоверяет</rdfs:label>
-    <fin:confidence>0.5</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Polnom">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">полном</rdfs:label>
-    <fin:confidence>0.6</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Akkreditovannoy">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">аккредитованной</rdfs:label>
-    <fin:confidence>0.6</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_Limit_hasValue">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/Limit"/>
-    <rdfs:comment xml:lang="ru">лимитом до 500 000 рублей</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/FinancialProductsOntology">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
-    <rdfs:label xml:lang="ru">Онтология финансовых продуктов</rdfs:label>
-    <rdfs:comment xml:lang="ru">Мультиагентная система. GPT-4o-mini + LangGraph.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Franshiza">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">франшиза</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/15000Rubley"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_SkidkaPriPogasheniiPayov_hasAttribute">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/SkidkaPriPogasheniiPayov"/>
-    <rdfs:comment xml:lang="ru">Скидка при погашении паёв</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_KreditnayaKarta_hasAttribute">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/KreditnayaKarta"/>
-    <rdfs:comment xml:lang="ru">Кредитная карта с лимитом до 500 000 рублей</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_Kredit_hasAttribute">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/Kredit"/>
-    <rdfs:comment xml:lang="ru">под процентную ставку 10,5% годовых</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/DosrochnyyVozvratKredita">
-    <rdf:type rdf:resource="http://fin-ontology.org/Process"/>
-    <rdfs:label xml:lang="ru">досрочный возврат кредита</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-    <fin:involves rdf:resource="http://fin-ontology.org/Zayomschiku"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/VoznagrazhdenieUpravlyayuscheyKompanii">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">вознаграждение управляющей компании</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/12"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Obyazatelnym">
-    <rdf:type rdf:resource="http://fin-ontology.org/Condition"/>
-    <rdfs:label xml:lang="ru">обязательным</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Ravna">
-    <rdf:type rdf:resource="http://fin-ontology.org/Condition"/>
-    <rdfs:label xml:lang="ru">равна</rdfs:label>
-    <fin:confidence>0.5</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Avtokredit">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://fin-ontology.org/CreditProduct"/>
-    <rdfs:label xml:lang="ru">автокредит</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-    <fin:issuedBy rdf:resource="http://fin-ontology.org/Priobretenie"/>
-    <fin:issuedBy rdf:resource="http://fin-ontology.org/Novykh"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Minimalnyy">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">минимальный</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Otkryt">
-    <rdf:type rdf:resource="http://fin-ontology.org/Process"/>
-    <rdfs:label xml:lang="ru">открыт</rdfs:label>
-    <fin:confidence>0.6</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Fondom">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://fin-ontology.org/InvestmentProduct"/>
-    <rdfs:label xml:lang="ru">фондом</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Nalogovym">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">налоговым</rdfs:label>
-    <fin:confidence>0.5</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Klassifitsiruyutsya">
-    <rdf:type rdf:resource="http://fin-ontology.org/Process"/>
-    <rdfs:label xml:lang="ru">классифицируются</rdfs:label>
-    <fin:confidence>0.7</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Rezervy">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">резервы</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/3RabochikhDnya">
-    <rdf:type rdf:resource="http://fin-ontology.org/Condition"/>
-    <rdfs:label xml:lang="ru">3 рабочих дня</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/PervonachalnyyVznos">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">первоначальный взнос</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/15"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_100OtSummyOsnovnogoDolga_hasValue">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/100OtSummyOsnovnogoDolga"/>
-    <rdfs:comment xml:lang="ru">резерв формируется в размере 100% от суммы основного долга</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_Predostavlyaet_issuedBy">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/Predostavlyaet"/>
-    <rdfs:comment xml:lang="ru">Банк предоставляет заёмщику ипотечный кредит</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/112Godovykh">
-    <rdf:type rdf:resource="http://fin-ontology.org/Metric"/>
-    <rdfs:label xml:lang="ru">11,2% годовых</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Kategoriyam">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">категориям</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Istechenii">
-    <rdf:type rdf:resource="http://fin-ontology.org/Condition"/>
-    <rdfs:label xml:lang="ru">истечении</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Protsenty">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">проценты</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/15">
-    <rdf:type rdf:resource="http://fin-ontology.org/Metric"/>
-    <rdfs:label xml:lang="ru">15%</rdfs:label>
-    <rdfs:label xml:lang="ru">1,5%</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/Pervonachalnyy"/>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/Vznos"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Annuitetnyy">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">аннуитетный</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Karta">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://fin-ontology.org/CardProduct"/>
-    <rdfs:label xml:lang="ru">карта</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Limitom"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_Fond_issuedBy">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/Fond"/>
-    <rdfs:comment xml:lang="ru">Управляющая компания осуществляет доверительное управление имуществом фонда.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Zadolzhennosti">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">задолженности</rdfs:label>
-    <fin:confidence>0.7</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/PolnayaStoimostKreditaPsk">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">Полная стоимость кредита (ПСК)</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/112Godovykh"/>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/Kredit"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Pogashenie">
-    <rdf:type rdf:resource="http://fin-ontology.org/Process"/>
-    <rdfs:label xml:lang="ru">погашение</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Opredelyaetsya">
-    <rdf:type rdf:resource="http://fin-ontology.org/Process"/>
-    <rdfs:label xml:lang="ru">определяется</rdfs:label>
-    <fin:confidence>0.5</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/IpotechnyyKredit">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://fin-ontology.org/CreditProduct"/>
-    <rdfs:label xml:lang="ru">ипотечный кредит</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-    <fin:issuedBy rdf:resource="http://fin-ontology.org/Predostavlyaet"/>
-    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Ipotechnyy"/>
-    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Srokom"/>
-    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Protsentnuyu"/>
-    <fin:hasAttribute rdf:resource="http://fin-ontology.org/Stavku"/>
-    <fin:subClassOf rdf:resource="http://fin-ontology.org/Kredit"/>
-    <skos:closeMatch rdf:resource="https://spec.edmcouncil.org/fibo/ontology/LOAN/ResidentialMortgageLoan"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Otkryvaetsya">
-    <rdf:type rdf:resource="http://fin-ontology.org/Process"/>
-    <rdfs:label xml:lang="ru">открывается</rdfs:label>
-    <fin:confidence>0.7</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Do7Let">
-    <rdf:type rdf:resource="http://fin-ontology.org/Condition"/>
-    <rdfs:label xml:lang="ru">до 7 лет</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_IpotechnyyKredit_issuedBy">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/IpotechnyyKredit"/>
-    <rdfs:comment xml:lang="ru">Банк предоставляет заёмщику ипотечный кредит</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Obligatsiy">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">облигаций</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
-    <fin:subClassOf rdf:resource="http://fin-ontology.org/Fond"/>
-    <fin:subClassOf rdf:resource="http://fin-ontology.org/Fondom"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Ugona">
-    <rdf:type rdf:resource="http://fin-ontology.org/LegalTerm"/>
-    <rdfs:label xml:lang="ru">угона</rdfs:label>
-    <fin:confidence>0.7</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Ustanavlivaetsya">
-    <rdf:type rdf:resource="http://fin-ontology.org/Process"/>
-    <rdfs:label xml:lang="ru">устанавливается</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_MinimalnyyEzhemesyachnyyPlatyozh_hasValue">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/MinimalnyyEzhemesyachnyyPlatyozh"/>
-    <rdfs:comment xml:lang="ru">Минимальный ежемесячный платёж — 3% от суммы задолженности, но не менее 300 рублей.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Pravo">
-    <rdf:type rdf:resource="http://fin-ontology.org/LegalTerm"/>
-    <rdfs:label xml:lang="ru">право</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Vozmozhnye">
-    <rdf:type rdf:resource="http://fin-ontology.org/Condition"/>
-    <rdfs:label xml:lang="ru">возможные</rdfs:label>
-    <fin:confidence>0.5</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Obespechivaet">
-    <rdf:type rdf:resource="http://fin-ontology.org/Process"/>
-    <rdfs:label xml:lang="ru">обеспечивает</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_300Rubley_hasValue">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/300Rubley"/>
-    <rdfs:comment xml:lang="ru">Минимальный ежемесячный платёж — 3% от суммы задолженности, но не менее 300 рублей.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_49919Rubley_hasValue">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/49919Rubley"/>
-    <rdfs:comment xml:lang="ru">Ежемесячный аннуитетный платёж составляет 49 919 рублей.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Uscherba">
-    <rdf:type rdf:resource="http://fin-ontology.org/LegalTerm"/>
-    <rdfs:label xml:lang="ru">ущерба</rdfs:label>
-    <fin:confidence>0.7</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Doveritelnoe">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">доверительное</rdfs:label>
-    <fin:confidence>0.7</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Vklyuchaet">
-    <rdf:type rdf:resource="http://fin-ontology.org/Process"/>
-    <rdfs:label xml:lang="ru">включает</rdfs:label>
-    <fin:confidence>0.5</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_Zayomschik_involves">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/Zayomschik"/>
-    <rdfs:comment xml:lang="ru">Право на досрочный возврат кредита принадлежит заёмщику</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Razmer">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">размер</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Predmet">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">предмет</rdfs:label>
-    <fin:confidence>0.7</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Lgotnyy">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">льготный</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Priobretaemoy">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">приобретаемой</rdfs:label>
-    <fin:confidence>0.7</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Ugon">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">угон</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Zaklyucheniem">
-    <rdf:type rdf:resource="http://fin-ontology.org/LegalTerm"/>
-    <rdfs:label xml:lang="ru">заключением</rdfs:label>
-    <fin:confidence>0.7</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Urovne">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">уровне</rdfs:label>
-    <fin:confidence>0.5</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Sredstva">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">средства</rdfs:label>
-    <fin:confidence>0.5</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Gospodderzhki">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">господдержки</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Polisa">
-    <rdf:type rdf:resource="http://fin-ontology.org/LegalTerm"/>
-    <rdfs:label xml:lang="ru">полиса</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/KoeffitsientBonusmalus">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">коэффициент бонус-малус</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Soversheniya">
-    <rdf:type rdf:resource="http://fin-ontology.org/Process"/>
-    <rdfs:label xml:lang="ru">совершения</rdfs:label>
-    <fin:confidence>0.5</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_Obligatsiy_subClassOf">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/Obligatsiy"/>
-    <rdfs:comment xml:lang="ru">открытым фондом облигаций</rdfs:comment>
-    <rdfs:comment xml:lang="ru">является открытым фондом облигаций</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Kreditnogo">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">кредитного</rdfs:label>
-    <fin:confidence>0.5</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Operatsii">
-    <rdf:type rdf:resource="http://fin-ontology.org/Process"/>
-    <rdfs:label xml:lang="ru">операции</rdfs:label>
-    <fin:confidence>0.6</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_PolnayaStoimostKreditaPsk_hasValue">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/PolnayaStoimostKreditaPsk"/>
-    <rdfs:comment xml:lang="ru">Полная стоимость кредита (ПСК) равна 11,2% годовых.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/InvestmentProduct">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="ru">Инвестиционный продукт</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://fin-ontology.org/FinancialProduct"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_Upravlyayuschaya_involves">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/Upravlyayuschaya"/>
-    <rdfs:comment xml:lang="ru">управляющая компания осуществляет доверительное управление</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Kreditu">
-    <rdf:type rdf:resource="http://fin-ontology.org/LegalTerm"/>
-    <rdfs:label xml:lang="ru">кредиту</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ProductAttribute">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="ru">Атрибут продукта</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Avtomobilya">
-    <rdf:type rdf:resource="http://fin-ontology.org/Actor"/>
-    <rdfs:label xml:lang="ru">автомобиля</rdfs:label>
-    <fin:confidence>0.6</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/49919Rubley">
-    <rdf:type rdf:resource="http://fin-ontology.org/Metric"/>
-    <rdfs:label xml:lang="ru">49 919 рублей</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/Annuitetnyy"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Poderzhannykh">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">подержанных</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Oformlenie">
-    <rdf:type rdf:resource="http://fin-ontology.org/Process"/>
-    <rdfs:label xml:lang="ru">оформление</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Prave">
-    <rdf:type rdf:resource="http://fin-ontology.org/LegalTerm"/>
-    <rdfs:label xml:lang="ru">праве</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Dosrochnoe">
-    <rdf:type rdf:resource="http://fin-ontology.org/Process"/>
-    <rdfs:label xml:lang="ru">досрочное</rdfs:label>
-    <fin:confidence>0.7</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Strakhovatel">
-    <rdf:type rdf:resource="http://fin-ontology.org/Actor"/>
-    <rdfs:label xml:lang="ru">страхователь</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Schyota">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">счёта</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Kompaniya">
-    <rdf:type rdf:resource="http://fin-ontology.org/Actor"/>
-    <rdfs:label xml:lang="ru">компания</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-    <fin:involves rdf:resource="http://fin-ontology.org/Upravlenie"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/NadbavkaPriPokupkePayov">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">надбавка при покупке паёв</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/15"/>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/Payov"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Formirovat">
-    <rdf:type rdf:resource="http://fin-ontology.org/Process"/>
-    <rdfs:label xml:lang="ru">формировать</rdfs:label>
-    <fin:confidence>0.5</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_NadbavkaPriPokupkePayov_hasValue">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/NadbavkaPriPokupkePayov"/>
-    <rdfs:comment xml:lang="ru">Надбавка при покупке паёв составляет не более 1,5%</rdfs:comment>
-    <rdfs:comment xml:lang="ru">Надбавка при покупке паёв составляет не более 1,5% от суммы инвестиций.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Transportnoe">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">транспортное</rdfs:label>
-    <fin:confidence>0.7</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_65Godovykh_hasValue">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/65Godovykh"/>
-    <rdfs:comment xml:lang="ru">Процентная ставка по программе господдержки составляет 6,5% годовых.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Podtverzhdeniya">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">подтверждения</rdfs:label>
-    <fin:confidence>0.7</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Imuschestvo">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">имущество</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ProtsentakhGodovykh">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">процентах годовых</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Sredstvo">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">средство</rdfs:label>
-    <fin:confidence>0.7</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/LgotnyyPeriod">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">льготный период</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/55Dney"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Tryokh">
-    <rdf:type rdf:resource="http://fin-ontology.org/Condition"/>
-    <rdfs:label xml:lang="ru">трёх</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Ipotechnyy">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">ипотечный</rdfs:label>
-    <fin:confidence>0.7</fin:confidence>
-    <fin:subClassOf rdf:resource="http://fin-ontology.org/Kredit"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Usloviem">
-    <rdf:type rdf:resource="http://fin-ontology.org/Condition"/>
-    <rdfs:label xml:lang="ru">условием</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_299Godovykh_hasValue">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/299Godovykh"/>
-    <rdfs:comment xml:lang="ru">процентная ставка составляет 29,9% годовых</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Upravlyayuschaya">
-    <rdf:type rdf:resource="http://fin-ontology.org/Actor"/>
-    <rdfs:label xml:lang="ru">управляющая</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-    <fin:involves rdf:resource="http://fin-ontology.org/Upravlenie"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Popolneniya">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">пополнения</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/MaksimalnayaSummaEzhegodnogoPopolneniyaSchyota">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">максимальная сумма ежегодного пополнения счёта</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/1000000Rubley"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/20Let">
-    <rdf:type rdf:resource="http://fin-ontology.org/Metric"/>
-    <rdfs:label xml:lang="ru">20 лет</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-    <fin:hasValue rdf:resource="http://fin-ontology.org/Srokom"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Lgotnogo">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">льготного</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_Paevoy_subClassOf">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/Paevoy"/>
-    <rdfs:comment xml:lang="ru">является открытым фондом облигаций</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Metric">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:label xml:lang="ru">Метрика</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_Limit_hasAttribute">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/Limit"/>
-    <rdfs:comment xml:lang="ru">Кредитная карта с лимитом до 500 000 рублей</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Protsentakh">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">процентах</rdfs:label>
-    <fin:confidence>0.9</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_1000000Rubley_hasValue">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/1000000Rubley"/>
-    <rdfs:comment xml:lang="ru">Максимальная сумма ежегодного пополнения счёта — 1 000 000 рублей.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Stavku">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">ставку</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Nalichnykh">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">наличных</rdfs:label>
-    <fin:confidence>0.6</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Poteri">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">потери</rdfs:label>
-    <fin:confidence>0.7</fin:confidence>
   </rdf:Description>
   <rdf:Description rdf:about="http://fin-ontology.org/FinancialProduct">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:label xml:lang="ru">Финансовый продукт</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/DogovorPotrebitelskogoKredita">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:resource="http://fin-ontology.org/FinancialProduct"/>
-    <rdfs:label xml:lang="ru">договор потребительского кредита</rdfs:label>
-    <fin:confidence>1.0</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/BezShtrafnykhSanktsiy">
-    <rdf:type rdf:resource="http://fin-ontology.org/Condition"/>
-    <rdfs:label xml:lang="ru">без штрафных санкций</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_PolisKasko_requires">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/PolisKasko"/>
-    <rdfs:comment xml:lang="ru">Полис КАСКО обеспечивает страховую защиту транспортного средства от ущерба и угона.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/ev_Karta_hasAttribute">
-    <rdf:type rdf:resource="http://fin-ontology.org/Evidence"/>
-    <fin:about rdf:resource="http://fin-ontology.org/Karta"/>
-    <rdfs:comment xml:lang="ru">Кредитная карта с лимитом</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Nedvizhimosti">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">недвижимости</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
-  </rdf:Description>
-  <rdf:Description rdf:about="http://fin-ontology.org/Strakhovaya">
-    <rdf:type rdf:resource="http://fin-ontology.org/ProductAttribute"/>
-    <rdfs:label xml:lang="ru">страховая</rdfs:label>
-    <fin:confidence>0.8</fin:confidence>
   </rdf:Description>
 </rdf:RDF>
