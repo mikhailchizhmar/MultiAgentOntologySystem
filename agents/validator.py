@@ -110,7 +110,13 @@ class ValidatorAgent:
             # 1. Дедупликация сущностей
             deduped_entities, dedup_map = self._dedup_entities(state.entities)
             removed = len(state.entities) - len(deduped_entities)
-            state.log("Validator", f"Дедупликация: убрано {removed} дублей")
+            state.log("Validator", f"Дедупликация сущностей: убрано {removed} дублей")
+
+            # После дедупликации id некоторых сущностей в relations невалидны —
+            # перепривязываем subject_id/object_id на канонические id
+            for r in state.relations:
+                r.subject_id = dedup_map.get(r.subject_id, r.subject_id)
+                r.object_id  = dedup_map.get(r.object_id,  r.object_id)
 
             # 2. Структурная валидация отношений
             struct_ok, struct_fail = self._structural_check(
@@ -120,9 +126,21 @@ class ValidatorAgent:
                       f"Структурная проверка: "
                       f"{len(struct_ok)} ОК, {len(struct_fail)} отклонено")
 
-            state.validated_triples = self._to_triples(
-                struct_ok, deduped_entities
-            )
+            # 3. Дедупликация троек: одна и та же тройка
+            #    (subject_id, relation, object_id) не должна попадать в граф
+            #    больше одного раза, даже если встретилась в нескольких предложениях.
+            seen: set[tuple[str, str, str]] = set()
+            unique: list[Relation] = []
+            for r in struct_ok:
+                key = (r.subject_id, r.relation, r.object_id)
+                if key not in seen:
+                    seen.add(key)
+                    unique.append(r)
+            duplicates_removed = len(struct_ok) - len(unique)
+            state.log("Validator",
+                      f"Дедупликация троек: убрано {duplicates_removed} дублей")
+
+            state.validated_triples = self._to_triples(unique, deduped_entities)
             state.log("Validator",
                       f"Итого валидных троек: {len(state.validated_triples)}")
 

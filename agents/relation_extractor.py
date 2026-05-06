@@ -170,11 +170,40 @@ class RelationExtractorAgent:
     # ── Приватные методы ─────────────────────────────────────────────────────
 
     def _split_sentences(self, text: str) -> list[tuple[str, int, int]]:
-        result = []
-        for m in re.finditer(r'[^.!?]+[.!?]?', text):
-            s = m.group().strip()
-            if s:
-                result.append((s, m.start(), m.end()))
+        """
+        Сплиттер устойчив к юридическим аббревиатурам и нумерации.
+        Защищает точки внутри 'п.', 'пп.', 'ст.', 'руб.', '2.1.', 'млн.' и т.п.
+        от ложной интерпретации как конец предложения.
+        """
+        # 1) Защищаем точки в нумерации (2.1, 2.1.3) и аббревиатурах
+        protected = re.sub(r'(\d)\.(\d)', r'\1·\2', text)
+        protected = re.sub(
+            r'\b(п|пп|ст|стст|абз|ч|разд|гл|подп|руб|коп|млн|млрд|тыс|г|гг|кв|м|см|др|пр|т|т\.е|т\.п|т\.д)\.',
+            lambda m: m.group(1) + '·',
+            protected,
+            flags=re.IGNORECASE,
+        )
+
+        # 2) Разбиваем только по настоящим концам предложений:
+        #    точка/!/? + пробел + заглавная буква (или начало нумерации типа "2.")
+        result: list[tuple[str, int, int]] = []
+        offset = 0
+        parts  = re.split(r'(?<=[.!?])\s+(?=[А-ЯA-ZЁ\d])', protected)
+
+        for part in parts:
+            # Восстанавливаем защищённые точки
+            sent = part.replace('·', '.').strip()
+            if not sent:
+                offset += len(part) + 1
+                continue
+            # Находим реальную позицию в исходном тексте
+            start = text.find(sent, offset) if sent in text[offset:] else offset
+            if start == -1:
+                start = offset
+            end = start + len(sent)
+            result.append((sent, start, end))
+            offset = end
+
         return result
 
     def _entities_in_sentence(
