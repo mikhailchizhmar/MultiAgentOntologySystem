@@ -21,6 +21,7 @@ from __future__ import annotations
 import re
 import json
 import argparse
+from functools import lru_cache
 from pathlib import Path
 from dataclasses import dataclass, field
 
@@ -28,6 +29,35 @@ from baseline.baseline_ner import SpacyFinancialNER, Entity
 from baseline.ontology_graph import OntologyGraph, fin_uri
 from evaluate import evaluate
 from corpus.loader import load_corpus, load_gold
+
+# pymorphy3 — для приведения текста сущностей к именительному падежу.
+# Тот же подход что в агентной системе: лемматизация служит ключом
+# дедупликации и нормализует написание ("заёмщика" → "заёмщик").
+try:
+    import pymorphy3
+    _morph = pymorphy3.MorphAnalyzer()
+except ImportError:
+    _morph = None
+
+
+@lru_cache(maxsize=20000)
+def _normalize_text(text: str) -> str:
+    """
+    Лемматизирует текст пословно. Используется и как ключ дедупликации,
+    и как канонический текст сущности. Если pymorphy3 недоступен —
+    возвращает text.lower() (graceful fallback).
+    """
+    if not _morph:
+        return text.lower().strip()
+    parts = re.findall(r"\w+|[^\w\s]+|\s+", text)
+    out = []
+    for p in parts:
+        if p.strip() and p[0].isalpha():
+            out.append(_morph.parse(p)[0].normal_form)
+        else:
+            out.append(p)
+    return "".join(out).strip()
+
 
 OUTPUT_DIR = Path(__file__).parent / "output"
 OUTPUT_DIR.mkdir(exist_ok=True)
@@ -38,13 +68,29 @@ OUTPUT_DIR.mkdir(exist_ok=True)
 # Простые правила на основе типов пар сущностей + текста между ними
 # ─────────────────────────────────────────────────────────────────────────────
 
-# Текстовые паттерны между двумя сущностями → тип отношения
+# Текстовые паттерны между двумя сущностями → тип отношения.
+# Покрывают активные, страдательные и юридические конструкции.
+# Порядок важен: более специфичные паттерны идут раньше — re.search
+# берёт первое совпадение в списке.
 BETWEEN_PATTERNS: list[tuple[re.Pattern, str]] = [
-    (re.compile(r'предоставляет|выдаёт|выдает|открывает|эмитирует|размещает', re.I), "issuedBy"),
-    (re.compile(r'обязан|необходимо|требуется|обязательн',                    re.I), "requires"),
-    (re.compile(r'осуществляет|производит|допускается',                        re.I), "involves"),
-    (re.compile(r'регулируется|устанавливает|осуществляет надзор',             re.I), "regulatedBy"),
-    (re.compile(r'составляет|равн[аео]|установлен',                            re.I), "hasValue"),
+    # Юридические конструкции — частотны в законах, типовых договорах.
+    # Идут первыми: "подлежит обязательному..." должно матчиться как appliesTo,
+    # а не как requires из-за слова "обязательному" дальше.
+    (re.compile(r'признаётся|признается|считается|является',                              re.I), "subClassOf"),
+    (re.compile(r'подлежит|применяется|распространяется',                                 re.I), "appliesTo"),
+
+    # Активные конструкции
+    (re.compile(r'предоставляет|выдаёт|выдает|открывает|эмитирует|размещает|оформляет',   re.I), "issuedBy"),
+    (re.compile(r'регулируется|устанавливает|осуществляет надзор|контролирует',           re.I), "regulatedBy"),
+    (re.compile(r'обязан|необходимо|обязательн',                                          re.I), "requires"),
+    (re.compile(r'осуществляет|производит|допускается|включает',                          re.I), "involves"),
+    (re.compile(r'составляет|равн[аео]|установлен',                                       re.I), "hasValue"),
+
+    # Страдательные конструкции — типичны в документах банков и нормативке.
+    # Используем `(е|ю)тся` чтобы матчить и ед.ч. и мн.ч.: "начисляется"/"начисляются"
+    (re.compile(r'выпуска(е|ю)тся|оформля(е|ю)тся|предоставля(е|ю)тся|размеща(е|ю)тся|выда[её]тся', re.I), "issuedBy"),
+    (re.compile(r'начисля(е|ю)тся|производ(и|я)тся|осуществля(е|ю)тся',                             re.I), "involves"),
+    (re.compile(r'требу(е|ю)тся|необходим[оа]?|должен быть',                                        re.I), "requires"),
 ]
 
 # Матрица: (класс субъекта, класс объекта) → отношение по умолчанию
@@ -180,22 +226,69 @@ class BaselinePipeline:
         doc_type = doc["type"]
         product  = doc["product"]
 
-        entities  = self.ner.extract(text)
-        relations = extract_relations(text, entities)
+        raw_entities = self.ner.extract(text)
+        entities     = self._normalize_and_dedup(raw_entities)
+        relations    = extract_relations(text, entities)
+        relations    = self._dedup_relations(relations)
 
         if verbose:
             by_cls = {}
             for e in entities:
                 by_cls[e.cls] = by_cls.get(e.cls, 0) + 1
             print(f"  [{doc_id}] {product}")
-            print(f"    → {len(entities)} сущностей: "
+            print(f"    → {len(raw_entities)} сырых, {len(entities)} после дедупликации: "
                   + ", ".join(f"{k}={v}" for k, v in sorted(by_cls.items())))
-            print(f"    → {len(relations)} отношений")
+            print(f"    → {len(relations)} уникальных отношений")
 
         parent = DOC_TYPE_TO_PARENT.get(doc_type, "FinancialProduct")
         self._populate_graph(entities, relations, parent)
 
         return ProcessedDoc(doc_id, doc_type, product, text, entities, relations)
+
+    @staticmethod
+    def _normalize_and_dedup(entities: list[Entity]) -> list[Entity]:
+        """
+        Нормализует текст сущностей в именительный падеж и схлопывает дубли
+        по ключу (нормализованный_текст, class, spacy_label).
+
+        Это закрывает сразу две проблемы:
+          - "заёмщика" / "заёмщиком" / "заёмщик" → одна сущность "заёмщик"
+          - повторные совпадения ruler-паттернов на одно и то же понятие
+        Перенумеровывает id чтобы они оставались последовательными.
+        """
+        seen: dict[tuple[str, str, str], Entity] = {}
+        for e in entities:
+            normalized = _normalize_text(e.text)
+            if not normalized:
+                continue
+            key = (normalized, e.cls, e.spacy_label)
+            if key in seen:
+                continue
+            # Сохраняем сущность с уже нормализованным text
+            e.text = normalized
+            seen[key] = e
+
+        result = list(seen.values())
+        for i, e in enumerate(result, 1):
+            e.id = f"e{i}"
+        return result
+
+    @staticmethod
+    def _dedup_relations(relations: list[dict]) -> list[dict]:
+        """
+        Убирает повторяющиеся тройки (subject_text, relation, object_text).
+        Одна и та же связь часто выводится несколько раз — из разных
+        предложений или из правил-перекрытий. В графе достаточно одной.
+        """
+        seen: set[tuple[str, str, str]] = set()
+        unique: list[dict] = []
+        for r in relations:
+            key = (r.get("subject_text", ""), r["relation"], r.get("object_text", ""))
+            if key in seen:
+                continue
+            seen.add(key)
+            unique.append(r)
+        return unique
 
     def _populate_graph(self, entities, relations, parent):
         for e in entities:

@@ -111,8 +111,6 @@ SYSTEM_PROMPT = f"""Ты — эксперт по финансовым онтол
   ]
 }}"""
 
-print(SYSTEM_PROMPT)
-
 USER_PROMPT_TEMPLATE = """Классифицируй следующие термины.
 Тип документа: {doc_type} | Продукт: {product}
 

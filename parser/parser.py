@@ -1,23 +1,19 @@
 """
 parser.py — универсальный парсер PDF и веб-страниц в TXT
 =========================================================
-Использование:
-    python parser.py urls.txt
-    python parser.py urls.txt --output ./output --delay 1.5 --short-threshold 80
+Запуск из корня проекта:
+    python parser/parser.py parser/urls.txt
+    python parser/parser.py parser/urls.txt --output ./parser/parsed_docs --delay 1.5
 
 Формат urls.txt (одна запись на строку):
-    https://example.com/doc.pdf  | имя_файла  | тип_документа
-    https://example.com/page     | имя_файла  | тип_документа
+    https://example.com/doc.pdf   | имя_файла | тип_документа
+    https://example.com/page      | имя_файла | тип_документа
+    parser/local/file.pdf         | имя_файла | тип_документа   ← локальный PDF
 
-Специальные типы с кастомным скрапингом:
-    centrinvest_mortgage   — парсит блоки ипотечных программ после «Полезная информация»
-    centrinvest_deposits   — переходит по каждой «Подробнее о вкладе» и собирает тексты
-
-Структура вывода:
-    output/
-    ├── parsed_docs/      ← нормальные документы (>= порога строк)
-    ├── short_docs/       ← короткие документы + short_docs.log
-    └── parsed_docs/parser.log  ← полный лог сессии
+Структура вывода (относительно --output):
+    parsed_docs/      ← нормальные документы (>= порога строк)
+    short_docs/       ← короткие документы + short_docs.log
+    parsed_docs/parser.log
 """
 
 import sys
@@ -123,7 +119,6 @@ def fix_encoding(response: requests.Response, logger) -> tuple[str, str]:
     detected = chardet.detect(raw)
     detected_enc = detected.get("encoding") or "utf-8"
 
-    # Не доверяем дефолтному latin-1, который requests ставит когда charset не указан
     bad_defaults = {"iso-8859-1", "latin-1", "windows-1252", "ascii"}
     candidates = []
     if declared and declared.lower() not in bad_defaults:
@@ -145,7 +140,7 @@ def fix_encoding(response: requests.Response, logger) -> tuple[str, str]:
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# ПАРСИНГ PDF
+# ПАРСИНГ УДАЛЁННЫХ PDF
 # ══════════════════════════════════════════════════════════════════════════════
 
 def parse_pdf(url: str, logger) -> str:
@@ -163,7 +158,26 @@ def parse_pdf(url: str, logger) -> str:
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# ПАРСИНГ ОБЫЧНЫХ ВЕБ-СТРАНИЦ
+# ПАРСИНГ ЛОКАЛЬНЫХ PDF
+# ══════════════════════════════════════════════════════════════════════════════
+
+def parse_local_pdf(path: str, logger) -> str:
+    local_path = Path(path)
+    if not local_path.exists():
+        raise FileNotFoundError(f"Локальный файл не найден: {local_path.resolve()}")
+    parts = []
+    with pdfplumber.open(local_path) as pdf:
+        for page in pdf.pages:
+            t = page.extract_text()
+            if t:
+                parts.append(t)
+    if not parts:
+        logger.warning("PDF без текстового слоя (скан?) — текст не извлечён")
+    return "\n\n".join(parts)
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# ПАРСИНГ ВЕБ-СТРАНИЦ
 # ══════════════════════════════════════════════════════════════════════════════
 
 def parse_web(url: str, logger) -> str:
@@ -193,155 +207,6 @@ def parse_web(url: str, logger) -> str:
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# КАСТОМНЫЙ ПАРСИНГ: ЦЕНТР-ИНВЕСТ ИПОТЕКА
-# ══════════════════════════════════════════════════════════════════════════════
-
-def parse_centrinvest_mortgage(url: str, logger) -> str:
-    """
-    Парсит /for-individuals/mortgage.
-    Собирает все блоки ПОСЛЕ элемента «Полезная информация»:
-    заголовки программ + описания → один текст.
-    """
-    resp = requests.get(url, headers=HEADERS, timeout=30)
-    resp.raise_for_status()
-    html, enc = fix_encoding(resp, logger)
-    logger.debug(f"Кодировка (mortgage): {enc}")
-    soup = BeautifulSoup(html, "html.parser")
-
-    # Ищем маркер «Полезная информация»
-    marker = None
-    for el in soup.find_all(string=re.compile(r"Полезная информация", re.I)):
-        parent = el.find_parent()
-        if parent:
-            marker = parent
-            break
-
-    blocks = []
-
-    if marker:
-        for sibling in marker.find_all_next():
-            tag = sibling.name
-            if not tag:
-                continue
-            if tag in ("h1", "h2", "h3", "h4", "h5"):
-                t = sibling.get_text(strip=True)
-                if t:
-                    blocks.append(f"\n{'=' * 50}\n{t}\n{'=' * 50}")
-            elif tag == "p":
-                t = sibling.get_text(separator=" ", strip=True)
-                if t and len(t) > 15:
-                    blocks.append(t)
-            elif tag == "li":
-                t = sibling.get_text(separator=" ", strip=True)
-                if t and len(t) > 10:
-                    blocks.append(f"• {t}")
-            elif tag == "div":
-                # Только листовые div (без вложенных блоков)
-                if not sibling.find(["div", "section", "article", "ul", "ol"]):
-                    t = sibling.get_text(separator=" ", strip=True)
-                    if t and len(t) > 20:
-                        blocks.append(t)
-    else:
-        logger.warning("Маркер 'Полезная информация' не найден — парсим секции страницы")
-        for sec in soup.find_all(["section", "article"],
-                                 class_=re.compile(r"(product|credit|card|block|program)", re.I)):
-            t = sec.get_text(separator="\n", strip=True)
-            if len(t) > 50:
-                blocks.append(t)
-
-    if not blocks:
-        logger.warning("Блоков не найдено — возврат полного текста страницы")
-        for tag in soup(["script", "style", "nav", "footer", "header"]):
-            tag.decompose()
-        return soup.get_text(separator="\n")
-
-    return "\n\n".join(blocks)
-
-
-# ══════════════════════════════════════════════════════════════════════════════
-# КАСТОМНЫЙ ПАРСИНГ: ЦЕНТР-ИНВЕСТ ВКЛАДЫ
-# ══════════════════════════════════════════════════════════════════════════════
-
-def parse_centrinvest_deposits(base_url: str, logger) -> str:
-    """
-    1. Загружает /for-individuals/deposits.
-    2. Собирает все ссылки «Подробнее о вкладе» / «Подробнее».
-    3. Переходит по каждой ссылке, парсит страницу вклада.
-    4. Склеивает всё в один текст с разделителями.
-    """
-    resp = requests.get(base_url, headers=HEADERS, timeout=30)
-    resp.raise_for_status()
-    html, enc = fix_encoding(resp, logger)
-    logger.debug(f"Кодировка (deposits-index): {enc}")
-    soup = BeautifulSoup(html, "html.parser")
-
-    # Извлекаем домен для построения абсолютных ссылок
-    domain_match = re.match(r"(https?://[^/]+)", base_url)
-    domain = domain_match.group(1) if domain_match else ""
-
-    deposit_links = []
-    seen = set()
-    link_re = re.compile(r"подробнее", re.I)
-
-    for a in soup.find_all("a", href=True):
-        link_text = a.get_text(strip=True)
-        href = a["href"].strip()
-        if not link_re.search(link_text):
-            continue
-        if href.startswith("http"):
-            full = href
-        elif href.startswith("/"):
-            full = domain + href
-        else:
-            full = base_url.rstrip("/") + "/" + href
-        if full not in seen:
-            seen.add(full)
-            deposit_links.append(full)
-            logger.debug(f"Ссылка на вклад: {full}")
-
-    if not deposit_links:
-        logger.warning("Ссылки 'Подробнее' не найдены — парсим саму страницу вкладов")
-        for tag in soup(["script", "style", "nav", "footer", "header"]):
-            tag.decompose()
-        return soup.get_text(separator="\n")
-
-    logger.info(f"Найдено {len(deposit_links)} карточек вкладов")
-    all_blocks = []
-
-    for i, dep_url in enumerate(deposit_links, 1):
-        logger.info(f"  [{i}/{len(deposit_links)}] {dep_url}")
-        try:
-            dep_resp = requests.get(dep_url, headers=HEADERS, timeout=30)
-            dep_resp.raise_for_status()
-            dep_html, dep_enc = fix_encoding(dep_resp, logger)
-
-            dep_text = trafilatura.extract(
-                dep_html,
-                include_tables=True,
-                include_links=False,
-                favor_recall=True,
-            )
-            if not dep_text or len(dep_text.splitlines()) < 5:
-                dep_soup = BeautifulSoup(dep_html, "html.parser")
-                for tag in dep_soup(["script", "style", "nav", "footer",
-                                     "header", "aside", "noscript"]):
-                    tag.decompose()
-                dep_text = dep_soup.get_text(separator="\n")
-
-            dep_text = clean_text(dep_text)
-            if dep_text:
-                separator = "═" * 60
-                all_blocks.append(
-                    f"{separator}\nВКЛАД: {dep_url}\n{separator}\n\n{dep_text}"
-                )
-            time.sleep(0.8)
-        except Exception as e:
-            logger.error(f"Ошибка при загрузке {dep_url}: {e}")
-
-    return "\n\n".join(all_blocks)
-
-
-# ══════════════════════════════════════════════════════════════════════════════
 # ОСНОВНОЙ ПРОЦЕССОР
 # ══════════════════════════════════════════════════════════════════════════════
 
@@ -359,11 +224,8 @@ def process_entry(
 
     try:
         # Выбор стратегии
-        if doc_type == "centrinvest_mortgage":
-            raw = parse_centrinvest_mortgage(url, logger)
-
-        elif doc_type == "centrinvest_deposits":
-            raw = parse_centrinvest_deposits(url, logger)
+        if url.startswith("parser/local/"):
+            raw = parse_local_pdf(url, logger)
 
         else:
             is_pdf = url.lower().endswith(".pdf")
@@ -441,8 +303,8 @@ def read_urls_file(path: str, logger) -> list:
 def main():
     ap = argparse.ArgumentParser(description="Парсер PDF и веб-страниц → TXT")
     ap.add_argument("urls_file", help="Путь к файлу со списком URL")
-    ap.add_argument("--output", default="./parsed_docs",
-                    help="Папка для нормальных документов (по умолчанию: ./parsed_docs)")
+    ap.add_argument("--output", default="./parser/parsed_docs",
+                    help="Папка для нормальных документов (по умолчанию: ./parser/parsed_docs)")
     ap.add_argument("--delay", type=float, default=1.2,
                     help="Задержка между запросами, сек (по умолчанию: 1.2)")
     ap.add_argument("--short-threshold", type=int, default=SHORT_THRESHOLD_DEFAULT,
@@ -480,7 +342,7 @@ def main():
             logger,
         )
         stats[status] = stats.get(status, 0) + 1
-        if i < total:
+        if i < total and not url.startswith("parser/local/"):
             time.sleep(args.delay)
 
     print("\n" + "═" * 60)

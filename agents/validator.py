@@ -14,14 +14,35 @@ validator.py
 
 from __future__ import annotations
 
+import re
 import json
 import os
 from difflib import SequenceMatcher
+from functools import lru_cache
 
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import SystemMessage, HumanMessage
 
 from agents.state import PipelineState, Entity, Relation
+
+# pymorphy3 — для лемматизации, чтобы дедуплицировать сущности
+# в разных падежах ("заёмщик" / "заёмщика" / "заёмщиком" → одна сущность).
+try:
+    import pymorphy3
+    _morph = pymorphy3.MorphAnalyzer()
+except ImportError:
+    _morph = None
+
+
+@lru_cache(maxsize=20000)
+def _lemmatize(text: str) -> str:
+    """Лемматизирует все слова текста, склейка через пробел.
+    Используется только для построения ключа дедупликации, не меняет сам текст."""
+    if not _morph:
+        return text.lower()
+    words = re.findall(r"\w+", text.lower())
+    return " ".join(_morph.parse(w)[0].normal_form for w in words)
+
 
 # ─────────────────────────────────────────────────────────────────────────────
 # СХЕМА: допустимые domain/range для каждого отношения
@@ -157,32 +178,45 @@ class ValidatorAgent:
         entities: list[Entity],
     ) -> tuple[list[Entity], dict[str, str]]:
         """
-        Объединяет сущности со схожим текстом (SequenceMatcher).
-        Возвращает (дедуплицированный список, маппинг id → канонический id).
+        Объединяет сущности с одинаковой лемматизированной формой.
+
+        Раньше работало только по SequenceMatcher — это пропускало дубли
+        в разных падежах: "заёмщик" / "заёмщика" / "заёмщиком" имеют sim ~0.7-0.85
+        и попадали как 3 разные сущности. После лемматизации все три
+        приводятся к "заёмщик" и схлопываются.
+
+        Канонический текст — самая короткая форма (обычно она же — именительный падеж).
         """
-        dedup_map: dict[str, str] = {}  # old_id → canonical_id
+        dedup_map: dict[str, str] = {}            # old_id → canonical_id
         canonical: list[Entity]   = []
+        lemma_to_canon: dict[tuple[str, str], Entity] = {}  # (cls, lemma) → Entity
 
         for e in entities:
-            matched = None
-            for c in canonical:
-                if e.cls != c.cls:
-                    continue
-                sim = SequenceMatcher(
-                    None, e.text.lower(), c.text.lower()
-                ).ratio()
-                if sim >= self.DEDUP_SIMILARITY:
-                    matched = c
-                    break
+            lemma_key = (e.cls, _lemmatize(e.text))
+            existing = lemma_to_canon.get(lemma_key)
 
-            if matched:
-                dedup_map[e.id] = matched.id
-                # Оставляем более длинный текст как каноническое написание
-                if len(e.text) > len(matched.text):
-                    matched.text = e.text
+            if existing is None:
+                # Также проверяем fuzzy match по тексту — на случай опечаток
+                # и если pymorphy не справился (составные термины)
+                fuzzy_match = None
+                for c in canonical:
+                    if c.cls != e.cls:
+                        continue
+                    sim = SequenceMatcher(None, e.text.lower(), c.text.lower()).ratio()
+                    if sim >= self.DEDUP_SIMILARITY:
+                        fuzzy_match = c
+                        break
+                existing = fuzzy_match
+
+            if existing:
+                dedup_map[e.id] = existing.id
+                # Оставляем более короткое написание — обычно ближе к именительному
+                if len(e.text) < len(existing.text):
+                    existing.text = e.text
             else:
                 dedup_map[e.id] = e.id
                 canonical.append(e)
+                lemma_to_canon[lemma_key] = e
 
         return canonical, dedup_map
 

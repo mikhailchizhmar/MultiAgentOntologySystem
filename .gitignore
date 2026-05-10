@@ -1,6 +1,8 @@
 .env
 __pycache__
 parser/*_docs*
+parser/processed
+parser/local
 .DS_Store
 legacy
 agents/output

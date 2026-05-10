@@ -230,6 +230,7 @@ def relation_triple_match(
     pred_relations: list[dict],
     gold_relations: list[dict],
     gold_entities:  list[dict],
+    pred_entities:  list[dict] | None = None,
 ) -> dict:
     """
     Считает TP/FP/FN для отношений.
@@ -237,31 +238,52 @@ def relation_triple_match(
     Тройка (subject_text, relation, object_text) засчитывается как TP
     только если совпадают все три компонента.
 
-    Subject и object сравниваются через partial match по тексту —
-    потому что предсказанный текст сущности может незначительно отличаться от gold.
+    Subject и object сравниваются через partial match по тексту.
     Тип отношения (relation) должен совпасть точно.
 
-    Это ключевая метрика для сравнения baseline vs мультиагентная система:
-    baseline строит отношения по шаблонным правилам и ошибается на большинстве пар,
-    LLM-агент опирается на семантику текста.
+    Порог для relations намеренно ниже чем для entities (0.75 vs 0.85):
+    «досрочное погашение» и «досрочное погашение кредита» — семантически
+    одно и то же, но их similarity = 0.80, ниже 0.85.
     """
-    # Строим индекс: id → text для gold-сущностей (нужен для восстановления текста из id)
-    gold_ent_by_id = {e["id"]: e["text"] for e in gold_entities}
+    RELATION_THRESHOLD = 0.75
 
-    # Нормализуем gold-тройки в формат (subj_text, relation, obj_text)
+    # Строим индекс id → text для gold и pred сущностей.
+    # pred_entities может приходить без id (когда get_entities в pipeline
+    # отдаёт только text+class) — тогда индекс остаётся пустым,
+    # а subject/object разрешаются через subject_text/object_text.
+    gold_ent_by_id = {e["id"]: e["text"] for e in gold_entities if "id" in e}
+    pred_ent_by_id = {e["id"]: e["text"] for e in (pred_entities or []) if "id" in e}
+
+    def resolve_text(r: dict, ent_by_id: dict, subj_key: str, text_key: str) -> str:
+        """
+        Возвращает текст сущности по такой логике:
+          1. Если есть subject_text/object_text — берём его.
+          2. Если значение subject/object найдено как id в ent_by_id — берём текст.
+          3. Иначе считаем что в subject/object уже лежит текст (формат
+             validated_triples из Validator) — возвращаем его как есть.
+        """
+        text = r.get(text_key, "")
+        if text:
+            return text
+        val = r.get(subj_key, "")
+        if val in ent_by_id:
+            return ent_by_id[val]
+        return val
+
+    # Нормализуем gold-тройки
     gold_triples = []
     for r in gold_relations:
-        subj = gold_ent_by_id.get(r["subject"], r.get("subject_text", ""))
-        obj  = gold_ent_by_id.get(r["object"],  r.get("object_text",  ""))
+        subj = resolve_text(r, gold_ent_by_id, "subject", "subject_text")
+        obj  = resolve_text(r, gold_ent_by_id, "object",  "object_text")
         if subj and obj:
             gold_triples.append((subj, r["relation"], obj))
 
-    # Нормализуем предсказанные тройки
+    # Нормализуем предсказанные тройки — разрешаем id через pred_entities
     pred_triples = []
     for r in pred_relations:
-        subj = r.get("subject_text", "")
-        obj  = r.get("object_text",  "")
-        rel  = r.get("relation",     "")
+        subj = resolve_text(r, pred_ent_by_id, "subject", "subject_text")
+        obj  = resolve_text(r, pred_ent_by_id, "object",  "object_text")
+        rel  = r.get("relation", "")
         if subj and obj and rel:
             pred_triples.append((subj, rel, obj))
 
@@ -279,11 +301,10 @@ def relation_triple_match(
             if pred_rel != gold_rel:
                 continue
 
-            # Subject и object сравниваем через partial match
             subj_score = similarity(normalize(pred_subj), normalize(gold_subj))
             obj_score  = similarity(normalize(pred_obj),  normalize(gold_obj))
 
-            if subj_score >= PARTIAL_MATCH_THRESHOLD and obj_score >= PARTIAL_MATCH_THRESHOLD:
+            if subj_score >= RELATION_THRESHOLD and obj_score >= RELATION_THRESHOLD:
                 tp += 1
                 used_gold.add(idx)
                 matched = True
@@ -295,13 +316,12 @@ def relation_triple_match(
     fn = len(gold_triples) - len(used_gold)
     p, r, f1 = prf(tp, fp, fn)
 
-    # Разбивка FP по типам отношений — показывает какие отношения система «выдумывает»
     fp_by_relation: dict[str, int] = {}
     for pred_subj, pred_rel, pred_obj in pred_triples:
         found = any(
             pred_rel == gold_rel
-            and similarity(normalize(pred_subj), normalize(gold_subj)) >= PARTIAL_MATCH_THRESHOLD
-            and similarity(normalize(pred_obj),  normalize(gold_obj))  >= PARTIAL_MATCH_THRESHOLD
+            and similarity(normalize(pred_subj), normalize(gold_subj)) >= RELATION_THRESHOLD
+            and similarity(normalize(pred_obj),  normalize(gold_obj))  >= RELATION_THRESHOLD
             for gold_subj, gold_rel, gold_obj in gold_triples
         )
         if not found:
@@ -364,7 +384,7 @@ def evaluate(
 
         m_partial = entity_partial_match(pred_ents, gold_ents)
         m_strict  = entity_class_match(pred_ents, gold_ents)
-        m_rel     = relation_triple_match(pred_rels, gold_rels, gold_ents)
+        m_rel     = relation_triple_match(pred_rels, gold_rels, gold_ents, pred_ents)
 
         per_doc[doc_id] = {
             "entity_partial": m_partial,

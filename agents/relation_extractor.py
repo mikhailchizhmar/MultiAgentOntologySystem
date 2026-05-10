@@ -15,7 +15,7 @@ from __future__ import annotations
 
 import re
 import json
-import os
+from functools import lru_cache
 from itertools import combinations
 
 from langchain_openai import ChatOpenAI
@@ -23,23 +23,63 @@ from langchain_core.messages import SystemMessage, HumanMessage
 
 from agents.state import PipelineState, Entity, Relation
 
+# pymorphy3 для лемматизации — нужен чтобы находить сущности
+# в косвенных падежах. Если библиотека недоступна — fallback на substring match.
+try:
+    import pymorphy3
+    _morph = pymorphy3.MorphAnalyzer()
+except ImportError:
+    _morph = None
+
+
+@lru_cache(maxsize=20000)
+def _lemma(word: str) -> str:
+    """Кэшированная лемматизация одного слова."""
+    if not _morph:
+        return word.lower()
+    return _morph.parse(word)[0].normal_form
+
+
+def _lemmatize_text(text: str) -> str:
+    """Лемматизирует все слова в тексте, склейка через пробел."""
+    words = re.findall(r"\w+", text.lower())
+    return " ".join(_lemma(w) for w in words)
+
+
 # ─────────────────────────────────────────────────────────────────────────────
 # МАТРИЦА ДОПУСТИМЫХ ПАР КЛАССОВ
 # Фильтрует пары до вызова LLM — не тратим токены на заведомо пустые комбинации
 # ─────────────────────────────────────────────────────────────────────────────
 
-VALID_PAIRS: set[tuple[str, str]] = {
-    ("FinancialProduct", "ProductAttribute"),
-    ("FinancialProduct", "Actor"),
-    ("FinancialProduct", "Process"),
-    ("FinancialProduct", "Condition"),
-    ("FinancialProduct", "LegalTerm"),
-    ("FinancialProduct", "FinancialProduct"),
-    ("ProductAttribute", "Metric"),
-    ("Actor",            "FinancialProduct"),
-    ("Actor",            "Process"),
-    ("Process",          "Actor"),
+# Направленные допустимые отношения (subject_cls, object_cls) → list[relation].
+# Это ключевое: направление субъект→объект ЗАФИКСИРОВАНО матрицей,
+# LLM не выбирает направление — она выбирает только тип отношения
+# из заранее ограниченного списка для данной направленной пары.
+# Так уходят абсурды вроде "Банк :issuedBy: кредит" (правильно: "кредит :issuedBy: Банк").
+DIRECTED_RELATIONS: dict[tuple[str, str], list[str]] = {
+    ("FinancialProduct", "ProductAttribute"): ["hasAttribute"],
+    ("FinancialProduct", "Actor"):            ["issuedBy", "regulatedBy"],
+    ("FinancialProduct", "Process"):          ["involves"],
+    ("FinancialProduct", "Condition"):        ["requires"],
+    ("FinancialProduct", "LegalTerm"):        ["requires", "involves"],
+    ("FinancialProduct", "FinancialProduct"): ["subClassOf"],
+    ("ProductAttribute", "Metric"):           ["hasValue"],
+    ("Process",          "Actor"):            ["involves"],
+    ("LegalTerm",        "Actor"):            ["involves"],
 }
+
+
+def get_allowed_relations(cls1: str, cls2: str) -> tuple[str, str, list[str]] | None:
+    """
+    Для пары (e1, e2) ищет правильное направление в DIRECTED_RELATIONS.
+    Возвращает (subj_cls, obj_cls, allowed) или None если пара невалидна.
+    Если допустимо только обратное направление — меняет порядок.
+    """
+    if (cls1, cls2) in DIRECTED_RELATIONS:
+        return (cls1, cls2, DIRECTED_RELATIONS[(cls1, cls2)])
+    if (cls2, cls1) in DIRECTED_RELATIONS:
+        return (cls2, cls1, DIRECTED_RELATIONS[(cls2, cls1)])
+    return None
 
 # ─────────────────────────────────────────────────────────────────────────────
 # ПРОМПТЫ
@@ -47,36 +87,37 @@ VALID_PAIRS: set[tuple[str, str]] = {
 # ─────────────────────────────────────────────────────────────────────────────
 
 SYSTEM_PROMPT = """Ты — эксперт по финансовым онтологиям.
-Для каждой пары сущностей определи семантическое отношение в контексте предложения.
+Для каждой пары (СУБЪЕКТ → ОБЪЕКТ) выбери ОДНО отношение из ПРЕДЛОЖЕННОГО
+для этой пары списка, или "no_relation" если в предложении нет такой связи.
 
-ДОПУСТИМЫЕ ОТНОШЕНИЯ:
-- hasAttribute  — продукт имеет атрибут
-- issuedBy      — продукт выпускается / предоставляется актором
-- requires      — продукт требует условие или актора
-- involves      — продукт / актор участвует в процессе
-- regulatedBy   — продукт регулируется актором
-- hasValue      — атрибут имеет числовое значение
-- subClassOf    — является подтипом
-- appliesTo     — применяется к продукту
-- no_relation   — нет значимого онтологического отношения
+КРИТИЧЕСКИЕ ПРАВИЛА:
+1. Направление субъект→объект УЖЕ ЗАДАНО в паре. НЕ меняй его.
+2. Выбирай ТОЛЬКО из списка allowed для каждой пары.
+3. Если в предложении связь между субъектом и объектом отсутствует
+   или не описана явно — ставь "no_relation".
+4. Лучше "no_relation", чем угаданная связь.
 
-ПРАВИЛА:
-1. Выбирай отношение строго по содержанию предложения.
-2. Если неочевидно — ставь no_relation.
-3. confidence 0.9+ только при явной лексической поддержке.
+ЗНАЧЕНИЯ ОТНОШЕНИЙ:
+- hasAttribute  — субъект (продукт) имеет атрибут (характеристику)
+- issuedBy      — субъект (продукт) выпускается / предоставляется актором (объект)
+- regulatedBy   — субъект (продукт) регулируется актором (объект)
+- requires      — субъект (продукт) требует условие или юр.термин (объект)
+- involves      — субъект включает в себя процесс / вовлекает актора (объект)
+- subClassOf    — субъект является подтипом объекта
+- hasValue      — атрибут (субъект) имеет числовое значение (объект)
 
-ФОРМАТ — строго JSON, массив длиной ровно столько элементов, сколько пар на входе:
+ФОРМАТ ОТВЕТА — строго JSON-массив, по одному элементу на каждую пару в порядке входа:
 [
-  {"relation": "...", "confidence": 0.0-1.0, "evidence": "фраза из текста"},
+  {"relation": "hasAttribute" | "no_relation" | ..., "confidence": 0.0-1.0, "evidence": "<=80 символов"},
   ...
 ]"""
 
 USER_PROMPT_TEMPLATE = """Предложение: «{sentence}»
 
-Пары сущностей:
+Пары (субъект → объект) и допустимые отношения для каждой:
 {pairs_block}
 
-Верни JSON-массив — по одному объекту на каждую пару в том же порядке."""
+Верни JSON-массив длиной ровно {n} — по одному объекту на каждую пару."""
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -112,42 +153,68 @@ class RelationExtractorAgent:
                 if len(sent_ents) < 2:
                     continue
 
-                # Собираем валидные пары для этого предложения
-                valid_pairs = [
-                    (e1, e2)
-                    for e1, e2 in combinations(sent_ents, 2)
-                    if (e1.cls, e2.cls) in VALID_PAIRS
-                    or (e2.cls, e1.cls) in VALID_PAIRS
-                ]
-                if not valid_pairs:
+                # Собираем направленные пары: для каждой пары классов
+                # уже определено кто субъект, кто объект, и какие отношения допустимы.
+                # Это убирает абсурды вида "Банк :issuedBy: кредит" — направление
+                # фиксировано матрицей DIRECTED_RELATIONS, а не выбором LLM.
+                directed_pairs: list[tuple[Entity, Entity, list[str]]] = []
+                for e1, e2 in combinations(sent_ents, 2):
+                    spec = get_allowed_relations(e1.cls, e2.cls)
+                    if spec is None:
+                        continue
+                    subj_cls, obj_cls, allowed = spec
+                    # Ставим в правильном порядке субъект → объект
+                    if e1.cls == subj_cls:
+                        directed_pairs.append((e1, e2, allowed))
+                    else:
+                        directed_pairs.append((e2, e1, allowed))
+
+                if not directed_pairs:
                     continue
 
-                total_pairs += len(valid_pairs)
-                total_calls += 1
+                # Защита от перегрузки контекста: предложения с >25 пар
+                # дробим на батчи. Это и убирает "Unterminated string" на
+                # длинных параграфах с десятками сущностей.
+                BATCH_SIZE = 20
+                batches = [
+                    directed_pairs[i:i + BATCH_SIZE]
+                    for i in range(0, len(directed_pairs), BATCH_SIZE)
+                ]
 
-                state.log("RelationExtractor",
-                          f"Предложение {sent_idx+1}/{len(sentences)}: "
-                          f"{len(valid_pairs)} пар → 1 LLM-вызов")
+                total_pairs += len(directed_pairs)
 
-                # Один вызов на всё предложение
-                results = self._classify_pairs_batch(valid_pairs, sent_text)
+                for batch_idx, batch in enumerate(batches):
+                    total_calls += 1
+                    batch_label = (f"{len(batch)} пар"
+                                   if len(batches) == 1
+                                   else f"{len(batch)} пар (батч {batch_idx+1}/{len(batches)})")
+                    state.log("RelationExtractor",
+                              f"Предложение {sent_idx+1}/{len(sentences)}: "
+                              f"{batch_label} → 1 LLM-вызов")
 
-                for (e1, e2), result in zip(valid_pairs, results):
-                    if result["relation"] == "no_relation":
-                        continue
-                    if result["confidence"] < self.CONFIDENCE_THRESHOLD:
-                        continue
-                    rel_counter += 1
-                    relations.append(Relation(
-                        id=f"r{rel_counter}",
-                        subject_id=e1.id,
-                        subject_text=e1.text,
-                        relation=result["relation"],
-                        object_id=e2.id,
-                        object_text=e2.text,
-                        confidence=result["confidence"],
-                        evidence=result.get("evidence", sent_text[:100]),
-                    ))
+                    results = self._classify_pairs_batch(batch, sent_text)
+
+                    for (subj, obj, allowed), result in zip(batch, results):
+                        rel = result["relation"]
+                        if rel == "no_relation":
+                            continue
+                        # Жёсткая фильтрация: тип отношения должен быть
+                        # в списке разрешённых для этой направленной пары
+                        if rel not in allowed:
+                            continue
+                        if result["confidence"] < self.CONFIDENCE_THRESHOLD:
+                            continue
+                        rel_counter += 1
+                        relations.append(Relation(
+                            id=f"r{rel_counter}",
+                            subject_id=subj.id,
+                            subject_text=subj.text,
+                            relation=rel,
+                            object_id=obj.id,
+                            object_text=obj.text,
+                            confidence=result["confidence"],
+                            evidence=result.get("evidence", sent_text[:100]),
+                        ))
 
             state.relations = relations
             by_type: dict[str, int] = {}
@@ -211,41 +278,96 @@ class RelationExtractorAgent:
         entities:  list[Entity],
         sent_text: str,
     ) -> list[Entity]:
-        return [e for e in entities if e.text.lower() in sent_text.lower()]
+        """
+        Находит сущности в предложении с учётом словоизменения.
+
+        Стратегия:
+        1) Прямое substring-совпадение (быстро, ловит точные формы и Metric).
+        2) Лемматизация: и сущности, и предложения приводятся к нормальной форме.
+           Это ловит "процентная ставка" в тексте "процентной ставки".
+
+        Без шага 2 после нормализации в TermExtractor сущности в косвенных
+        падежах становятся невидимы — это была корневая причина relation F1=0.
+        """
+        sent_lower    = sent_text.lower()
+        sent_lemmas   = _lemmatize_text(sent_text) if _morph else None
+        result = []
+
+        for e in entities:
+            text_lower = e.text.lower()
+
+            # 1) Прямое вхождение
+            if text_lower in sent_lower:
+                result.append(e)
+                continue
+
+            # 2) Лемматизированное вхождение
+            if sent_lemmas is not None:
+                ent_lemmas = _lemmatize_text(e.text)
+                if ent_lemmas and ent_lemmas in sent_lemmas:
+                    result.append(e)
+
+        return result
 
     def _classify_pairs_batch(
         self,
-        pairs:     list[tuple[Entity, Entity]],
-        sent_text: str,
+        pairs:       list[tuple[Entity, Entity, list[str]]],
+        sent_text:   str,
+        max_retries: int = 3,
     ) -> list[dict]:
         """
         Один LLM-вызов для всех пар в предложении.
-        Возвращает список результатов в том же порядке, что и pairs.
+        Каждая пара — направленная (subj, obj, allowed_relations).
+        LLM выбирает только из allowed_relations или ставит no_relation.
         """
+
+        # Формат: «субъект» ({subj_cls}) → «объект» ({obj_cls})  allowed: [list]
         pairs_block = "\n".join(
-            f"{i+1}. «{e1.text}» ({e1.cls}) ↔ «{e2.text}» ({e2.cls})"
-            for i, (e1, e2) in enumerate(pairs)
+            f"{i+1}. «{subj.text}» ({subj.cls}) → «{obj.text}» ({obj.cls})  allowed: {allowed + ['no_relation']}"
+            for i, (subj, obj, allowed) in enumerate(pairs)
         )
 
         user_msg = USER_PROMPT_TEMPLATE.format(
             sentence=sent_text,
             pairs_block=pairs_block,
+            n=len(pairs),
         )
 
-        response = self.llm.invoke([
-            SystemMessage(content=SYSTEM_PROMPT),
-            HumanMessage(content=user_msg),
-        ])
+        no_relation_fallback = [
+            {"relation": "no_relation", "confidence": 0.0, "evidence": ""}
+            for _ in pairs
+        ]
 
-        raw = response.content.strip()
-        if raw.startswith("```"):
-            raw = "\n".join(raw.split("\n")[1:]).rsplit("```", 1)[0]
+        last_error = None
+        for attempt in range(1, max_retries + 1):
+            try:
+                response = self.llm.bind(max_tokens=4096).invoke([
+                    SystemMessage(content=SYSTEM_PROMPT),
+                    HumanMessage(content=user_msg),
+                ])
 
-        results = json.loads(raw)
+                raw = response.content.strip()
+                if raw.startswith("```"):
+                    raw = "\n".join(raw.split("\n")[1:]).rsplit("```", 1)[0]
 
-        # Защита: если LLM вернул меньше элементов чем пар — дополняем no_relation
-        while len(results) < len(pairs):
-            results.append({"relation": "no_relation", "confidence": 0.0, "evidence": ""})
+                # Убираем невалидные escape-последовательности.
+                # LLM копирует фрагменты документа в поле "evidence" и иногда
+                # оставляет одиночный \ (например из "Центр-инвест" или № п/п).
+                # Валидные JSON-escapes: \" \\ \/ \b \f \n \r \t \uXXXX — их не трогаем.
+                raw = re.sub(r'\\(?!["\\/bfnrtu])', r'\\\\', raw)
 
-        return results[:len(pairs)]
+                results = json.loads(raw)
 
+                while len(results) < len(pairs):
+                    results.append({"relation": "no_relation", "confidence": 0.0, "evidence": ""})
+
+                return results[:len(pairs)]
+
+            except Exception as e:
+                last_error = e
+                wait = 2 ** attempt
+                print(f"  [RelationExtractor] Попытка {attempt}/{max_retries}: {e}. "
+                      f"Повтор через {wait}с...")
+
+        print(f"  [RelationExtractor] Все попытки исчерпаны: {last_error}")
+        return no_relation_fallback

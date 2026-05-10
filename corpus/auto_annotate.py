@@ -192,13 +192,11 @@ def annotate_document(client: OpenAI, doc: dict, verbose: bool = True) -> dict:
             last_error = f"JSONDecodeError: {e}"
             if verbose:
                 print(f"     ✗ Попытка {attempt}/{MAX_RETRIES}: {last_error}")
-            time.sleep(RETRY_DELAY)
 
         except Exception as e:
             last_error = str(e)
             if verbose:
                 print(f"     ✗ Попытка {attempt}/{MAX_RETRIES}: {last_error}")
-            time.sleep(RETRY_DELAY)
 
     # Все попытки исчерпаны
     return {
